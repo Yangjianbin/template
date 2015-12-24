@@ -300,20 +300,59 @@ footer{
 
 }
 
-.icon{
-    float: right;
+.hidecode1{
+    float: right;;
     width: 32px;
-    margin: 145px 0 2px 2%;
-    opacity: 0.85;
+    margin: 134px 0 2px 2%;
+    position: relative;
+}
+.icon1{
+    float: left;
+    width: 32px;
+    margin: 30px 0 2px 2%;
+    opacity: 0.5;
+    border-radius: 5px;
 }
 
-.icon:hover{
+.icon1:hover{
     opacity: 1;
 }
 
+.icon11{
+    float: right;
+    display: none;
+    position: absolute;
+    top:-80px;
+    left: -40px;
+}
+
+.icon2{
+    float: left;
+    width: 32px;
+    margin: 30px 0 2px 2%;
+    opacity: 0.5;
+    border-radius: 5px;
+}
+
+.icon2:hover{
+    opacity: 1;
+}
+
+.icon22{
+    float: right;
+    display: none;
+    position: absolute;
+    top:-80px;
+    left: -30px;
+}
 .social{
     color: #f38094;
 }
+
+.
+
+
+
 
 
 
@@ -453,6 +492,9 @@ textarea.focused{
 
     .item p{
         font-size: 60%;
+    }
+    .icon11{
+        left: -70px;
     }
 }
 

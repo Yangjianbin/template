@@ -145,9 +145,21 @@
         </section>
 
         <section class="right social">
-            <a href="javascript:void(0);"><img class="icon" src="images/icons/weibo.png" width="28" height="28" alt="weibo"></a>
-            <a href="javascript:void(0);"><img class="icon" src="images/icons/weixin.png" width="28" height="28" alt="weixin"></a>
-        </section> <!-- icons end -->
+            <a class="hidecode1" href="javascript:void(0);"><img class="icon1" src="images/icons/weibo.png" width="28" height="28" alt="weibo"/><img class="icon11" src="images/qrcoode.jpg" width="100px" height="100px"/></a>
+            <a class="hidecode1" href="javascript:void(0);"><img class="icon2" src="images/icons/weixin.png" width="28" height="28" alt="weixin"/><img class="icon22" src="images/qrcoode.jpg" width="100px" height="100px"/></a>
+        </section>
+        <script type="text/javascript">
+            $(".icon1").hover(function(){
+                $(".icon11").show(600);
+            },function(){
+                $(".icon11").hide(300);
+            });
+            $(".icon2").hover(function(){
+                $(".icon22").show(600);
+            },function(){
+                $(".icon22").hide(300);
+            })
+        </script> <!-- icons end -->
         <!--<p>lets get social - </p>-->
         <!--</section> -->
     </div>
