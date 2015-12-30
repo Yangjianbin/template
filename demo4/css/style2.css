@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+/*reset*/
+
+body{
+    background: #303030;
+    color: #fff;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+a{
+     color: #47c6f8;
+}
+
+a:hover{
+    color: #0ff;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 40px;
+}
+
+h2 span{
+    color: ##28a7e9;
+    font-weight: bold;
+}
+
+
+/*--------------------- header --------------------*/
+header
+{
+    min-height: 20px;
+    padding-top: 18px;
+    padding-bottom: 10px;
+}
+header .fa
+{
+    color: #28a7e9;
+}
+header span
+{
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left: 4px;
+}
+header a
+{
+    color: #999;
+    font-weight: 600;
+}
+
+/*--------------------- nav --------------------*/
+
+.navbar-default
+{
+    background: #fff;
+    border: none;
+    box-shadow: none;
+    margin: 0 !important;
+}
+.navbar-default .navbar-brand
+{
+    font-weight: 500;
+    font-size: 30px;
+    height: 70px;
+    line-height: 40px;
+    padding: 12px 0px 0px 12px;
+}
+.navbar-default .navbar-nav li a
+{
+    font-weight: bold;
+    font-size: 13px;
+    height: 70px;
+    line-height: 40px;
+}
+
+.navbar-default .navbar-nav > li > a.current {
+    color: #28A7E9;
+}
+.templatemo-nav {
+    border-radius: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+/*--------------------- home_bg --------------------*/
+#home_bg{
+    background: url("../images/home-bg.jpg") no-repeat;
+    height: 100px;
+    overflow: hidden;
+}
+/*--------------------- detail --------------------*/
+#detail{
+    margin: 80px 15px 20px 15px;
+}
+
+#detail .col-md-8 p{
+    word-wrap: break-word;
+}
+
+/*--------------------- map --------------------*/
+
+#map{
+    margin-top: 60px;
+}
+#allmap {height: 500px;width:100%;overflow: hidden; margin-top: 40px; margin-bottom: 100px;}
+#result {width:100%;font-size:12px;}
+dl,dt,dd,ul,li{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+dt{
+    font-size:14px;
+    font-family:"Microsoft YaHei",sans-serif;
+    font-weight:bold;
+    border-bottom:1px dotted #000;
+    padding:5px 0 5px 5px;
+    margin:5px 0;
+}
+dd{
+    padding:5px 0 0 5px;
+}
+li{
+    line-height:28px;
+}
+
+/*--------------------- footer --------------------*/
+
+#footer{
+
+    padding: 20px;
+}
+
+#footer p{
+    font-weight: 400;
+}
+
