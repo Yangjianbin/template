@@ -1,0 +1,1 @@
+INSERT INTO `dede_diyforms` VALUES('1','‘⁄œﬂ¡Ù—‘','post_diyform1.htm','view_diyform1.htm','list_diyform1.htm','dede_diyform1','\n<field:content itemname=\"ƒ⁄»›\" autofield=\"1\" type=\"text\" isnull=\"true\" default=\"\"  maxlength=\"250\" page=\"\">\r\n</field:content>\r\n','1');

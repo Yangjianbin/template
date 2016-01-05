@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>5项提高产品设计的交互模式_我的网站</title>
+<meta name="keywords" content="5项,提高,产品设计,交互,模式,这个,短的,移动,设计模式" />
+<meta name="description" content="在这个简短的移动端设计模式系列文章的前几篇中，我为大家介绍了几个能够解决开发期间所产生问题的常见设计模式，大家也学到了什么是设计模式，其基本组成 部分有什么，使用它们解决问题的最佳方法都有哪些，以及表单、图片集架构、搜索功能和交互建议等各种" />
+<link href="/skin/css/bootstrap.min.css" rel="stylesheet">
+<link href="/skin/css/font-awesome.min.css" rel="stylesheet">
+<link href="/skin/css/flexslider.css" rel="stylesheet" >
+<link href="/skin/css/styles.css" rel="stylesheet">
+<link href="/skin/css/queries.css" rel="stylesheet">
+<link href="/skin/css/animate.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries by www.dede58.com -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="/skin/js/html5shiv.js"></script>
+        <script src="/skin/js/respond.min.js"></script>
+        <link href="/skin/css/ie.css" rel="stylesheet">
+        <![endif]-->
+<SCRIPT language=javascript>
+<!--
+window.onerror=function(){return true;}
+// -->
+</SCRIPT>
+</head>
+<style>
+.hero {
+	padding:20px 0 100px
+}
+.inner {
+	padding-top:80px;
+}
+</style>
+<body id="top">
+<header id="home">
+  <nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+          <nav class="pull">
+            <ul class="top-nav">
+              <li><a href="/">网站首页 <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="/#intro">关于我们 <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="/#features">服务支持 <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="/#responsive">发展历程 <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="/#portfolio">客服案例 <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="/#team">设计团队 <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="/#contact">联系我们 <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-right navicon"> <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center inner">
+          <h1 class="animated fadeInDown">联合威力<span>WEIPOW.COM</span></h1>
+          <p class="animated fadeInUp delay-05s">我们致力于为您打造一个专业的WEB</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center"> <a href="http://www.weipow.com/" class="learn-more-btn">weipow</a> </div>
+      </div>
+    </div>
+  </section>
+</header>
+<section class="portfolio intro" id="portfolio">
+  <div class="container">
+    <div class="row" style="margin-bottom:50px; line-height:30px; color:#8c9398">
+      <h1 class="arrow text-center " style="margin:60px 0px; font-size:20px;">5项提高产品设计的交互模式</h1>
+      <span style="color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);">在这个简短的移动端设计模式系列文章的前几篇中，我为大家介绍了几个能够解决开发期间所产生问题的常见设计模式，大家也学到了什么是设计模式，其基本组成 部分有什么，使用它们解决问题的最佳方法都有哪些，以及表单、图片集架构、搜索功能和交互建议等各种问题。另外，大家应该还了解了避免</span><br style="box-sizing: border-box; color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);" />
+<span style="color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);">作为本系列的终篇，我将为大家概括性地介绍5种流行移动应用中常见的界面设计模式以供大家在自己的项目中参考。这些设计模式有助于大家提高设计的可用性，让界面变得更加直观。文章将侧重介绍能够帮助大家进行下列各方面设计的模式：</span><br style="box-sizing: border-box; color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);" />
+<span style="color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);">&middot; 社交分享</span><br style="box-sizing: border-box; color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);" />
+<span style="color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);">&middot; 通知</span><br style="box-sizing: border-box; color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);" />
+<span style="color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);">&middot; 弹窗</span><br style="box-sizing: border-box; color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);" />
+<span style="color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);">&middot; 内容更新</span><br style="box-sizing: border-box; color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);" />
+<span style="color: rgb(140, 147, 152); font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; background-color: rgb(243, 245, 248);">&middot; 用户互动（滑动、点击等）</span> </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="legals">
+          <li><a href="http://www.weipow.com/"></a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 credit">
+        <p>Copyright &copy; 2012-2021 WEIPOW. 联合威力 <a href=http://www.dedecms.com target='_blank'>Power by DedeCms</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+ 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="/skin/js/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="/skin/js/waypoints.min.js"></script> 
+<script src="/skin/js/bootstrap.min.js"></script> 
+<script src="/skin/js/scripts.js"></script> 
+<script src="/skin/js/jquery.flexslider.js"></script> 
+<script src="/skin/js/modernizr.js"></script>
+</body>
+</html>

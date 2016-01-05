@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>{dede:global.cfg_webname/}</title>
+    <meta name="description" content="{dede:global.cfg_description/}" />
+    <meta name="keywords" content="{dede:global.cfg_keywords/}" />
+    <meta name="author" content="design by www.dede58.com" />
+    <link href="/skin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/skin/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/skin/css/flexslider.css" rel="stylesheet" >
+    <link href="/skin/css/styles.css" rel="stylesheet">
+    <link href="/skin/css/queries.css" rel="stylesheet">
+    <link href="/skin/css/animate.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries by www.dede58.com-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/skin/js/html5shiv.js"></script>
+    <script src="/skin/js/respond.min.js"></script>
+    <link href="/skin/css/ie.css" rel="stylesheet">
+    <![endif]-->
+    <SCRIPT language=javascript>
+        <!--
+        window.onerror=function(){return true;}
+        // -->
+    </SCRIPT>
+</head>
+<body id="top">
+{dede:include filename="head.htm"/}
+<section class="intro text-center section-padding" id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 wp1">
+                <h1 class="arrow">关于我们</h1>
+                <p>{dede:myad name='gywm'/}</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="features text-center section-padding" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="arrow">我们的服务</h1>
+                <div class="features-wrapper">
+                    <div class="col-md-4 wp2">
+                        <div class="icon"> <i class="fa fa-laptop shadow"></i> </div>
+                        <h2>品牌网站建设</h2>
+                        <p>{dede:myad name='mb'/}</p>
+                    </div>
+                    <div class="col-md-4 wp2 delay-05s">
+                        <div class="icon"> <i class="fa fa-code shadow"></i> </div>
+                        <h2>软件开发</h2>
+                        <p>{dede:myad name='sc'/}</p>
+                    </div>
+                    <div class="col-md-4 wp2 delay-1s">
+                        <div class="icon"> <i class="fa fa-heart shadow"></i> </div>
+                        <h2>移动APP</h2>
+                        <p>{dede:myad name='px'/}</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="text-center" id="responsive">
+    <div class="container-fluid nopadding responsive-services">
+        <div class="wrapper">
+            <div class="iphone">
+                <div class="wp3"></div>
+            </div>
+            <div class="fluid-white"></div>
+        </div>
+        <div class="container designs">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-7">
+                    <div id="servicesSlider">
+                        <ul class="slides">
+                            <li>
+                                <h1 class="arrow">公司简介</h1>
+                                {dede:myad name='jj'/} </li>
+                            <li>
+                                <h1 class="arrow">发展历程</h1>
+                                {dede:myad name='lc'/} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="swag text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Customer Case<span>联合威力工作室</span></h1>
+                <a href="/a/kefuanli/" class="down-arrow-btn"><i class="fa fa-chevron-down"></i></a> </div>
+        </div>
+    </div>
+</section>
+<section class="portfolio text-center section-padding" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div id="portfolioSlider">
+                <ul class="slides">
+                    <li> {dede:arclist limit='0,3' infolen='140' typeid='4' titlelen=50}
+                        <div class="col-md-4 wp4">
+                            <div class="overlay-effect effects clearfix">
+                                <div class="img"> <img src="[field:picname/]" alt="[field:title/]" height="220">
+                                    <div class="overlay"> <a href="[field:arcurl/]" class="expand"><i class="fa fa-search"></i><br>
+                                        View More</a> <a class="close-overlay hidden">x</a> </div>
+                                </div>
+                            </div>
+                            <h2>[field:title/]</h2>
+                            <p>[field:info/]...</p>
+                        </div>
+                        {/dede:arclist} </li>
+                    <li> {dede:arclist limit='3,3' infolen='140' typeid='4' titlelen=50}
+                        <div class="col-md-4 wp4">
+                            <div class="overlay-effect effects clearfix">
+                                <div class="img"> <img src="[field:picname/]" alt="[field:title/]" height="220">
+                                    <div class="overlay"> <a href="[field:arcurl/]" class="expand"><i class="fa fa-search"></i><br>
+                                        View More</a> <a class="close-overlay hidden">x</a> </div>
+                                </div>
+                            </div>
+                            <h2>[field:title/]</h2>
+                            <p>[field:info/]...</p>
+                        </div>
+                        {/dede:arclist} </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="ignite-cta text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"> <a href="http://www.weipow.com/" class="ignite-btn">联合威力，专业建站</a> </div>
+        </div>
+    </div>
+</div>
+<section class="team text-center section-padding" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="arrow">联合威力团队</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="team-wrapper">
+                <div id="teamSlider">
+                    <ul class="slides">
+                        <li> {dede:arclist limit='0,3' infolen='100' typeid='5' titlelen=50}
+                            <div class="col-md-4 wp5"> <img src="[field:picname/]" alt="Team Member">
+                                <h2>[field:title/]</h2>
+                                <p>[field:info/]</p>
+                                <div class="social">
+                                    <ul class="social-buttons">
+                                        <li><a href="#" class="social-btn"><i class="fa fa-weibo"></i></a></li>
+                                        <li><a href="#" class="social-btn"><i class="fa fa-qq"></i></a></li>
+                                        <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {/dede:arclist} </li>
+                        <li> {dede:arclist limit='3,3' infolen='100' typeid='5' titlelen=50}
+                            <div class="col-md-4 wp5"> <img src="[field:picname/]" alt="Team Member">
+                                <h2>[field:title/]</h2>
+                                <p>[field:info/]</p>
+                                <div class="social">
+                                    <ul class="social-buttons">
+                                        <li><a href="#" class="social-btn"><i class="fa fa-weibo"></i></a></li>
+                                        <li><a href="#" class="social-btn"><i class="fa fa-qq"></i></a></li>
+                                        <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {/dede:arclist} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="subscribe text-center">
+    <div class="container">
+        <h1><i class="fa fa-paper-plane"></i><span>您想对我们说什么？一句话表达你的来意吧！</span></h1>
+        <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+        <input type="hidden" name="action" value="post">
+        <input type="hidden" name="diyid" value="1">
+        <input type="hidden" name="do" value="2">
+        <input type="text" name="content" value="" placeholder="" required>
+        <input type="hidden" name="dede_fields" value="content,text">
+        <input type="hidden" name="dede_fieldshash" value="38c007b88409d690dbada0207b4c35ec">
+        <input type="submit" name="" value="Send">
+        </form>
+    </div>
+</section>
+<section class="dark-bg text-center section-padding contact-wrap" id="contact"> <a href="#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="arrow">联系我们</h1>
+            </div>
+        </div>
+        <div class="row contact-details">
+            <div class="col-md-4">
+                <div class="light-box box-hover">
+                    <h2><i class="fa fa-map-marker"></i><span>Address</span></h2>
+                    <p>{dede:global.cfg_dz/}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="light-box box-hover">
+                    <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
+                    <p>{dede:global.cfg_tel/}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="light-box box-hover">
+                    <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
+                    <p>{dede:global.cfg_emial/}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="social-buttons">
+                    <li><a href="javascript:void (0);" class="social-btn" target="_blank"><i class="fa fa-weibo"></i></a></li>
+                    <li><a href="javascript:void (0);" class="social-btn" target="_blank"><i class="fa fa-qq"></i></a></li>
+                    <li><a href="javascript:void (0);" class="social-btn" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{dede:include filename="footer.htm"/}
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/skin/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/skin/js/waypoints.min.js"></script>
+<script src="/skin/js/bootstrap.min.js"></script>
+<script src="/skin/js/scripts.js"></script>
+<script src="/skin/js/jquery.flexslider.js"></script>
+<script src="/skin/js/modernizr.js"></script>
+</body>
+</html>
