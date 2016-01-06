@@ -1,0 +1,60 @@
+﻿@font-face {
+	font-family: 'Indie Flower';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Indie Flower'), local('IndieFlower'), url(../images/10JVD_humAd5zP2yrFqw6onF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 100;
+	src: local('Lato Hairline'), local('Lato-Hairline'), url(../images/zJY4gsxBiSo5L7tNutxFNg.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Lato Light'), local('Lato-Light'), url(../images/nj47mAZe0mYUIySgfn0wpQ.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Lato Regular'), local('Lato-Regular'), url(../images/v0SdcGFAl2aezM9Vq_aFTQ.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Lato Bold'), local('Lato-Bold'), url(../images/DvlFBScY1r-FMtZSYIYoYw.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Lato Black'), local('Lato-Black'), url(../images/4cKlrioa77J2iqTqBgkRWg.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Open Sans Light'), local('OpenSans-Light'), url(../images/DXI1ORHCpsQm3Vp6mXoaTYnF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Oswald Light'), local('Oswald-Light'), url(../images/HqHm7BVC_nzzTui2lzQTDaCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Oswald Regular'), local('Oswald-Regular'), url(../images/Y_TKV6o8WovbUd3m_X9aAA.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Oswald Bold'), local('Oswald-Bold'), url(../images/bH7276GfdCjMjApa_dkG6aCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+}

@@ -1,0 +1,1 @@
+<li> <a class="fancy_gallery" rel="group-2354" href="[field:imgsrc/]"> <img src="[field:imgsrc/]" > <span class="slide-info"> <span class="slide-description">[field:title/]</span> </span> <span class="overlay"><span class="p-icon"></span></span> </a> </li>

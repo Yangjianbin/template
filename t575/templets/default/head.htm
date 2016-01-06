@@ -1,0 +1,26 @@
+<div class="header-fixed-wrapper">
+  <header id="header">
+    <div class="central-wrapper">
+      <div class="navigation clearfix logo-position-left">
+        <h1 class="site-title logo"> <a href="/" title="{dede:global.cfg_webname/}" rel="home"> <img src="/skin/images/logo.png" alt="{dede:global.cfg_webname/}"> <img src="/skin/images/logo.png" alt="{dede:global.cfg_webname/}" class="header-fixed-logo" style="display: none;"> </a> </h1>
+        <nav id="site-navigation"> <a href="javascript:void(0);" class="menu-toggle dl-trigger"> Menu </a>
+          <ul id="menu-home" class="nav-menu styled">
+            <li><a href="/">首页<br />
+              Home</a></li>
+            {dede:channelartlist typeid='top' row=7 currentstyle='current-menu-item'}
+            <li class='{dede:field.currentstyle/}'><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}<br />
+              {dede:field.typenameen/}</a>
+              <ul class="sub-menu">
+                {dede:channel type='son' noself='yes'}
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="[field:typeurl/]">[field:typename/]</a></li>
+                {/dede:channel}
+              </ul>
+            </li>
+            {/dede:channelartlist}
+          </ul>
+        </nav>
+        <!-- #site-navigation --> 
+      </div>
+    </div>
+  </header>
+</div>

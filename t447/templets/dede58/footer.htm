@@ -1,0 +1,83 @@
+<!-- !Footer -->
+
+<footer id="footer" class="footer">
+  <div class="wf-wrap">
+    <div class="wf-container">
+      <section id="presscore-accordion-widget-2" class="widget widget_presscore-accordion-widget">
+        <div class="widget-title">主要服务</div>
+        <div class="st-accordion">
+          <ul>
+            <li><a class="text-primary" href="#">标志设计</a>
+              <div class="st-content">
+                <p>{dede:myad name='bz'/}</p>
+              </div>
+            </li>
+            <li><a class="text-primary" href="#">品牌设计</a>
+              <div class="st-content">
+                <p> {dede:myad name='pp'/}</p>
+              </div>
+            </li>
+            <li><a class="text-primary" href="#">印刷品设计</a>
+              <div class="st-content">
+                <p> {dede:myad name='ys'/}</p>
+              </div>
+            </li>
+            <li><a class="text-primary" href="#">商业插画</a>
+              <div class="st-content">
+                <p> {dede:myad name='sy'/}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="text-4" class="widget widget_text">
+        <div class="widget-title">微博扫一扫，有惊喜~</div>
+        <div class="textwidget"><a><img class="alignleft size-full wp-image-12885" alt="新浪微博"
+                                                src="/skin/images/erwei.jpg" width="306" height="410"
+                                                data-pinit="registered"/></a></div>
+      </section>
+      <section id="text-5" class="widget widget_text">
+        <div class="widget-title">最新动态</div>
+        <div class="textwidget">
+          <div class="standard-arrow list-divider">
+            <ul>
+              {dede:arclist row=9 titlelen=40 typeid='8'}
+              <li><a href="[field:arcurl/]" style="text-decoration: none">[field:pubdate function="MyDate('Y-m-d',@me)"/]  [field:title/]</a></li>
+              {/dede:arclist}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="linkcat-2" class="widget widget_links">
+        <div class="widget-title">友情链接</div>
+        <ul class='xoxo blogroll'>
+          {dede:flink titlelen='20' row='10' type='text'}
+          <li>[field:link /]</li>
+          {/dede:flink}
+          <li><a href='http://www.weipow.com' target='_blank'>技术支持</a> </li>
+        </ul>
+      </section>
+    </div>
+    <!-- .wf-container --> 
+  </div>
+  <!-- .wf-wrap --> 
+</footer>
+<!-- #footer --> 
+<!-- !Bottom-bar -->
+<div id="bottom-bar" role="contentinfo">
+  <div class="wf-wrap">
+    <div class="wf-table wf-mobile-collapsed">
+      <div id="branding-bottom" class="wf-td"><img class="preload-me" src="/skin/images/logo_button.png" width="121" height="42" /> </div>
+      <div class="wf-td">
+        <div class="wf-float-left"> {dede:global.cfg_powerby/} Power by <a href='http://www.weipow.com' target='_blank'>联合威力</a> {dede:global.cfg_beian/} </div>
+      </div>
+      <div class="wf-td"> </div>
+    </div>
+  </div>
+  <!-- .wf-wrap --> 
+</div>
+<!-- #bottom-bar --> 
+
+<a href="#" class="scroll-top"></a>
+</div>
+<!-- #page -->

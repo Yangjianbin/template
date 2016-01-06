@@ -1,0 +1,71 @@
+<!-- !Top-bar -->
+
+<div id="top-bar" role="complementary">
+  <div class="wf-wrap">
+    <div class="wf-table wf-mobile-collapsed">
+      <div class="wf-td">
+        <div class="mini-contacts wf-float-left">
+          <ul>
+            <li class="address">HangZhou，ZheJiang，China</li>
+            <li class="phone">{dede:global.cfg_tel/}</li>
+            <li class="email">admin@dweipow.com</li>
+          </ul>
+        </div>
+        <div class="wf-float-left">
+          <p>欢迎光临我的网站！</p>
+        </div>
+      </div>
+      <div class="wf-td right-block">
+        <div class="soc-ico"><a title="邮件" target="_top"
+                                                                        href="mailto:admin@weipow.com" class="mail"><span
+                            class="assistive-text">邮件</span></a><a title="网站" target="_blank" href="http://www.weipow.com"
+                                                                   class="website"><span
+                            class="assistive-text">网站</span></a></div>
+      </div>
+    </div>
+    <!-- .wf-table --> 
+  </div>
+  <!-- .wf-wrap --> 
+</div>
+<!-- #top-bar --> 
+<!-- left, center, classical, classic-centered --> 
+<!-- !Header -->
+<header id="header" class="logo-left" role="banner"> 
+  <!-- class="overlap"; class="logo-left", class="logo-center", class="logo-classic" -->
+  <div class="wf-wrap">
+    <div class="wf-table"> 
+      <!-- !- Branding -->
+      <div id="branding" class="wf-td"> <a href="/web10"><img class="preload-me" src="/skin/images/logo-small.png"
+                                                      width="210" height="73"
+                                                      alt=""/></a>
+        <div id="site-title" class="assistive-text"> </div>
+        <div id="site-description" class="assistive-text"> </div>
+      </div>
+      <!-- !- Navigation -->
+      <nav id="navigation" class="wf-td">
+        <ul id="main-nav" class="fancy-rollovers wf-mobile-hidden">
+        
+          <li> <a href="/"><span>首页</span></a></li>
+          
+          {dede:channel type='top' row='10' currentstyle="
+          <li class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item level-arrows-on current_page_item act first menu-frame-on'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>
+          "}
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-frame-on level-arrows-on"><a href='[field:typeurl/]' ><span>[field:typename/]</span></a></li>
+          {/dede:channel}
+          
+        </ul>
+        <a href="#show-menu" rel="nofollow" id="mobile-menu"> <span class="menu-open">菜单</span> <span class="menu-close">关闭</span> <span class="menu-back">返回</span> <span class="wf-phone-visible"> </span> </a> </nav>
+      <div class="wf-td mini-search wf-mobile-hidden">
+        <form  class="searchform" role="search" name="formsearch" action="/plus/search.php">
+          <input type="hidden" name="kwtype" value="0" />
+          <input type="text" class="field searchform-s" name="q" value="" placeholder="在这里搜索 …"/>
+          <input type="submit" class="assistive-text searchsubmit" value="Go!"/>
+          <a href="#go" class="submit"></a>
+        </form>
+      </div>
+    </div>
+    <!-- .wf-table --> 
+  </div>
+  <!-- .wf-wrap --> 
+</header>
+<!-- #masthead -->

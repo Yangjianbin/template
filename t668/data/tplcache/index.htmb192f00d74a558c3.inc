@@ -1,0 +1,42 @@
+<?php
+$z[0]=Array("global","",254,280);
+$z[0][4]['name']="cfg_webname";
+$z[1]=Array("global","",324,354);
+$z[1][4]['name']="cfg_description";
+$z[2]=Array("global","",391,418);
+$z[2][4]['name']="cfg_keywords";
+$z[3]=Array("global","",490,517);
+$z[3][4]['name']="cfg_basehost";
+$z[4]=Array("channel","\r\n        <li><a href='[field:typeurl/]'  rel='dropmenu1'>[field:typename/]</a></li>\r\n        ",1175,1430);
+$z[4][4]['type']="top";
+$z[4][4]['row']="5";
+$z[4][4]['currentstyle']="<li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>";
+$z[5]=Array("arclist","\r\n          <li><a href=\"[field:arcurl/]\"><img src=\"[field:picname/]\" width=\"335\" height=\"244\" /></a>\r\n            <div class=\"text31\"> <a href=\"[field:arcurl/]\">[field:title/]</a>\r\n              <p>[field:info/]...</p>\r\n            </div>\r\n          </li>\r\n          ",2633,2977);
+$z[5][4]['row']="3";
+$z[5][4]['infolen']="200";
+$z[5][4]['titlelen']="56";
+$z[5][4]['typeid']="2";
+$z[6]=Array("arclist","\r\n          <li><a href=\"[field:arcurl/]\"><img src=\"[field:picname/]\" width=\"335\" height=\"244\" /></a>\r\n            <div class=\"text31\"> <a href=\"[field:arcurl/]\">[field:title/]</a>\r\n              <p>[field:info/]...</p>\r\n            </div>\r\n          </li>\r\n          ",3043,3387);
+$z[6][4]['row']="3";
+$z[6][4]['infolen']="200";
+$z[6][4]['titlelen']="56";
+$z[6][4]['typeid']="3";
+$z[7]=Array("arclist","\r\n          <li><a href=\"[field:arcurl/]\"><img src=\"[field:picname/]\" width=\"335\" height=\"244\" /></a>\r\n            <div class=\"text31\"> <a href=\"[field:arcurl/]\">[field:title/]</a>\r\n              <p>[field:info/]...</p>\r\n            </div>\r\n          </li>\r\n          ",3453,3797);
+$z[7][4]['row']="3";
+$z[7][4]['infolen']="200";
+$z[7][4]['titlelen']="56";
+$z[7][4]['typeid']="4";
+$z[8]=Array("arclist","\r\n          <li><a href=\"[field:arcurl/]\">\r\n            <div class=\"bga\" style=\"padding:0;\"> <img src=\"[field:picname/]\" width=\"100%\" height=\"225\" /> </div>\r\n            </a>\r\n            <p><a href=\"[field:arcurl/]\">[field:title/]</a></p>\r\n          </li>\r\n          ",4120,4466);
+$z[8][4]['row']="12";
+$z[8][4]['infolen']="100";
+$z[8][4]['titlelen']="32";
+$z[8][4]['typeid']="10";
+$z[9]=Array("arclist","\r\n          <li><a href=\"[field:arcurl/]\"><img src=\"[field:picname/]\" width=\"335\" height=\"244\" /></a>\r\n            <div class=\"text31\"> <a href=\"[field:arcurl/]\">[field:title/]</a>\r\n              <p>[field:info/]...</p>\r\n            </div>\r\n          </li>\r\n          ",4749,5093);
+$z[9][4]['row']="3";
+$z[9][4]['infolen']="200";
+$z[9][4]['titlelen']="32";
+$z[9][4]['typeid']="9";
+$z[10]=Array("include","",6661,6698);
+$z[10][4]['filename']="footer.htm";
+
+?>

@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<title>DEMO </title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<!--[if lt IE 9]>
+		<script src="skin/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+	<!-- css样式-->
+	<link rel='stylesheet' id='layerslider-group-css' href='/skin/css/fb9c977685b9403585f0114bbc44212c.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='ls-google-fonts-css'  href='/skin/css/941a38c90006478193433504e8f3d158.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='ls-google-fonts-css'  href='/skin/css/icons.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='ls-google-fonts-css'  href='/skin/css/editor-content.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='ls-google-fonts-css'  href='/skin/css/layerslider.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='ls-google-fonts-css'  href='/skin/css/nivo-slider.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='ls-google-fonts-css'  href='/skin/css/styles.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='ls-google-fonts-css'  href='/skin/css/public.css' type='text/css' media='all' />
+	<!--[if lt IE 9]>
+<link rel='stylesheet' id='codeus-ie-group-css' href='/skin/css/0930c3f9d4724067a80789e526459c62.css' type='text/css' media='all' />
+<![endif]-->
+	<script type='text/javascript' src='/skin/js/jquery.js'></script>
+	<script type='text/javascript' src='/skin/js/jquery-migrate.min.js'></script>
+	<script type='text/javascript' src='/skin/js/042b049e422843eab4bcf9863f20b3e8.js'></script>
+	<style type="text/css">
+@font-face {
+	font-family: 'Geometria Light';
+	src: url('/skin/images/geometria-light-webfont.eot');
+	src:local('☺'), url('/skin/images/geometria-light-webfont.eot?#iefix') format('embedded-opentype'), url('/skin/images/geometria-light-webfont.woff') format('woff'), url('/skin/images/geometria-light-webfont.ttf') format('truetype'), url('/skin/images/geometria-light-webfont.svg#geometria_lightlight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Supra ThinDemiserif';
+	src: url('/skin/images/supra-thindemiserif-webfont.eot');
+	src:local('☺'), url('/skin/images/supra-thindemiserif-webfont.eot?#iefix') format('embedded-opentype'), url('/skin/images/supra-thindemiserif-webfont.woff') format('woff'), url('/skin/images/supra-thindemiserif-webfont.ttf') format('truetype'), url('/skin/images/supra-thindemiserif-webfont.svg#suprathindemiserif') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+</style>
+	<style type="text/css">
+/* ELEMENTS */
+
+body {
+	font-family: 'Geometria Light';
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: normal;
+	font-style: normal;
+	background-color: #272533;
+	color: #3b3e4f;
+}
+a {
+	color: #7a4e71;
+}
+a:hover {
+	color: #7a4e71;
+}
+a:active {
+	color: #7a4e71;
+}
+h1 {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 58px;
+	line-height: 70px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+h2, body.home h3.widget-title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 36px;
+	line-height: 46px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+h3 {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 30px;
+	line-height: 38px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+h4, table thead th {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	line-height: 31px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+h5 {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 21px;
+	line-height: 28px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+h6 {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 19px;
+	line-height: 25px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.page-links-title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 19px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.bar-title {
+	color: #2c2635;
+}
+#footer #contacts .bar-title, #footer #contacts a {
+	color: #e8ecef;
+}
+input[type="submit"], button, a.button, .widget input[type="submit"], .widget button, .widget a.button {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 19px;
+	line-height: 19px;
+	font-weight: normal;
+	font-style: normal;
+	color: #ffffff;
+	background-color: #56797f;
+}
+input[type="submit"]:before, button:before, a.button:before, .widget input[type="submit"]:before, .widget button:before, .widget a.button:before {
+	color: #ffffff;
+	border-color: #ffffff;
+}
+input[type="submit"]:hover, button:hover, a.button:hover, .widget input[type="submit"]:hover, .widget button:hover, .widget a.button:hover {
+	color: #ffffff;
+	background-color: #2c2635;
+}
+input[type="submit"]:hover:before, input[type="submit"]:hover:before, input[type="submit"]:hover:before {
+	color: #ffffff;
+	border-color: #ffffff;
+}
+input[type="submit"]:active, button:active, a.button:active {
+	color: #ffffff;
+	background-color: #2c2635;
+}
+input[type="submit"]:active:before, input[type="submit"]:active:before, input[type="submit"]:active:before {
+	color: #ffffff;
+	border-color: #ffffff;
+}
+.icon {
+	color: #d0cec4;
+}
+.icon.active {
+	color: #a5b753;
+}
+input[type="text"], input[type="password"], textarea, input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="range"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="month"], input[type="week"] {
+	background-color: #ffffff;
+	color: #99a2a9;
+	border-color: #d0cec4;
+}
+.pagination > a, .pagination > span {
+	font-family: 'Supra ThinDemiserif';
+	font-weight: normal;
+	font-size: 30px;
+	font-style: normal;
+	color: #3b3e4f;
+	border-color: #7a4e71;
+}
+.pagination .current, .pagination > span, .pagination a:hover {
+	background-color: #7a4e71;
+	color: #ffffff;
+}
+body span.styled-subtitle {
+	font-family: 'Supra ThinDemiserif';
+	color: #a4a39a;
+	font-size: 24px;
+	line-height: 31px;
+}
+.socials li a:hover:after {
+	background-color: #a5b753;
+	color: #ffffff;
+}
+/* LAYOUT */
+
+#page {
+	background-color: #f7f6f4;
+}
+/* HEADER */
+
+.page-title-block .page-title-block-header {
+	font-size: 58px;
+}
+#header {
+	background-color: #2d2a3b;
+}
+#header.header-fixed {
+	background-color: #2d2a3b;
+}
+#header #site-navigation li.current-menu-item, #header #site-navigation li.current-menu-ancestor {
+}
+#header #site-navigation li a {
+	font-family: 'Geometria Light';
+	font-size: 15px;
+	font-weight: normal;
+	font-style: normal;
+	color: #ffffff;
+}
+#header #site-navigation li a:hover {
+	color: #a5b753;
+}
+#header #site-navigation li.current-menu-item > a, #header #site-navigation li.current-menu-ancestor > a {
+	color: #a5b753;
+}
+#header #site-navigation li li {
+	background-color: #ffffff;
+}
+#header #site-navigation li li + li {
+	background-color: #ffffff;
+}
+#header #site-navigation li li:hover a, #header #site-navigation li li.current-menu-item a, #header #site-navigation li li.current-menu-ancestor a, #header #site-navigation li li li a {
+	background-color: #dfeae0;
+}
+#header #site-navigation li li a {
+	font-family: 'Geometria Light';
+	font-size: 15px;
+	line-height: 30px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+#header #site-navigation li li:hover a, #header #site-navigation li li.current-menu-item a, #header #site-navigation li li.current-menu-ancestor a {
+	color: #3b3e4f;
+}
+#header #site-navigation li li.menu-parent-item > a:before {
+	color: #a5b753;
+}
+#header #site-navigation li li.menu-parent-item:hover > a:before, #header #site-navigation li li.current-menu-item > a:before, #header #site-navigation li li.current-menu-ancestor > a:before {
+	color: #3b3e4f;
+}
+#header #site-navigation li li li:hover a, #header #site-navigation li li li.current-menu-item a, #header #site-navigation li li li.current-menu-ancestor a {
+	background-color: #a5b753;
+}
+@media only screen and (max-width:799px) {
+#header #site-navigation li {
+	background-color: #ffffff;
+}
+#header #site-navigation li.current-menu-item, #header #site-navigation li.current-menu-ancestor {
+}
+#header #site-navigation li a {
+	font-family: 'Geometria Light';
+	font-size: 15px;
+	line-height: 30px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+#header #site-navigation li a:hover {
+	color: #3b3e4f;
+}
+#header #site-navigation li.current-menu-item > a, #header #site-navigation li.current-menu-ancestor > a {
+	color: #a5b753;
+}
+}
+/* MAIN */
+
+.content-wrap {
+	background-color: #f5f4f0;
+}
+/* SIDEBAR */
+
+.sidebar .widget + .widget {
+	border-top-color: #d0cec4;
+}
+/* FOOTER */
+
+#footer #contacts {
+	background-color: #2d2a3b;
+	color: #e8ecef;
+}
+#footer .socials-icons li a:after {
+	color: #2d2a3b;
+}
+#footer .socials-icons li a:hover:after {
+	background-color: #a5b753;
+}
+#bottom-line {
+	background-color: #2d2a3b;
+	color: #e8ecef;
+}
+#bottom-line .footer-nav li a {
+	color: #e8ecef;
+}
+#bottom-line .footer-nav li:before {
+	color: #a5b753;
+}
+#bottom-line .site-info {
+	color: #7b848f;
+}
+#bottom-line .site-info a {
+	color: #87d890;
+}
+/* SLIDESHOW */
+
+.slideshow .nivo-caption .title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 31px;
+	line-height: 38px;
+	font-weight: normal;
+	font-style: normal;
+}
+.slideshow .nivo-caption .description {
+	font-family: 'Geometria Light';
+	font-size: 15px;
+	line-height: 19px;
+	font-weight: normal;
+	font-style: normal;
+}
+/* QUICKFINDER */
+
+.quickfinder.block, .slideshow.block {
+	background-color: #2e2a3c;
+}
+.quickfinder ul li .title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.quickfinder ul li .description {
+	font-family: 'Geometria Light';
+	font-size: 16px;
+	line-height: 23px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.quickfinder.block ul li .title {
+	color: #dadee1;
+}
+.quickfinder.block ul li .description {
+	color: #dadee1;
+}
+.quickfinder ul li .image {
+	color: #ffffff;
+	background-color: #56797f;
+}
+/* PORTFOLIO */
+
+/* ARROWS */
+
+html * .ls-container .ls-nav-prev:before, html * .ls-container .ls-nav-next:before, .block.clients .prev:before, .block.clients .next:before, .block.portfolio .prev:before, .block.portfolio .next:before {
+	border-color: #56797f;
+	color: #805878;
+}
+.portfolio ul.thumbs li .title, .block.portfolio ul.thumbs li .title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 21px;
+	line-height: 60px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.portfolio ul.thumbs li .small-title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 21px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.portfolio ul.thumbs li .description {
+	font-family: 'Geometria Light';
+	font-size: 17px;
+	line-height: 26px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.portfolio.block {
+	background-color: #dfeae0;
+}
+.portfolio.block ul.thumbs li .title {
+	background-color: #ffffff;
+	color: #3b3e4f;
+}
+.portfolio.block ul.thumbs li .description {
+	color: #3b3e4f;
+}
+.portfolio.block ul.thumbs li .small-title {
+	color: #3b3e4f;
+}
+.portfolio ul.thumbs li .title {
+	background-color: #ffffff;
+}
+.portfolio ul.thumbs li .title .title-hover-color {
+	background-color: #56797f;
+}
+.portfolio ul.thumbs li .title .title-inner-content.hover {
+	color: #ffffff;
+}
+.portfolio ul.thumbs li .share-block-toggle {
+	background-color: #56797f;
+	color: #ffffff;
+}
+.portfolio ul.thumbs li .share-block-toggle.active {
+	background-color: #56797f;
+}
+.portfolio ul.thumbs li .share-block {
+	background-color: #2c2635;
+}
+.portfolio ul.thumbs li .share-block a, .portfolio ul.thumbs li .share-block a:hover {
+	color: #ffffff;
+}
+.portfolio ul.thumbs li .share-block a:hover {
+	background-color: #56797f;
+}
+.portfolio ul.thumbs li .info {
+	font-size: 18px;
+}
+.portfolio ul.thumbs li .info {
+	color: #a4a39a;
+}
+.portfolio ul.filter li a {
+	color: #3b3e4f;
+}
+.portfolio ul.filter li a:hover, .portfolio ul.filter li.active a {
+	color: #a5b753;
+}
+.portfolio ul.filter li .icon {
+	color: #d0cec4;
+}
+.portfolio ul.filter li a:hover .icon, .portfolio ul.filter li.active a .icon {
+	color: #a5b753;
+}
+/* NEWS & BLOG */
+
+.blog_list li .date-day {
+	font-family: 'Supra ThinDemiserif';
+	font-weight: normal;
+	font-size: 36px;
+	font-style: normal;
+	color: #ffffff;
+	background-color: #56797f;
+}
+.blog_list li .date-day span {
+	color: #ffffff;
+}
+.news_list .news_item .image {
+	background-color: #ffffff;
+}
+.news_list .news_item .date {
+	color: #a4a39a;
+}
+.news_list .all-news a:before {
+	color: #3b3e4f;
+}
+.blog_list li .comment-count {
+	color: #a4a39a;
+}
+.blog_list li .post-info {
+	border-color: #d0cec4;
+}
+.blog_list li .post-info-bottom .more-link b:before {
+	color: #a5b753;
+}
+.newslist:before, .newslist:after {
+	background-color: #ffffff;
+}
+.newslist > li .datetime .day {
+	color: #a4a39a;
+}
+.newslist > li .datetime .time {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 36px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.newslist > li .thumbnail img {
+	border-color: #ffffff;
+}
+.newslist > li .thumbnail .empty {
+	background-color: #ffffff;
+	border-color: #ffffff;
+}
+.newslist > li .thumbnail .empty:after {
+	color: #d0cec4;
+}
+.newslist > li .text {
+	background-color: #ffffff;
+}
+.newslist > li .text:after {
+	border-color: transparent #ffffff transparent transparent;
+}
+@media only screen and (max-width:999px) {
+.panel .newslist > li .text:after {
+	border-color: transparent transparent #ffffff transparent;
+}
+}
+@media only screen and (max-width:799px) {
+#page .newslist > li .text:after {
+	border-color:  transparent#ffffff transparent transparent;
+}
+}
+@media only screen and (max-width:599px) {
+#page .newslist > li .text:after {
+	border-color: transparent transparent #ffffff transparent;
+}
+}
+.post-tags-block {
+	border-color: #d0cec4;
+}
+.post-tags {
+	color: #a4a39a;
+}
+.post-author-block {
+	background-color: #ffffff;
+}
+.post-author-avatar img {
+	background-color: #f5f4f0;
+}
+.post-author-info .name {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	line-height: 31px;
+	font-weight: normal;
+	font-style: normal;
+}
+.post-author-info .date-info {
+	color: #a4a39a;
+}
+.post-related-posts-line {
+	border-color: #d0cec4;
+}
+.post-posts-links a {
+	font-family: 'Geometria Light';
+	font-size: 15px;
+	line-height: 30px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.post-posts-links a:hover {
+	color: #a5b753;
+}
+.post-posts-links .left a:before, .post-posts-links .right a:before {
+	border-color: #a5b753;
+	color: #3b3e4f;
+}
+.related-element img {
+	border-color: #ffffff;
+}
+.related-element.without-image > a {
+	background-color: #ffffff;
+}
+ol.commentlist .comment-content .comment-author {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	line-height: 31px;
+	font-weight: normal;
+	font-style: normal;
+}
+ol.commentlist .comment-content .comment-date {
+	color: #a4a39a;
+}
+ol.commentlist ul.children li {
+	border-color: #d0cec4;
+}
+/* COMMENTS */
+
+ol.commentlist li.comment {
+	border-color: #d0cec4;
+}
+ol.commentlist {
+	border-color: #d0cec4;
+}
+/* GALLERY */
+
+.gallery .slide-info, .slideinfo .fancybox-title {
+	background-color: #ffffff;
+}
+.gallery ul.thumbs li.selected a {
+	border-color: #ffffff;
+}
+.gallery ul.thumbs li.selected a:before {
+	border-color: transparent transparent #ffffff transparent;
+}
+.gallery .navigation .prev:before, .gallery .navigation .next:before {
+	border-color: #56797f;
+	color: #805878;
+}
+.gallery .slide-info .slide-caption, .slideinfo .fancybox-title .slide-caption {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.gallery .slide-info .slide-description, .slideinfo .fancybox-title .slide-description {
+	font-family: 'Geometria Light';
+	font-size: 13px;
+	line-height: 26px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+/* SHORTCODES */
+
+.divider, .divider.double, .divider.dashed {
+	border-color: #d0cec4;
+}
+.text_box {
+	background-color: #ffffff;
+}
+.wrap-box.style-1 .wrap-box-inner, .wrap-box.style-2 .wrap-box-inner, .wrap-box.style-6 .wrap-box-inner {
+	border-color: #e0e2d7;
+}
+.wrap-box.style-3 .wrap-box-inner {
+	border-color: #ffffff;
+}
+.accordion {
+	border-color: #d0cec4;
+}
+.accordion h5:before {
+	border-color: #a5b753;
+	color: #3b3e4f;
+}
+.tabs {
+	background-color: #e0e2d7;
+}
+.tabs > ul.tabs-nav li a {
+	background-color: #ffffff;
+	color: #3b3e4f;
+}
+.tabs > ul.tabs-nav li.ui-tabs-active a {
+	background-color: #f5f4f0;
+	color: #a5b753;
+}
+.tabs > .tab_wrapper {
+	background-color: #f5f4f0;
+}
+.dropcap span {
+	font-family: 'Supra ThinDemiserif';
+	font-weight: normal;
+	font-size: 30px;
+	font-style: normal;
+	border-color: #a5b753;
+	color: #3b3e4f;
+}
+.simple-icon {
+	border-color: #a5b753;
+	color: #3b3e4f;
+}
+.list ul li:before {
+	color: #a5b753;
+}
+table {
+	border-color: #ffffff;
+}
+table thead tr {
+	background-color: #ffffff;
+}
+table tr:nth-child(even) {
+	background-color: #ffffff;
+}
+.alert-box > div {
+	background-color: #ffffff;
+}
+.alert-box .alert-icon {
+	border-color: #a5b753;
+	color: #3b3e4f;
+}
+.iconed-title .icon, .iconed-text .icon {
+	border-color: #a5b753;
+	color: #3b3e4f;
+}
+.iconed-title .icon.active, .iconed-text .icon.active {
+	background-color: #a5b753;
+}
+/* WIDGETS */
+
+h3.widget-title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 28px;
+	line-height: 40px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+h3.widget-title + * {
+}
+.widget a {
+	color: #3b3e4f;
+}
+.widget a:hover {
+	color: #48afdb;
+}
+.widget a:active {
+	color: #48afdb;
+}
+/* Projects & Contact Info */
+.project_info-item .title, .contact_info-item .title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	line-height: 31px;
+	font-weight: normal;
+	font-style: normal;
+	color: #a4a39a;
+}
+.project_info-item + .project_info-item, .contact_info-item + .contact_info-item {
+	border-color: #d0cec4;
+}
+/* Testimonials */
+.testimonial_item td {
+	color: #a4a39a;
+}
+.testimonial_item td.image div {
+	background-color: #ffffff;
+}
+.testimonial_item td.info .name {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	line-height: 31px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+/* Categories */
+.widget.widget_categories ul li, .widget.widget_meta ul li {
+	border-color: #d0cec4;
+}
+.widget.widget_categories ul li a, .widget.widget_meta ul li a {
+	color: #3b3e4f;
+	font-size: 15px;
+}
+.widget.widget_categories ul li a:hover, .widget.widget_meta ul li a:hover {
+	color: #a5b753;
+}
+.widget.widget_categories ul li a:before, .widget.widget_meta ul li a:before {
+	color: #a5b753;
+}
+/* Custom Recent/Popular Posts */
+.widget.Custom_Recent_Posts a, .widget.Custom_Popular_Posts a, .widget.widget_recent_entries a, .widget.widget_rss a, .twitter-box a, .widget.widget_recent_comments a {
+	color: #7a4e71;
+}
+.widget.Custom_Recent_Posts .image, .widget.Custom_Popular_Posts .image {
+	background-color: #ffffff;
+}
+.widget.widget_recent_comments ul li:before {
+	color: #d0cec4;
+}
+.widget_tag_cloud a {
+	color: #3b3e4f;
+}
+.widget.widget_archive a {
+	color: #7a4e71;
+}
+.widget.widget_archive ul li a:before {
+	color: #3b3e4f;
+}
+/* Menu Widgets */
+.widget.widget_nav_menu li, .widget.widget_submenu li {
+	border-color: #d0cec4;
+}
+.widget.widget_nav_menu li a, .widget.widget_submenu li a {
+	color: #3b3e4f;
+	font-size: 15px;
+}
+.widget.widget_nav_menu li a:hover, .widget.widget_submenu li a:hover {
+	color: #a5b753;
+}
+.widget.widget_nav_menu li.menu-item a:before, .widget.widget_submenu li.menu-item a:before {
+	color: #a5b753;
+}
+.widget.widget_nav_menu li.menu-parent-item a:before, .widget.widget_submenu li.menu-parent-item a:before {
+	border-color: #a5b753;
+	color: #3b3e4f;
+}
+.widget.widget_nav_menu li.current-menu-item a, .widget.widget_nav_menu li.current-menu-ancestor a, .widget.widget_submenu li.current-menu-item a, .widget.widget_submenu li.current-menu-ancestor a {
+	color: #a5b753;
+}
+.widget.widget_nav_menu li.current-menu-item ul, .widget.widget_nav_menu li.current-menu-ancestor ul, .widget.widget_submenu li.current-menu-item ul, .widget.widget_submenu li.current-menu-ancestor ul {
+	border-color: #d0cec4;
+	background-color: #dfeae0;
+}
+.widget.widget_nav_menu li li.current-menu-item, .widget.widget_submenu li li.current-menu-item {
+	color: #a5b753;
+	background-color: #a5b753;
+}
+.widget.widget_nav_menu li.current-menu-ancestor li a:before, .widget.widget_submenu li.current-menu-ancestor li a:before {
+	color: #a5b753;
+}
+.widget.widget_nav_menu li.current-menu-ancestor li.current-menu-item a, .widget.widget_submenu li.current-menu-ancestor li.current-menu-item a {
+	color: #ffffff;
+}
+.widget.widget_nav_menu li.current-menu-ancestor li.current-menu-item a:before, .widget.widget_submenu li.current-menu-ancestor li.current-menu-item a:before {
+	color: #ffffff;
+}
+.widget.widget_nav_menu li.current-menu-item li a, .widget.widget_nav_menu li.current-menu-ancestor li a, .widget.widget_submenu li.current-menu-item li a, .widget.widget_submenu li.current-menu-ancestor li a {
+	color: #3b3e4f;
+}
+.widget.widget_nav_menu li li.current-menu-item a, .widget.widget_nav_menu li li.current-menu-ancestor a, .widget.widget_submenu li li.current-menu-item a, .widget.widget_submenu li li.current-menu-ancestor a {
+	color: #a5b753;
+}
+/* Team */
+.team-item .team-image {
+	background-color: #ffffff;
+}
+.team-item .team-name {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	line-height: 31px;
+	font-weight: normal;
+	font-style: normal;
+}
+.widget.widget_calendar th, .widget.widget_calendar caption {
+	color: #a4a39a;
+}
+.widget.widget_calendar td a {
+	color: #ffffff;
+	background-color: #56797f;
+}
+.twitter-box .jtwt_tweet:before {
+	color: #d0cec4;
+}
+.widget.picturebox .description, .widget.widget_search form {
+	background-color: #ffffff;
+}
+/* TEAM */
+
+.team-element-email a:before {
+	color: #d0cec4;
+}
+.team-element-position {
+	color: #a4a39a;
+}
+.team-element-name {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	line-height: 31px;
+	font-weight: normal;
+	font-style: normal;
+}
+.team-element-image {
+	background-color: #ffffff;
+}
+.team-element {
+	border-color: #d0cec4;
+}
+/* CLIENTS */
+
+.clients.block {
+	background-color: #dfeae0;
+}
+.clients ul.list li a {
+	background-color: #ffffff;
+}
+.clients ul.filter li a {
+	color: #3b3e4f;
+}
+.clients ul.filter li a:hover, .clients ul.filter li.active a {
+	color: #a5b753;
+}
+.clients ul.filter li .icon {
+	color: #d0cec4;
+}
+.clients ul.filter li a:hover .icon, .clients ul.filter li.active a .icon {
+	color: #a5b753;
+}
+/* DIAGRAMS */
+
+.skill-line {
+	background-color: #ffffff;
+}
+.diagram-circle .text {
+	color: #a4a39a;
+}
+.diagram-circle .text div {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	font-weight: normal;
+	font-style: normal;
+	color: #a4a39a;
+}
+.diagram-circle .text div span {
+	font-family: 'Supra ThinDemiserif';
+	font-weight: Supra ThinDemiserif;
+	font-style: normal;
+	color: #a5b753;
+}
+.diagram-circle .text div span.title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	font-weight: normal;
+	font-style: normal;
+	color: #a4a39a;
+}
+.diagram-circle .text div span.summary {
+	font-family: 'Geometria Light';
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	color: #3b3e4f;
+}
+.diagram-legend .legend-element .title {
+	font-family: 'Supra ThinDemiserif';
+	font-size: 24px;
+	font-weight: normal;
+	font-style: normal;
+	color: #a4a39a;
+}
+/* SLIDESHOW & OVERLAY ICONS */
+
+.slideshow .nivo-directionNav a.nivo-nextNav:before, .slideshow .nivo-directionNav a.nivo-prevNav:before, html * .slideshow .ls-container .ls-nav-prev:before, html * .slideshow .ls-container .ls-nav-next:before, .portfolio ul.thumbs li .overlay .p-icon, .block.portfolio ul.thumbs li .overlay .p-icon, .gallery .navigation.preview-navigation .prev:before, .gallery .navigation.preview-navigation .next:before, .gallery .preview li a span.overlay .p-icon, .gallery-three-columns ul li a span.overlay .p-icon, .gallery-four-columns ul li a span.overlay .p-icon, .image.wrap-box .fancy .overlay:before {
+	border-color: #ffffff;
+	color: #87d890;
+}
+</style>
+	<style type="text/css">
+/*********** Jason Updated ************/
+#header.header-fixed #site-navigation > ul > li > a {
+	line-height: 25px;
+!important;
+}
+#header #site-navigation ul ul {
+	width:165px !important;
+}
+#header #site-navigation li a {
+	font-family:'微软雅黑' !important;
+}
+body {
+	font-family:'微软雅黑' !important;
+	font-size:14px!important;
+}
+#content .inner > p, .block.content .inner > p {
+	line-height:23px!important;
+	font-size:14px!important;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family:'微软雅黑' !important;
+}
+h1 {
+	font-size:38px!important;
+}
+.quickfinder {
+	padding:30px 0;
+}
+.quickfinder ul li .title {
+	font-family:'微软雅黑' !important;
+}
+.quickfinder ul li .description {
+	font-family:'微软雅黑' !important;
+	font-size:14px!important;
+}
+.portfolio ul.thumbs li .title, .block.portfolio ul.thumbs li .title {
+	font-family:'微软雅黑' !important;
+}
+.portfolio ul.thumbs li .description {
+	font-family:'微软雅黑' !important;
+}
+#footer .socials-icons .text {
+	padding-bottom:0!important;
+}
+#footer #contacts {
+	padding:30px 0!important;
+}
+.block.clients {
+	padding:30px 0!important;
+}
+.block.content {
+	padding:30px 0 0 !important;
+}
+.block.content .central-wrapper {
+	padding-bottom:30px!important;
+}
+.block.portfolio {
+	padding:30px 0!important;
+}
+.slideshow .nivo-caption .title {
+	font-family:'微软雅黑' !important;
+}
+.page-title-block-content {
+	padding:40px 0;
+}
+.team-element-name {
+	font-family:'微软雅黑';
+}
+.page-title-block-content {
+	padding:0;
+	height:150px;
+}
+.page-title-block .page-title-block-header h1 {
+	display:none;
+}
+body {
+	position:relative;
+}
+#BDBridgeIconWrap {
+	margin:0!important;
+}
+#respond {
+	display:none;
+}
+.post-author-block {
+	display:none;
+}
+.iconed-title, .iconed-text {
+	padding-top:0;
+}
+.related-element.without-image > a {
+	width: 70px;
+	height: 70px;
+	background:#fff url('/skin/images/related_posts_img.png') no-repeat 50% 50%;
+}
+.news_item img {
+	width:80px!important;
+	height:80px!important;
+	border-radius:50%;
+}
+/***
+.quickfinder.block, .slideshow.block,#footer #contacts{background-color:#00366c;}
+#header,#header.header-fixed{background-color:#002a50;}
+#bottom-line{background-color:#002a50 !important;}
+***/
+.contacts-info.sidebar {
+	width:330px;
+	position:absolute;
+	right:50px;
+	margin:0 !important;
+}
+.clients.block {
+	background-color: #fff;
+}
+.block.news {
+	background-color:#dfeae0;
+}
+.block.news .news_item {
+	background-color: transparent !important;
+}
+.block.news .news_item:hover {
+	background-color: #F5F4F0 !important;
+}
+</style>
+	<script type="text/javascript">
+		document.write('<style>.noscript { display: none; }</style>');
+	</script>
+	<!--<link type="text/css" rel="stylesheet" href="skin/css/public.css">
+--><!-- css样式-->
+	</head>
+	<style>
+h4.hidden {
+	display:none;
+}
+</style>
+	<body class="page page-id-676 page-child parent-pageid-608 page-template page-template-page_sidebar-php">
+<script type="text/javascript">
+	if(jQuery('body').hasClass('lazy-enabled') && jQuery(window).width() <= 800) {
+		jQuery('body').removeClass('lazy-enabled')
+	}
+</script>
+<div id="page" class="fullwidth">
+<!-- wrap start -->
+<div class="block-wrap"> <div class="header-fixed-wrapper">
+  <header id="header">
+    <div class="central-wrapper">
+      <div class="navigation clearfix logo-position-left">
+        <h1 class="site-title logo"> <a href="/" title="DEMO " rel="home"> <img src="/skin/images/logo.png" alt="DEMO "> <img src="/skin/images/logo.png" alt="DEMO " class="header-fixed-logo" style="display: none;"> </a> </h1>
+        <nav id="site-navigation"> <a href="javascript:void(0);" class="menu-toggle dl-trigger"> Menu </a>
+          <ul id="menu-home" class="nav-menu styled">
+            <li><a href="/">首页<br />
+              Home</a></li>
+            <li class=''><a href="/a/guanyuwomen/">关于我们<br />
+              About</a>
+              <ul class="sub-menu">
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/guanyuwomen/gongsijieshao/">公司介绍</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/guanyuwomen/fuwunarong/">服务内容</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/guanyuwomen/ruanzhuangliucheng/">软装流程</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/guanyuwomen/qiyezhanlue/">企业战略</a></li>
+                
+              </ul>
+            </li><li class=''><a href="/a/fuwulingyu/">服务领域<br />
+              Field</a>
+              <ul class="sub-menu">
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/fuwulingyu/yangbanfangruanzhuangsheji/">样板房软装设计</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/fuwulingyu/jingzhuangxiufangruanzhuang/">精装修房软装</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/fuwulingyu/bieshuruanzhuangsheji/">别墅软装设计</a></li>
+                
+              </ul>
+            </li><li class=''><a href="/a/ruanzhuangfengge/">软装风格<br />
+              Style</a>
+              <ul class="sub-menu">
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/xingudianfengge/">新古典风格</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/dongnanyafengge/">东南亚风格</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/fashifengge/">法式风格</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/xibanyafengge/">西班牙风格</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/houxiandaifengge/">后现代风格</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/meishifengge/">美式风格</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/oushifengge/">欧式风格</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/xiandaijianyuefengge/">现代简约风格</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/zhongshifengge/">中式风格</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/ruanzhuangfengge/dizhonghaifengge/">地中海风格</a></li>
+                
+              </ul>
+            </li><li class=''><a href="/a/zixunzhongxin/">资讯中心<br />
+              Info</a>
+              <ul class="sub-menu">
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/zixunzhongxin/gongsidongtai/">公司动态</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/zixunzhongxin/ruanzhuangzixun/">软装资讯</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/zixunzhongxin/ruanzhuangchangshi/">软装常识</a></li>
+                
+              </ul>
+            </li><li class=''><a href="/a/tuanduifengcai/">团队风采<br />
+              Team</a>
+              <ul class="sub-menu">
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/tuanduifengcai/tuanduijieshao/">团队介绍</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/tuanduifengcai/ruanzhuangtuandui/">软装团队</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/tuanduifengcai/gongchengtuandui/">工程团队</a></li>
+                
+              </ul>
+            </li><li class='current-menu-item'><a href="/a/renliziyuan/">人力资源<br />
+              Hr</a>
+              <ul class="sub-menu">
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/renliziyuan/rencailinian/">人才理念</a></li>
+                
+                <li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="/a/renliziyuan/jrwm/">加入我们</a></li>
+                
+              </ul>
+            </li><li class=''><a href="/a/lianxiwomen/">联系我们<br />
+              Contact</a>
+              <ul class="sub-menu">
+                
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- #site-navigation --> 
+      </div>
+    </div>
+  </header>
+</div>
+ 
+      <!-- #header -->
+      
+      <div class="page-title-block" style="background-image: url(/skin/images/banner_hr.jpg); background-color: #f5f4f0;">
+    <div class="central-wrapper page-title-block-content">
+          <div class="page-title-block-header">
+        <h1 style=""> 人才理念 </h1>
+      </div>
+        </div>
+  </div>
+    </div>
+<!-- wrap end --> 
+
+<!-- wrap start -->
+<div class="content-wrap">
+      <div id="main">
+    <div class="central-wrapper clearfix">
+          <div class="panel clearfix">
+        <div id="center" class="center clearfix">
+              <div id="content"> <div class="inner">
+	<div class="tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+		<ul class="tabs-nav styled ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+			<li aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0">
+				<h5>
+					<a class="ui-tabs-anchor" href="#tabs-1" id="ui-id-1" role="presentation" tabindex="-1">首席设计师</a></h5>
+			</li>
+			<li aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="false" class="ui-state-default ui-corner-top" role="tab" tabindex="-1">
+				<h5>
+					<a class="ui-tabs-anchor" href="#tabs-2" id="ui-id-2" role="presentation" tabindex="-1">软装设计师</a></h5>
+			</li>
+			<li aria-controls="tabs-3" aria-labelledby="ui-id-3" aria-selected="false" class="ui-state-default ui-corner-top" role="tab" tabindex="-1">
+				<h5>
+					<a class="ui-tabs-anchor" href="#tabs-3" id="ui-id-3" role="presentation" tabindex="-1">大客户经理</a></h5>
+			</li>
+			<li aria-controls="tabs-4" aria-labelledby="ui-id-4" aria-selected="false" class="ui-state-default ui-corner-top" role="tab" tabindex="-1">
+				<h5>
+					<a class="ui-tabs-anchor" href="#tabs-4" id="ui-id-4" role="presentation" tabindex="-1">销售经理</a></h5>
+			</li>
+		</ul>
+		<div aria-expanded="true" aria-hidden="false" aria-labelledby="ui-id-1" class="tab_wrapper ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-1" role="tabpanel">
+			<b>职位标签：</b> 首席设计师<br />
+			<b>职位职能：</b> 展览/展示/店面设计 家具/家居用品设计<br />
+			<b>职位描述：</b><br />
+			1、 28-45岁，大专（含）以上学历；<br />
+			2、 具有5年（含）以上室内设计、整体软装设计等相关工作经验，有服务高端客户整体软装设计、风格定位、商品<br />
+			选择等相关工作经验；<br />
+			3、 熟悉室内设计知识、理念、平面布局及装饰风格；<br />
+			4、 掌握软装搭配的技巧，具有较好的整体软装方案设计创意及项目深化执行经验；<br />
+			5、 熟练操作专业设计软件，如CAD、Photo Shop、Illustrator等设计软件；<br />
+			6、 掌握家居软装、色彩搭配的知识；<br />
+			7、 有能力绘制家居配制平面图、家居设计搭配的3D效果图等；<br />
+			8、 表达沟通能力良好，可独立、正确、清晰地向他人阐述自己的设计理念与软装搭配。<br />
+			<b>岗位职责：</b><br />
+			1、 配合销售人员，与销售人员密切沟通，为客户提供专业的整体软装设计搭配服务，挑选全套窗帘、壁纸、家具、<br />
+			沙发、饰品等商品，予以组合、搭配成最终专业的整体软装设计方案；<br />
+			2、 需要时，与客户进行设计方案方面的沟通，阐述自己的设计理念，为客户解答设计方案的疑问并解决；<br />
+			3、 不定期市调，了解市场的商品、设计潮流等，做到与时俱进；<br />
+			4、 阅读有关设计杂志，收集相关信息，不断的提升及完善个人的专业能力；<br />
+			5、 巡视卖场，熟悉全店所有商品；<br />
+			6、 各类信息回馈，如商品面等，促进各部门提升与改进；<br />
+			7、 行销相关活动配合；<br />
+			8、 配合培训部，担任设计类等课程讲师</div>
+		<div aria-expanded="false" aria-hidden="true" aria-labelledby="ui-id-2" class="tab_wrapper ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-2" role="tabpanel" style="display: none;">
+			<b>职位标签：</b> 软装设计师<br />
+			<b>职位职能：</b> 室内设计<br />
+			<b>任职要求：</b><br />
+			1、26岁以上，室内设计、建筑、环艺美术等相关专业毕业，大学专科以上学历；<br />
+			2、3年以上软装设计工作，有高端样板房、会所、酒店软装设计及执行经验；<br />
+			3、熟练操作Office、Photoshop、CAD等软件，具有手绘能力更佳；<br />
+			4、时尚自信，沟通能力强，热爱室内软装设计；<br />
+			5、曾独立操作过完整的室内软装项目执行工作；<br />
+			6、有强烈的责任心，具备优秀的职业素养及良好的团队合作精神；<br />
+			7、具有独立操作室内软装项目的经验，能独立执行完成及深化软装方案；<br />
+			8、熟悉不同的空间风格及软装的表现手法，具有很强的美学功底；<br />
+			9、熟悉家具，了解面料壁纸、选型；对各项材料搭配;属性;家具风格以及相关专业有经验。<br />
+			<b>主要职责：</b><br />
+			1、负责陈列摆场的工作的协调、问题解决及沟通；<br />
+			2、给助理安排好与分配好工作。</div>
+		<div aria-expanded="false" aria-hidden="true" aria-labelledby="ui-id-3" class="tab_wrapper ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-3" role="tabpanel" style="display: none;">
+			<b>职位职能:</b> 大客户经理<br />
+			<b>岗位职责: </b><br />
+			1、负责其功能领域内主要目标和计划；<br />
+			2、制定、参与或协助上层执行相关的政策和制度；<br />
+			5、协助销售总监设置销售目标、销售模式、销售战略、销售预算和奖励计划；<br />
+			6、建立和管理销售队伍，完成销售目标；
+			<p>
+				&nbsp;</p>
+			<p>
+				<b>任职资格：</b><br />
+				1、专科及以上学历，市场营销等相关专业；<br />
+				2、3年以上销售行业工作经验，熟悉家装市场有销售管理工作经历者优先；<br />
+				3、具有丰富的客户资源和客户关系，业绩优秀；<br />
+				4、具备较强的市场分析、营销、推广能力和良好的人际沟通、协调能力，分析和解决问题的能力；<br />
+				5、有较强的事业心。</p>
+		</div>
+		<div aria-expanded="false" aria-hidden="true" aria-labelledby="ui-id-4" class="tab_wrapper ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-4" role="tabpanel" style="display: none;">
+			<b>职位职能：</b> 销售经理<br />
+			<b>职位描述：</b><br />
+			<b>职位描述：</b><br />
+			1、独立进行装饰软装市场及深入推广能力；<br />
+			2、熟悉装饰行业，并有出色的谈判技巧和预算能力者优先；<br />
+			3、拥有娴熟的电话邀约技巧，娴熟的谈判技巧，能适应工作出差，具有成功的营销案例；<br />
+			4、良好的与客户、设计师、工程部协调沟通能力；<br />
+			5、能够独立制定市场开发及推广实施计划，制定并实施营销策略及预算，能够带领团队进行高效的市场拓展工作；<br />
+			6、有良好的客户心理把握及谈判能力，与客户沟通能力强；<br />
+			7、具有良好的团队组织凝聚能力，吃苦耐劳，敬业，爱岗。<br />
+			8、有硬装、软装经验者优先。
+			<p>
+				&nbsp;</p>
+			<p>
+				<b>任职要求：</b><br />
+				1、专科及以上学历，设计、房地产、市场营销等相关专业；<br />
+				2、具有较强的分析、总结、组织、协调及沟通能力；<br />
+				3、熟练使用办公软件，具备良好的文字表达功能；<br />
+				4、性格乐观开朗，具备较强的敬业精神。<br />
+				5、有客户资源者优先。</p>
+		</div>
+	</div>
+	<p>
+		<span style="font-size: 16px;">请发简历至邮箱：jobs@dede58.com</span></p>
+</div>
+<br />
+ </div>
+              <!-- #content --> 
+            </div>
+        <!-- #center -->
+        
+        <div id="sidebar" class="sidebar">
+              <section id="nav_menu-31" class="widget widget_nav_menu">
+            <h3 class="widget-title">人力资源</h3>
+            <div class="menu-%e4%ba%ba%e5%8a%9b%e8%b5%84%e6%ba%90-container">
+                  <ul id="menu-%e4%ba%ba%e5%8a%9b%e8%b5%84%e6%ba%90" class="menu">
+                
+                <li id="menu-item-678" class="menu-item menu-item-type-post_type"><a href="/a/renliziyuan/rencailinian/">人才理念</a></li>
+                <li class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-676 current_page_item menu-item-678'><a href='/a/renliziyuan/jrwm/' class='thisclass'>加入我们</a></li>
+              </ul>
+                </div>
+          </section>
+            </div>
+        <!-- #sidebar --> 
+        
+      </div>
+          <!-- .panel --> 
+          
+        </div>
+    <!-- .central-wrapper --> 
+  </div>
+      <!-- #main --> 
+      
+    </div>
+<!-- wrap end --> 
+
+<!-- wrap start -->
+<div class="block-wrap"> </div>
+<!-- wrap end --> 
+<footer id="footer">
+<div id="contacts" class="clearfix">
+      <div class="central-wrapper">
+    <div class="panel clearfix">
+          <div class="socials socials-icons center">
+        <h2 class="bar-title">关注我们</h2>
+        <div class="text">
+              <p>联合威力: <a href="http://weibo.com/" target="_blank"><img src="/skin/images/weixin01.jpg" style="margin:6px 10px 0 3px;" alt="联合威力"/></a> 联合威力: <a href="http://www.weipow.com" target="_blank"><img src="/skin/images/weixin01.jpg" style="margin:6px 10px 0 3px;" alt="联合威力" /></p>
+              <p><!--第一时间了解最新软装信息资讯和软装案例，请关注我们！--></p>
+            </div>
+      </div>
+          <!-- .social-icons -->
+          
+          <div class="contacts-info sidebar">
+        <h2 class="bar-title"> 联系我们</h2>
+        集团：杭州市江干区下沙金沙居A座 <br />
+        软装总部：xxxxxxxxxxxxxxxxxxxx<br />
+        杨浦分部：xxxxxxxxxxxxxxxxxxxxx<br />
+        徐汇分部：xxxxxxxxxxxxxxxxxxxx <br />
+        热线电话：xxxxxxxxxxxx  xxxxxxxxxxx <br />
+        Email: <a href="mailto:info@weipow.com">info@weipow.com</a> </div>
+        </div>
+        <div class='cleanfix'></div>
+    <!-- .panel --> 
+    
+  </div>
+    </div>
+<!-- #contacts -->
+
+<div id="bottom-line" style="background-color:#191724">
+      <div class="central-wrapper">
+    <div class="panel">
+          <div class="footer-nav center"> </div>
+          <!-- .footer-nav -->
+          
+          <div class="site-info sidebar" style="width:1200px;"><!-- style="width:1200px;"-->
+       
+        <div style="width:100%; text-align: center;">2012-2021 © <a href="http://www.weipow.com/"> 联合威力</a> 版权所有 浙ICP备14024098号
+            </div>
+        <!-- .site-info --> 
+        
+      </div>
+        </div>
+    <div class="clear"></div>
+  </div>
+      <!-- #bottom-line -->
+      
+      </footer>
+         <!-- #footer --> 
+      
+    </div>
+<!-- #page -->  
+<script type='text/javascript' src='/skin/js/572563e731414ce38645c6838197cdea.js'></script> 
+<script type='text/javascript' src='/skin/js/26fee0a165144a028f772b103af2c4cf.js'></script> 
+<script type='text/javascript' src='/skin/js/cefea0cea0104f6c880cb953fee41f5d.js'></script> 
+<script type='text/javascript' src='/skin/js/2e6ead105d7e4954933f25ec260acbc8.js'></script> 
+</body>
+</html>

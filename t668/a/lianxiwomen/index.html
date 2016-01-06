@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>demo</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://t668.a.com:8888//favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="/skin/css/list.css" />
+<link href="/skin/css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--header--> 
+<div class="bgt">
+  <div class="top">
+    <div class="logo f_l"> <a href="/"><img src="/skin/images/logo.png" /></a> </div>
+    <div class="nav f_r" id="nav">
+      <ul>
+        <li><a href='/'>主页</a></li>
+        
+        <li><a href='/a/xinwendongtai/'  rel='dropmenu1'>新闻动态</a></li>
+        
+        <li><a href='/a/guanyuwomen/'  rel='dropmenu1'>关于我们</a></li>
+        
+        <li><a href='/a/chuangtouketang/'  rel='dropmenu1'>创投课堂</a></li>
+        
+        <li><a href='/a/touzianli/'  rel='dropmenu1'>投资案例</a></li>
+        <li class='thisnav'><a href='/a/lianxiwomen/' ><span>联系我们</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+ 
+<!--//header-->
+<div class="container container-banner1"></div>
+<!-- banner end -->
+<div class="main main-content">
+  <div class="side-wrap">
+    <div class="side-hd"> <span class="side-hd-top">联系我们</span> </div>
+    <div class="side-bd">  <a href='/a/lianxiwomen/yewuzixun/' ><i></i>业务咨询<span></span></a>  </div>
+  </div>
+  <div class="content-wrap"> <div class="content-bd">
+	<div class="content-hd">
+		<div class="colunm" style="padding: 0px; margin: 0px; font-size: 20px; position: absolute; width: 748px; height: 150px; left: 0px; top: 10px; text-align: center; line-height: 150px; color: rgb(255, 255, 255);">
+			<img alt="联系我们" src="/uploads/allimg/151114/1-151114122950A8.jpg" style="padding: 0px; margin: 0px; font-size: 14px; vertical-align: middle; border: 0px; width: 326px; height: 60px;" /></div>
+	</div>
+	<div class="content-bd">
+		<p style="padding: 0px; margin: 20px 0px 0px; line-height: 30px; color: rgb(102, 102, 102);">
+			联系人：陈安智</p>
+		<p style="padding: 0px; margin: 20px 0px 0px; line-height: 30px; color: rgb(102, 102, 102);">
+			电话：020-66997344</p>
+		<p style="padding: 0px; margin: 20px 0px 0px; line-height: 30px; color: rgb(102, 102, 102);">
+			手机：13965326696</p>
+		<p style="padding: 0px; margin: 20px 0px 0px; line-height: 30px; color: rgb(102, 102, 102);">
+			投资人关系管理邮箱：329435596@qq.com</p>
+		<p style="padding: 0px; margin: 20px 0px 0px; line-height: 30px; color: rgb(102, 102, 102);">
+			创业项目提交邮箱：329435598@qq.com</p>
+		<p style="padding: 0px; margin: 20px 0px 0px; line-height: 30px; color: rgb(102, 102, 102);">
+			地址：广州市北部新区金城国际大厦A区9楼</p>
+		<p style="padding: 0px; margin: 20px 0px 0px; line-height: 30px; color: rgb(102, 102, 102);">
+			法务天使期待与国内众多优秀的创业者、投资人、企业携手一起，享受创业，享受成功！</p>
+	</div>
+	<br />
+	<br />
+	<!--引用百度地图API-->
+	<style type="text/css">
+html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}	</style>
+	<script type="text/javascript" src="/skin/js/map.js"></script><!--百度地图容器-->
+	<div id="dituContent" style="width:100%;height:550px;border:#ccc solid 1px;">
+		&nbsp;</div>
+	<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(106.565609,29.537977);//定义一个中心点坐标
+        map.centerAndZoom(point,16);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.disableScrollWheelZoom();//禁用地图滚轮放大缩小，默认禁用(可不写)
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+                        }
+    
+    //标注点数组
+    var markerArr = [{title:"重庆法务天使投资有限公司",content:"联系电话：020-66233744<br/>工作时间：9:30~18:30",point:"106.564441|29.535651",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script></div>
+<br />
+ </div>
+</div>
+<div class="bgb">
+  <div class="footer">
+    <div class="lefta f_l">
+      <div class="navb f_l">
+        <ul>
+          
+          <li><a href='/a/xinwendongtai/'  rel='dropmenu1'>新闻动态</a></li>
+          
+          <li><a href='/a/guanyuwomen/'  rel='dropmenu1'>关于我们</a></li>
+          
+          <li><a href='/a/chuangtouketang/'  rel='dropmenu1'>创投课堂</a></li>
+          
+          <li><a href='/a/touzianli/'  rel='dropmenu1'>投资案例</a></li>
+          <li><a href='/a/lianxiwomen/' >联系我们</a> </li>
+        </ul>
+      </div>
+      <div class="texta">
+        <div class="logob f_l"> <img src="/skin/images/logo2.jpg" style="padding-top:20px;" /> </div>
+        <div class="textb f_r" style="padding-top:40px;">
+          <p class="font3">123：开创致胜的投资哲学</p>
+          <p class="font4">123：积极的投后管理及增值服务</p>
+        </div>
+      </div>
+    </div>
+    <div class="righta f_r">
+      <p class="font8">联系我们</p>
+      <p class="font6"> 020-123123 </p>
+      <p class="font7">（工作时间：9:30~18:30）</p>
+    </div>
+  </div>
+</div>
+<div class="bgc-noh">
+  <div class="w1000">
+    <div class="navc f_l"> Copyright &copy; 2012-2021 WEIPOW.COM 联合威力 版权所有 浙ICP备32659845号 </div>
+    <div class="weixin f_r rel">
+      <div class="sns" id="s-weibo"> <img src="/skin/images/tb1.jpg" /> <a href="snia.com">新浪微博</a>     </div>
+       <div class="weibo_img" id="sina_img"> <img src="/skin/images/yyts-qrcode1.jpg" width="100" height="100" alt="关注微博" /> </div>
+      <div class="sns" id="s-weixin"> <img src="/skin/images/tb2.jpg" />     <a href="#" class="s-weixin">微信</a> </div>
+      <div class="weixin_img" id="weixin_img"> <img src="/skin/images/yyts-qrcode.jpg" width="100" height="100" alt="关注微信" /> </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?57965e106fbbbe7f1067b75071665bf4";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+    $(document).ready(function(){
+        $("#s-weixin").hover(function(){
+          $("#weixin_img").show();
+        },function(){
+          $("#weixin_img").hide();
+        });
+    });
+     $(document).ready(function(){
+        $("#s-weibo").hover(function(){
+          $("#weibo_img").show();
+        },function(){
+          $("#weibo_img").hide();
+        });
+    });
+  </script>
+</body>
+</html>

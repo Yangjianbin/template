@@ -1,0 +1,1 @@
+<li> <a href="[field:arcurl/]">[field:title/]</a> <span class="post-date">[field:pubdate function="MyDate('Y年m月d日',@me)"/]</span> </li>

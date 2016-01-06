@@ -1,0 +1,2 @@
+INSERT INTO `dede_search_keywords` VALUES('1','2014标志设计趋势探索','2014标志设计趋势探索 探索 标志设计 趋势 2014','11','1','1432723992','0','0');
+INSERT INTO `dede_search_keywords` VALUES('2','2014','2014','1','1','1432724098','0','0');
