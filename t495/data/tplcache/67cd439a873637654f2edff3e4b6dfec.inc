@@ -1,0 +1,1 @@
+<div id='box[field:global name=autoindex runphp="yes"]@me=@me+4;[/field:global]' class='list-item'> <a href='[field:arcurl/]' target='_self'> <img src='[field:litpic/]'  alt='' width='554' height='554' border='0' /></a> </div>

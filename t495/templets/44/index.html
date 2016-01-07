@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/base.css" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/basic.css" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/style.css" />
+<!--轮播JS-->
+
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/scripts.js"></script>
+
+<!--左侧导航JS-->
+
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.nav.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.scrollto.js"></script>
+
+<!--左侧导航JS-->
+<title></title>
+</head>
+<body>
+  <div id="wrap"> 
+    <!--top 开始-->
+    <div id="container">
+      <div class="top_nav">
+        <div class="top_nav_con" id="wrap_content">
+          <div class="fl logo"> <img src="{dede:global.cfg_templets_skin/}/picture/logo.png" width="167" height="181" /></div>
+          <div class="fl nav_menu">
+            <div class="top01">
+              <div class="fl icon01"> <a href="javascript:;"> <img src="{dede:global.cfg_templets_skin/}/picture/icon01.png" width="21" height="21"></a></div>
+              <div class="fl icon01"> <a href="javascript:;"> <img src="{dede:global.cfg_templets_skin/}/picture/icon02.png" width="21" height="21"></a></div>
+              <div class="fl font01"> 微博<span>一键分享</span></div>
+              <div class="fl tel"> <img src="{dede:global.cfg_templets_skin/}/picture/tel.png" width="123" height="18"></div>
+              <div class="clear"> </div>
+            </div>
+            <div class="clear"> </div>
+            <div class="nav_con">
+              <ul id="nav1" style="display: block;">
+                <li class="hover"><a href="#section-1">首页
+                  <p> Home</p>
+                  </a></li>
+             {dede:channel type='top' row='5' currentstyle="<li class='hover'><a href='~typelink~' ~rel~>~typename~<p>~typenameen~</p></a></li>"}   
+                <li><a href='#section-[field:global name=autoindex runphp="yes"]@me=@me+2;[/field:global]'>[field:typename/]
+                  <p>[field:typenameen/]</p>
+                  </a> </li>
+             {/dede:channel}  
+                <div class="clear"> </div>
+              </ul>
+            </div>
+          </div>
+          <div class="clear"> </div>
+        </div>
+      </div>
+    </div>
+    <!--top end--> 
+    <!--滚屏一 开始-->
+    <div class="main_body">
+      <div id="section-1"> </div>
+      <div class="section section-1"> 
+        <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.8.3.min.js"></script> 
+        <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.banner.revolution.min.js"></script> 
+        <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/banner.js"></script>
+        <div id="wrapper">
+          <div class="fullwidthbanner-container">
+            <div class="fullwidthbanner">
+              <ul>
+                <li data-transition='3dcurtain-horizontal' data-slotamount='15' data-masterspeed='300' data-link='javascript:;'> <img src='{dede:global.cfg_templets_skin/}/picture/slide1.jpg' /> </li>
+                <li data-transition='3dcurtain-vertical' data-slotamount='15' data-masterspeed='300' data-link='javascript:;'> <img src='{dede:global.cfg_templets_skin/}/picture/20150430152357_7593.jpg' /> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--滚屏一 结束-->
+      <div id="section-2"> </div>
+      <div class="section section-2" style="background: #ffffff;">
+        <div class="tit01">
+          <div class="tit01_a">
+            <div id="wrap_content" class="main_b">
+              <div class="tit01_img"> <img src="{dede:global.cfg_templets_skin/}/picture/tit01.jpg" width="998" height="54" /></div>
+            </div>
+          </div>
+          <div id="wrap_content" class="mainframe"> 
+            <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/hover.js"></script>
+            <div class="lookpp">
+              <div class="m_more"> <a href="/a/anlishangxi"> <img src="{dede:global.cfg_templets_skin/}/picture/more.jpg" width="46" height="46" /></a></div>
+              <div class="lookpp1">
+                <ul>
+                 <!-- <li id="two1" onclick="setTab('two',1,8)" class="hover_a"><a href="javascript:;">婚礼图片</a></li>-->
+<!--                  <li id="two2" onclick="setTab('two',2,8)"><a href="javascript:;">婚礼视频</a></li>-->
+                </ul>
+              </div>
+              <div class="lookpp2">
+                <div id="con_two_1">
+                  <div class="section-2_con"> 
+                    <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/ccw.grid.js"></script>
+                    <div class="thumbs grid big">
+                      <div class="list-wrapper"> 
+          {dede:arclist row='6' titlelen='30' typeid='1'}
+            <div id='box[field:global name=autoindex runphp="yes"]@me=@me+4;[/field:global]' class='list-item'> <a href='[field:arcurl/]' target='_self'> <img src='[field:litpic/]'  alt='' width='554' height='554' border='0' /></a> </div>
+          {/dede:arclist}
+            </div>
+ </div>
+                    </div>
+                  </div>
+                </div>
+                <!--<div id="con_two_2" style="display: none;">
+                  <div class="section-2_con"> 
+                    <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/ccw.grid1.js"></script>
+                    <div class="thumbs grid big">
+                      <div class="list-wrapper1">
+                      <div class="list-wrapper"> <div id='box5' class='list-item'> <a href='/cases/hunlishipin/24.html' target='_self'> <img src='{dede:global.cfg_templets_skin/}/picture/1-150503195q10-l.jpg'  alt='' width='554' height='554' border='0' /></a> </div>
+ </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>-->
+              </div>
+            </div>
+            <div class="main03_a">
+              <div class="fl main03_b"> <img src="/templets/44/picture/tel02.jpg" width="237" height="64" /></div>
+              <div class="fl main03_c">
+                <p> <a href="/news/pinpaijianjie/">xxx，中国十大最具影响力婚礼服务品牌，西南地区我们的服务有婚礼策划、婚礼主持、婚礼摄像...</a></p>
+              </div>
+              <div class="clear"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-3"> </div>
+      <div class="section section-3">
+        <div style="height: 62px;"> </div>
+        <div class="main3"> </div>
+        <div class="main3_a">
+          <p> 完美婚礼一站式一站式的婚礼服务，不仅可以省去婚礼筹备中的一大堆麻烦，同时专业的婚礼服务更可以保证婚礼顺利且充满惊喜的进行。每个细节在一站式婚礼中都得到婚宴专家的妥当处理。<span> <a href="/a/yizhanshifuwu">了解更多</a></span></p>
+        </div>
+        <div id="wrap_content" class="mainframe">
+          <div class="main3_b">
+            <div class="main3_li">
+              <ul>
+                <li><a href="/a/yizhanshifuwu/xuanrizi">
+                  <div class="main3_c">
+                    <div class="fl mc_01"> <img src="/templets/44/picture/s01.png" width="55" height="55" /></div>
+                    <div class="fl mc_02">
+                      <p> AUSPICIIOUS DAY</p>
+                      <b>择黄道吉日</b></div>
+                    <div class="clear"> </div>
+                    <div class="mc_03"> 我们有专业的师傅为您选择黄道吉日专业中的专业</div>
+                  </div>
+                  </a></li>
+                <li><a href="/a/yizhanshifuwu/xuanjiudian">
+                  <div class="main3_d">
+                    <div class="fl md_01"> <img src="/templets/44/picture/s02.png" width="55" height="55" /></div>
+                    <div class="fl md_02">
+                      <p> HOTEL RESERVATION</p>
+                      <b>酒店预订</b></div>
+                    <div class="clear"> </div>
+                    <div class="md_03"> 我们有专业的师傅为您选择黄道吉日专业中的专业</div>
+                  </div>
+                  </a></li>
+                <li><a href="/a/yizhanshifuwu/hunshasheying">
+                  <div class="main3_c">
+                    <div class="fl mc_01"> <img src="/templets/44/picture/s03.png" width="55" height="55" /></div>
+                    <div class="fl mc_02">
+                      <p> PHOTOGRAPHY</p>
+                      <b>婚纱摄影</b></div>
+                    <div class="clear"> </div>
+                    <div class="mc_03"> 迎宾牌在鲜花的簇拥下简洁大方迎宾牌在鲜花的簇拥下简洁大方</div>
+                  </div>
+                  </a></li>
+                <li><a href="/a/yizhanshifuwu/hunlitaocan">
+                  <div class="main3_d">
+                    <div class="fl md_01"> <img src="/templets/44/picture/s04.jpg" width="55" height="55" /></div>
+                    <div class="fl md_02">
+                      <p> WEDDING PACKAGE</p>
+                      <b>婚礼套餐</b></div>
+                    <div class="clear"> </div>
+                    <div class="md_03"> 玫瑰与百合，婚礼不变的经典主题玫瑰与百合，婚礼不变的经典主题</div>
+                  </div>
+                  </a></li>
+                <div class="clear"> </div>
+              </ul>
+            </div>
+          </div>
+          <div class="main3_more"> <a href="/a/yizhanshifuwu">查看更多服务</a></div>
+        </div>
+      </div>
+      <div id="section-4"> </div>
+      <div class="section section-4">
+        <div style="height: 52px;"> </div>
+        <div class="tit01_a">
+          <div id="wrap_content" class="main_b">
+            <div class="tit01_img"> <img src="{dede:global.cfg_templets_skin/}/picture/p_title.jpg" width="998" height="54" /></div>
+            <div class="main4_a"> <b>xxx</b>&nbsp;中国<b>十大</b>最具影响力婚礼服务品牌 西南地区婚礼<b>首选品牌</b></div>
+            <div class="main4_more">
+            <a href="/a/sirendingzhi"> <img src="{dede:global.cfg_templets_skin/}/picture/p_more.jpg" width="46" height="46" /></a>
+             </div>
+          </div>
+        </div>
+        <div id="wrap_content" class="mainframe">
+          <div class="main4_bg">
+            <div class="main4_01">
+              <p> 私人定制</p>
+              <span>【我们根据您的需求为您量身定制您的婚礼】</span> </div>
+            <div class="main4_02"><a href="/a/sirendingzhi/huangdaojiri">
+              <p> 01</p>
+              <b>黄道吉日</b> </a> </div>
+            <div class="main4_03"> <a href="/a/sirendingzhi/hunliweidianying">
+              <p> 02</p>
+              <b>婚礼微电影</b> </a> </div>
+            <div class="main4_04"><a href="/a/sirendingzhi/lifudingzhi">
+              <p> 03</p>
+              <b>礼服定制</b> </a> </div>
+            <div class="main4_05"> <a href="/a/sirendingzhi/hunjiedingzhi">
+              <p> 04</p>
+              <b>婚戒定制</b> </a> </div>
+            <div class="main4_06"><a href="/a/sirendingzhi/zhutidingzhihunli">
+              <p> 05</p>
+              <b>主题定制婚礼</b> </a> </div>
+            <div class="main4_07"> <a href="/a/sirendingzhi/miyuedingzhi">
+              <p> 06</p>
+              <b>蜜月定制</b> </a> </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-5"> </div>
+      <div class="section section-5">
+        <div style="height: 52px;"> </div>
+        <div class="tit02_a">
+          <div style="background: url({dede:global.cfg_templets_skin/}/images/font_title.png) center no-repeat" class="tit02_b"> </div>
+          <div class="main5_a">
+            <div class="main5_b">
+              <div class="main5_c"> 通过此方式我们可以先举行婚礼，然后还婚礼所需费用</div>
+            </div>
+          </div>
+        </div>
+        <div id="wrap_content" class="mainframe">
+          <div class="main5_d">
+            <div class="md5_01">
+              <ul>
+                <li>
+                  <div class="md5_pic"> <img src="{dede:global.cfg_templets_skin/}/picture/f_01.jpg" width="292" height="152" /></div>
+                </li>
+                <li>
+                  <div class="md5_pic"> <img src="{dede:global.cfg_templets_skin/}/picture/f_02.jpg" width="292" height="152" /></div>
+                </li>
+                <li>
+                  <div class="md5_pic"> <img src="{dede:global.cfg_templets_skin/}/picture/f_03.jpg" width="292" height="152" /></div>
+                </li>
+                <div class="clear"> </div>
+              </ul>
+            </div>
+            <div class="fl md_04">
+              <div class="md_04_con">
+                <ul>
+                  <li> <img src="{dede:global.cfg_templets_skin/}/picture/f_tit01.jpg" width="237" height="23" /></li>
+                  <li>
+                    <p> 什么是<b>婚礼基金？</b></p>
+                  </li>
+                  <li> <img src="{dede:global.cfg_templets_skin/}/picture/border.jpg" width="43" height="3" /></li>
+                  <li><span>每一个女孩，即便是最平凡的女孩，一旦真心爱上一个男人，都会希望能够走进婚礼的殿堂，这是一个美好的结局，但结婚的过程却让人感到格外的琐碎。采用一站式的婚礼服务，不仅可以省去婚礼筹备中的...</span></li>
+                  <li>
+                    <div class="md_04_btn"><a href="/a/hunlijijin">MORE</a></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="fl md_05">
+              <div class="md_04_con">
+                <ul>
+                  <li> <img src="{dede:global.cfg_templets_skin/}/picture/f_tit02.jpg" /></li>
+                  <li>
+                    <p> 申请婚礼基金<b>条件</b></p>
+                  </li>
+                  <li> <img src="{dede:global.cfg_templets_skin/}/picture/border.jpg" width="43" height="3" /></li>
+                  <li><span>每一个女孩，即便是最平凡的女孩，一旦真心爱上一个男人，都会希望能够走进婚礼的殿堂，这是一个美好的结局，但结婚的过程却让人感到格外的琐碎。采用一站式的婚礼服务，不仅可以省去婚礼筹备中的...</span></li>
+                  <li>
+                    <div class="md_04_btn"> <a href="/a/hunlijijin/jijintiaojian">MORE</a></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="clear"> </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-6"> </div>
+      <div class="section section-6" style="min-height:640px;">
+        <div style="height: 52px;"> </div>
+        <div class="tit01_a">
+          <div id="wrap_content" class="main_b">
+            <div class="tit01_img"> <img src="{dede:global.cfg_templets_skin/}/picture/crs_title.jpg" width="998" height="54" /></div>
+            <div class="CRS_a"> <b>xxx</b>&nbsp;中国<b>十大</b>最具影响力婚礼服务品牌 西南地区婚礼<b>首选品牌</b></div>
+            <div class="main4_more"><a href="/a/CRShuodong"> <img src="{dede:global.cfg_templets_skin/}/picture/more.jpg" width="46" height="46" /></a></div>
+          </div>
+        </div>
+        <div class="main6" id="wrap_content">
+          <div class="main6_con">
+            <ul>
+            {dede:arclist row='3' titlelen='30' typeid='10'}
+              <li>
+                <div class="main6_01">
+                  <div class="CRS_b">
+                    <p>[field:pubdate function="MyDate('y-m-d',@me)"/]</p>
+                  </div>
+                  <div class="crs_c"><a href="[field:arcurl/]"><img src="[field:litpic/]" width="258" height="106" /></a></div>
+                  <div class="crs_d"> <b>[field:title/]</b>
+                    <p>[field:description function='cn_substr(@me,58)'/]..</p>
+                  </div>
+                  <div>
+                    <div class="crs_btn"><a href="[field:arcurl/]">MORE</a></div>
+                  </div>
+                </div>
+              </li>
+           {/dede:arclist}  
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--尾部开始--> 
+  {dede:include filename="footer.htm"/}
+  <ul id="nav" class="clearfix" style="display: block;">
+    <li class="current"><a href="#section-1">&nbsp;<em class="nav-ico fr"></em></a></li>
+    <li><a href="#section-2">&nbsp;<em class="nav-ico fr"></em></a></li>
+    <li><a href="#section-3">&nbsp;<em class="nav-ico fr"></em></a></li>
+    <li><a href="#section-4">&nbsp;<em class="nav-ico fr"></em></a></li>
+    <li><a href="#section-5">&nbsp;<em class="nav-ico fr"></em></a></li>
+    <li><a href="#section-6">&nbsp;<em class="nav-ico fr"></em></a></li>
+  </ul>
+</body>
+</html>
+<script>
+
+var jq = $.noConflict();
+	jq(document).ready(function(){
+	  $('#nav').onePageNav({
+
+    begin: function() {
+
+	  console.log('start');
+
+    },
+
+    end: function() {
+
+	  console.log('stop');
+
+    },
+
+	scrollOffset:127
+
+  });
+  
+  $('#nav1').onePageNav({
+
+    begin: function() {
+
+	  console.log('start');
+
+    },
+
+    end: function() {
+
+	  console.log('stop');
+
+    },
+
+	scrollOffset: 127
+
+  });
+	});
+
+
+</script>

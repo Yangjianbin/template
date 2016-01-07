@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/base.css" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/basic.css" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/style.css" />
+<title></title>
+</head>
+<body style="overflow: visible;">
+{dede:include filename="head.htm"/}
+ 
+<!--ZContent开始-->
+<div class="ZHeaderContainter">
+  <div class="ZHeaderBox"> <img src="{dede:global.cfg_templets_skin/}/picture/zheader_03.png" /> </div>
+</div>
+<div class="ZSrdz">
+  <div class="SrdzNvg">
+    <h1> {dede:field name='typename'/}</h1>
+    <span id="span_nav">当前位置：{dede:field name='position'/}</span> </div>
+</div>
+<div class="ZContent">
+  <div class="pravite">
+    <div id="wrap_content" class="mainframe"> <span style="color: rgb(102, 102, 102); font-family: 'Microsoft YaHei'; font-size: 18px; line-height: 27px; background-color: rgb(249, 248, 244);">正在建设中，敬请关注!  Loading......</span> </div>
+  </div>
+</div>
+<!--尾部开始--> 
+ {dede:include filename="footer.htm"/}
+</body>
+</html>
