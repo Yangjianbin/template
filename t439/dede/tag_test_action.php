@@ -1,8 +1,8 @@
 <?php
 /**
- * ±êÇ©²âÊÔ²Ù×÷
+ * æ ‡ç­¾æµ‹è¯•æ“ä½œ
  *
- * @version        $Id: tag_test_action.php 1 23:07 2010Äê7ÔÂ20ÈÕZ tianya $
+ * @version        $Id: tag_test_action.php 1 23:07 2010å¹´7æœˆ20æ—¥Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -13,7 +13,7 @@ CheckPurview('temp_Test');
 require_once(DEDEINC."/arc.partview.class.php");
 if(empty($partcode))
 {
-    ShowMsg('´íÎóÇëÇó','javascript:;');
+    ShowMsg('é”™è¯¯è¯·æ±‚','javascript:;');
     exit;
 }
 $partcode = stripslashes($partcode);
@@ -27,8 +27,8 @@ else $pv = new PartView();
 $pv->SetTemplet($partcode, "string");
 if( $showsource == "" || $showsource == "yes" )
 {
-    echo "Ä£°å´úÂë:";
-    echo "<span style='color:red;'><pre>".htmlspecialchars($partcode)."</pre></span>";
-    echo "½á¹û:<hr size='1' width='100%'>";
+    echo "æ¨¡æ¿ä»£ç :";
+    echo "<span style='color:red;'><pre>".dede_htmlspecialchars($partcode)."</pre></span>";
+    echo "ç»“æœ:<hr size='1' width='100%'>";
 }
 $pv->Display();

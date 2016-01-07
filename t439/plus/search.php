@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * ËÑË÷Ò³
+ * æœç´¢é¡µ
  *
- * @version        $Id: search.php 1 15:38 2010Äê7ÔÂ8ÈÕZ tianya $
+ * @version        $Id: search.php 1 15:38 2010å¹´7æœˆ8æ—¥Z tianya $
  * @package        DedeCMS.Site
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -11,12 +11,19 @@
  */
 require_once(dirname(__FILE__)."/../include/common.inc.php");
 require_once(DEDEINC."/arc.searchview.class.php");
+if ( file_exists(DEDEINC."/baidusitemap.func.php") ) require_once(DEDEINC."/baidusitemap.func.php");
 
 $pagesize = (isset($pagesize) && is_numeric($pagesize)) ? $pagesize : 10;
 $typeid = (isset($typeid) && is_numeric($typeid)) ? $typeid : 0;
 $channeltype = (isset($channeltype) && is_numeric($channeltype)) ? $channeltype : 0;
 $kwtype = (isset($kwtype) && is_numeric($kwtype)) ? $kwtype : 0;
 $mid = (isset($mid) && is_numeric($mid)) ? $mid : 0;
+$mobile = (isset($mobile) && is_numeric($mobile)) ? $mobile : 0;
+
+if ( $mobile==1 )
+{
+    define('DEDEMOB', 'Y');
+}
 
 if(!isset($orderby)) $orderby='';
 else $orderby = preg_replace("#[^a-z]#i", '', $orderby);
@@ -31,8 +38,39 @@ if(!isset($keyword)){
 
 $oldkeyword = $keyword = FilterSearch(stripslashes($keyword));
 
+if ( function_exists('baidu_get_setting') )
+{
+    $site_id = baidu_get_setting('site_id');
+    $lastuptime_all = baidu_get_setting('lastuptime_all');
+    
+    $addquery='';
+    if ( $searchtype =='title' )
+    {
+        $addquery ='&stp=1';
+    }
+    // éœ€è¦æäº¤å…¨é‡ç´¢å¼•å5ä¸ªå°æ—¶å†…æ‰èƒ½å¤Ÿè¿›è¡Œè·³è½¬
+    if ( !empty($site_id) AND time()-$lastuptime_all>60*60*5)
+    {
+        $row = $dsql->GetOne("SELECT spwords FROM `#@__search_keywords` WHERE keyword='".addslashes($keyword)."'; ");
+        if(!is_array($row))
+        {
+            $inquery = "INSERT INTO `#@__search_keywords`(`keyword`,`spwords`,`count`,`result`,`lasttime`)
+          VALUES ('".addslashes($keyword)."', '".addslashes($keyword)."', '1', '0', '".time()."'); ";
+            $dsql->ExecuteNoneQuery($inquery);
+        }
+        else
+        {
+            $dsql->ExecuteNoneQuery("UPDATE `#@__search_keywords` SET count=count+1,lasttime='".time()."' WHERE keyword='".addslashes($keyword)."'; ");
+        }
 
-//²éÕÒÀ¸Ä¿ĞÅÏ¢
+        $keyword = urlencode($keyword);
+        $baidu_search_url = "http://zhannei.baidu.com/cse/search?s={$site_id}&entry=1&q={$keyword}{$addquery}";
+        header("Location:{$baidu_search_url}");
+        exit;
+    }
+}
+
+//æŸ¥æ‰¾æ ç›®ä¿¡æ¯
 if(empty($typeid))
 {
     $typenameCacheFile = DEDEDATA.'/cache/typename.inc';
@@ -44,12 +82,13 @@ if(empty($typeid))
         $dsql->Execute();
         while($row = $dsql->GetArray())
         {
+            $row['typename'] = HtmlReplace($row['typename']);
             fwrite($fp, "\$typeArr[{$row['id']}] = '{$row['typename']}';\r\n");
         }
         fwrite($fp, '?'.'>');
         fclose($fp);
     }
-    //ÒıÈëÀ¸Ä¿»º´æ²¢¿´¹Ø¼ü×ÖÊÇ·ñÓĞÏà¹ØÀ¸Ä¿ÄÚÈİ
+    //å¼•å…¥æ ç›®ç¼“å­˜å¹¶çœ‹å…³é”®å­—æ˜¯å¦æœ‰ç›¸å…³æ ç›®å†…å®¹
     require_once($typenameCacheFile);
     if(isset($typeArr) && is_array($typeArr))
     {
@@ -68,30 +107,29 @@ if(empty($typeid))
 }
 
 $keyword = addslashes(cn_substr($keyword,30));
-$typeid = intval($typeid);
 
 if($cfg_notallowstr !='' && preg_match("#".$cfg_notallowstr."#i", $keyword))
 {
-    ShowMsg("ÄãµÄËÑË÷¹Ø¼ü×ÖÖĞ´æÔÚ·Ç·¨ÄÚÈİ£¬±»ÏµÍ³½ûÖ¹£¡","-1");
+    ShowMsg("ä½ çš„æœç´¢å…³é”®å­—ä¸­å­˜åœ¨éæ³•å†…å®¹ï¼Œè¢«ç³»ç»Ÿç¦æ­¢ï¼","-1");
     exit();
 }
 
 if(($keyword=='' || strlen($keyword)<2) && empty($typeid))
 {
-    ShowMsg('¹Ø¼ü×Ö²»ÄÜĞ¡ÓÚ2¸ö×Ö½Ú£¡','-1');
+    ShowMsg('å…³é”®å­—ä¸èƒ½å°äº2ä¸ªå­—èŠ‚ï¼','-1');
     exit();
 }
 
-//¼ì²éËÑË÷¼ä¸ôÊ±¼ä
+//æ£€æŸ¥æœç´¢é—´éš”æ—¶é—´
 $lockfile = DEDEDATA.'/time.lock.inc';
 $lasttime = file_get_contents($lockfile);
 if(!empty($lasttime) && ($lasttime + $cfg_search_time) > time())
 {
-    ShowMsg('¹ÜÀíÔ±Éè¶¨ËÑË÷Ê±¼ä¼ä¸ôÎª'.$cfg_search_time.'Ãë£¬ÇëÉÔºóÔÙÊÔ£¡','-1');
+    ShowMsg('ç®¡ç†å‘˜è®¾å®šæœç´¢æ—¶é—´é—´éš”ä¸º'.$cfg_search_time.'ç§’ï¼Œè¯·ç¨åå†è¯•ï¼','-1');
     exit();
 }
 
-//¿ªÊ¼Ê±¼ä
+//å¼€å§‹æ—¶é—´
 if(empty($starttime)) $starttime = -1;
 else
 {

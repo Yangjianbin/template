@@ -1,0 +1,78 @@
+﻿/* timeline */
+/* dede58.com 做最好的织梦模板 */
+#timeline {
+	width: 850px;
+	height: 550px;
+	overflow: hidden;
+	position: relative;
+	background: url('../images/dot.gif') 86px top repeat-y;
+}
+#dates {
+	width:120px;
+	height:550px;
+	overflow:hidden;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#ababab;
+}
+#dates li {
+	text-align:right;
+	padding-right:50px;
+	height:100px;
+	line-height:100px;
+	font-size:18px;
+	background:url('../images/biggerdot.png') 82px center no-repeat;
+}
+#dates a {
+	line-height:100px;
+	padding-bottom:10px;
+	color:#ababab;
+fon/t-weight:bold;
+}
+#dates .selected {
+	font-size:28px;
+	font-size:18px;
+	color:#317de9;
+}
+#issues {
+	width:710px;
+	padding:0 0 0 15px;
+	overflow:hidden;
+	float:left;
+}
+#issues li {
+wid/th:525px;
+	height:550px;
+	overflow:auto;
+}
+#grad_top, #grad_bottom {
+	width:500px;
+	height:80px;
+	position:absolute;
+}
+#grad_top {
+	top:0;
+backgro/und:url('../images/grad_top.png') repeat-x;
+}
+#grad_bottom {
+	bottom:0;
+backg/round:url('../images/grad_bottom.png') repeat-x;
+}
+/* 内容区域内容 */
+.sjz {
+}
+.sjz span {
+	color:#de0010;
+}
+.sjz a {
+	display:block;
+	padding:0 5px;
+	font-size:12px;
+	line-height:30px;
+	color:#828282;
+font-wei/ght:bold;
+	line-height:30px;
+}
+.sjz a:hover {
+	background-color:#f8f4f1;
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="author" content="design by www.weipow.com" />
+<script type="text/javascript" src="/skin/js/jquery-1.7.2.min.js"></script>
+<script>
+window.onload= new function() {
+	 setTimeout(function(){window.scrollTo(0,0);}, 50);
+} 
+</script>
+<script type="text/javascript" src="/skin/js/duoduo.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.event.drag-1.5.min.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.touchslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$(".main_visual").hover(function(){
+		$("#btn_prev,#btn_next").fadeIn()
+		},function(){
+		$("#btn_prev,#btn_next").fadeOut()
+		})
+	$dragBln = false;
+	$(".main_image").touchSlider({
+		flexible : true,
+		speed : 200,
+		btn_prev : $("#btn_prev"),
+		btn_next : $("#btn_next"),
+		paging : $(".flicking_con a"),
+		counter : function (e) {
+			$(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+		}
+	});
+	$(".main_image").bind("mousedown", function() {
+		$dragBln = false;
+	})
+	$(".main_image").bind("dragstart", function() {
+		$dragBln = true;
+	})
+	$(".main_image a").click(function() {
+		if($dragBln) {
+			return false;
+		}
+	})
+	timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	$(".main_visual").hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+	$(".main_image").bind("touchstart", function() {
+		clearInterval(timer);
+	}).bind("touchend", function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+});
+</script>
+<link href="/skin/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/animate.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/g2.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div class="banner">
+  <div class="main_visual">
+    <div class="flicking_con">
+      <div class="flicking_inner"> <a >1</a> <a >2</a> </div>
+    </div>
+    <div class="main_image">
+      <ul>
+        <li><span class="img_1" style="background:url(/skin/images/banner1.jpg) no-repeat top;"></span></li>
+        <li><span class="img_2" style="background:url(/skin/images/banner2.jpg) no-repeat top;"></span></li>
+      </ul>
+      <a href="javascript:;" id="btn_prev" title="向左"></a> <a href="javascript:;" id="btn_next"  title="向右"></a> </div>
+  </div>
+</div>
+<div class="content">
+  <div class="a1"><img src="/skin/images/a1.jpg" width="95" height="36" alt="关于我们" /></div>
+  <div class="a2">{dede:myad name='gywm'/}</div>
+  <div class="a3"><img src="/skin/images/a3.jpg" width="518" height="33" alt="英文"/></div>
+  <div class="a4">
+    <div class="a4_aa">
+      <div class="ih-item square colored effect15 bottom_to_top"> {dede:type typeid='2'} <a href="[field:typelink/]" title="[field:typename/]">
+        <div class="img">
+          <div class="imer"><img src="/skin/images/20150812124106-669338592.jpg" width="185" height="117" alt="[field:typename/]" /></div>
+          <div class="bt">[field:typename/]</div>
+        </div>
+        <div class="info">
+          <div class="imer"><img src="/skin/images/20150812124106-669338592.jpg" width="185" height="117" alt="[field:typename/]" /></div>
+          <div class="bta">[field:typename/]</div>
+        </div>
+        </a> {/dede:type} </div>
+    </div>
+    <div class="a4_ab">
+      <div class="ih-item square colored effect15 bottom_to_top"> {dede:type typeid='3'} <a href="[field:typelink/]" title="[field:typename/]">
+        <div class="img">
+          <div class="imer"><img src="/skin/images/20150812150015-83291752822697168.jpg" width="185" height="117" alt="[field:typename/]" /></div>
+          <div class="bt">[field:typename/]</div>
+        </div>
+        <div class="info">
+          <div class="imer"><img src="/skin/images/20150812150015-83291752822697168.jpg" width="185" height="117" alt="[field:typename/]" /></div>
+          <div class="bta">[field:typename/]</div>
+        </div>
+        </a> {/dede:type} </div>
+    </div>
+    <div class="a4_ac">
+      <div class="ih-item square colored effect15 bottom_to_top"> {dede:type typeid='4'} <a href="[field:typelink/]" title="[field:typename/]">
+        <div class="img">
+          <div class="imer"><img src="/skin/images/20150812150022-31539172353222968.jpg" width="185" height="117" alt="[field:typename/]" /></div>
+          <div class="bt">[field:typename/]</div>
+        </div>
+        <div class="info">
+          <div class="imer"><img src="/skin/images/20150812150022-31539172353222968.jpg" width="185" height="117" alt="[field:typename/]" /></div>
+          <div class="bta">[field:typename/]</div>
+        </div>
+        </a> {/dede:type} </div>
+    </div>
+    <div class="a4_ad">
+      <div class="ih-item square colored effect15 bottom_to_top">{dede:type typeid='5'}<a href="[field:typelink/]" title="[field:typename/]">
+        <div class="img">
+          <div class="imer"><img src="/skin/images/20150812150116-94544511893764144.jpg" width="185" height="117" alt="[field:typename/]" /></div>
+          <div class="bt">[field:typename/]</div>
+        </div>
+        <div class="info">
+          <div class="imer"><img src="/skin/images/20150812150116-94544511893764144.jpg" width="185" height="117" alt="[field:typename/]" /></div>
+          <div class="bta">[field:typename/]</div>
+        </div>
+        </a>{/dede:type}</div>
+    </div>
+  </div>
+</div>
+<div class="hes">
+  <div class="hes_top"><img src="/skin/images/cpfu.png" width="120" height="36" alt="产品与服务" /></div>
+  <div class="hes_bt">
+    <div class="hes_bt1">
+      <div class="ih-item square effect13 left_to_right"> {dede:type typeid='10'} <a href="[field:typelink/]" title="[field:typename/]">
+        <div class="img"><img src="/skin/images/20150812150649-25481599150225520.jpg" alt="[field:typename/]"></div>
+        <div class="info"> </div>
+        </a>{/dede:type} </div>
+      <div class="hes_bt1_bt">
+        <div class="hes_bt1_bt_ico"><img src="/skin/images/logoa.jpg" width="55" height="40" alt="" /></div>
+        <div class="hes_bt1_bt_ico1">
+          <h4>原材料</h4>
+          <p>创新、诚信、务实、高...</p>
+        </div>
+      </div>
+    </div>
+    <div class="hes_bt2">
+      <div class="ih-item square effect13 left_to_right">{dede:type typeid='11'}<a href="[field:typelink/]" title="[field:typename/]">
+        <div class="img"><img src="/skin/images/20150812151615-39104547910392288.jpg" alt="[field:typename/]"></div>
+        <div class="info"> </div>
+        </a>{/dede:type}</div>
+      <div class="hes_bt1_bt">
+        <div class="hes_bt1_bt_ico"><img src="/skin/images/logoa.jpg" width="55" height="40" alt="" /></div>
+        <div class="hes_bt1_bt_ico1">
+          <h4>零部件</h4>
+          <p>创新、诚信、务实、高...</p>
+        </div>
+      </div>
+    </div>
+    <div class="hes_bt3">
+      <div class="ih-item square effect13 left_to_right">{dede:type typeid='12'}<a href="[field:typelink/]" title="[field:typename/]">
+        <div class="img"><img src="/skin/images/20150818134311-62295312620699408.jpg" alt="[field:typename/]"></div>
+        <div class="info"> </div>
+        </a>{/dede:type}</div>
+      <div class="hes_bt1_bt">
+        <div class="hes_bt1_bt_ico"><img src="/skin/images/logoa.jpg" width="55" height="40" alt="" /></div>
+        <div class="hes_bt1_bt_ico1">
+          <h4>服务</h4>
+          <p>创新、诚信、务实、高...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="huise">
+  <div class="huise_top huise_top_new">{dede:type typeid='13'}<a href="[field:typelink/]" title="fff"><img src="/skin/images/yfd.png" alt="[field:typename/]" width="95" height="36" /></a>{/dede:type}</div>
+  <div class="huise_bt">
+    <div class="huise_bt_1">
+      <div class="huise_top">{dede:type typeid='14'}<a href="[field:typelink/]" title="[field:typename/]"><img src="/skin/images/20150819181154-89256216539070016.jpg" alt="[field:typename/]"  width="238" height="206" /></a>{/dede:type}</div>
+      <div class="huise_bt_a_cha">工程中心</div>
+      <div class="huise_bt_a_bt">公司与沈阳工业大学联合建立了工程中心，作为公司的技术创新平台...</div>
+    </div>
+    <div class="huise_bt_2">
+      <div class="huise_top">{dede:type typeid='15'}<a href="[field:typelink/]" title="[field:typename/]"><img src="/skin/images/20150819181220-64561999961733816.jpg" alt="[field:typename/]"  width="238" height="206" /></a>{/dede:type}</div>
+      <div class="huise_bt_a_cha">分析检测中心</div>
+      <div class="huise_bt_a_bt">公司依托股东公司建立分析测试中心。分析检测中心拥有总价值达千...</div>
+    </div>
+    <div class="huise_bt_3">
+      <div class="huise_top">{dede:type typeid='16'}<a href="[field:typelink/]" title="[field:typename/]"><img src="/skin/images/20150819181232-72103282529860736.jpg" alt="[field:typename/]"  width="238" height="206" /></a>{/dede:type}</div>
+      <div class="huise_bt_a_cha">研发团队</div>
+      <div class="huise_bt_a_bt">研发队伍由专家团队及项目管理团队组成。</div>
+    </div>
+    <div class="huise_bt_4">
+      <div class="huise_top">{dede:type typeid='17'}<a href="[field:typelink/]" title="[field:typename/]"><img src="/skin/images/20150819181245-40961809316650032.jpg" alt="[field:typename/]"  width="238" height="206" /></a>{/dede:type}</div>
+      <div class="huise_bt_a_cha">研发成果</div>
+      <div class="huise_bt_a_bt">（1）转向架低成本钛合金锻件的开发；（2）机车制动盘专用钛合...</div>
+    </div>
+  </div>
+</div>
+<div class="synews">
+  <div class="synews_tit"><img src="/skin/images/nnsa.jpg" alt="新闻中心" width="96" height="36" /></div>
+  <div class="synews_bt">
+    <div id="container">
+      <div id="example">
+        <div id="slides">
+          <div class="slides_container" >
+            <div class="slide" style="width:110%;">
+              <div style="overflow:hidden;">
+                <ul>
+                  {dede:arclist limit='0,3' titlelen=32 infolen='100'}
+                  <li>
+                    <h4>[field:pubdate function="MyDate('Y-m-d',@me)"/]</h4>
+                    <p><a href="[field:arcurl/]" title="[field:title/]">[field:title/]...</a></p>
+                    <h6>　　[field:info/]...</h6>
+                    <div class="a1"><a href="[field:arcurl/]" title="DETAILS"></a></div>
+                  </li>
+                  {/dede:arclist}
+                </ul>
+              </div>
+            </div>
+            <div class="slide" style="width:110%;">
+              <div style="overflow:hidden;">
+                <ul>
+                  {dede:arclist limit='4,3' titlelen=32 infolen='100'}
+                  <li>
+                    <h4>[field:pubdate function="MyDate('Y-m-d',@me)"/]</h4>
+                    <p><a href="[field:arcurl/]" title="[field:title/]">[field:title/]...</a></p>
+                    <h6>　　[field:info/]...</h6>
+                    <div class="a1"><a href="[field:arcurl/]" title="DETAILS"></a></div>
+                  </li>
+                  {/dede:arclist}
+                </ul>
+              </div>
+            </div>
+            <div class="slide" style="width:110%;">
+              <div style="overflow:hidden;">
+                <ul>
+                  {dede:arclist limit='5,3' titlelen=32 infolen='100'}
+                  <li>
+                    <h4>[field:pubdate function="MyDate('Y-m-d',@me)"/]</h4>
+                    <p><a href="[field:arcurl/]" title="[field:title/]">[field:title/]...</a></p>
+                    <h6>　　[field:info/]...</h6>
+                    <div class="a1"><a href="[field:arcurl/]" title="DETAILS"></a></div>
+                  </li>
+                  {/dede:arclist}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <a href="javascript:void(0);" class="prev"><img src="/skin/images/ja1.jpg" width="26" height="46" /></a> <a href="javascript:void(0);" class="next"><img src="/skin/images/ja2.jpg" width="26" height="46" /></a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="ccac">
+  <div class="ccacx_top"><img src="/skin/images/lxw.png" width="95" height="36" alt="联系我们"/></div>
+  <div class="ccacx_topa"> <img src="/skin/images/20150812050836-667183452.png" style="width: 515px; height: 34px;" /></div>
+  <div class="ccacx_topb"> <img src="/skin/images/20150812050847-1444039584.png" style="width: 229px; height: 28px;" /></div>
+  <div class="ccacx_topc">{dede:type typeid='21'}<a href="[field:typelink/]" title="[field:typename/]"><img src="/skin/images/xxf.png" width="96" height="28" alt="[field:typename/]" /></a>{/dede:type}</div>
+</div>
+<script src="/skin/js/slides.min.jquery.js"></script> 
+<script>
+		$(function(){
+			// Set starting slide to 1
+			var startSlide = 1;
+			// Get slide number if it exists
+			if (window.location.hash) {
+				startSlide = window.location.hash.replace('#','');
+			}
+			// Initialize Slides
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				generatePagination: true,
+				play: 3000,
+				pause: 2500,
+				hoverPause: true,
+				// Get the starting slide
+				start: startSlide,
+				animationComplete: function(current){
+					// Set the slide number as a hash
+					
+				}
+			});
+		});
+</script> 
+{dede:include filename="footer.htm"/}
+</body>
+</html>

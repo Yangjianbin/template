@@ -21,7 +21,7 @@ if($dopost!='save')
     
     $keywords = $writer = $source = $body = $description = $title = '';
 
-    //²É¼¯µ¥¸öÍøÒ³
+    //é‡‡é›†å•ä¸ªç½‘é¡µ
     if(preg_match("#^http:\/\/#", $geturl))
     {
         require_once(DEDEADMIN."/inc/inc_coonepage.php");
@@ -29,7 +29,7 @@ if($dopost!='save')
         extract($redatas);
     }
 
-    //»ñµÃÆµµÀÄ£ĞÍID
+    //è·å¾—é¢‘é“æ¨¡å‹ID
     if($cid>0 && $channelid==0)
     {
         $row = $dsql->GetOne("Select channeltype From `#@__arctype` where id='$cid'; ");
@@ -43,10 +43,10 @@ if($dopost!='save')
         }
     }
 
-    //»ñµÃÆµµÀÄ£ĞÍĞÅÏ¢
+    //è·å¾—é¢‘é“æ¨¡å‹ä¿¡æ¯
     $cInfos = $dsql->GetOne(" Select * From  `#@__channeltype` where id='$channelid' ");
     
-    //»ñÈ¡ÎÄÕÂ×î´óidÒÔÈ·¶¨µ±Ç°È¨ÖØ
+    //è·å–æ–‡ç« æœ€å¤§idä»¥ç¡®å®šå½“å‰æƒé‡
     $maxWright = $dsql->GetOne("SELECT COUNT(*) AS cc FROM #@__archives");
     
     include DedeInclude("templets/article_add.htm");
@@ -72,33 +72,33 @@ else if($dopost=='save')
     
     if(empty($typeid))
     {
-        ShowMsg("ÇëÖ¸¶¨ÎÄµµµÄÀ¸Ä¿£¡","-1");
+        ShowMsg("è¯·æŒ‡å®šæ–‡æ¡£çš„æ ç›®ï¼","-1");
         exit();
     }
     if(empty($channelid))
     {
-        ShowMsg("ÎÄµµÎª·ÇÖ¸¶¨µÄÀàĞÍ£¬Çë¼ì²éÄã·¢²¼ÄÚÈİµÄ±íµ¥ÊÇ·ñºÏ·¨£¡","-1");
+        ShowMsg("æ–‡æ¡£ä¸ºéæŒ‡å®šçš„ç±»å‹ï¼Œè¯·æ£€æŸ¥ä½ å‘å¸ƒå†…å®¹çš„è¡¨å•æ˜¯å¦åˆæ³•ï¼","-1");
         exit();
     }
     if(!CheckChannel($typeid,$channelid))
     {
-        ShowMsg("ÄãËùÑ¡ÔñµÄÀ¸Ä¿Óëµ±Ç°Ä£ĞÍ²»Ïà·û£¬ÇëÑ¡Ôñ°×É«µÄÑ¡Ïî£¡","-1");
+        ShowMsg("ä½ æ‰€é€‰æ‹©çš„æ ç›®ä¸å½“å‰æ¨¡å‹ä¸ç›¸ç¬¦ï¼Œè¯·é€‰æ‹©ç™½è‰²çš„é€‰é¡¹ï¼","-1");
         exit();
     }
     if(!TestPurview('a_New'))
     {
-        CheckCatalog($typeid,"¶Ô²»Æğ£¬ÄãÃ»ÓĞ²Ù×÷À¸Ä¿ {$typeid} µÄÈ¨ÏŞ£¡");
+        CheckCatalog($typeid,"å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ“ä½œæ ç›® {$typeid} çš„æƒé™ï¼");
     }
 
-    //¶Ô±£´æµÄÄÚÈİ½øĞĞ´¦Àí
+    //å¯¹ä¿å­˜çš„å†…å®¹è¿›è¡Œå¤„ç†
     if(empty($writer))$writer=$cuserLogin->getUserName();
-    if(empty($source))$source='Î´Öª';
+    if(empty($source))$source='æœªçŸ¥';
     $pubdate = GetMkTime($pubdate);
     $senddate = time();
     $sortrank = AddDay($pubdate,$sortup);
     $ismake = $ishtml==0 ? -1 : 0;
-    $title = preg_replace("#\"#", '£¢', $title);
-    $title = htmlspecialchars(cn_substrR($title,$cfg_title_maxlen));
+    $title = preg_replace("#\"#", 'ï¼‚', $title);
+    $title = dede_htmlspecialchars(cn_substrR($title,$cfg_title_maxlen));
     $shorttitle = cn_substrR($shorttitle,36);
     $color =  cn_substrR($color,7);
     $writer =  cn_substrR($writer,20);
@@ -116,7 +116,7 @@ else if($dopost=='save')
     }
     $adminid = $cuserLogin->getUserID();
 
-    //´¦ÀíÉÏ´«µÄËõÂÔÍ¼
+    //å¤„ç†ä¸Šä¼ çš„ç¼©ç•¥å›¾
     if(empty($ddisremote))
     {
         $ddisremote = 0;
@@ -124,30 +124,30 @@ else if($dopost=='save')
     
     $litpic = GetDDImage('none', $picname, $ddisremote);
 
-    //Éú³ÉÎÄµµID
+    //ç”Ÿæˆæ–‡æ¡£ID
     $arcID = GetIndexKey($arcrank,$typeid,$sortrank,$channelid,$senddate,$adminid);
     
     if(empty($arcID))
     {
-        ShowMsg("ÎŞ·¨»ñµÃÖ÷¼ü£¬Òò´ËÎŞ·¨½øĞĞºóĞø²Ù×÷£¡","-1");
+        ShowMsg("æ— æ³•è·å¾—ä¸»é”®ï¼Œå› æ­¤æ— æ³•è¿›è¡Œåç»­æ“ä½œï¼","-1");
         exit();
     }
     if(trim($title) == '')
     {
-        ShowMsg('±êÌâ²»ÄÜÎª¿Õ', '-1');
+        ShowMsg('æ ‡é¢˜ä¸èƒ½ä¸ºç©º', '-1');
         exit();
     }
 
-    //´¦Àíbody×Ö¶Î×Ô¶¯ÕªÒª¡¢×Ô¶¯ÌáÈ¡ËõÂÔÍ¼µÈ
+    //å¤„ç†bodyå­—æ®µè‡ªåŠ¨æ‘˜è¦ã€è‡ªåŠ¨æå–ç¼©ç•¥å›¾ç­‰
     $body = AnalyseHtmlBody($body,$description,$litpic,$keywords,'htmltext');
 
-    //×Ô¶¯·ÖÒ³
+    //è‡ªåŠ¨åˆ†é¡µ
     if($sptype=='auto')
     {
-        $body = SpLongBody($body,$spsize*1024,"#p#·ÖÒ³±êÌâ#e#");
+        $body = SpLongBody($body,$spsize*1024,"#p#åˆ†é¡µæ ‡é¢˜#e#");
     }
 
-    //·ÖÎö´¦Àí¸½¼Ó±íÊı¾İ
+    //åˆ†æå¤„ç†é™„åŠ è¡¨æ•°æ®
     $inadd_f = $inadd_v = '';
     if(!empty($dede_addonfields))
     {
@@ -173,7 +173,7 @@ else if($dopost=='save')
         }
     }
 
-    //´¦ÀíÍ¼Æ¬ÎÄµµµÄ×Ô¶¨ÒåÊôĞÔ
+    //å¤„ç†å›¾ç‰‡æ–‡æ¡£çš„è‡ªå®šä¹‰å±æ€§
     if($litpic!='' && !preg_match("#p#", $flag))
     {
         $flag = ($flag=='' ? 'p' : $flag.',p');
@@ -183,10 +183,10 @@ else if($dopost=='save')
         $flag = ($flag=='' ? 'j' : $flag.',j');
     }
     
-    //Ìø×ªÍøÖ·µÄÎÄµµÇ¿ÖÆÎª¶¯Ì¬
+    //è·³è½¬ç½‘å€çš„æ–‡æ¡£å¼ºåˆ¶ä¸ºåŠ¨æ€
     if(preg_match("#j#", $flag)) $ismake = -1;
 
-    //±£´æµ½Ö÷±í
+    //ä¿å­˜åˆ°ä¸»è¡¨
     $query = "INSERT INTO `#@__archives`(id,typeid,typeid2,sortrank,flag,ismake,channel,arcrank,click,money,title,shorttitle,
     color,writer,source,litpic,pubdate,senddate,mid,voteid,notpost,description,keywords,filename,dutyadmin,weight)
     VALUES ('$arcID','$typeid','$typeid2','$sortrank','$flag','$ismake','$channelid','$arcrank','$click','$money',
@@ -197,18 +197,18 @@ else if($dopost=='save')
     {
         $gerr = $dsql->GetError();
         $dsql->ExecuteNoneQuery("DELETE FROM `#@__arctiny` WHERE id='$arcID'");
-        ShowMsg("°ÑÊı¾İ±£´æµ½Êı¾İ¿âÖ÷±í `#@__archives` Ê±³ö´í£¬Çë°ÑÏà¹ØĞÅÏ¢Ìá½»¸øDedeCms¹Ù·½¡£".str_replace('"','',$gerr),"javascript:;");
+        ShowMsg("æŠŠæ•°æ®ä¿å­˜åˆ°æ•°æ®åº“ä¸»è¡¨ `#@__archives` æ—¶å‡ºé”™ï¼Œè¯·æŠŠç›¸å…³ä¿¡æ¯æäº¤ç»™DedeCmså®˜æ–¹ã€‚".str_replace('"','',$gerr),"javascript:;");
         exit();
     }
 
-    //±£´æµ½¸½¼Ó±í
+    //ä¿å­˜åˆ°é™„åŠ è¡¨
     $cts = $dsql->GetOne("SELECT addtable FROM `#@__channeltype` WHERE id='$channelid' ");
     $addtable = trim($cts['addtable']);
     if(empty($addtable))
     {
         $dsql->ExecuteNoneQuery("DELETE FROM `#@__archives` WHERE id='$arcID'");
         $dsql->ExecuteNoneQuery("DELETE FROM `#@__arctiny` WHERE id='$arcID'");
-        ShowMsg("Ã»ÕÒµ½µ±Ç°Ä£ĞÍ[{$channelid}]µÄÖ÷±íĞÅÏ¢£¬ÎŞ·¨Íê³É²Ù×÷£¡¡£","javascript:;");
+        ShowMsg("æ²¡æ‰¾åˆ°å½“å‰æ¨¡å‹[{$channelid}]çš„ä¸»è¡¨ä¿¡æ¯ï¼Œæ— æ³•å®Œæˆæ“ä½œï¼ã€‚","javascript:;");
         exit();
     }
     $useip = GetIP();
@@ -219,10 +219,10 @@ else if($dopost=='save')
         $gerr = $dsql->GetError();
         $dsql->ExecuteNoneQuery("Delete From `#@__archives` where id='$arcID'");
         $dsql->ExecuteNoneQuery("Delete From `#@__arctiny` where id='$arcID'");
-        ShowMsg("°ÑÊı¾İ±£´æµ½Êı¾İ¿â¸½¼Ó±í `{$addtable}` Ê±³ö´í£¬Çë°ÑÏà¹ØĞÅÏ¢Ìá½»¸øDedeCms¹Ù·½¡£".str_replace('"','',$gerr),"javascript:;");
+        ShowMsg("æŠŠæ•°æ®ä¿å­˜åˆ°æ•°æ®åº“é™„åŠ è¡¨ `{$addtable}` æ—¶å‡ºé”™ï¼Œè¯·æŠŠç›¸å…³ä¿¡æ¯æäº¤ç»™DedeCmså®˜æ–¹ã€‚".str_replace('"','',$gerr),"javascript:;");
         exit();
     }
-    //Éú³ÉHTML
+    //ç”ŸæˆHTML
     InsertTags($tags,$arcID);
     if($cfg_remote_site=='Y' && $isremote=="1")
     {    
@@ -260,23 +260,23 @@ else if($dopost=='save')
     ClearMyAddon($arcID, $title);
 
 
-    //·µ»Ø³É¹¦ĞÅÏ¢
-    $msg = "    ¡¡¡¡ÇëÑ¡ÔñÄãµÄºóĞø²Ù×÷£º
-    <a href='article_add.php?cid=$typeid'><u>¼ÌĞø·¢²¼ÎÄÕÂ</u></a>
+    //è¿”å›æˆåŠŸä¿¡æ¯
+    $msg = "    ã€€ã€€è¯·é€‰æ‹©ä½ çš„åç»­æ“ä½œï¼š
+    <a href='article_add.php?cid=$typeid'><u>ç»§ç»­å‘å¸ƒæ–‡ç« </u></a>
     &nbsp;&nbsp;
-    <a href='$artUrl' target='_blank'><u>²é¿´ÎÄÕÂ</u></a>
+    <a href='$artUrl' target='_blank'><u>æŸ¥çœ‹æ–‡ç« </u></a>
     &nbsp;&nbsp;
-    <a href='archives_do.php?aid=".$arcID."&dopost=editArchives'><u>¸ü¸ÄÎÄÕÂ</u></a>
+    <a href='archives_do.php?aid=".$arcID."&dopost=editArchives'><u>æ›´æ”¹æ–‡ç« </u></a>
     &nbsp;&nbsp;
-    <a href='catalog_do.php?cid=$typeid&dopost=listArchives'><u>ÒÑ·¢²¼ÎÄÕÂ¹ÜÀí</u></a>
+    <a href='catalog_do.php?cid=$typeid&dopost=listArchives'><u>å·²å‘å¸ƒæ–‡ç« ç®¡ç†</u></a>
     &nbsp;&nbsp;
     $backurl
   ";
   $msg = "<div style=\"line-height:36px;height:36px\">{$msg}</div>".GetUpdateTest();
-    $wintitle = "³É¹¦·¢²¼ÎÄÕÂ£¡";
-    $wecome_info = "ÎÄÕÂ¹ÜÀí::·¢²¼ÎÄÕÂ";
+    $wintitle = "æˆåŠŸå‘å¸ƒæ–‡ç« ï¼";
+    $wecome_info = "æ–‡ç« ç®¡ç†::å‘å¸ƒæ–‡ç« ";
     $win = new OxWindow();
-    $win->AddTitle("³É¹¦·¢²¼ÎÄÕÂ£º");
+    $win->AddTitle("æˆåŠŸå‘å¸ƒæ–‡ç« ï¼š");
     $win->AddMsgItem($msg);
     $winform = $win->GetWindow("hand","&nbsp;",false);
     $win->Display();

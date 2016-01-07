@@ -1,8 +1,8 @@
 <?php
 /**
- * ×Ô¶¨ÒåÄ£ĞÍ¹ÜÀí
+ * è‡ªå®šä¹‰æ¨¡å‹ç®¡ç†
  *
- * @version        $Id: mychannel_edit.php 1 14:49 2010Äê7ÔÂ20ÈÕZ tianya $
+ * @version        $Id: mychannel_edit.php 1 14:49 2010å¹´7æœˆ20æ—¥Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -22,13 +22,13 @@ function __ShowHide()
 if($dopost=="show")
 {
     $dsql->ExecuteNoneQuery("UPDATE `#@__channeltype` SET isshow=1 WHERE id='$id' ");
-    ShowMsg("²Ù×÷³É¹¦£¡", "mychannel_main.php");
+    ShowMsg("æ“ä½œæˆåŠŸï¼", "mychannel_main.php");
     exit();
 }
 else if($dopost=="hide")
 {
     $dsql->ExecuteNoneQuery("UPDATE `#@__channeltype` SET isshow=0 WHERE id='$id'");
-    ShowMsg("²Ù×÷³É¹¦£¡", "mychannel_main.php");
+    ShowMsg("æ“ä½œæˆåŠŸï¼", "mychannel_main.php");
     exit();
 }
 /*----------------
@@ -38,7 +38,7 @@ else if($dopost=="copystart")
 {
     if($id==-1)
     {
-        ShowMsg("×¨ÌâÄ£ĞÍ²»Ö§³Ö¸´ÖÆ£¡","-1");
+        ShowMsg("ä¸“é¢˜æ¨¡å‹ä¸æ”¯æŒå¤åˆ¶ï¼","-1");
         exit();
     }
     $row = $dsql->GetOne("SELECT * FROM `#@__channeltype` WHERE id='$id'");
@@ -61,38 +61,38 @@ else if($dopost=="copystart")
         $idname = 'w'.($newid * -1);
     }
     $row = $dsql->GetOne("SELECT * FROM `#@__channeltype` WHERE id='$id'");
-    $wintitle = "ÆµµÀ¹ÜÀí-Ä£ĞÍ¸´ÖÆ";
-    $wecome_info = "&nbsp;<a href='mychannel_main.php'>ÆµµÀ¹ÜÀí</a> - Ä£ĞÍ¸´ÖÆ";
+    $wintitle = "é¢‘é“ç®¡ç†-æ¨¡å‹å¤åˆ¶";
+    $wecome_info = "&nbsp;<a href='mychannel_main.php'>é¢‘é“ç®¡ç†</a> - æ¨¡å‹å¤åˆ¶";
     $win = new OxWindow();
     $win->Init("mychannel_edit.php", "js/blank.js", "post");
-    $win->AddTitle("&nbsp;±»¸´ÖÆÆµµÀ£º [<font color='red'>".$row['typename']."</font>]");
+    $win->AddTitle("&nbsp;è¢«å¤åˆ¶é¢‘é“ï¼š [<font color='red'>".$row['typename']."</font>]");
     $win->AddHidden("cid", $id);
     $win->AddHidden("id", $id);
     $win->AddHidden("dopost", 'copysave');
     $msg = "
         <table width='460' border='0' cellspacing='0' cellpadding='0'>
         <tr>
-        <td width='170' height='24' align='center'>ĞÂÆµµÀid£º</td>
+        <td width='170' height='24' align='center'>æ–°é¢‘é“idï¼š</td>
         <td width='230'><input name='newid' type='text' id='newid' size='6' value='{$newid}' /></td>
         </tr>
         <tr>
-        <td height='24' align='center'>ĞÂÆµµÀÃû³Æ£º</td>
+        <td height='24' align='center'>æ–°é¢‘é“åç§°ï¼š</td>
         <td><input name='newtypename' type='text' id='newtypename' value='{$row['typename']}{$idname}' style='width:250px' /></td>
         </tr>
         <tr>
-        <td height='24' align='center'>ĞÂÆµµÀ±êÊ¶£º</td>
+        <td height='24' align='center'>æ–°é¢‘é“æ ‡è¯†ï¼š</td>
         <td><input name='newnid' type='text' id='newnid' value='{$row['nid']}{$idname}' style='width:250px' /></td>
         </tr>
         <tr>
-        <td height='24' align='center'>ĞÂ¸½¼Ó±í£º</td>
+        <td height='24' align='center'>æ–°é™„åŠ è¡¨ï¼š</td>
         <td><input name='newaddtable' type='text' id='newaddtable' value='{$row['addtable']}{$idname}' style='width:250px' /></td>
         </tr>
         <tr>
-        <td height='24' align='center'>¸´ÖÆÄ£°å£º</td>
+        <td height='24' align='center'>å¤åˆ¶æ¨¡æ¿ï¼š</td>
         <td>
-        <input name='copytemplet' type='radio' id='copytemplet' value='1' class='np' checked='checked' /> ¸´ÖÆ
+        <input name='copytemplet' type='radio' id='copytemplet' value='1' class='np' checked='checked' /> å¤åˆ¶
         &nbsp;
-        <input name='copytemplet' type='radio' id='copytemplet' class='np' value='0' /> ²»¸´ÖÆ
+        <input name='copytemplet' type='radio' id='copytemplet' class='np' value='0' /> ä¸å¤åˆ¶
         </td>
         </tr>
         </table>
@@ -109,7 +109,7 @@ else if($dopost=="export")
 {
     if($id==-1)
     {
-        ShowMsg("×¨ÌâÄ£ĞÍ²»Ö§³Öµ¼³ö£¡","-1");
+        ShowMsg("ä¸“é¢˜æ¨¡å‹ä¸æ”¯æŒå¯¼å‡ºï¼","-1");
         exit();
     }
     $row = $dsql->GetOne("SELECT * FROM `#@__channeltype` WHERE id='$id' ");
@@ -121,11 +121,11 @@ else if($dopost=="export")
         if($k=='fieldset') $v = "\r\n$v\r\n";
         $channelconfig .= "<channel:{$k}>$v</channel:{$k}>\r\n";
     }
-    $wintitle = "µ¼³öÄÚÈİÄ£ĞÍ¹æÔò";
-    $wecome_info = "<a href='mychannel_main.php'><u>ÄÚÈİÄ£ĞÍ¹ÜÀí</u></a>::µ¼³öÄÚÈİÄ£ĞÍ¹æÔò";
+    $wintitle = "å¯¼å‡ºå†…å®¹æ¨¡å‹è§„åˆ™";
+    $wecome_info = "<a href='mychannel_main.php'><u>å†…å®¹æ¨¡å‹ç®¡ç†</u></a>::å¯¼å‡ºå†…å®¹æ¨¡å‹è§„åˆ™";
     $win = new OxWindow();
     $win->Init();
-    $win->AddTitle("ÒÔÏÂÎª¹æÔò [{$row['typename']}] µÄÄ£ĞÍ¹æÔò£¬Äã¿ÉÒÔ¹²Ïí¸øÄãµÄÅóÓÑ£º");
+    $win->AddTitle("ä»¥ä¸‹ä¸ºè§„åˆ™ [{$row['typename']}] çš„æ¨¡å‹è§„åˆ™ï¼Œä½ å¯ä»¥å…±äº«ç»™ä½ çš„æœ‹å‹ï¼š");
     $winform = $win->GetWindow("hand","<textarea name='config' style='width:99%;height:450px;word-wrap: break-word;word-break:break-all;'>".$channelconfig."</textarea>");
     $win->Display();
     exit();
@@ -135,12 +135,12 @@ function __ExportIn()
 -----------------*/
 else if($dopost=="exportin")
 {
-    $wintitle = "µ¼ÈëÄÚÈİÄ£ĞÍ¹æÔò";
-    $wecome_info = "<a href='mychannel_main.php'>ÄÚÈİÄ£ĞÍ¹ÜÀí</a>::µ¼ÈëÄÚÈİÄ£ĞÍ¹æÔò";
+    $wintitle = "å¯¼å…¥å†…å®¹æ¨¡å‹è§„åˆ™";
+    $wecome_info = "<a href='mychannel_main.php'>å†…å®¹æ¨¡å‹ç®¡ç†</a>::å¯¼å…¥å†…å®¹æ¨¡å‹è§„åˆ™";
     $win = new OxWindow();
     $win->Init("mychannel_edit.php", "js/blank.js", "post");
     $win->AddHidden("dopost", "exportinok");
-    $win->AddTitle("ÊäÈë¹æÔòÄÚÈİ£º(µ¼ÈëÄ£ĞÍ»áºÍÔ­ÓĞÄ£ĞÍ³åÍ»£¬²»¹ı¿ÉÒÔÔÚµ¼ÈëºóĞŞ¸Ä)");
+    $win->AddTitle("è¾“å…¥è§„åˆ™å†…å®¹ï¼š(å¯¼å…¥æ¨¡å‹ä¼šå’ŒåŸæœ‰æ¨¡å‹å†²çªï¼Œä¸è¿‡å¯ä»¥åœ¨å¯¼å…¥åä¿®æ”¹)");
     $win->AddMsgItem("<textarea name='exconfig' style='width:99%;height:450px;word-wrap: break-word;word-break:break-all;'></textarea>");
     $winform = $win->GetWindow("ok");
     $win->Display();
@@ -155,25 +155,25 @@ else if($dopost=="exportinok")
     function GotoStaMsg($msg)
     {
         global $wintitle,$wecome_info,$winform;
-        $wintitle = "µ¼ÈëÄÚÈİÄ£ĞÍ¹æÔò";
-        $wecome_info = "<a href='mychannel_main.php'>ÄÚÈİÄ£ĞÍ¹ÜÀí</a>::µ¼ÈëÄÚÈİÄ£ĞÍ¹æÔò";
+        $wintitle = "å¯¼å…¥å†…å®¹æ¨¡å‹è§„åˆ™";
+        $wecome_info = "<a href='mychannel_main.php'>å†…å®¹æ¨¡å‹ç®¡ç†</a>::å¯¼å…¥å†…å®¹æ¨¡å‹è§„åˆ™";
         $win = new OxWindow();
         $win->Init();
-        $win->AddTitle("²Ù×÷×´Ì¬ÌáÊ¾£º");
+        $win->AddTitle("æ“ä½œçŠ¶æ€æç¤ºï¼š");
         $win->AddMsgItem($msg);
         $winform = $win->GetWindow("hand");
         $win->Display();
         exit();
     }
 
-    $msg = "ÎŞĞÅÏ¢";
+    $msg = "æ— ä¿¡æ¯";
     $exconfig = stripslashes($exconfig);
 
     $dtp = new DedeTagParse();
     $dtp->SetNameSpace('channel', '<', '>');
     $dtp->LoadSource($exconfig);
 
-    if(!is_array($dtp->CTags)) GotoStaMsg("Ä£ĞÍ¹æÔò²»ÊÇºÏ·¨µÄDedeÄ£ĞÍ¹æÔò£¡");
+    if(!is_array($dtp->CTags)) GotoStaMsg("æ¨¡å‹è§„åˆ™ä¸æ˜¯åˆæ³•çš„Dedeæ¨¡å‹è§„åˆ™ï¼");
 
     $fields = array();
     foreach($dtp->CTags as $ctag)
@@ -184,19 +184,19 @@ else if($dopost=="exportinok")
 
     if(!isset($fields['nid']) || !isset($fields['fieldset']))
     {
-        GotoStaMsg("Ä£ĞÍ¹æÔò²»ÊÇºÏ·¨µÄDedeÄ£ĞÍ¹æÔò£¡");
+        GotoStaMsg("æ¨¡å‹è§„åˆ™ä¸æ˜¯åˆæ³•çš„Dedeæ¨¡å‹è§„åˆ™ï¼");
     }
 
-    //Õı³£µÄµ¼Èë¹ı³Ì
+    //æ­£å¸¸çš„å¯¼å…¥è¿‡ç¨‹
     $mysql_version = $dsql->GetVersion(true);
 
     $row = $dsql->GetOne("SELECT * FROM `#@__channeltype` WHERE nid='{$fields['nid']}' ");
     if(is_array($row))
     {
-        GotoStaMsg("ÏµÍ³ÖĞÒÑ¾­´æÔÚÏàÍ¬±êÊ¶ {$fields['nid']} µÄ¹æÔò£¡");
+        GotoStaMsg("ç³»ç»Ÿä¸­å·²ç»å­˜åœ¨ç›¸åŒæ ‡è¯† {$fields['nid']} çš„è§„åˆ™ï¼");
     }
 
-    //´´½¨±í
+    //åˆ›å»ºè¡¨
     if($fields['issystem'] != -1)
     {
         $tabsql = "CREATE TABLE IF NOT EXISTS `{$fields['addtable']}`(
@@ -230,7 +230,7 @@ else if($dopost=="exportinok")
     $rs = $dsql->ExecuteNoneQuery($tabsql);
     if(!$rs)
     {
-        GotoStaMsg("´´½¨±íÊ§°Ü!".$dsql->GetError());
+        GotoStaMsg("åˆ›å»ºè¡¨å¤±è´¥!".$dsql->GetError());
         exit();
     }
 
@@ -260,7 +260,7 @@ else if($dopost=="exportinok")
 
     $rs = $dsql->ExecuteNoneQuery($inquery);
 
-    if(!$rs) GotoStaMsg("µ¼ÈëÄ£ĞÍÊ±·¢Éú´íÎó£¡".$dsql->GetError());
+    if(!$rs) GotoStaMsg("å¯¼å…¥æ¨¡å‹æ—¶å‘ç”Ÿé”™è¯¯ï¼".$dsql->GetError());
     $dtp = new DedeTagParse();
     $dtp->SetNameSpace("field","<",">");
     $dtp->LoadSource($fieldset);
@@ -269,7 +269,7 @@ else if($dopost=="exportinok")
     {
         foreach($dtp->CTags as $ctag)
         {
-            //¼ì²â±»ĞŞ¸ÄµÄ×Ö¶ÎÀàĞÍ
+            //æ£€æµ‹è¢«ä¿®æ”¹çš„å­—æ®µç±»å‹
             $dtype = $ctag->GetAtt('type');
             $fieldname = $ctag->GetName();
             $dfvalue = $ctag->GetAtt('default');
@@ -290,7 +290,7 @@ else if($dopost=="exportinok")
     {
         $dsql->ExecuteNoneQuery("UPDATE `#@__channeltype` SET listfields='$allfields' WHERE id='{$fields['newid']}' ");
     }
-    GotoStaMsg("³É¹¦µ¼ÈëÒ»¸öÄ£ĞÍ£¡");
+    GotoStaMsg("æˆåŠŸå¯¼å…¥ä¸€ä¸ªæ¨¡å‹ï¼");
 }
 /*----------------
 function __SaveCopy()
@@ -330,13 +330,13 @@ else if($dopost=="copysave")
     $rs = $dsql->ExecuteNoneQuery($inquery);
     if($rs)
     {
-        ShowMsg("³É¹¦¸´ÖÆÄ£ĞÍ£¬ÏÖ×ªµ½ÏêÏ¸²ÎÊıÒ³... ","mychannel_edit.php?id={$newid}&dopost=edit");
+        ShowMsg("æˆåŠŸå¤åˆ¶æ¨¡å‹ï¼Œç°è½¬åˆ°è¯¦ç»†å‚æ•°é¡µ... ","mychannel_edit.php?id={$newid}&dopost=edit");
         exit();
     }
     else
     {
         $errv = $dsql->GetError();
-        ShowMsg("ÏµÍ³³ö´í£¬Çë°Ñ´íÎó´úÂë·¢ËÍµ½¹Ù·½ÂÛÌ³£¬ÒÔ¼ì²éÔ­Òò£¡<br /> ´íÎó´úÂë£ºmychannel_edit.php?dopost=savecopy $errv","javascript:;");
+        ShowMsg("ç³»ç»Ÿå‡ºé”™ï¼Œè¯·æŠŠé”™è¯¯ä»£ç å‘é€åˆ°å®˜æ–¹è®ºå›ï¼Œä»¥æ£€æŸ¥åŸå› ï¼<br /> é”™è¯¯ä»£ç ï¼šmychannel_edit.php?dopost=savecopy $errv","javascript:;");
         exit();
     }
 }
@@ -376,18 +376,18 @@ else if($dopost=="save")
         $dtp->LoadSource(stripslashes($fieldset));
         if(!is_array($dtp->CTags))
         {
-            ShowMsg("ÎÄ±¾ÅäÖÃ²ÎÊıÎŞĞ§£¬ÎŞ·¨½øĞĞ½âÎö£¡","-1");
+            ShowMsg("æ–‡æœ¬é…ç½®å‚æ•°æ— æ•ˆï¼Œæ— æ³•è¿›è¡Œè§£æï¼","-1");
             exit();
         }
     }
     $trueTable = str_replace("#@__", $cfg_dbprefix, $addtable);
     if(!$dsql->IsTable($trueTable))
     {
-        ShowMsg("ÏµÍ³ÕÒ²»µ½ÄãËùÖ¸¶¨µÄ±í $trueTable £¬ÇëÊÖ¹¤´´½¨Õâ¸ö±í£¡","-1");
+        ShowMsg("ç³»ç»Ÿæ‰¾ä¸åˆ°ä½ æ‰€æŒ‡å®šçš„è¡¨ $trueTable ï¼Œè¯·æ‰‹å·¥åˆ›å»ºè¿™ä¸ªè¡¨ï¼","-1");
         exit();
     }
     $dsql->ExecuteNoneQuery($query);
-    ShowMsg("³É¹¦¸ü¸ÄÒ»¸öÄ£ĞÍ£¡","mychannel_main.php");
+    ShowMsg("æˆåŠŸæ›´æ”¹ä¸€ä¸ªæ¨¡å‹ï¼","mychannel_main.php");
     exit();
 }
 /*--------------------
@@ -397,20 +397,20 @@ else if($dopost=="gettemplets")
 {
     require_once(DEDEINC."/oxwindow.class.php");
     $row = $dsql->GetOne("SELECT * FROM `#@__channeltype` WHERE id='$id'");
-    $wintitle = "&nbsp;ÆµµÀ¹ÜÀí-²é¿´Ä£°å";
-    $wecome_info = "<a href='mychannel_main.php'>ÆµµÀ¹ÜÀí</a>::²é¿´Ä£°å";
+    $wintitle = "&nbsp;é¢‘é“ç®¡ç†-æŸ¥çœ‹æ¨¡æ¿";
+    $wecome_info = "<a href='mychannel_main.php'>é¢‘é“ç®¡ç†</a>::æŸ¥çœ‹æ¨¡æ¿";
     $win = new OxWindow();
     $win->Init("", "js/blank.js", "");
-    $win->AddTitle("&nbsp;ÆµµÀ£º£¨".$row['typename']."£©Ä¬ÈÏÄ£°åÎÄ¼şËµÃ÷£º");
+    $win->AddTitle("&nbsp;é¢‘é“ï¼šï¼ˆ".$row['typename']."ï¼‰é»˜è®¤æ¨¡æ¿æ–‡ä»¶è¯´æ˜ï¼š");
     $defaulttemplate = $cfg_templets_dir.'/'.$cfg_df_style;
     $msg = "
-        ÎÄµµÄ£°å£º{$defaulttemplate}/article_{$row['nid']}.htm
-        <a href='tpl.php?acdir={$cfg_df_style}&action=edit&filename=article_{$row['nid']}.htm'>[ĞŞ¸Ä]</a><br/>
-        ÁĞ±íÄ£°å£º{$defaulttemplate}/list_{$row['nid']}.htm
-        <a href='tpl.php?acdir={$cfg_df_style}&action=edit&filename=list_{$row['nid']}.htm'>[ĞŞ¸Ä]</a>
+        æ–‡æ¡£æ¨¡æ¿ï¼š{$defaulttemplate}/article_{$row['nid']}.htm
+        <a href='tpl.php?acdir={$cfg_df_style}&action=edit&filename=article_{$row['nid']}.htm'>[ä¿®æ”¹]</a><br/>
+        åˆ—è¡¨æ¨¡æ¿ï¼š{$defaulttemplate}/list_{$row['nid']}.htm
+        <a href='tpl.php?acdir={$cfg_df_style}&action=edit&filename=list_{$row['nid']}.htm'>[ä¿®æ”¹]</a>
         <br/>
-        ÆµµÀ·âÃæÄ£°å£º{$defaulttemplate}/index_{$row['nid']}.htm
-        <a href='tpl.php?acdir={$cfg_df_style}&action=edit&filename=index_{$row['nid']}.htm'>[ĞŞ¸Ä]</a>
+        é¢‘é“å°é¢æ¨¡æ¿ï¼š{$defaulttemplate}/index_{$row['nid']}.htm
+        <a href='tpl.php?acdir={$cfg_df_style}&action=edit&filename=index_{$row['nid']}.htm'>[ä¿®æ”¹]</a>
     ";
     $win->AddMsgItem("<div style='padding:20px;line-height:300%'>$msg</div>");
     $winform = $win->GetWindow("hand","");
@@ -426,41 +426,41 @@ else if($dopost=="delete")
     $row = $dsql->GetOne("SELECT * FROM `#@__channeltype` WHERE id='$id'");
     if($row['issystem'] == 1)
     {
-        ShowMsg("ÏµÍ³Ä£ĞÍ²»ÔÊĞíÉ¾³ı£¡","mychannel_main.php");
+        ShowMsg("ç³»ç»Ÿæ¨¡å‹ä¸å…è®¸åˆ é™¤ï¼","mychannel_main.php");
         exit();
     }
     if(empty($job)) $job="";
 
-    if($job == "") //È·ÈÏÌáÊ¾
+    if($job == "") //ç¡®è®¤æç¤º
     {
         require_once(DEDEINC."/oxwindow.class.php");
-        $wintitle = "ÆµµÀ¹ÜÀí-É¾³ıÄ£ĞÍ";
-        $wecome_info = "<a href='mychannel_main.php'>ÆµµÀ¹ÜÀí</a>::É¾³ıÄ£ĞÍ";
+        $wintitle = "é¢‘é“ç®¡ç†-åˆ é™¤æ¨¡å‹";
+        $wecome_info = "<a href='mychannel_main.php'>é¢‘é“ç®¡ç†</a>::åˆ é™¤æ¨¡å‹";
         $win = new OxWindow();
         $win->Init("mychannel_edit.php","js/blank.js","POST");
         $win->AddHidden("job","yes");
         $win->AddHidden("dopost",$dopost);
         $win->AddHidden("id",$id);
-        $win->AddTitle("ÄãÈ·ÊµÒªÉ¾³ı (".$row['typename'].") Õâ¸öÆµµÀ£¿");
+        $win->AddTitle("ä½ ç¡®å®è¦åˆ é™¤ (".$row['typename'].") è¿™ä¸ªé¢‘é“ï¼Ÿ");
         $winform = $win->GetWindow("ok");
         $win->Display();
         exit();
-    } else if($job=="yes") //²Ù×÷
+    } else if($job=="yes") //æ“ä½œ
     {
         require_once(DEDEINC."/typeunit.class.admin.php");
         $myrow = $dsql->GetOne("SELECT addtable FROM `#@__channeltype` WHERE id='$id'",MYSQL_ASSOC);
         if(!is_array($myrow))
         {
-            ShowMsg('ÄãËùÖ¸¶¨µÄÆµµÀĞÅÏ¢²»´æÔÚ!','-1');
+            ShowMsg('ä½ æ‰€æŒ‡å®šçš„é¢‘é“ä¿¡æ¯ä¸å­˜åœ¨!','-1');
             exit();
         }
 
-        //¼ì²éÆµµÀµÄ±íÊÇ·ñ¶ÀÕ¼Êı¾İ±í
+        //æ£€æŸ¥é¢‘é“çš„è¡¨æ˜¯å¦ç‹¬å æ•°æ®è¡¨
         $addtable = str_replace($cfg_dbprefix,'',str_replace('#@__',$cfg_dbprefix,$myrow['addtable']));
         $row = $dsql->GetOne("SELECT COUNT(id) AS dd FROM `#@__channeltype` WHERE  addtable like '{$cfg_dbprefix}{$addtable}' OR addtable LIKE CONCAT('#','@','__','$addtable') ; ");
         $isExclusive2 = ($row['dd']>1 ? 0 : 1 );
 
-        //»ñÈ¡ÓëÆµµÀ¹ØÁ¬µÄËùÓĞÀ¸Ä¿id
+        //è·å–ä¸é¢‘é“å…³è¿çš„æ‰€æœ‰æ ç›®id
         $tids = '';
         $dsql->Execute('qm',"SELECT id FROM `#@__arctype` WHERE channeltype='$id'");
         while($row = $dsql->GetArray('qm'))
@@ -468,7 +468,7 @@ else if($dopost=="delete")
             $tids .= ($tids=='' ? $row['id'] : ','.$row['id']);
         }
 
-        //É¾³ıÏà¹ØĞÅÏ¢
+        //åˆ é™¤ç›¸å…³ä¿¡æ¯
         if($tids!='')
         {
             $dsql->ExecuteNoneQuery("DELETE FROM `#@__arctiny` WHERE typeid IN($tids); ");
@@ -478,7 +478,7 @@ else if($dopost=="delete")
             $dsql->ExecuteNoneQuery("DELETE FROM `#@__arctype` WHERE id IN ($tids); ");
         }
 
-        //É¾³ı¸½¼Ó±í»ò¸½¼Ó±íÄÚµÄĞÅÏ¢
+        //åˆ é™¤é™„åŠ è¡¨æˆ–é™„åŠ è¡¨å†…çš„ä¿¡æ¯
         if($isExclusive2==1)
         {
             $dsql->ExecuteNoneQuery("DROP TABLE IF EXISTS `{$cfg_dbprefix}{$addtable}`;");
@@ -491,12 +491,12 @@ else if($dopost=="delete")
             }
         }
 
-        //É¾³ıÆµµÀÅäÖÃĞÅÏ¢
+        //åˆ é™¤é¢‘é“é…ç½®ä¿¡æ¯
         $dsql->ExecuteNoneQuery("DELETE FROM `#@__channeltype` WHERE id='$id' ");
 
-        //¸üĞÂÀ¸Ä¿»º´æ
+        //æ›´æ–°æ ç›®ç¼“å­˜
         UpDateCatCache($dsql);
-        ShowMsg("³É¹¦É¾³ıÒ»¸öÄ£ĞÍ£¡","mychannel_main.php");
+        ShowMsg("æˆåŠŸåˆ é™¤ä¸€ä¸ªæ¨¡å‹ï¼","mychannel_main.php");
         exit();
     }
 }//del
@@ -531,18 +531,18 @@ else if($dopost == 'modifysearch')
         $c4 = in_array('source', $searchinfo['mainfields']) ? 'checked' : '';
         $c5 = in_array('senddate', $searchinfo['mainfields']) ? 'checked' : '';
 
-        $mainfields = '<label><input type="checkbox" name="mainfields[]" '.$c1.' value="iscommend" class="np" />ÊÇ·ñÍÆ¼ö</label>';
-        $mainfields .= '<label><input type="checkbox" name="mainfields[]" '.$c2.' value="typeid" class="np" />À¸Ä¿</label>';
+        $mainfields = '<label><input type="checkbox" name="mainfields[]" '.$c1.' value="iscommend" class="np" />æ˜¯å¦æ¨è</label>';
+        $mainfields .= '<label><input type="checkbox" name="mainfields[]" '.$c2.' value="typeid" class="np" />æ ç›®</label>';
 
-        $mainfields .= '<label><input type="checkbox" name="mainfields[]" '.$c3.' value="writer" class="np" />×÷Õß</label>';
-        $mainfields .= '<label><input type="checkbox" name="mainfields[]" '.$c4.' value="source" class="np" />À´Ô´</label>';
-        $mainfields .= '<label><input type="checkbox" name="mainfields[]" '.$c5.' value="senddate" class="np" />·¢²¼Ê±¼ä</label>';
+        $mainfields .= '<label><input type="checkbox" name="mainfields[]" '.$c3.' value="writer" class="np" />ä½œè€…</label>';
+        $mainfields .= '<label><input type="checkbox" name="mainfields[]" '.$c4.' value="source" class="np" />æ¥æº</label>';
+        $mainfields .= '<label><input type="checkbox" name="mainfields[]" '.$c5.' value="senddate" class="np" />å‘å¸ƒæ—¶é—´</label>';
         /*
-        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="description" />ÕªÒª</label>';
-        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="keywords" />¹Ø¼ü´Ê</label>';
-        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="smalltypeid" />Ğ¡·ÖÀà</label>';
-        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="area" />µØÇø</label>';
-        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="sector" />ĞĞÒµ</label>';
+        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="description" />æ‘˜è¦</label>';
+        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="keywords" />å…³é”®è¯</label>';
+        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="smalltypeid" />å°åˆ†ç±»</label>';
+        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="area" />åœ°åŒº</label>';
+        $mainfields .= '<label><input type="checkbox" name="mainfields[]" value="sector" />è¡Œä¸š</label>';
         */
         $query = "SELECT * FROM `#@__channeltype` WHERE id='$mid'";
         $channel = $dsql->GetOne($query);
@@ -555,9 +555,9 @@ else if($dopost == 'modifysearch')
         if($channel['issystem'] < 0)
         {
             $checked = in_array('typeid', $addonfieldsarr) ? 'checked' : '';
-            $addonfields .= '<label><input type="checkbox" name="addonfields[]" '.$checked.' value="typeid" class="np" />À¸Ä¿</label>';
+            $addonfields .= '<label><input type="checkbox" name="addonfields[]" '.$checked.' value="typeid" class="np" />æ ç›®</label>';
             $checked = in_array('senddate', $addonfieldsarr) ? 'checked' : '';
-            $addonfields .= '<label><input type="checkbox" name="addonfields[]" '.$checked.' value="senddate" class="np" />·¢²¼Ê±¼ä</label>';
+            $addonfields .= '<label><input type="checkbox" name="addonfields[]" '.$checked.' value="senddate" class="np" />å‘å¸ƒæ—¶é—´</label>';
         }
         if(is_array($dtp->CTags) && !empty($dtp->CTags))
         {
@@ -591,7 +591,7 @@ else if($dopost == 'modifysearch')
         $forms = '<form action="'.$cfg_cmspath.'/plus/advancedsearch.php" method="post">';
         $forms .= "<input type=\"hidden\" name=\"mid\" value=\"$mid\" />";
         $forms .= "<input type=\"hidden\" name=\"dopost\" value=\"search\" />";
-        $forms .= "¹Ø¼ü´Ê£º<input type=\"text\" name=\"q\" /><br />";
+        $forms .= "å…³é”®è¯ï¼š<input type=\"text\" name=\"q\" /><br />";
         $mainstring = '';
         if(!empty($mainfields) && is_array($mainfields))
         {
@@ -603,24 +603,24 @@ else if($dopost == 'modifysearch')
                     require_once(dirname(__FILE__)."/../include/typelink.class.php");
                     $tl = new TypeLink(0);
                     $typeOptions = $tl->GetOptionArray(0,0,$mid);
-                    $forms .= "<br />À¸Ä¿£º<select name='typeid' style='width:200'>\r\n";
-                    $forms .= "<option value='0' selected>--²»ÏŞÀ¸Ä¿--</option>\r\n";
+                    $forms .= "<br />æ ç›®ï¼š<select name='typeid' style='width:200'>\r\n";
+                    $forms .= "<option value='0' selected>--ä¸é™æ ç›®--</option>\r\n";
                     $forms .= $typeOptions;
                     $forms .= "</select>";
-                    $forms .= "<label><input type=\"checkbox\" name=\"includesons\" value=\"1\" />°üº¬×ÓÀ¸Ä¿</label><br />";
+                    $forms .= "<label><input type=\"checkbox\" name=\"includesons\" value=\"1\" />åŒ…å«å­æ ç›®</label><br />";
                 }else if ($mainfield == 'iscommend')
                 {
-                    $forms .= "<label><input type=\"checkbox\" name=\"iscommend\" value=\"1\" />ÍÆ¼ö</label><br />";
+                    $forms .= "<label><input type=\"checkbox\" name=\"iscommend\" value=\"1\" />æ¨è</label><br />";
                 }else if ($mainfield == 'writer')
                 {
-                    $forms .= "×÷Õß£º <input type=\"text\" name=\"writer\" value=\"\" /><br />";
+                    $forms .= "ä½œè€…ï¼š <input type=\"text\" name=\"writer\" value=\"\" /><br />";
                 }else if ($mainfield == 'source')
                 {
-                    $forms .= "À´Ô´£º <input type=\"text\" name=\"source\" value=\"\" /><br />";
+                    $forms .= "æ¥æºï¼š <input type=\"text\" name=\"source\" value=\"\" /><br />";
                 }else if ($mainfield == 'senddate')
                 {
-                    $forms .= "¿ªÊ¼Ê±¼ä£º<input type=\"text\" name=\"startdate\" value=\"\" /><br />";
-                    $forms .= "½áÊøÊ±¼ä£º<input type=\"text\" name=\"enddate\" value=\"\" /><br />";
+                    $forms .= "å¼€å§‹æ—¶é—´ï¼š<input type=\"text\" name=\"startdate\" value=\"\" /><br />";
+                    $forms .= "ç»“æŸæ—¶é—´ï¼š<input type=\"text\" name=\"enddate\" value=\"\" /><br />";
                 }
 
             }
@@ -638,15 +638,15 @@ else if($dopost == 'modifysearch')
                     require_once(dirname(__FILE__)."/../include/typelink.class.php");
                     $tl = new TypeLink(0);
                     $typeOptions = $tl->GetOptionArray(0,0,$mid);
-                    $forms .= "<br />À¸Ä¿£º<select name='typeid' style='width:200'>\r\n";
-                    $forms .= "<option value='0' selected>--²»ÏŞÀ¸Ä¿--</option>\r\n";
+                    $forms .= "<br />æ ç›®ï¼š<select name='typeid' style='width:200'>\r\n";
+                    $forms .= "<option value='0' selected>--ä¸é™æ ç›®--</option>\r\n";
                     $forms .= $typeOptions;
                     $forms .= "</select>";
-                    $forms .= "<label><input type=\"checkbox\" name=\"includesons\" value=\"1\" />°üº¬×ÓÀ¸Ä¿</label><br />";
+                    $forms .= "<label><input type=\"checkbox\" name=\"includesons\" value=\"1\" />åŒ…å«å­æ ç›®</label><br />";
                     $addonstring .= 'typeid:int,';
                 } elseif($addonfield == 'senddate') {
-                    $forms .= "¿ªÊ¼Ê±¼ä£º<input type=\"text\" name=\"startdate\" value=\"\" /><br />";
-                    $forms .= "½áÊøÊ±¼ä£º<input type=\"text\" name=\"enddate\" value=\"\" /><br />";
+                    $forms .= "å¼€å§‹æ—¶é—´ï¼š<input type=\"text\" name=\"startdate\" value=\"\" /><br />";
+                    $forms .= "ç»“æŸæ—¶é—´ï¼š<input type=\"text\" name=\"enddate\" value=\"\" /><br />";
                     $addonstring .= 'senddate:datetime,';
                 }
             }
@@ -686,7 +686,7 @@ else if($dopost == 'modifysearch')
                 $tmp = $name.':'.$type;
                 if(in_array($type, $intarr))
                 {
-                    $forms .= "<br />$itemname : <input type=\"text\" name=\"start".$name."\" value=\"\" /> µ½ <input type=\"text\" name=\"end".$name."\" value=\"\" /><br />";
+                    $forms .= "<br />$itemname : <input type=\"text\" name=\"start".$name."\" value=\"\" /> åˆ° <input type=\"text\" name=\"end".$name."\" value=\"\" /><br />";
                 } else if (in_array($type, $textarr))
                 {
                     $forms .= "$itemname : <input type=\"text\" name=\"$name\" value=\"\" /><br />";
@@ -696,7 +696,7 @@ else if($dopost == 'modifysearch')
                     $values = explode(',', $valuearr[$k]);
                     if(is_array($values) && !empty($values))
                     {
-                        $forms .= "<br />$itemname : <select name=\"$name\" ><option value=\"\">²»ÏŞ</option>";
+                        $forms .= "<br />$itemname : <select name=\"$name\" ><option value=\"\">ä¸é™</option>";
                         foreach($values as $value)
                         {
                             $forms .= "<option value=\"$value\">$value</option>";
@@ -707,7 +707,7 @@ else if($dopost == 'modifysearch')
                 {
                     $values = explode(',', $valuearr[$k]);
                     if(is_array($values) && !empty($values)){
-                        $forms .= "<br />$itemname : <label><input type=\"radio\" name=\"".$name."\" value=\"\" checked />²»ÏŞ</label>";
+                        $forms .= "<br />$itemname : <label><input type=\"radio\" name=\"".$name."\" value=\"\" checked />ä¸é™</label>";
                         foreach($values as $value){
                             $forms .= "<label><input type=\"radio\" name=\"".$name."\" value=\"$value\" />$value</label>";
                         }
@@ -725,32 +725,32 @@ else if($dopost == 'modifysearch')
                     }
 
                 }elseif($type == 'datetime'){
-                    $forms .= "<br />¿ªÊ¼Ê±¼ä£º<input type=\"text\" name=\"startdate\" value=\"\" /><br />";
-                    $forms .= "½áÊøÊ±¼ä£º<input type=\"text\" name=\"enddate\" value=\"\" /><br />";
+                    $forms .= "<br />å¼€å§‹æ—¶é—´ï¼š<input type=\"text\" name=\"startdate\" value=\"\" /><br />";
+                    $forms .= "ç»“æŸæ—¶é—´ï¼š<input type=\"text\" name=\"enddate\" value=\"\" /><br />";
                 }else{
                     $tmp = '';
                 }
                 $addonstring .= $tmp.',';
             }
         }
-        $forms .= '<input type="submit" name="submit" value="¿ªÊ¼ËÑË÷" /></form>';
+        $forms .= '<input type="submit" name="submit" value="å¼€å§‹æœç´¢" /></form>';
         $formssql = addslashes($forms);
         $query = "REPLACE INTO #@__advancedsearch(mid, maintable, mainfields, addontable, addonfields, forms, template) VALUES('$mid','$maintable','$mainstring','$addontable','$addonstring','$formssql', '$template')";
         $dsql->ExecuteNoneQuery($query);
-        $formshtml = htmlspecialchars($forms);
+        $formshtml = dede_htmlspecialchars($forms);
         echo '<meta http-equiv="Content-Type" content="text/html; charset='.$cfg_soft_lang.'">';
-        echo "ÏÂÃæÎªÉú³ÉµÄhtml±íµ¥£¬Çë×ÔĞĞ¸´ÖÆ£¬¸ù¾İ×Ô¼ºĞèÇóĞŞ¸ÄÑùÊ½ºóÕ³Ìùµ½¶ÔÓ¦µÄÄ£°åÖĞ<br><br><textarea cols=\"100\"  rows=\"10\">".$forms."</textarea>";
-        echo '<br />Ô¤ÀÀ£º<br /><hr>';
+        echo "ä¸‹é¢ä¸ºç”Ÿæˆçš„htmlè¡¨å•ï¼Œè¯·è‡ªè¡Œå¤åˆ¶ï¼Œæ ¹æ®è‡ªå·±éœ€æ±‚ä¿®æ”¹æ ·å¼åç²˜è´´åˆ°å¯¹åº”çš„æ¨¡æ¿ä¸­<br><br><textarea cols=\"100\"  rows=\"10\">".$forms."</textarea>";
+        echo '<br />é¢„è§ˆï¼š<br /><hr>';
         echo $forms;
     }
     exit;
 }
-//É¾³ı×Ô¶¨ÒåËÑË÷£»
+//åˆ é™¤è‡ªå®šä¹‰æœç´¢ï¼›
 else if($dopost == 'del')
 {
     $mid = intval($mid);
     $dsql->ExecuteNoneQuery("DELETE FROM `#@__advancedsearch` WHERE mid = '$mid'; ");
-    ShowMsg("³É¹¦É¾³ıÒ»¸ö×Ô¶¨ÒåËÑË÷£¡","mychannel_main.php");
+    ShowMsg("æˆåŠŸåˆ é™¤ä¸€ä¸ªè‡ªå®šä¹‰æœç´¢ï¼","mychannel_main.php");
     exit();
 }
 $row = $dsql->GetOne("SELECT * FROM `#@__channeltype` WHERE id='$id' ");

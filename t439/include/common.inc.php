@@ -7,8 +7,8 @@
  * @link           http://www.dedecms.com
  */
 
-// ±¨´í¼¶±ğÉè¶¨,Ò»°ãÔÚ¿ª·¢»·¾³ÖĞÓÃE_ALL,ÕâÑùÄÜ¹»¿´µ½ËùÓĞ´íÎóÌáÊ¾
-// ÏµÍ³Õı³£ÔËĞĞºó,Ö±½ÓÉè¶¨ÎªE_ALL || ~E_NOTICE,È¡Ïû´íÎóÏÔÊ¾
+// æŠ¥é”™çº§åˆ«è®¾å®š,ä¸€èˆ¬åœ¨å¼€å‘ç¯å¢ƒä¸­ç”¨E_ALL,è¿™æ ·èƒ½å¤Ÿçœ‹åˆ°æ‰€æœ‰é”™è¯¯æç¤º
+// ç³»ç»Ÿæ­£å¸¸è¿è¡Œå,ç›´æ¥è®¾å®šä¸ºE_ALL || ~E_NOTICE,å–æ¶ˆé”™è¯¯æ˜¾ç¤º
 // error_reporting(E_ALL);
 error_reporting(E_ALL || ~E_NOTICE);
 define('DEDEINC', str_replace("\\", '/', dirname(__FILE__) ) );
@@ -28,7 +28,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<'))
 {
     set_magic_quotes_runtime(0);
 }
-
 
 if (version_compare(PHP_VERSION, '5.4.0', '>=')) 
 {
@@ -51,7 +50,7 @@ if (version_compare(PHP_VERSION, '5.4.0', '>='))
     }
 }
 
-//ÊÇ·ñÆôÓÃmb_substrÌæ»»cn_substrÀ´Ìá¸ßĞ§ÂÊ
+//æ˜¯å¦å¯ç”¨mb_substræ›¿æ¢cn_substræ¥æé«˜æ•ˆç‡
 $cfg_is_mb = $cfg_is_iconv = FALSE;
 if(function_exists('mb_substr')) $cfg_is_mb = TRUE;
 if(function_exists('iconv_substr')) $cfg_is_iconv = TRUE;
@@ -78,7 +77,7 @@ function _RunMagicQuotes(&$svar)
 
 if (!defined('DEDEREQUEST')) 
 {
-    //¼ì²éºÍ×¢²áÍâ²¿Ìá½»µÄ±äÁ¿   (2011.8.10 ĞŞ¸ÄµÇÂ¼Ê±Ïà¹Ø¹ıÂË)
+    //æ£€æŸ¥å’Œæ³¨å†Œå¤–éƒ¨æäº¤çš„å˜é‡   (2011.8.10 ä¿®æ”¹ç™»å½•æ—¶ç›¸å…³è¿‡æ»¤)
     function CheckRequest(&$val) {
         if (is_array($val)) {
             foreach ($val as $_k=>$_v) {
@@ -109,7 +108,7 @@ if (!defined('DEDEREQUEST'))
     }
 }
 
-//ÏµÍ³Ïà¹Ø±äÁ¿¼ì²â
+//ç³»ç»Ÿç›¸å…³å˜é‡æ£€æµ‹
 if(!isset($needFilter))
 {
     $needFilter = false;
@@ -122,40 +121,43 @@ if( preg_match('/windows/i', @getenv('OS')) )
     $isSafeMode = false;
 }
 
-//Session±£´æÂ·¾¶
-$sessSavePath = DEDEDATA."/sessions/";
+//Sessionä¿å­˜è·¯å¾„
+$enkey = substr(md5(substr($cfg_domain_cookie,0,5)),0,10);
+$sessSavePath = DEDEDATA."/sessions_{$enkey}";
+if ( !is_dir($sessSavePath) ) mkdir($sessSavePath);
+
 if(is_writeable($sessSavePath) && is_readable($sessSavePath))
 {
     session_save_path($sessSavePath);
 }
 
-//ÏµÍ³ÅäÖÃ²ÎÊı
+//ç³»ç»Ÿé…ç½®å‚æ•°
 require_once(DEDEDATA."/config.cache.inc.php");
 
-//×ª»»ÉÏ´«µÄÎÄ¼şÏà¹ØµÄ±äÁ¿¼°°²È«´¦Àí¡¢²¢ÒıÓÃÇ°Ì¨Í¨ÓÃµÄÉÏ´«º¯Êı
+//è½¬æ¢ä¸Šä¼ çš„æ–‡ä»¶ç›¸å…³çš„å˜é‡åŠå®‰å…¨å¤„ç†ã€å¹¶å¼•ç”¨å‰å°é€šç”¨çš„ä¸Šä¼ å‡½æ•°
 if($_FILES)
 {
     require_once(DEDEINC.'/uploadsafe.inc.php');
 }
 
-//Êı¾İ¿âÅäÖÃÎÄ¼ş
+//æ•°æ®åº“é…ç½®æ–‡ä»¶
 require_once(DEDEDATA.'/common.inc.php');
 
-//ÔØÈëÏµÍ³ÑéÖ¤°²È«ÅäÖÃ
+//è½½å…¥ç³»ç»ŸéªŒè¯å®‰å…¨é…ç½®
 if(file_exists(DEDEDATA.'/safe/inc_safe_config.php'))
 {
     require_once(DEDEDATA.'/safe/inc_safe_config.php');
     if(!empty($safe_faqs)) $safefaqs = unserialize($safe_faqs);
 }
 
-//Session¿çÓòÉèÖÃ
+//Sessionè·¨åŸŸè®¾ç½®
 if(!empty($cfg_domain_cookie))
 {
     @session_set_cookie_params(0,'/',$cfg_domain_cookie);
 }
 
-//php5.1°æ±¾ÒÔÉÏÊ±ÇøÉèÖÃ
-//ÓÉÓÚÕâ¸öº¯Êı¶ÔÓÚÊÇphp5.1ÒÔÏÂ°æ±¾²¢ÎŞÒâÒå£¬Òò´ËÊµ¼ÊÉÏµÄÊ±¼äµ÷ÓÃ£¬Ó¦¸ÃÓÃMyDateº¯Êıµ÷ÓÃ
+//php5.1ç‰ˆæœ¬ä»¥ä¸Šæ—¶åŒºè®¾ç½®
+//ç”±äºè¿™ä¸ªå‡½æ•°å¯¹äºæ˜¯php5.1ä»¥ä¸‹ç‰ˆæœ¬å¹¶æ— æ„ä¹‰ï¼Œå› æ­¤å®é™…ä¸Šçš„æ—¶é—´è°ƒç”¨ï¼Œåº”è¯¥ç”¨MyDateå‡½æ•°è°ƒç”¨
 if(PHP_VERSION > '5.1')
 {
     $time51 = $cfg_cli_time * -1;
@@ -163,10 +165,10 @@ if(PHP_VERSION > '5.1')
 }
 $cfg_isUrlOpen = @ini_get("allow_url_fopen");
 
-//ÓÃ»§·ÃÎÊµÄÍøÕ¾host
+//ç”¨æˆ·è®¿é—®çš„ç½‘ç«™host
 $cfg_clihost = 'http://'.$_SERVER['HTTP_HOST'];
 
-//Õ¾µã¸ùÄ¿Â¼
+//ç«™ç‚¹æ ¹ç›®å½•
 $cfg_basedir = preg_replace('#'.$cfg_cmspath.'\/include$#i', '', DEDEINC);
 if($cfg_multi_site == 'Y')
 {
@@ -177,62 +179,65 @@ else
     $cfg_mainsite = '';
 }
 
-//Ä£°åµÄ´æ·ÅÄ¿Â¼
+//æ¨¡æ¿çš„å­˜æ”¾ç›®å½•
 $cfg_templets_dir = $cfg_cmspath.'/templets';
 $cfg_templeturl = $cfg_mainsite.$cfg_templets_dir;
 $cfg_templets_skin = empty($cfg_df_style)? $cfg_mainsite.$cfg_templets_dir."/default" : $cfg_mainsite.$cfg_templets_dir."/$cfg_df_style";
 
-//cms°²×°Ä¿Â¼µÄÍøÖ·
+//cmså®‰è£…ç›®å½•çš„ç½‘å€
 $cfg_cmsurl = $cfg_mainsite.$cfg_cmspath;
 
-//²å¼şÄ¿Â¼£¬Õâ¸öÄ¿Â¼ÊÇÓÃÓÚ´æ·Å¼ÆÊıÆ÷¡¢Í¶Æ±¡¢ÆÀÂÛµÈ³ÌĞòµÄ±ØÒª¶¯Ì¬³ÌĞò
+//æ’ä»¶ç›®å½•ï¼Œè¿™ä¸ªç›®å½•æ˜¯ç”¨äºå­˜æ”¾è®¡æ•°å™¨ã€æŠ•ç¥¨ã€è¯„è®ºç­‰ç¨‹åºçš„å¿…è¦åŠ¨æ€ç¨‹åº
 $cfg_plus_dir = $cfg_cmspath.'/plus';
 $cfg_phpurl = $cfg_mainsite.$cfg_plus_dir;
+
+$cfg_mobile_dir = $cfg_cmspath.'/m';
+$cfg_mobileurl = $cfg_mainsite.$cfg_mobile_dir;
 
 $cfg_data_dir = $cfg_cmspath.'/data';
 $cfg_dataurl = $cfg_mainsite.$cfg_data_dir;
 
-//»áÔ±Ä¿Â¼
+//ä¼šå‘˜ç›®å½•
 $cfg_member_dir = $cfg_cmspath.'/member';
 $cfg_memberurl = $cfg_mainsite.$cfg_member_dir;
 
-//×¨ÌâÁĞ±íµÄ´æ·ÅÂ·¾¶
+//ä¸“é¢˜åˆ—è¡¨çš„å­˜æ”¾è·¯å¾„
 $cfg_special = $cfg_cmspath.'/special';
 $cfg_specialurl = $cfg_mainsite.$cfg_special;
 
-//¸½¼şÄ¿Â¼
+//é™„ä»¶ç›®å½•
 $cfg_medias_dir = $cfg_cmspath.$cfg_medias_dir;
 $cfg_mediasurl = $cfg_mainsite.$cfg_medias_dir;
 
-//ÉÏ´«µÄÆÕÍ¨Í¼Æ¬µÄÂ·¾¶,½¨Òé°´Ä¬ÈÏ
+//ä¸Šä¼ çš„æ™®é€šå›¾ç‰‡çš„è·¯å¾„,å»ºè®®æŒ‰é»˜è®¤
 $cfg_image_dir = $cfg_medias_dir.'/allimg';
 
-//ÉÏ´«µÄËõÂÔÍ¼
+//ä¸Šä¼ çš„ç¼©ç•¥å›¾
 $ddcfg_image_dir = $cfg_medias_dir.'/litimg';
 
-//ÓÃ»§Í¶¸åÍ¼Æ¬´æ·ÅÄ¿Â¼
+//ç”¨æˆ·æŠ•ç¨¿å›¾ç‰‡å­˜æ”¾ç›®å½•
 $cfg_user_dir = $cfg_medias_dir.'/userup';
 
-//ÉÏ´«µÄÈí¼şÄ¿Â¼
+//ä¸Šä¼ çš„è½¯ä»¶ç›®å½•
 $cfg_soft_dir = $cfg_medias_dir.'/soft';
 
-//ÉÏ´«µÄ¶àÃ½ÌåÎÄ¼şÄ¿Â¼
+//ä¸Šä¼ çš„å¤šåª’ä½“æ–‡ä»¶ç›®å½•
 $cfg_other_medias = $cfg_medias_dir.'/media';
 
-//Èí¼şÕªÒªĞÅÏ¢£¬****Çë²»ÒªÉ¾³ı±¾Ïî**** ·ñÔòÏµÍ³ÎŞ·¨ÕıÈ·½ÓÊÕÏµÍ³Â©¶´»òÉı¼¶ĞÅÏ¢
-$cfg_version = 'V57_GBK_SP1';
-$cfg_soft_lang = 'gb2312';
+//è½¯ä»¶æ‘˜è¦ä¿¡æ¯ï¼Œ****è¯·ä¸è¦åˆ é™¤æœ¬é¡¹**** å¦åˆ™ç³»ç»Ÿæ— æ³•æ­£ç¡®æ¥æ”¶ç³»ç»Ÿæ¼æ´æˆ–å‡çº§ä¿¡æ¯
+$cfg_version = 'V57_UTF8_SP1';
+$cfg_soft_lang = 'utf-8';
 $cfg_soft_public = 'base';
 
-$cfg_softname = 'Ö¯ÃÎÄÚÈİ¹ÜÀíÏµÍ³';
+$cfg_softname = 'ç»‡æ¢¦å†…å®¹ç®¡ç†ç³»ç»Ÿ';
 $cfg_soft_enname = 'DedeCMS';
-$cfg_soft_devteam = 'DedeCMS¹Ù·½ÍÅ¶Ó';
+$cfg_soft_devteam = 'DedeCMSå®˜æ–¹å›¢é˜Ÿ';
 
-//ÎÄµµµÄÄ¬ÈÏÃüÃû¹æÔò
+//æ–‡æ¡£çš„é»˜è®¤å‘½åè§„åˆ™
 $art_shortname = $cfg_df_ext = '.html';
 $cfg_df_namerule = '{typedir}/{Y}/{M}{D}/{aid}'.$cfg_df_ext;
 
-//ĞÂ½¨Ä¿Â¼µÄÈ¨ÏŞ£¬Èç¹ûÄãÊ¹ÓÃ±ğµÄÊôĞÔ£¬±¾³Ì²»±£Ö¤³ÌĞòÄÜË³ÀûÔÚLinux»òUnixÏµÍ³ÔËĞĞ
+//æ–°å»ºç›®å½•çš„æƒé™ï¼Œå¦‚æœä½ ä½¿ç”¨åˆ«çš„å±æ€§ï¼Œæœ¬ç¨‹ä¸ä¿è¯ç¨‹åºèƒ½é¡ºåˆ©åœ¨Linuxæˆ–Unixç³»ç»Ÿè¿è¡Œ
 if(isset($cfg_ftp_mkdir) && $cfg_ftp_mkdir=='Y')
 {
     $cfg_dir_purview = '0755';
@@ -242,10 +247,10 @@ else
     $cfg_dir_purview = 0755;
 }
 
-//»áÔ±ÊÇ·ñÊ¹ÓÃ¾«¼òÄ£Ê½£¨ÒÑ½ûÓÃ£©
+//ä¼šå‘˜æ˜¯å¦ä½¿ç”¨ç²¾ç®€æ¨¡å¼ï¼ˆå·²ç¦ç”¨ï¼‰
 $cfg_mb_lit = 'N';
 
-//ÌØÊâÈ«¾Ö±äÁ¿
+//ç‰¹æ®Šå…¨å±€å˜é‡
 $_sys_globals['curfile'] = '';
 $_sys_globals['typeid'] = 0;
 $_sys_globals['typename'] = '';
@@ -260,7 +265,7 @@ if($cfg_sendmail_bysmtp=='Y' && !empty($cfg_smtp_usermail))
     $cfg_adminemail = $cfg_smtp_usermail;
 }
 
-//¶ÔÈ«¾Ö·ÖÒ³´«µİ²ÎÊı½øĞĞ¹ıÂË
+//å¯¹å…¨å±€åˆ†é¡µä¼ é€’å‚æ•°è¿›è¡Œè¿‡æ»¤
 if (isset($GLOBALS['PageNo'])) {
     $GLOBALS['PageNo'] = intval($GLOBALS['PageNo']);
 }
@@ -269,7 +274,7 @@ if (isset($GLOBALS['TotalResult'])) {
 }
 
 // ------------------------------------------------------------------------
-// Éè¶¨»º´æÅäÖÃĞÅÏ¢
+// è®¾å®šç¼“å­˜é…ç½®ä¿¡æ¯
 if ($cfg_memcache_enable == 'Y')
 {
     $cache_helper_config = array();
@@ -286,7 +291,7 @@ if(!isset($cfg_NotPrintHead)) {
     header("Content-Type: text/html; charset={$cfg_soft_lang}");
 }
 
-//×Ô¶¯¼ÓÔØÀà¿â´¦Àí
+//è‡ªåŠ¨åŠ è½½ç±»åº“å¤„ç†
 function __autoload($classname)
 {
     global $cfg_soft_lang;
@@ -310,7 +315,7 @@ function __autoload($classname)
             if (DEBUG_LEVEL === TRUE)
             {
                 echo '<pre>';
-				echo $classname.'ÀàÕÒ²»µ½';
+				echo $classname.'ç±»æ‰¾ä¸åˆ°';
 				echo '</pre>';
 				exit ();
             }
@@ -320,9 +325,9 @@ function __autoload($classname)
                 die ();
             }
         }
-}
+}
 
-//ÒıÈëÊı¾İ¿âÀà
+//å¼•å…¥æ•°æ®åº“ç±»
 if ($GLOBALS['cfg_mysql_type'] == 'mysqli' && function_exists("mysqli_init"))
 {
     require_once(DEDEINC.'/dedesqli.class.php');
@@ -331,22 +336,22 @@ if ($GLOBALS['cfg_mysql_type'] == 'mysqli' && function_exists("mysqli_init"))
 }
 
 
-//È«¾Ö³£ÓÃº¯Êı
+//å…¨å±€å¸¸ç”¨å‡½æ•°
 require_once(DEDEINC.'/common.func.php');
 
-// Ä£¿éMVC¿ò¼ÜĞèÒªµÄ¿ØÖÆÆ÷ºÍÄ£ĞÍ»ùÀà
+// æ¨¡å—MVCæ¡†æ¶éœ€è¦çš„æ§åˆ¶å™¨å’Œæ¨¡å‹åŸºç±»
 require_once(DEDEINC.'/control.class.php');
 require_once(DEDEINC.'/model.class.php');
 
-//ÔØÈëĞ¡ÖúÊÖÅäÖÃ,²¢¶ÔÆä½øĞĞÄ¬ÈÏ³õÊ¼»¯
+//è½½å…¥å°åŠ©æ‰‹é…ç½®,å¹¶å¯¹å…¶è¿›è¡Œé»˜è®¤åˆå§‹åŒ–
 if(file_exists(DEDEDATA.'/helper.inc.php'))
 {
     require_once(DEDEDATA.'/helper.inc.php');
-    // ÈôÃ»ÓĞÔØÈëÅäÖÃ,Ôò³õÊ¼»¯Ò»¸öÄ¬ÈÏĞ¡ÖúÊÖÅäÖÃ
+    // è‹¥æ²¡æœ‰è½½å…¥é…ç½®,åˆ™åˆå§‹åŒ–ä¸€ä¸ªé»˜è®¤å°åŠ©æ‰‹é…ç½®
     if (!isset($cfg_helper_autoload))
     {
         $cfg_helper_autoload = array('util', 'charset', 'string', 'time', 'cookie');
     }
-    // ³õÊ¼»¯Ğ¡ÖúÊÖ
+    // åˆå§‹åŒ–å°åŠ©æ‰‹
     helper($cfg_helper_autoload);
 }

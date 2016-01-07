@@ -1,8 +1,8 @@
 <?php
 /**
- * ¹ÜÀíºóÌ¨Ê×Ò³Ö÷Ìå
+ * ç®¡ç†åå°é¦–é¡µä¸»ä½“
  *
- * @version        $Id: index_body.php 1 11:06 2010Äê7ÔÂ13ÈÕZ tianya $
+ * @version        $Id: index_body.php 1 11:06 2010å¹´7æœˆ13æ—¥Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -15,7 +15,7 @@ $defaultIcoFile = DEDEDATA.'/admin/quickmenu.txt';
 $myIcoFile = DEDEDATA.'/admin/quickmenu-'.$cuserLogin->getUserID().'.txt';
 if(!file_exists($myIcoFile)) $myIcoFile = $defaultIcoFile;
 
-//Ä¬ÈÏÖ÷Ò³
+//é»˜è®¤ä¸»é¡µ
 if(empty($dopost))
 {
     require(DEDEINC.'/inc/inc_fun_funAdmin.php');
@@ -48,14 +48,14 @@ if(empty($dopost))
     exit();
 }
 /*-----------------------
-Ôö¼ÓĞÂÏî
+å¢åŠ æ–°é¡¹
 function _AddNew() {   }
 -------------------------*/
 else if($dopost=='addnew')
 {
     if(empty($link) || empty($title))
     {
-        ShowMsg("Á´½ÓÍøÖ·»ò±êÌâ²»ÄÜÎª¿Õ£¡","-1");
+        ShowMsg("é“¾æ¥ç½‘å€æˆ–æ ‡é¢˜ä¸èƒ½ä¸ºç©ºï¼","-1");
         exit();
     }
 
@@ -73,11 +73,11 @@ else if($dopost=='addnew')
     fwrite($fp, $oldct);
     fclose($fp);
 
-    ShowMsg("³É¹¦Ôö¼ÓÒ»¸öÏîÄ¿£¡","index_body.php?".time());
+    ShowMsg("æˆåŠŸå¢åŠ ä¸€ä¸ªé¡¹ç›®ï¼","index_body.php?".time());
     exit();
 }
 /*---------------------------
-±£´æĞŞ¸ÄµÄÏî
+ä¿å­˜ä¿®æ”¹çš„é¡¹
 function _EditSave() {   }
 ----------------------------*/
 else if($dopost=='editsave')
@@ -89,11 +89,11 @@ else if($dopost=='editsave')
     fwrite($fp,$quickmenu);
     fclose($fp);
 
-    ShowMsg("³É¹¦ĞŞ¸Ä¿ì½İ²Ù×÷ÏîÄ¿£¡","index_body.php?".time());
+    ShowMsg("æˆåŠŸä¿®æ”¹å¿«æ·æ“ä½œé¡¹ç›®ï¼","index_body.php?".time());
     exit();
 }
 /*---------------------------
-±£´æĞŞ¸ÄµÄÏî
+ä¿å­˜ä¿®æ”¹çš„é¡¹
 function _EditSave() {   }
 ----------------------------*/
 else if($dopost=='movesave')
@@ -107,7 +107,7 @@ else if($dopost=='movesave')
     fclose($fp);
 }
 /*-----------------------------
-ÏÔÊ¾ĞŞ¸Ä±íµ¥
+æ˜¾ç¤ºä¿®æ”¹è¡¨å•
 function _EditShow() {   }
 -----------------------------*/
 else if($dopost=='editshow')
@@ -121,7 +121,7 @@ else if($dopost=='editshow')
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
    <tr>
      <td height='28' background="images/tbg.gif">
-         <div style='float:left'><b>ĞŞ¸Ä¿ì½İ²Ù×÷Ïî</b></div>
+         <div style='float:left'><b>ä¿®æ”¹å¿«æ·æ“ä½œé¡¹</b></div>
       <div style='float:right;padding:3px 10px 0 0;'>
              <a href="javascript:CloseTab('editTab')"><img src="images/close.gif" width="12" height="12" border="0" /></a>
       </div>
@@ -130,7 +130,7 @@ else if($dopost=='editshow')
       <tr><td style="height:6px;font-size:1px;border-top:1px solid #8DA659">&nbsp;</td></tr>
    <tr>
      <td>
-         °´Ô­¸ñÊ½ĞŞ¸Ä/Ôö¼ÓXMLÏî¡£
+         æŒ‰åŸæ ¼å¼ä¿®æ”¹/å¢åŠ XMLé¡¹ã€‚
      </td>
    </tr>
    <tr>
@@ -140,9 +140,9 @@ else if($dopost=='editshow')
    </tr>
    <tr>
      <td height="45" align="center">
-         <input type="submit" name="Submit" value="±£´æÏîÄ¿" class="np coolbg" style="width:80px;cursor:pointer" />
+         <input type="submit" name="Submit" value="ä¿å­˜é¡¹ç›®" class="np coolbg" style="width:80px;cursor:pointer" />
          &nbsp;
-         <input type="reset" name="reset" value="ÖØÉè" class="np coolbg" style="width:50px;cursor:pointer" />
+         <input type="reset" name="reset" value="é‡è®¾" class="np coolbg" style="width:50px;cursor:pointer" />
      </td>
    </tr>
   </table>
@@ -151,7 +151,7 @@ else if($dopost=='editshow')
 exit();
 }
 /*---------------------------------
-ÔØÈëÓÒ±ßÄÚÈİ
+è½½å…¥å³è¾¹å†…å®¹
 function _getRightSide() {   }
 ---------------------------------*/
 else if($dopost=='getRightSide')
@@ -182,11 +182,11 @@ else if($dopost=='getRightSide')
 ?>
     <table width="100%" class="dboxtable">
     <tr>
-        <td width='50%' class='nline'  style="text-align:left"> »áÔ±Êı£º </td>
+        <td width='50%' class='nline'  style="text-align:left"> ä¼šå‘˜æ•°ï¼š </td>
         <td class='nline' style="text-align:left"> <?php echo $row1['dd']; ?> </td>
     </tr>
     <tr>
-        <td class='nline' style="text-align:left"> ÎÄµµÊı£º </td>
+        <td class='nline' style="text-align:left"> æ–‡æ¡£æ•°ï¼š </td>
         <td class='nline' style="text-align:left"> <?php echo $allArc; ?> </td>
     </tr>
     <?php
@@ -194,14 +194,14 @@ else if($dopost=='getRightSide')
     {
     ?>
     <tr>
-        <td class='nline' style="text-align:left"> <?php echo $row['typename']; ?>£º </td>
+        <td class='nline' style="text-align:left"> <?php echo $row['typename']; ?>ï¼š </td>
         <td class='nline' style="text-align:left"> <?php echo $row['dd']; ?>&nbsp; </td>
     </tr>
     <?php
     }
     ?>
     <tr>
-        <td style="text-align:left"> ÆÀÂÛÊı£º </td>
+        <td style="text-align:left"> è¯„è®ºæ•°ï¼š </td>
         <td style="text-align:left"> <?php echo $row2['dd']; ?> </td>
     </tr>
     </table>
@@ -227,8 +227,8 @@ exit();
         if(trim($row['editcon'])=='') {
             $row['editcon'] = 'archives_edit.php';
         }
-        $linkstr = "¡¤<a href='{$row['editcon']}?aid={$row['id']}&channelid={$row['channel']}'>{$row['title']}</a>";
-        if($row['arcrank']==-1) $linkstr .= "<font color='red'>(Î´ÉóºË)</font>";
+        $linkstr = "Â·<a href='{$row['editcon']}?aid={$row['id']}&channelid={$row['channel']}'>{$row['title']}</a>";
+        if($row['arcrank']==-1) $linkstr .= "<font color='red'>(æœªå®¡æ ¸)</font>";
     ?>
     <tr>
         <td class='nline'>
@@ -255,6 +255,208 @@ exit;
 	$skin = !in_array($cskin, array(1,2,3,4))? 1 : $cskin;
 	$skinconfig = DEDEDATA.'/admin/skin.txt';
 	PutFile($skinconfig, $skin);
+} elseif ( $dopost=='get_seo' )
+{
+    if (!function_exists('fsocketopen') && !function_exists('curl_init')) {
+        echo 'æ²¡æœ‰æ”¯æŒçš„curlæˆ–fsocketopenç»„ä»¶';
+        exit;
+    }
+    function dedeseo_http_send($url, $limit=0, $post='', $cookie='', $timeout=5)
+    {
+        $return = '';
+        $matches = parse_url($url);
+        $scheme = $matches['scheme'];
+        $host = $matches['host'];
+        $path = $matches['path'] ? $matches['path'].(@$matches['query'] ? '?'.$matches['query'] : '') : '/';
+        $port = !empty($matches['port']) ? $matches['port'] : 80;
+
+        if (function_exists('curl_init') && function_exists('curl_exec')) {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $scheme.'://'.$host.':'.$port.$path);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_USERAGENT, @$_SERVER['HTTP_USER_AGENT']); 
+            if ($post) {
+                curl_setopt($ch, CURLOPT_POST, 1);
+                $content = is_array($port) ? http_build_query($post) : $post;
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+            }
+            if ($cookie) {
+                curl_setopt($ch, CURLOPT_COOKIE, $cookie);
+            }
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+            curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+            $data = curl_exec($ch);
+            $status = curl_getinfo($ch);
+            $errno = curl_errno($ch);
+            curl_close($ch);
+            if ($errno || $status['http_code'] != 200) {
+                return;
+            } else {
+                return !$limit ? $data : substr($data, 0, $limit);
+            }
+        }
+
+        if ($post) {
+            $content = is_array($port) ? http_build_query($post) : $post;
+            $out = "POST $path HTTP/1.0\r\n";
+            $header = "Accept: */*\r\n";
+            $header .= "Accept-Language: zh-cn\r\n";
+            $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
+            $header .= "User-Agent: ".@$_SERVER['HTTP_USER_AGENT']."\r\n";
+            $header .= "Host: $host:$port\r\n";
+            $header .= 'Content-Length: '.strlen($content)."\r\n";
+            $header .= "Connection: Close\r\n";
+            $header .= "Cache-Control: no-cache\r\n";
+            $header .= "Cookie: $cookie\r\n\r\n";
+            $out .= $header.$content;
+        } else {
+            $out = "GET $path HTTP/1.0\r\n";
+            $header = "Accept: */*\r\n";
+            $header .= "Accept-Language: zh-cn\r\n";
+            $header .= "User-Agent: ".@$_SERVER['HTTP_USER_AGENT']."\r\n";
+            $header .= "Host: $host:$port\r\n";
+            $header .= "Connection: Close\r\n";
+            $header .= "Cookie: $cookie\r\n\r\n";
+            $out .= $header;
+        }
+
+        $fpflag = 0;
+        $fp = false;
+        if (function_exists('fsocketopen')) {
+            $fp = fsocketopen($host, $port, $errno, $errstr, $timeout);
+        }
+        if (!$fp) {
+            $context = stream_context_create(array(
+                'http' => array(
+                    'method' => $post ? 'POST' : 'GET',
+                    'header' => $header,
+                    'content' => $content,
+                    'timeout' => $timeout,
+                ),
+            ));
+            $fp = @fopen($scheme.'://'.$host.':'.$port.$path, 'b', false, $context);
+            $fpflag = 1;
+        }
+
+        if (!$fp) {
+            return '';
+        } else {
+            stream_set_blocking($fp, true);
+            stream_set_timeout($fp, $timeout);
+            @fwrite($fp, $out);
+            $status = stream_get_meta_data($fp);
+            if (!$status['timed_out']) {
+                while (!feof($fp) && !$fpflag) {
+                    if (($header = @fgets($fp)) && ($header == "\r\n" ||  $header == "\n")) {
+                        break;
+                    }
+                }
+                if ($limit) {
+                    $return = stream_get_contents($fp, $limit);
+                } else {
+                    $return = stream_get_contents($fp);
+                }
+            }
+            @fclose($fp);
+            return $return;
+        }
+    }
+    $seo_info = array();
+    $seo_info = $dsql->GetOne("SELECT * FROM `#@__plus_seoinfo` ORDER BY id DESC");
+    $now = time();
+    if ( empty($seo_info) OR $now - $seo_info['create_time'] > 60*60*6 )
+    {
+        $site = str_replace(array("http://",'/'),'',$cfg_basehost);
+
+        $url = "http://www.alexa.com/siteinfo/{$site}";
+    	$html = dedeseo_http_send($url);
+    	//var_dump($html);exit;
+    	if ( preg_match("#API at http://aws.amazon.com/awis -->(.*)</strong>#isU",$html,$matches) )
+        {
+            $seo_info['alexa_num'] = isset($matches[1])? trim($matches[1]) : 0;
+        }
+        $seo_info['alexa_num'] = empty($seo_info['alexa_num'])? 0 : $seo_info['alexa_num'];
+    	if ( preg_match("#Flag'><strong class=\"metrics-data align-vmiddle\">(.*)</strong>#isU",$html,$matches) )
+        {
+            $seo_info['alexa_area_num'] = isset($matches[1])? trim($matches[1]) : 0;
+        }
+        $seo_info['alexa_area_num'] = empty($seo_info['alexa_area_num'])? 0 : $seo_info['alexa_area_num'];
+        
+        $url = "http://www.baidu.com/s?wd=site:{$site}";
+    	$html = Html2Text(dedeseo_http_send($url));
+    	if ( preg_match("#ç»“æœæ•°çº¦([\d]+)ä¸ª#",$html,$matches) )
+        {
+            $seo_info['baidu_count'] = isset($matches[1])? $matches[1] : 0;
+        }
+    	if (empty($seo_info['baidu_count']) AND preg_match("#ç½‘ç«™å…±æœ‰([\d, ]+)ä¸ª#",$html,$matches) )
+        {
+            $seo_info['baidu_count'] = isset($matches[1])? trim($matches[1]) : 0;
+        }
+        $seo_info['baidu_count'] = empty($seo_info['baidu_count'])? 0 : $seo_info['baidu_count'];
+
+        $url = "http://www.sogou.com/web?query=site:{$site}";
+    	$html = Html2Text(dedeseo_http_send($url));
+    	if ( preg_match("#ç»“æœæ•°çº¦([\d]+)ä¸ª#",$html,$matches) )
+        {
+            $seo_info['sogou_count'] = isset($matches[1])? $matches[1] : 0;
+        }
+    	if (empty($seo_info['sogou_count']) AND preg_match("#æ‰¾åˆ°çº¦([\d, ]+)æ¡ç»“æœ#",$html,$matches) )
+        {
+            $seo_info['sogou_count'] = isset($matches[1])? trim($matches[1]) : 0;
+        }
+        $seo_info['sogou_count'] = empty($seo_info['sogou_count'])? 0 : $seo_info['sogou_count'];
+
+        $url = "http://www.haosou.com/s?q=site%3A{$site}";
+    	$html = Html2Text(dedeseo_http_send($url));
+    	if ( preg_match("#ç»“æœæ•°çº¦([\d]+)ä¸ª#",$html,$matches) )
+        {
+            $seo_info['haosou360_count'] = isset($matches[1])? $matches[1] : 0;
+        }
+    	if (empty($seo_info['haosou360_count']) AND preg_match("#ç»“æœçº¦([\d, ]+)ä¸ª#",$html,$matches) )
+        {
+            $seo_info['haosou360_count'] = isset($matches[1])? trim($matches[1]) : 0;
+        }
+        $seo_info['haosou360_count'] = empty($seo_info['haosou360_count'])? 0 : $seo_info['haosou360_count'];
+        
+
+        $in_query = "INSERT INTO `#@__plus_seoinfo` (`create_time`, `alexa_num`, `alexa_area_num`, `baidu_count`, `sogou_count`, `haosou360_count`) VALUES ({$now}, '{$seo_info['alexa_num']}', '{$seo_info['alexa_area_num']}', '{$seo_info['baidu_count']}', '{$seo_info['sogou_count']}', '{$seo_info['haosou360_count']}');";
+        $dsql->ExecuteNoneQuery($in_query);
+    }
+    $inff=array(
+        'alexa_num'=>'Alexaå…¨çƒæ’å',
+        'alexa_area_num'=>'Alexaåœ°åŒºæ’å',
+        'baidu_count'=>'ç™¾åº¦æ”¶å½•',
+        'sogou_count'=>'æœç‹—æ”¶å½•',
+        'haosou360_count'=>'360æ”¶å½•',
+    );
+?>
+<table width="100%" class="dboxtable">
+    <tbody>
+<?php
+    foreach( $seo_info as $key => $value )
+    {
+        if ( $key=='id' OR $key=='create_time' ) continue;
+?>
+
+    <tr>
+        <td width="50%" class="nline" style="text-align:left"> <?php
+            echo $inff[$key];
+        ?>
+        ï¼š </td>
+        <td class="nline" style="text-align:left"> <?php
+            echo $value;
+        ?>
+         </td>
+    </tr>
+<?php
+}
+?>
+
+    </tbody></table>
+<?php
+    
+	exit;
 }
 ?>
        

@@ -1,8 +1,8 @@
 <?php
 /**
- * ÎÄµµ´¦Àí
+ * æ–‡æ¡£å¤„ç†
  *
- * @version        $Id: archives_do.php 1 8:26 2010Äê7ÔÂ12ÈÕZ tianya $
+ * @version        $Id: archives_do.php 1 8:26 2010å¹´7æœˆ12æ—¥Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -17,13 +17,13 @@ $ENV_GOBACK_URL = (empty($_COOKIE['ENV_GOBACK_URL']) ? 'content_list.php' : $_CO
 
 if(empty($dopost))
 {
-    ShowMsg('¶Ô²»Æğ£¬ÄãÃ»Ö¸¶¨ÔËĞĞ²ÎÊı£¡','-1');
+    ShowMsg('å¯¹ä¸èµ·ï¼Œä½ æ²¡æŒ‡å®šè¿è¡Œå‚æ•°ï¼','-1');
     exit();
 }
 $aid = isset($aid) ? preg_replace("#[^0-9]#", '', $aid) : '';
 
 /*--------------------------
-//±à¼­ÎÄµµ
+//ç¼–è¾‘æ–‡æ¡£
 function editArchives(){ }
 ---------------------------*/
 if($dopost=='editArchives')
@@ -40,14 +40,14 @@ if($dopost=='editArchives')
     exit();
 }
 /*--------------------------
-//ä¯ÀÀÎÄµµ
+//æµè§ˆæ–‡æ¡£
 function viewArchives(){ }
 ---------------------------*/
 else if($dopost=="viewArchives")
 {
     $aid = preg_replace("#[^0-9]#", '', $aid);
 
-    //»ñÈ¡Ö÷±íĞÅÏ¢
+    //è·å–ä¸»è¡¨ä¿¡æ¯
     $query = "SELECT arc.*,ch.maintable,ch.addtable,ch.issystem,ch.editcon,
               tp.typedir,tp.typename,tp.corank,tp.namerule,tp.namerule2,tp.ispart,tp.moresite,tp.sitepath,tp.siteurl
            FROM `#@__arctiny` arc
@@ -103,7 +103,7 @@ else if($dopost=="viewArchives")
     exit();
 }
 /*--------------------------
-//Òì²½ÉÏ´«ËõÂÔÍ¼
+//å¼‚æ­¥ä¸Šä¼ ç¼©ç•¥å›¾
 function uploadLitpic(){ }
 ---------------------------*/
 else if($dopost=="uploadLitpic")
@@ -113,21 +113,21 @@ else if($dopost=="uploadLitpic")
     {
         $msg = "<script language='javascript'>
                 parent.document.getElementById('uploadwait').style.display = 'none';
-                alert('ÄãÃ»Ö¸¶¨ÒªÉÏ´«µÄÎÄ¼ş»òÎÄ¼ş´óĞ¡³¬¹ıÏŞÖÆ£¡');
+                alert('ä½ æ²¡æŒ‡å®šè¦ä¸Šä¼ çš„æ–‡ä»¶æˆ–æ–‡ä»¶å¤§å°è¶…è¿‡é™åˆ¶ï¼');
             </script>";
     }
     else if($upfile=='-2')
     {
         $msg = "<script language='javascript'>
                 parent.document.getElementById('uploadwait').style.display = 'none';
-                alert('ÉÏ´«ÎÄ¼şÊ§°Ü£¬Çë¼ì²éÔ­Òò£¡');
+                alert('ä¸Šä¼ æ–‡ä»¶å¤±è´¥ï¼Œè¯·æ£€æŸ¥åŸå› ï¼');
             </script>";
     }
     else if($upfile=='0')
     {
         $msg = "<script language='javascript'>
                 parent.document.getElementById('uploadwait').style.display = 'none';
-                alert('ÎÄ¼şÀàĞÍ²»ÕıÈ·£¡');
+                alert('æ–‡ä»¶ç±»å‹ä¸æ­£ç¡®ï¼');
             </script>";
     }
     else
@@ -156,7 +156,7 @@ else if($dopost=="uploadLitpic")
     exit();
 }
 /*--------------------------
-//ÍÆ¼öÎÄµµ
+//æ¨èæ–‡æ¡£
 function commendArchives(){ }
 ---------------------------*/
 else if($dopost=="commendArchives")
@@ -168,7 +168,7 @@ else if($dopost=="commendArchives")
     }
     if($qstr=='')
     {
-        ShowMsg("²ÎÊıÎŞĞ§£¡",$ENV_GOBACK_URL);
+        ShowMsg("å‚æ•°æ— æ•ˆï¼",$ENV_GOBACK_URL);
         exit();
     }
     $arcids = preg_replace("#[^0-9,]#", '', preg_replace("#`#", ',', $qstr));
@@ -196,12 +196,12 @@ else if($dopost=="commendArchives")
             $dsql->ExecuteNoneQuery(" UPDATE `{$maintable}` SET `flag`='$flag' WHERE aid='{$aid}' ");
         }
     }
-    ShowMsg("³É¹¦°ÑËùÑ¡µÄÎÄµµÉèÎªÍÆ¼ö£¡",$ENV_GOBACK_URL);
+    ShowMsg("æˆåŠŸæŠŠæ‰€é€‰çš„æ–‡æ¡£è®¾ä¸ºæ¨èï¼",$ENV_GOBACK_URL);
     exit();
 }
 
 /*--------------------------
-//Éú³ÉHTML
+//ç”ŸæˆHTML
 function makeArchives();
 ---------------------------*/
 else if($dopost=="makeArchives")
@@ -211,7 +211,7 @@ else if($dopost=="makeArchives")
     
     if($qstr=='')
     {
-        ShowMsg('²ÎÊıÎŞĞ§£¡',$ENV_GOBACK_URL);
+        ShowMsg('å‚æ•°æ— æ•ˆï¼',$ENV_GOBACK_URL);
         exit();
     }
     require_once(DEDEADMIN.'/inc/inc_archives_functions.php');
@@ -222,11 +222,11 @@ else if($dopost=="makeArchives")
         $i++;
         $pageurl = MakeArt($aid,false);
     }
-    ShowMsg("³É¹¦¸üĞÂÖ¸¶¨ $i ¸öÎÄ¼ş...",$ENV_GOBACK_URL);
+    ShowMsg("æˆåŠŸæ›´æ–°æŒ‡å®š $i ä¸ªæ–‡ä»¶...",$ENV_GOBACK_URL);
     exit();
 }
 /*--------------------------
-//ÉóºËÎÄµµ
+//å®¡æ ¸æ–‡æ¡£
 function checkArchives() {   }
 ---------------------------*/
 else if($dopost=="checkArchives")
@@ -236,7 +236,7 @@ else if($dopost=="checkArchives")
     if( !empty($aid) && empty($qstr) ) $qstr = $aid;
     if($qstr=='')
     {
-        ShowMsg("²ÎÊıÎŞĞ§£¡",$ENV_GOBACK_URL);
+        ShowMsg("å‚æ•°æ— æ•ˆï¼",$ENV_GOBACK_URL);
         exit();
     }
     $arcids = preg_replace("#[^0-9,]#", '', preg_replace("#`#", ',', $qstr));
@@ -262,11 +262,11 @@ else if($dopost=="checkArchives")
         $dsql->ExecuteNoneQuery("UPDATE `#@__taglist` SET arcrank='0' WHERE aid='$aid' "); 
         $pageurl = MakeArt($aid,false);
     }
-    ShowMsg("³É¹¦ÉóºËÖ¸¶¨µÄÎÄµµ£¡",$ENV_GOBACK_URL);
+    ShowMsg("æˆåŠŸå®¡æ ¸æŒ‡å®šçš„æ–‡æ¡£ï¼",$ENV_GOBACK_URL);
     exit();
 }
 /*--------------------------
-//É¾³ıÎÄµµ
+//åˆ é™¤æ–‡æ¡£
 function delArchives(){ }
 ---------------------------*/
 else if($dopost=="delArchives")
@@ -283,7 +283,7 @@ else if($dopost=="delArchives")
         }
         if($qstr=='')
         {
-            ShowMsg("²ÎÊıÎŞĞ§£¡",$ENV_GOBACK_URL);
+            ShowMsg("å‚æ•°æ— æ•ˆï¼",$ENV_GOBACK_URL);
             exit();
         }
         $qstrs = explode("`",$qstr);
@@ -300,21 +300,21 @@ else if($dopost=="delArchives")
                 $okaids[$aid] = 1;
             }
         }
-        ShowMsg("³É¹¦É¾³ıÖ¸¶¨µÄÎÄµµ£¡",$ENV_GOBACK_URL);
+        ShowMsg("æˆåŠŸåˆ é™¤æŒ‡å®šçš„æ–‡æ¡£ï¼",$ENV_GOBACK_URL);
         exit();
     }
 
     else
     {
-        $wintitle = "ÎÄµµ¹ÜÀí-É¾³ıÎÄµµ";
-        $wecome_info = "<a href='".$ENV_GOBACK_URL."'>ÎÄµµ¹ÜÀí</a>::É¾³ıÎÄµµ";
+        $wintitle = "æ–‡æ¡£ç®¡ç†-åˆ é™¤æ–‡æ¡£";
+        $wecome_info = "<a href='".$ENV_GOBACK_URL."'>æ–‡æ¡£ç®¡ç†</a>::åˆ é™¤æ–‡æ¡£";
         $win = new OxWindow();
         $win->Init("archives_do.php","js/blank.js","POST");
         $win->AddHidden("fmdo","yes");
         $win->AddHidden("dopost",$dopost);
         $win->AddHidden("qstr",$qstr);
         $win->AddHidden("aid",$aid);
-        $win->AddTitle("ÄãÈ·ÊµÒªÉ¾³ı¡° $qstr ºÍ $aid ¡±ÕâĞ©ÎÄµµ£¿");
+        $win->AddTitle("ä½ ç¡®å®è¦åˆ é™¤â€œ $qstr å’Œ $aid â€è¿™äº›æ–‡æ¡£ï¼Ÿ");
         $winform = $win->GetWindow("ok");
         $win->Display();
     }
@@ -335,15 +335,15 @@ else if($dopost=='moveArchives')
         $tl = new TypeLink($aid);
         $typeOptions = $tl->GetOptionArray(0, $admin_catalogs, $channelid);
         $typeOptions = "<select name='totype' style='width:90%'>
-        <option value='0'>ÇëÑ¡ÔñÒÆ¶¯µ½µÄÎ»ÖÃ...</option>\r\n
+        <option value='0'>è¯·é€‰æ‹©ç§»åŠ¨åˆ°çš„ä½ç½®...</option>\r\n
         $typeOptions
         </select>";
         
-        //Êä³öAJAX¿ÉÒÆ¶¯´°Ìå
+        //è¾“å‡ºAJAXå¯ç§»åŠ¨çª—ä½“
         $divname = 'moveArchives';
         echo "<div class='title' onmousemove=\"DropMoveHand('{$divname}', 225);\" onmousedown=\"DropStartHand();\" onmouseup=\"DropStopHand();\">\r\n";
-        echo "    <div class='titLeft'>ÒÆ¶¯ÎÄµµ</div>\r\n";
-        echo "    <div class='titRight'><img src='images/ico-close.gif' style='cursor:pointer;' onclick='HideObj(\"{$divname}\");ChangeFullDiv(\"hide\");' alt='¹Ø±Õ' title='¹Ø±Õ' /></div>\r\n";
+        echo "    <div class='titLeft'>ç§»åŠ¨æ–‡æ¡£</div>\r\n";
+        echo "    <div class='titRight'><img src='images/ico-close.gif' style='cursor:pointer;' onclick='HideObj(\"{$divname}\");ChangeFullDiv(\"hide\");' alt='å…³é—­' title='å…³é—­' /></div>\r\n";
         echo "</div>\r\n";
         echo "<form name='quickeditform' action='archives_do.php' method='post'>\r\n";
         echo "<input type='hidden' name='dopost' value='{$dopost}' />\r\n";
@@ -351,17 +351,17 @@ else if($dopost=='moveArchives')
         echo "<table width='100%' style='margin-top:6px;z-index:9000;'>\r\n";
 ?>
 <tr height='28'>
-    <td width="80" class='bline'>&nbsp;Ä¿±êÀ¸Ä¿£º</td>
+    <td width="80" class='bline'>&nbsp;ç›®æ ‡æ ç›®ï¼š</td>
     <td class='bline'>
     <?php echo $typeOptions; ?>
     </td>
 </tr>
 <tr height='32'>
-    <td width="80" class='bline'>&nbsp;ÎÄµµID£º</td>
+    <td width="80" class='bline'>&nbsp;æ–‡æ¡£IDï¼š</td>
     <td class='bline'>
         <input type='text' name='tmpids' value="<?php echo $qstr; ?>" style='width:310px;overflow:hidden;' />
         <br />
-        ÒÆ¶¯µ½µÄÄ¿±êÀ¸Ä¿±ØĞëºÍÑ¡¶¨µÄÎÄµµÆµµÀÀàĞÍÒ»ÖÂ£¬·ñÔò³ÌĞò»á×Ô¶¯ÎğÂÔ²»·ûºÏµÄÎÄµµ¡£
+        ç§»åŠ¨åˆ°çš„ç›®æ ‡æ ç›®å¿…é¡»å’Œé€‰å®šçš„æ–‡æ¡£é¢‘é“ç±»å‹ä¸€è‡´ï¼Œå¦åˆ™ç¨‹åºä¼šè‡ªåŠ¨å‹¿ç•¥ä¸ç¬¦åˆçš„æ–‡æ¡£ã€‚
     </td>
 </tr>
 <tr height='32'>
@@ -375,7 +375,7 @@ else if($dopost=='moveArchives')
 </table>
 </form>
 <?php
-    //AJAX´°Ìå½áÊø
+    //AJAXçª—ä½“ç»“æŸ
     }
     else
     {
@@ -384,19 +384,19 @@ else if($dopost=='moveArchives')
         $idtype = "id";
         if(!is_array($typeInfos))
         {
-            ShowMsg('²ÎÊı´íÎó£¡','-1');
+            ShowMsg('å‚æ•°é”™è¯¯ï¼','-1');
             exit();
         }
         if($typeInfos['ispart']!=0)
         {
-            ShowMsg('ÎÄµµ±£´æµÄÀ¸Ä¿±ØĞëÎª×îÖÕÁĞ±íÀ¸Ä¿£¡','-1');
+            ShowMsg('æ–‡æ¡£ä¿å­˜çš„æ ç›®å¿…é¡»ä¸ºæœ€ç»ˆåˆ—è¡¨æ ç›®ï¼','-1');
             exit();
         }
         if(empty($typeInfos['addtable']))
         {
             $typeInfos['maintable'] = '#@__archives';
         }
-        //Ôö¼Óµ¥±íÄ£ĞÍÅĞ¶Ï
+        //å¢åŠ å•è¡¨æ¨¡å‹åˆ¤æ–­
         if($typeInfos['issystem'] == -1)
         {
             $typeInfos['maintable'] = $typeInfos['addtable'];
@@ -419,18 +419,18 @@ else if($dopost=='moveArchives')
                 $j++;
             }
         }
-        //¸üĞÂHTML
+        //æ›´æ–°HTML
         foreach($okids as $aid)
         {
             $arc = new Archives($aid);
             $arc->MakeHtml();
         }
-        ShowMsg("³É¹¦ÒÆ¶¯ $j ¸öÎÄµµ£¡", $ENV_GOBACK_URL);
+        ShowMsg("æˆåŠŸç§»åŠ¨ $j ä¸ªæ–‡æ¡£ï¼", $ENV_GOBACK_URL);
         exit();
     }
 }
 /*-----------------------------
-//»¹Ô­ÎÄµµ
+//è¿˜åŸæ–‡æ¡£
 function RbReturnArchives(){ }
 ------------------------------*/
 else if($dopost=='return')
@@ -442,7 +442,7 @@ else if($dopost=='return')
 
     if($qstr=='')
     {
-        ShowMsg("²ÎÊıÎŞĞ§£¡","recycling.php");
+        ShowMsg("å‚æ•°æ— æ•ˆï¼","recycling.php");
         exit();
     }
     $qstrs = explode("`", $qstr);
@@ -451,11 +451,11 @@ else if($dopost=='return')
         $dsql->ExecuteNoneQuery("UPDATE `#@__archives` SET arcrank='-1',ismake='0' WHERE id='$aid'");
         $dsql->ExecuteNoneQuery("UPDATE `#@__arctiny` SET `arcrank` = '-1' WHERE id = '$aid'; ");
     }
-    ShowMsg("³É¹¦»¹Ô­Ö¸¶¨µÄÎÄµµ£¡","recycling.php");
+    ShowMsg("æˆåŠŸè¿˜åŸæŒ‡å®šçš„æ–‡æ¡£ï¼","recycling.php");
     exit();
 }
 /*-----------------------------
-//Çå¿ÕÎÄµµ
+//æ¸…ç©ºæ–‡æ¡£
 function RbClearArchives(){ }
 ------------------------------*/
 else if($dopost=='clear')
@@ -470,7 +470,7 @@ else if($dopost=='clear')
         if( !empty($aid) && empty($qstr) ) $qstr = $aid;
         if($qstr=='')
         {
-            ShowMsg("²ÎÊıÎŞĞ§£¡","recycling.php");
+            ShowMsg("å‚æ•°æ— æ•ˆï¼","recycling.php");
             exit();
         }
         $qstrs = explode(",", $qstr);
@@ -487,7 +487,7 @@ else if($dopost=='clear')
                 $okaids[$qstr] = 1;
             }
         }
-        ShowMsg("³É¹¦É¾³ıÖ¸¶¨µÄÎÄµµ£¡","recycling.php");
+        ShowMsg("æˆåŠŸåˆ é™¤æŒ‡å®šçš„æ–‡æ¡£ï¼","recycling.php");
         exit();
     }
     else
@@ -503,11 +503,11 @@ else if($dopost=='clear')
         $num = $dsql->GetTotalRow();
         if(empty($num))
         {
-            ShowMsg("¶Ô²»Æğ£¬Î´·¢ÏÖÏà¹ØÎÄµµ£¡","recycling.php");
+            ShowMsg("å¯¹ä¸èµ·ï¼Œæœªå‘ç°ç›¸å…³æ–‡æ¡£ï¼","recycling.php");
             exit();
         }
-        $wintitle = "ÎÄµµ¹ÜÀí-Çå¿ÕËùÓĞÎÄµµ";
-        $wecome_info = "<a href='recycling.php'>ÎÄµµ»ØÊÕÕ¾</a>::Çå¿ÕËùÓĞÎÄµµ";
+        $wintitle = "æ–‡æ¡£ç®¡ç†-æ¸…ç©ºæ‰€æœ‰æ–‡æ¡£";
+        $wecome_info = "<a href='recycling.php'>æ–‡æ¡£å›æ”¶ç«™</a>::æ¸…ç©ºæ‰€æœ‰æ–‡æ¡£";
         $win = new OxWindow();
         $win->Init("archives_do.php","js/blank.js","POST");
         $win->AddHidden("fmdo","yes");
@@ -515,13 +515,13 @@ else if($dopost=='clear')
         $win->AddHidden("qstr",$qstr);
         $win->AddHidden("aid",$aid);
         $win->AddHidden("recycle",$recycle);
-        $win->AddTitle("±¾´Î²Ù×÷½«Çå¿Õ»ØÊÕÕ¾<font color='#FF0000'>ËùÓĞ¹² $num ÆªÎÄµµ</font><br>ÄãÈ·ÊµÒªÓÀ¾ÃÉ¾³ı¡° $qstr ¡±ÕâĞ©ÎÄµµ£¿");
+        $win->AddTitle("æœ¬æ¬¡æ“ä½œå°†æ¸…ç©ºå›æ”¶ç«™<font color='#FF0000'>æ‰€æœ‰å…± $num ç¯‡æ–‡æ¡£</font><br>ä½ ç¡®å®è¦æ°¸ä¹…åˆ é™¤â€œ $qstr â€è¿™äº›æ–‡æ¡£ï¼Ÿ");
         $winform = $win->GetWindow("ok");
         $win->Display();
     }
 }
 /*-----------------------------
-//Çå³ıÎÄµµ
+//æ¸…é™¤æ–‡æ¡£
 function RbDelArchives(){ }
 ------------------------------*/
 else if($dopost=='del')
@@ -536,7 +536,7 @@ else if($dopost=='del')
         if( !empty($aid) && empty($qstr) ) $qstr = $aid;
         if($qstr=='')
         {
-            ShowMsg("²ÎÊıÎŞĞ§£¡","recycling.php");
+            ShowMsg("å‚æ•°æ— æ•ˆï¼","recycling.php");
             exit();
         }
         $qstrs = explode("`", $qstr);
@@ -553,14 +553,14 @@ else if($dopost=='del')
                 $okaids[$aid] = 1;
             }
         }
-        ShowMsg("³É¹¦É¾³ıÖ¸¶¨µÄÎÄµµ£¡","recycling.php");
+        ShowMsg("æˆåŠŸåˆ é™¤æŒ‡å®šçš„æ–‡æ¡£ï¼","recycling.php");
         exit();
     }
 
     else
     {
-        $wintitle = "ÎÄµµ¹ÜÀí-É¾³ıÎÄµµ";
-        $wecome_info = "<a href='recycling.php'>ÎÄµµ¹ÜÀí</a>::É¾³ıÎÄµµ";
+        $wintitle = "æ–‡æ¡£ç®¡ç†-åˆ é™¤æ–‡æ¡£";
+        $wecome_info = "<a href='recycling.php'>æ–‡æ¡£ç®¡ç†</a>::åˆ é™¤æ–‡æ¡£";
         $win = new OxWindow();
         $win->Init("archives_do.php","js/blank.js","POST");
         $win->AddHidden("fmdo","yes");
@@ -568,13 +568,13 @@ else if($dopost=='del')
         $win->AddHidden("qstr",$qstr);
         $win->AddHidden("aid",$aid);
         $win->AddHidden("recycle",$recycle);
-        $win->AddTitle("ÄãÈ·ÊµÒªÓÀ¾ÃÉ¾³ı¡° $qstr ºÍ $aid ¡±ÕâĞ©ÎÄµµ£¿");
+        $win->AddTitle("ä½ ç¡®å®è¦æ°¸ä¹…åˆ é™¤â€œ $qstr å’Œ $aid â€è¿™äº›æ–‡æ¡£ï¼Ÿ");
         $winform = $win->GetWindow("ok");
         $win->Display();
     }
 }
 /*-----------------------------
-//¿ìËÙ±à¼­
+//å¿«é€Ÿç¼–è¾‘
 function quickEdit(){ }
 ------------------------------*/
 else if($dopost=='quickEdit')
@@ -588,8 +588,8 @@ else if($dopost=='quickEdit')
     $arcRow = $dsql->GetOne($query);
     $divname = 'quickEdit';
     echo "<div class='title' onmousemove=\"DropMoveHand('{$divname}', 225);\" onmousedown=\"DropStartHand();\" onmouseup=\"DropStopHand();\">\r\n";
-    echo "    <div class='titLeft'>¿ìËÙÊôĞÔ±à¼­</div>\r\n";
-    echo "    <div class='titRight'><img src='images/ico-close.gif' style='cursor:pointer;' onclick='HideObj(\"{$divname}\");ChangeFullDiv(\"hide\");' alt='¹Ø±Õ' title='¹Ø±Õ' /></div>\r\n";
+    echo "    <div class='titLeft'>å¿«é€Ÿå±æ€§ç¼–è¾‘</div>\r\n";
+    echo "    <div class='titRight'><img src='images/ico-close.gif' style='cursor:pointer;' onclick='HideObj(\"{$divname}\");ChangeFullDiv(\"hide\");' alt='å…³é—­' title='å…³é—­' /></div>\r\n";
     echo "</div>\r\n";
     echo "<form name='quickeditform' action='archives_do.php?dopost=quickEditSave&aid={$aid}' method='post'>\r\n";
     echo "<input type='hidden' name='addtable' value='{$arcRow['addtable']}' />\r\n";
@@ -597,19 +597,19 @@ else if($dopost=='quickEdit')
     echo "<table width='100%' style='margin-top:6px;z-index:9000;'>\r\n";
 ?>
 <tr height='32'>
-    <td width="80" class='bline'>&nbsp;ËùÊôÀ¸Ä¿£º</td>
+    <td width="80" class='bline'>&nbsp;æ‰€å±æ ç›®ï¼š</td>
     <td class='bline'>
         <?php
             $typeOptions = GetOptionList($arcRow['typeid'],$cuserLogin->getUserChannel(), $arcRow['channel']);
             echo "<select name='typeid' style='width:70%'>\r\n";
-            if($arcRow["typeid"]=="0") echo "<option value='0' selected>ÇëÑ¡ÔñÀ¸Ä¿...</option>\r\n";
+            if($arcRow["typeid"]=="0") echo "<option value='0' selected>è¯·é€‰æ‹©æ ç›®...</option>\r\n";
             echo $typeOptions;
             echo "</select>";
         ?>
     </td>
 </tr>
 <tr height='28'>
-    <td width="80" class='bline'>&nbsp;Êô ĞÔ£º</td>
+    <td width="80" class='bline'>&nbsp;å± æ€§ï¼š</td>
     <td class='bline'>
     <input type='hidden' name='oldflag' value='<?php echo $arcRow['flag']; ?>' />
     <?php
@@ -627,19 +627,19 @@ else if($dopost=='quickEdit')
     </td>
 </tr>
 <tr height='32'>
-    <td width="80" class='bline'>&nbsp;±ê Ìâ£º</td>
+    <td width="80" class='bline'>&nbsp;æ ‡ é¢˜ï¼š</td>
     <td class='bline'>
         <input name="title" type="text" id="title" value="<?php echo $arcRow['title']; ?>" style="width:90%" />
     </td>
 </tr>
 <tr height='32'>
-    <td width="80" class='bline'>&nbsp;¼òÂÔ±êÌâ£º</td>
+    <td width="80" class='bline'>&nbsp;ç®€ç•¥æ ‡é¢˜ï¼š</td>
     <td class='bline'>
         <input name="shorttitle" type="text" id="shorttitle" value="<?php echo $arcRow['shorttitle']; ?>" style="width:60%" />
     </td>
 </tr>
 <tr height='32'>
-    <td width="80" class='bline'>&nbsp;ÔÄ¶ÁÈ¨ÏŞ£º</td>
+    <td width="80" class='bline'>&nbsp;é˜…è¯»æƒé™ï¼š</td>
     <td class='bline'>
         <select name="arcrank" id="arcrank" style="width:120px">
     <option value='<?php echo $arcRow["arcrank"]?>'>
@@ -654,11 +654,11 @@ else if($dopost=='quickEdit')
     }
     ?>
     </select>
-    ĞèÒª½ğ±Ò£º<input name="money" type="text" id="money" value="<?php echo $arcRow["money"]; ?>" style="width:80px" />
+    éœ€è¦é‡‘å¸ï¼š<input name="money" type="text" id="money" value="<?php echo $arcRow["money"]; ?>" style="width:80px" />
     </td>
 </tr>
 <tr height='32'>
-    <td width="80" class='bline'>&nbsp;¹Ø¼ü×Ö£º</td>
+    <td width="80" class='bline'>&nbsp;å…³é”®å­—ï¼š</td>
     <td class='bline'>
         <input name="keywords" type="text" id="keywords" value="<?php echo $arcRow['keywords']; ?>" style="width:70%" />
     </td>
@@ -674,35 +674,35 @@ else if($dopost=='quickEdit')
 </table>
 </form>
 <?php
-//AJAX´°Ìå½áÊø
+//AJAXçª—ä½“ç»“æŸ
 }
 /*-----------------------------
-//±£´æ¿ìËÙ±à¼­µÄÄÚÈİ
+//ä¿å­˜å¿«é€Ÿç¼–è¾‘çš„å†…å®¹
 function quickEditSave(){ }
 ------------------------------*/
 else if($dopost=='quickEditSave')
 {
     require_once(DEDEADMIN.'/inc/inc_archives_functions.php');
-    //È¨ÏŞ¼ì²â
+    //æƒé™æ£€æµ‹
     if(!TestPurview('a_Edit'))
     {
         if(TestPurview('a_AccEdit'))
         {
-            CheckCatalog($typeid, "¶Ô²»Æğ£¬ÄãÃ»ÓĞ²Ù×÷À¸Ä¿ {$typeid} µÄÎÄµµÈ¨ÏŞ£¡");
+            CheckCatalog($typeid, "å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ“ä½œæ ç›® {$typeid} çš„æ–‡æ¡£æƒé™ï¼");
         }
         else
         {
             CheckArcAdmin($aid, $cuserLogin->getUserID());
         }
     }
-    $title = htmlspecialchars(cn_substrR($title, $cfg_title_maxlen));
+    $title = dede_htmlspecialchars(cn_substrR($title, $cfg_title_maxlen));
     $shorttitle = cn_substrR($shorttitle, 36);
     $keywords = trim(cn_substrR($keywords, 60));
     if(!TestPurview('a_Check,a_AccCheck,a_MyCheck')) $arcrank = -1;
 
     $adminid = $cuserLogin->getUserID();
     
-    //ÊôĞÔ´¦Àí
+    //å±æ€§å¤„ç†
     $flag = isset($flags) ? join(',', $flags) : '';
     if(!empty($flag))
     {
@@ -726,11 +726,11 @@ else if($dopost=='quickEditSave')
     keywords = '$keywords',
     dutyadmin = '$adminid'
     WHERE id = '$aid'; ";
-    //¸üĞÂÖ÷±í
+    //æ›´æ–°ä¸»è¡¨
     $dsql->ExecuteNoneQuery($query);
-    //¸üĞÂÎ¢±í
+    //æ›´æ–°å¾®è¡¨
     $dsql->ExecuteNoneQuery(" UPDATE `#@__arctiny` SET typeid='$typeid',arcrank='$arcrank' WHERE id='$aid' ");
-    //¸üĞÂ¸½¼Ó±í
+    //æ›´æ–°é™„åŠ è¡¨
     if($typeid != $oldtypeid)
     {
         $addtable = trim($addtable);
@@ -738,15 +738,15 @@ else if($dopost=='quickEditSave')
         else $addtable = preg_replace("#[^a-z0-9__#@-]#i", "", $addtable);
             $dsql->ExecuteNoneQuery(" UPDATE `$addtable` SET typeid='$typeid' WHERE aid='$aid' ");
       }
-    //¸üĞÂHTML
+    //æ›´æ–°HTML
     $artUrl = MakeArt($aid, TRUE, TRUE);
 
         $backurl = !empty($_COOKIE['ENV_GOBACK_URL']) ? $_COOKIE['ENV_GOBACK_URL'] : '-1';
-        ShowMsg('³É¹¦¸üĞÂÒ»ÆªÎÄµµµÄ»ù±¾ĞÅÏ¢£¡', $backurl);
+        ShowMsg('æˆåŠŸæ›´æ–°ä¸€ç¯‡æ–‡æ¡£çš„åŸºæœ¬ä¿¡æ¯ï¼', $backurl);
         exit();
 }
 /*--------------------------
-·ÖÎö²¢×Ô¶¯»ñÈ¡ÎÄµµ¹Ø¼ü´Ê
+åˆ†æå¹¶è‡ªåŠ¨è·å–æ–‡æ¡£å…³é”®è¯
 function makekw(){ }
 --------------------------*/
 else if($dopost=="makekw")
@@ -757,7 +757,7 @@ else if($dopost=="makekw")
 
     if($qstr=='')
     {
-        ShowMsg("²ÎÊıÎŞĞ§£¡", $ENV_GOBACK_URL);
+        ShowMsg("å‚æ•°æ— æ•ˆï¼", $ENV_GOBACK_URL);
         exit();
     }
     $sp = new SplitWord($cfg_soft_lang, $cfg_soft_lang);
@@ -767,7 +767,7 @@ else if($dopost=="makekw")
     $dsql->Execute();
     while($row = $dsql->GetArray())
     {
-        //Ìø¹ıÒÑ¾­ÓĞ¹Ø¼ü×ÖµÄÄÚÈİ
+        //è·³è¿‡å·²ç»æœ‰å…³é”®å­—çš„å†…å®¹
         if(trim($row['keywords']) !='' ) continue;
         
         $aid = $row['id'];
@@ -810,21 +810,21 @@ else if($dopost=="makekw")
             }
         }
 
-        $description = str_replace('¡¡', ' ', trim($description));
-        $description = str_replace('£Û', ' ', $description);
-        $description = str_replace('£İ', ' ', $description);
+        $description = str_replace('ã€€', ' ', trim($description));
+        $description = str_replace('ï¼»', ' ', $description);
+        $description = str_replace('ï¼½', ' ', $description);
         $description = preg_replace("#[ \r\n\t]{1,}#is", ' ', $description);
-        $description = str_replace('¹Ø¼ü×Ö', '', $description);
-        $description = str_replace('¹Ø¼ü´Ê', '', $description);
+        $description = str_replace('å…³é”®å­—', '', $description);
+        $description = str_replace('å…³é”®è¯', '', $description);
         $description = addslashes($description);
         $dsql->ExecuteNoneQuery(" UPDATE `#@__archives` SET `keywords`='$keywords',`description`='$description'  WHERE id='{$aid}' ");
     }
     $sp = null;
-    ShowMsg("³É¹¦·ÖÎöÖ¸¶¨ÎÄµµµÄ¹Ø¼ü´Ê£¡", $ENV_GOBACK_URL);
+    ShowMsg("æˆåŠŸåˆ†ææŒ‡å®šæ–‡æ¡£çš„å…³é”®è¯ï¼", $ENV_GOBACK_URL);
     exit();
 }
 /*--------------------------
-//ÅúÁ¿Ôö¼ÓÊôĞÔ
+//æ‰¹é‡å¢åŠ å±æ€§
 function attsAdd(){ }
 ---------------------------*/
 else if($dopost=='attsAdd')
@@ -834,12 +834,12 @@ else if($dopost=='attsAdd')
 
     if($qstr=='')
     {
-        ShowMsg("²ÎÊıÎŞĞ§£¡",$ENV_GOBACK_URL);
+        ShowMsg("å‚æ•°æ— æ•ˆï¼",$ENV_GOBACK_URL);
         exit();
     }
     if(empty($flagname))
     {
-        ShowMsg("±ØĞëÖ¸¶¨ÒªÌí¼ÓµÄÊôĞÔ£¡",$ENV_GOBACK_URL);
+        ShowMsg("å¿…é¡»æŒ‡å®šè¦æ·»åŠ çš„å±æ€§ï¼",$ENV_GOBACK_URL);
         exit();
     }
     $arcids = preg_replace("#[^0-9,]#", '', preg_replace("#`#", ',', $qstr));
@@ -867,11 +867,11 @@ else if($dopost=='attsAdd')
             $dsql->ExecuteNoneQuery(" UPDATE `{$maintable}` SET `flag`='$flag' WHERE aid='{$aid}' ");
         }
     }
-    ShowMsg("³É¹¦¶ÔÑ¡ÖĞÎÄµµÔö¼ÓÖ¸¶¨µÄÊôĞÔ£¡",$ENV_GOBACK_URL);
+    ShowMsg("æˆåŠŸå¯¹é€‰ä¸­æ–‡æ¡£å¢åŠ æŒ‡å®šçš„å±æ€§ï¼",$ENV_GOBACK_URL);
     exit();
 }
 /*--------------------------
-//ÅúÁ¿É¾³ıÊôĞÔ
+//æ‰¹é‡åˆ é™¤å±æ€§
 function attsDel(){ }
 ---------------------------*/
 else if($dopost=='attsDel')
@@ -880,12 +880,12 @@ else if($dopost=='attsDel')
     if( !empty($aid) && empty($qstr) ) $qstr = $aid;
     if($qstr=='')
     {
-        ShowMsg("²ÎÊıÎŞĞ§£¡", $ENV_GOBACK_URL);
+        ShowMsg("å‚æ•°æ— æ•ˆï¼", $ENV_GOBACK_URL);
         exit();
     }
     if(empty($flagname))
     {
-        ShowMsg("±ØĞëÖ¸¶¨ÒªÉ¾³ıµÄÊôĞÔ£¡", $ENV_GOBACK_URL);
+        ShowMsg("å¿…é¡»æŒ‡å®šè¦åˆ é™¤çš„å±æ€§ï¼", $ENV_GOBACK_URL);
         exit();
     }
     $arcids = preg_replace("#[^0-9,]#", '', preg_replace("#`#", ',', $qstr));
@@ -927,24 +927,24 @@ else if($dopost=='attsDel')
         $flag = trim(join(',', $okflags));
         $dsql->ExecuteNoneQuery(" UPDATE `{$maintable}` SET `flag`='$flag' WHERE {$idname}='{$aid}' ");
     }
-    ShowMsg("³É¹¦¶ÔÑ¡ÖĞÎÄµµÉ¾³ıÖ¸¶¨µÄÊôĞÔ£¡", $ENV_GOBACK_URL);
+    ShowMsg("æˆåŠŸå¯¹é€‰ä¸­æ–‡æ¡£åˆ é™¤æŒ‡å®šçš„å±æ€§ï¼", $ENV_GOBACK_URL);
     exit();
 }
 /*--------------------------
-//»ñµÃÅúÁ¿ÊôĞÔ´¦ÀíµÄAJAX´°Ìå
+//è·å¾—æ‰¹é‡å±æ€§å¤„ç†çš„AJAXçª—ä½“
 function attsDlg(){ }
 ---------------------------*/
 else if($dopost=='attsDlg')
 {
     if( !empty($aid) && empty($qstr) ) $qstr = $aid;
 
-    $dojobname = ($dojob=='attsDel' ? 'ÅúÁ¿É¾³ıÊôĞÔ' : 'ÅúÁ¿Ôö¼ÓÊôĞÔ');
+    $dojobname = ($dojob=='attsDel' ? 'æ‰¹é‡åˆ é™¤å±æ€§' : 'æ‰¹é‡å¢åŠ å±æ€§');
     AjaxHead();
-    //Êä³öAJAX¿ÉÒÆ¶¯´°Ìå
+    //è¾“å‡ºAJAXå¯ç§»åŠ¨çª—ä½“
     $divname = 'attsDlg';
     echo "<div class='title' onmousemove=\"DropMoveHand('{$divname}', 225);\" onmousedown=\"DropStartHand();\" onmouseup=\"DropStopHand();\">\r\n";
     echo "    <div class='titLeft'>{$dojobname}</div>\r\n";
-    echo "    <div class='titRight'><img src='images/ico-close.gif' style='cursor:pointer;' onclick='HideObj(\"{$divname}\");ChangeFullDiv(\"hide\");' alt='¹Ø±Õ' title='¹Ø±Õ' /></div>\r\n";
+    echo "    <div class='titRight'><img src='images/ico-close.gif' style='cursor:pointer;' onclick='HideObj(\"{$divname}\");ChangeFullDiv(\"hide\");' alt='å…³é—­' title='å…³é—­' /></div>\r\n";
     echo "</div>\r\n";
     echo "<form name='quickeditform' action='archives_do.php' method='post'>\r\n";
     echo "<input type='hidden' name='dopost' value='{$dojob}' />\r\n";
@@ -952,7 +952,7 @@ else if($dopost=='attsDlg')
     echo "<table width='100%' style='margin-top:6px;z-index:9000;'>\r\n";
 ?>
 <tr height='28'>
-    <td width="80" class='bline'>&nbsp;Êô ĞÔ£º</td>
+    <td width="80" class='bline'>&nbsp;å± æ€§ï¼š</td>
     <td class='bline'>
     <input type='hidden' name='oldflag' value='<?php echo $arcRow['flag']; ?>' />
     <?php
@@ -967,7 +967,7 @@ else if($dopost=='attsDlg')
     </td>
 </tr>
 <tr height='32'>
-    <td width="80" class='bline'>&nbsp;ÎÄµµID£º</td>
+    <td width="80" class='bline'>&nbsp;æ–‡æ¡£IDï¼š</td>
     <td class='bline'>
         <input type='text' name='tmpids' value="<?php echo $qstr; ?>" style='width:310px;overflow:hidden;' />
     </td>
@@ -983,7 +983,7 @@ else if($dopost=='attsDlg')
 </table>
 </form>
 <?php
-//AJAX´°Ìå½áÊø
+//AJAXçª—ä½“ç»“æŸ
 }
 /*------------------------
 function getCatMap() {  }
@@ -992,11 +992,11 @@ else if($dopost=='getCatMap')
 {
     require_once(DEDEINC.'/typeunit.class.selector.php');
     AjaxHead();
-    //Êä³öAJAX¿ÉÒÆ¶¯´°Ìå
+    //è¾“å‡ºAJAXå¯ç§»åŠ¨çª—ä½“
     $divname = 'getCatMap';
     echo "<div class='title' style='cursor:default;'>\r\n";
-    echo "    <div class='titLeft'>À¸Ä¿¿ìËÙÑ¡ÔñÆ÷</div>\r\n";
-    echo "    <div class='titRight'><img src='images/ico-close.gif' style='cursor:pointer;' onclick='HideObj(\"{$divname}\");ChangeFullDiv(\"hide\");' alt='¹Ø±Õ' title='¹Ø±Õ' /></div>\r\n";
+    echo "    <div class='titLeft'>æ ç›®å¿«é€Ÿé€‰æ‹©å™¨</div>\r\n";
+    echo "    <div class='titRight'><img src='images/ico-close.gif' style='cursor:pointer;' onclick='HideObj(\"{$divname}\");ChangeFullDiv(\"hide\");' alt='å…³é—­' title='å…³é—­' /></div>\r\n";
     echo "</div>\r\n";
     $tus = new TypeUnitSelector();
 ?>
@@ -1011,6 +1011,6 @@ else if($dopost=='getCatMap')
 </div>
 </form>
 <?php
-//AJAX´°Ìå½áÊø
+//AJAXçª—ä½“ç»“æŸ
 }
 ?>

@@ -1,0 +1,74 @@
+<div class="headbj">
+  <div class="headbj_mid">
+    <div class="logo" style=" margin-left:-32px; margin-top:15px;"><a href="/" title="{dede:global.cfg_webname/}"><img src="/skin/images/logo.png" alt="{dede:global.cfg_webname/}" width="283" height="56" /></a></div>
+    <div class="menu">
+      <div class="glable_nav">
+        <div id="nav-menu">
+          <div class="container">
+            <div class="outerbox">
+              <div class="innerbox clearfixmenu">
+                <div class="menu">
+                  <div class="glable_nav">
+                    <div id="nav-menu">
+                      <div class="container">
+                        <div class="outerbox">
+                          <div class="innerbox clearfixmenu">
+                            <ul class="menu">
+                              <!--11111-->
+                              <li class="stmenu">
+                                <div class="nav01"><a href="/" class="xialaguang nav\hover" title="首页"><span>首页 </span></a></div>
+                              </li>
+                              <!--11111--> 
+                              {dede:channelartlist typeid='top'}
+                              <li class="stmenu">
+                                <div class="nav01"><a href="{dede:field name='typeurl'/}" class="xialaguang" title="{dede:field name='typename'/}"><span> {dede:field name='typename'/} </span></a></div>
+                                <ul class="children clearfixmenu pngFix">
+                                  {dede:channel type='son' noself='yes'}
+                                  <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a></li>
+                                  {/dede:channel}
+                                </ul>
+                              </li>
+                              {/dede:channelartlist} 
+                              
+                              <!---<li class="overlay"></li>-->
+                            </ul>
+                            <script type="text/javascript">
+$('#nav-menu .menu > li').hover(function() {
+$(this).find('.children').animate({ opacity:'show', height:'show' },200);
+$(this).find('.xialaguang').addClass('navhover');
+}, function() {
+$('.children').stop(true,true).hide();
+$('.xialaguang').removeClass('navhover');
+}
+).slice(-1,-3).find('.children').addClass('sleft');
+</script> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- END 页脚包含 --> 
+                    <!--导航代码结束--> 
+                    
+                  </div>
+                </div>
+                <script type="text/javascript">
+$('#nav-menu .menu > li').hover(function() {
+$(this).find('.children').animate({ opacity:'show', height:'show' },200);
+$(this).find('.xialaguang').addClass('navhover');
+}, function() {
+$('.children').stop(true,true).hide();
+$('.xialaguang').removeClass('navhover');
+}
+).slice(-1,-3).find('.children').addClass('sleft');
+</script> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END 页脚包含 --> 
+        <!--导航代码结束--> 
+        
+      </div>
+    </div>
+  </div>
+</div>

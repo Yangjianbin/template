@@ -5,8 +5,8 @@ require_once(dirname(__FILE__)."/config.php");
 AjaxHead();
 if(!function_exists('TestWriteable'))
 {
-	// ¼ì²âÊÇ·ñ¿ÉĞ´
-	function TestWriteable($d, $c=TRUE)
+	// æ£€æµ‹æ˜¯å¦å¯å†™
+	function TestWriteable($d, $c=false)
 	{
 		$tfile = '_write_able.txt';
 		$d = preg_replace("/\/$/", '', $d);
@@ -30,7 +30,7 @@ if(!function_exists('TestWriteable'))
 
 if(!function_exists('TestExecuteable'))
 {
-	// ¼ì²éÊÇ·ñ¾ßÄ¿Â¼¿ÉÖ´ĞĞ
+	// æ£€æŸ¥æ˜¯å¦å…·ç›®å½•å¯æ‰§è¡Œ
 	function TestExecuteable($d='.', $siteuRL='', $rootDir='') {
 		$testStr = '<'.chr(0x3F).'p'.chr(hexdec(68)).chr(112)."\n\r";
 		$filename = md5($d).'.php';
@@ -91,11 +91,11 @@ if(!function_exists('PostHost'))
 
 if(!function_exists('TestAdminPWD'))
 {
-	//·µ»Ø½á¹û£¬-1£ºÃ»ÓĞ¸ü¸ÄÄ¬ÈÏ¹ÜÀíÔ±Ãû³Æ  -2£ºÃ»ÓĞ¸ü¸ÄÄ¬ÈÏ¹ÜÀíÔ±ÓÃ»§ÃûºÍÃÜÂë 0£ºÃ»ÓĞ·¢ÏÖÄ¬ÈÏÕËºÅ
+	//è¿”å›ç»“æœï¼Œ-1ï¼šæ²¡æœ‰æ›´æ”¹é»˜è®¤ç®¡ç†å‘˜åç§°  -2ï¼šæ²¡æœ‰æ›´æ”¹é»˜è®¤ç®¡ç†å‘˜ç”¨æˆ·åå’Œå¯†ç  0ï¼šæ²¡æœ‰å‘ç°é»˜è®¤è´¦å·
 	function TestAdminPWD() 
 	{
 		global $dsql;
-		// ²éÑ¯À¸Ä¿±íÈ·¶¨À¸Ä¿ËùÔÚµÄÄ¿Â¼
+		// æŸ¥è¯¢æ ç›®è¡¨ç¡®å®šæ ç›®æ‰€åœ¨çš„ç›®å½•
 		$sql = "SELECT usertype,userid,pwd FROM #@__admin WHERE `userid`='admin'";
 		$row = $dsql->GetOne($sql);
 		if(is_array($row))
@@ -114,7 +114,7 @@ if(!function_exists('TestAdminPWD'))
 
 if(!function_exists('IsWritable'))
 {
-	// ¼ì²âÊÇ·ñ¿ÉĞ´
+	// æ£€æµ‹æ˜¯å¦å¯å†™
 	function IsWritable($pathfile) {
 		$isDir = substr($pathfile,-1)=='/' ? true : false;
 		if ($isDir) {
@@ -127,7 +127,7 @@ if(!function_exists('IsWritable'))
 				return false;
 			}
 		}
-		//@chmod($pathfile,0777);
+		@chmod($pathfile,0777);
 		$fp = @fopen($pathfile,'ab');
 		if ($fp===false) return false;
 		fclose($fp);
@@ -136,54 +136,54 @@ if(!function_exists('IsWritable'))
 	}
 }
 
-// ¼ì²âÈ¨ÏŞ
+// æ£€æµ‹æƒé™
 $safeMsg = array();
-if(TestExecuteable(DEDEROOT.'/data',$cfg_basehost) || TestExecuteable(DEDEROOT.'/uploads',$cfg_basehost))
-{
-	$helpurl = "http://help.dedecms.com/install-use/server/2011/1109/2124.html";
-	$safeMsg[] = 'Ä¿Ç°data¡¢uploadsÓĞÖ´ĞĞ.phpÈ¨ÏŞ£¬·Ç³£Î£ÏÕ£¬ĞèÒªÁ¢¼´È¡ÏûÄ¿Â¼µÄÖ´ĞĞÈ¨ÏŞ£¡
-	<a href="testenv.php" title="È«Ãæ¼ì²â"><img src="images/btn_fullscan.gif" /></a>
-	<a href="'.$helpurl.'" style="color:blue;text-decoration:underline;" target="_blank">²é¿´ÈçºÎÈ¡Ïû</a>';
-}
+//if(TestExecuteable(DEDEROOT.'/data',$cfg_basehost) || TestExecuteable(DEDEROOT.'/uploads',$cfg_basehost))
+//{
+//	$helpurl = "http://help.dedecms.com/install-use/server/2011/1109/2124.html";
+//	$safeMsg[] = 'ç›®å‰dataã€uploadsæœ‰æ‰§è¡Œ.phpæƒé™ï¼Œéå¸¸å±é™©ï¼Œéœ€è¦ç«‹å³å–æ¶ˆç›®å½•çš„æ‰§è¡Œæƒé™ï¼
+//	<a href="testenv.php" title="å…¨é¢æ£€æµ‹"><img src="images/btn_fullscan.gif" /></a>
+//	<a href="'.$helpurl.'" style="color:blue;text-decoration:underline;" target="_blank">æŸ¥çœ‹å¦‚ä½•å–æ¶ˆ</a>';
+//}
 $dirname = str_replace('index_body.php', '', strtolower($_SERVER['PHP_SELF']));
 if(preg_match("#[\\|/]dede[\\|/]#", $dirname))
 {
-	$safeMsg[] = 'Ä¬ÈÏ¹ÜÀíÄ¿Â¼Îªdede£¬ĞèÒªÁ¢¼´½«Ëü¸üÃû£»';
+	$safeMsg[] = 'é»˜è®¤ç®¡ç†ç›®å½•ä¸ºdedeï¼Œéœ€è¦ç«‹å³å°†å®ƒæ›´åï¼›';
 }
 if(IsWritable(DEDEDATA.'/common.inc.php'))
 {
-	$safeMsg[] = 'Ç¿ÁÒ½¨Òédata/common.inc.phpÎÄ¼şÊôĞÔÉèÖÃÎª644£¨Linux/Unix£©»òÖ»¶Á£¨NT£©£»';
+	$safeMsg[] = 'å¼ºçƒˆå»ºè®®data/common.inc.phpæ–‡ä»¶å±æ€§è®¾ç½®ä¸º644ï¼ˆLinux/Unixï¼‰æˆ–åªè¯»ï¼ˆNTï¼‰ï¼›';
 }
 $rs = TestAdminPWD();
 if($rs < 0)
 {
-	$linkurl = "<a href='sys_admin_user.php' style='color:blue;text-decoration:underline;'>ÂíÉÏĞŞ¸Ä</a>";
+	$linkurl = "<a href='sys_admin_user.php' style='color:blue;text-decoration:underline;'>é©¬ä¸Šä¿®æ”¹</a>";
 	switch ($rs)
 	{
 		case -1:
-			$msg = "Ã»ÓĞ¸ü¸ÄÄ¬ÈÏ¹ÜÀíÔ±Ãû³Æadmin£¬½¨ÒéÄúĞŞ¸ÄÎªÆäËû¹ÜÀíÕËºÅ£¡{$linkurl}";
+			$msg = "æ²¡æœ‰æ›´æ”¹é»˜è®¤ç®¡ç†å‘˜åç§°adminï¼Œå»ºè®®æ‚¨ä¿®æ”¹ä¸ºå…¶ä»–ç®¡ç†è´¦å·ï¼{$linkurl}";
 			break;
 		case -2:
-			$msg = "Ã»ÓĞ¸ü¸ÄÄ¬ÈÏµÄ¹ÜÀíÔ±Ãû³ÆºÍÃÜÂë£¬Ç¿ÁÒ½¨ÒéÄú½øĞĞ¸ü¸Ä£¡{$linkurl}";
+			$msg = "æ²¡æœ‰æ›´æ”¹é»˜è®¤çš„ç®¡ç†å‘˜åç§°å’Œå¯†ç ï¼Œå¼ºçƒˆå»ºè®®æ‚¨è¿›è¡Œæ›´æ”¹ï¼{$linkurl}";
 			break;
 	}
 	$safeMsg[] = $msg;
 }
 
-if(PostHost($cfg_basehost.'/data/admin/ver.txt') === @file_get_contents(DEDEDATA.'/admin/ver.txt'))
-{
-	$helpurl = 'http://help.dedecms.com/install-use/apply/2011/1110/2129.html';
-	$safeMsg[] = '<font color="blue">Ç¿ÁÒ½¨Òé½«dataÄ¿Â¼°áÒÆµ½Web¸ùÄ¿Â¼ÒÔÍâ£»</font><a href="'.$helpurl.'" style="color:blue;text-decoration:underline;" target="_blank">²é¿´ÈçºÎ°áÇ¨</a>';
-}
+//if(PostHost($cfg_basehost.'/data/admin/ver.txt') === @file_get_contents(DEDEDATA.'/admin/ver.txt'))
+//{
+//	$helpurl = 'http://help.dedecms.com/install-use/apply/2011/1110/2129.html';
+//	$safeMsg[] = '<font color="blue">å¼ºçƒˆå»ºè®®å°†dataç›®å½•æ¬ç§»åˆ°Webæ ¹ç›®å½•ä»¥å¤–ï¼›</font><a href="'.$helpurl.'" style="color:blue;text-decoration:underline;" target="_blank">æŸ¥çœ‹å¦‚ä½•æ¬è¿</a>';
+//}
 ?>
 <?php
 if(count($safeMsg) > 0)
 {
 ?>
-<!--°²È«¼ì²âÌáÊ¾ -->
+<!--å®‰å…¨æ£€æµ‹æç¤º -->
 <div id="safemsg">
   <dl class="dbox" id="item1" style="margin-left:0.5%;margin-right:0.5%; width:97%">
-    <dt class='lside'><span class='l'><?php echo $cfg_soft_enname; ?>°²È«ÌáÊ¾</span></dt>
+    <dt class='lside'><span class='l'><?php echo $cfg_soft_enname; ?>å®‰å…¨æç¤º</span></dt>
     <dd>
       <div id='safelist'>
         <table width="98%" border="0" cellspacing="1" cellpadding="0" style="color:red">

@@ -1,8 +1,8 @@
 <?php
 /**
- * ��Աģ�͹���
+ * 会员模型管理
  *
- * @version        $Id: member_model_add.php 1 11:17 2010��7��19��Z tianya $
+ * @version        $Id: member_model_add.php 1 11:17 2010年7月19日Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -22,20 +22,20 @@ if(empty($action))
 } else {
     if(preg_match("#[^0-9-]#", $id) || empty($id))
     {
-        ShowMsg("<font color=red>'��Աģ��ID'</font>����Ϊ���֣�","-1");
+        ShowMsg("<font color=red>'会员模型ID'</font>必须为数字！","-1");
         exit();
     }
     if($table=="")
     {
-        ShowMsg("��������Ϊ�գ�","-1");
+        ShowMsg("表名不能为空！","-1");
         exit();
     }
     $state = isset($state) && is_numeric($state) ? $state : 0;
-    $name = htmlspecialchars($name);
+    $name = dede_htmlspecialchars($name);
     $row = $dsql->GetOne("SELECT * FROM #@__member_model WHERE id='$id' OR `table` LIKE '$table' OR name LIKE '$name' ");
     if(is_array($row))
     {
-        ShowMsg("���ܻ�Աģ�͵ġ�ID���������ơ������ݿ����Ѵ��ڣ������ظ�ʹ�ã�","-1");
+        ShowMsg("可能会员模型的‘ID’、‘名称’在数据库中已存在，不能重复使用！","-1");
         exit();
     }
     $query = "SHOW TABLES FROM {$dsql->dbName} ";
@@ -46,7 +46,7 @@ if(empty($action))
         if(empty($row[0])) $row[0] = '';
         if($table == $row[0])
         {
-            ShowMsg('ָ���ı������ݿ����ظ�', '-1');
+            ShowMsg('指定的表在数据库中重复', '-1');
             exit();
         }
     }
@@ -61,10 +61,10 @@ if(empty($action))
     if($dsql->ExecNoneQuery($sql)){
         $query = "INSERT INTO #@__member_model (`id`, `name`, `table`, `description`, `issystem`, `state`) VALUES ('$id', '$name', '$table', '$description', 0, '$state')";
         $dsql->ExecNoneQuery($query);
-        //���»�Աģ�ͻ���
+        //更新会员模型缓存
         UpDateMemberModCache();
-        ShowMsg('��Աģ�ʹ����ɹ��������������ֶ�', 'member_model_main.php');
+        ShowMsg('会员模型创建成功，请自行添加字段', 'member_model_main.php');
     }else{
-        ShowMsg('��Աģ�ʹ���ʧ��', '-1');
+        ShowMsg('会员模型创建失败', '-1');
     }
 }

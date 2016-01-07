@@ -1,0 +1,1 @@
+<a href="[field:typelink/]" title="返回列表"><img src="/skin/images/fhb.jpg" width="87" height="26" alt="返回列表" /></a>

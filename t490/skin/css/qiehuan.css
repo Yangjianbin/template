@@ -1,0 +1,117 @@
+﻿/*焦点图*/
+/* dede58.com 做最好的织梦模板 */
+.mod18 {
+	width: 607px;
+	height: 500px;
+	margin: 0 auto;
+	position: relative;
+ ba/ckground: #f7f7f7;
+overf/low:hidden;
+}
+.mod18 .btn {
+	position: absolute;
+	width: 24px;
+	height: 83px;
+	top: 410px;
+	cursor: pointer;
+	z-index: 99;
+	font-size: 50px;
+	font-weight: bold;
+}
+.mod18 .prev {
+	left:0;
+	background: url(../images/prevbtn.png) no-repeat;
+}
+.mod18 .next {
+	right:0;
+	background: url(../images/nextbtn.png) no-repeat;
+}
+.mod18 li {
+	float:left;
+}
+.mod18 .cf li {
+	position:relative;
+	color:#fff;
+}
+.mod18 .cf li a {
+	position:absolute;
+	left:0;
+	bottom:0;
+	height:46px;
+	line-height:46px;
+	color:#fff;
+	display:block;
+	width:97%;
+	background:url(../images/cpbg.png) repeat;
+	padding-left:3%;
+	font-size:12px;
+	overflow:hidden;
+}
+.mod18 .cf li span {
+	display:block;
+	width:640px;
+	position:absolute;
+	left:0;
+	bottom:0;
+	padding:10px 20px;
+	line-height:22px;
+	text-align:left;
+	background:rgba(0,0,0,0.6);
+filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0, startColorstr = "#60000000", endColorstr = "#60000000");
+}
+.mod18 .picBox {
+	height:398px;
+	position:relative;
+	overflow:hidden;
+}
+.mod18 .picBox ul {
+	height:398px;
+	position:absolute;
+}
+.mod18 .picBox li {
+	width:605px;
+	height:396px;
+}
+.mod18 .listBox {
+	width: 516px;
+	height: 83px;
+	margin: 0 auto;
+	position: relative;
+	padding: 12px 0 0;
+	overflow: hidden;
+}
+.mod18 .listBox ul {
+	height: 83px;
+	position: absolute;
+}
+.mod18 .listBox ul {
+	height:83px;
+	position:absolute;
+}
+.mod18 .listBox li {
+	width:120px;
+	height:83px;
+	cursor:pointer;
+	position:relative;
+	padding-right:11px;
+}
+.mod18 .listBox li i {
+	display:none;
+}
+.mod18 .listBox li a {
+	display:block;
+	width:120px;
+	height:83px;
+}
+.mod18 .listBox li img {
+	width:120px;
+	height:83px;
+}
+.mod18 .listBox .on img {
+	width:118px;
+	height:81px;
+	border:1px solid #949494;
+}
+.mod18 .listBox .on i {
+	display:block;
+}

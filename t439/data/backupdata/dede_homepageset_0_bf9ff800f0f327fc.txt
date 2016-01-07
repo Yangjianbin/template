@@ -1,1 +1,0 @@
-INSERT INTO `dede_homepageset` VALUES('muban/index.htm','../index.html','1');

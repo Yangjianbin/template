@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<LINK href="/skin/css/style.css" rel=stylesheet>
+<LINK href="/skin/css/base.css" rel=stylesheet>
+<LINK href="/skin/css/animate.css" rel=stylesheet>
+<LINK href="/skin/css/main.css" rel=stylesheet>
+<LINK href="/skin/css/jbox.css" rel=stylesheet>
+<script language="JavaScript" type="text/javascript" src="/skin/js/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/duoduo.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/functions.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/jquery.jbox-2.3.min.js"></script>
+</head>
+<body>
+{dede:include filename="head.htm"/} 
+<script type="text/javascript" src="/skin/js/main.js"></script>
+<div class="c"></div>
+<style>
+.nybanner{ width:100%; height:122px; background:url(/skin/images/20150812102531-507128388.jpg) no-repeat;}
+</style>
+<div class="nybanner">
+  <div class="nybanner_mid">
+    <h4>{dede:field name='typeid' function="GetTopTypename(@me)"/}</h4>
+    <p>创新、诚信、务实、高效</p>
+  </div>
+</div>
+<div class="ny_mid">
+  <div class="nyleft">
+    <div class="lefta">{dede:field name='typeid' function="GetTopTypename(@me)"/}</div>
+    <div class="leftb">
+      <ul>
+        {dede:channel type='son' currentstyle="
+        <li><a href='~typelink~' class='cu'>~typename~</a></li>
+        "}
+        <li><a href="[field:typeurl/]" title="[field:typename/]">[field:typename/]</a></li>
+        {/dede:channel}
+      </ul>
+    </div>
+    <div class="contact">
+      <div class="lefta">联系我们</div>
+      <div class="contactbt">
+        <p>浙江省杭州市江干区，金沙居A座1524室</p>
+        <h6>我们的服务好啊，真是好好好好好好</h6>
+        <h4>联系电话：xxxxxxxxxx</h4>
+        <h3>传真：xxxxxxxxxx</h3>
+      </div>
+    </div>
+  </div>
+  <div class="contentright">
+    <div class="contentright_head">
+      <div class="contentright_head_left">{dede:field name='typename'/}</div>
+      <div class="contentright_head_right">您的位置：{dede:field name='position'/}</div>
+    </div>
+    <div class="proxx_bta">
+      <div class='pb'> {dede:field.content/} </div>
+    </div>
+    <div class="c"></div>
+    <div class="fanyea">
+      <div class="fah"><a href="/" title="返回首页"><img src="/skin/images/ffaa.jpg" width="70" height="25" alt="返回首页" /></a></div>
+      </a></div>
+  </div>
+  <div class="c"></div>
+</div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>

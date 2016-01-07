@@ -1,6 +1,6 @@
 <?php
 /**
- *   ±à¼­È¦×Ó
+ *   ç¼–è¾‘åœˆå­
  *
  * @version        $Id: group_edit.php 1 15:34 2011-1-21 tianya $
  * @package        DedeCMS.Administrator
@@ -18,11 +18,11 @@ $action = isset($action) ? trim($action) : '';
 
 if($id < 1)
 {
-    ShowMsg("º¬ÓÐ·Ç·¨²Ù×÷!.","-1");
+    ShowMsg("å«æœ‰éžæ³•æ“ä½œ!.","-1");
     exit();
 }
 
-//È¡³öÈ¦×ÓÐÅÏ¢
+//å–å‡ºåœˆå­ä¿¡æ¯
 $row = $db->GetOne("SELECT * FROM #@__groups WHERE groupid='{$id}'");
 $groupsname = $row['groupname'];
 $groupstoreid = $row['storeid'];
@@ -31,11 +31,11 @@ $groupissystem = $row['issystem'];
 $groupcreater = $row['creater'];
 $groupimg     = $row['groupimg'];
 $ismaster     = $row['ismaster'];
-$groupdes     = htmlspecialchars($row['des']);
+$groupdes     = dede_htmlspecialchars($row['des']);
 $groupisindex = $row['isindex'];
 $groupsmalltype = $row['smalltype'];
 
-//±àÒëÐ¡·ÖÀà³ÉÊý×é
+//ç¼–è¯‘å°åˆ†ç±»æˆæ•°ç»„
 $smalltypes    = $row['smalltype'];
 $lists            = array();
 $smalltypes    = @explode(",", $smalltypes);
@@ -46,7 +46,7 @@ foreach($smalltypes as $k)
 }
 
 
-//====±£´æÈ¦×ÓÐÅÏ¢=====//
+//====ä¿å­˜åœˆå­ä¿¡æ¯=====//
 if($action=="save")
 {
     $groupname = cn_substr($groupname,75);
@@ -71,7 +71,7 @@ if($action=="save")
         $rootstoreid = $storeid;
     }
 
-    //´¦ÀíÉÏ´«µÄËõÂÔÍ¼
+    //å¤„ç†ä¸Šä¼ çš„ç¼©ç•¥å›¾
     if(empty($ddisremote))
     {
         $ddisremote = 0;
@@ -89,23 +89,23 @@ if($action=="save")
     $inQuery = "UPDATE #@__groups SET groupname='".$groupname."',des='".$description."',groupimg='".$litpic."',rootstoreid='{$rootstoreid}',storeid='{$storeid}',creater='".$creater."',ismaster='".$master."',issystem='{$issystem}',ishidden='{$ishidden}',isindex='".$isindex."' WHERE groupid='{$id}'";
     if(!$db->ExecuteNoneQuery($inQuery))
     {
-        ShowMsg("°ÑÊý¾Ý¸üÐÂµ½Êý¾Ý¿âgroups±íÊ±³ö´í£¬Çë¼ì²é£¡","-1");
+        ShowMsg("æŠŠæ•°æ®æ›´æ–°åˆ°æ•°æ®åº“groupsè¡¨æ—¶å‡ºé”™ï¼Œè¯·æ£€æŸ¥ï¼","-1");
         exit();
     }
     else
     {
-        ShowMsg("³É¹¦¸ü¸ÄÈ¦×ÓÉèÖÃ£¡","-1");
+        ShowMsg("æˆåŠŸæ›´æ”¹åœˆå­è®¾ç½®ï¼","-1");
         exit();
     }
 }
 
-//¸üÐÂÊý¾ÝÍê±Ï
+//æ›´æ–°æ•°æ®å®Œæ¯•
 if(!$groupimg||empty($groupimg))
 {
     $groupimg = "img/pview.gif";
 }
 
-//ÀàÄ¿µÝ¹é
+//ç±»ç›®é€’å½’
 $db->SetQuery("SELECT * FROM #@__store_groups WHERE tops=0 ORDER BY orders ASC");
 $db->Execute(1);
 $option = '';

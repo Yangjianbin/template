@@ -6,15 +6,15 @@ $fields = array();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
-<title>¹ã¸æ¹ÜÀí</title>
+<title>å¹¿å‘Šç®¡ç†</title>
 <link href="css/base.css" rel="stylesheet" type="text/css">
 </head>
 <body background="images/allbg.gif" leftmargin="8" topmargin='8'>
 <table width="98%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#D6D6D6">
   <tr>
     <td height="28" background="images/tbg.gif" colspan="7" style="padding-left:10px;">
-      <b><a href="ad_main.php">¹ã¸æ¹ÜÀí</a></b>&nbsp;[<a href="ad_add.php"><u>Ôö¼ÓÒ»¸öÐÂ¹ã¸æ</u></a>]
-    [<a href="adtype_main.php"><u>¹ã¸æ·ÖÀà¹ÜÀí</u></a>]</td>
+      <b><a href="ad_main.php">å¹¿å‘Šç®¡ç†</a></b>&nbsp;[<a href="ad_add.php"><u>å¢žåŠ ä¸€ä¸ªæ–°å¹¿å‘Š</u></a>]
+    [<a href="adtype_main.php"><u>å¹¿å‘Šåˆ†ç±»ç®¡ç†</u></a>]</td>
 </tr>
   <tr>
     <td height="28" colspan="7" style="padding-left:10px;" bgcolor="#FFFFFF"><table>
@@ -23,14 +23,14 @@ $fields = array();
           <input type='hidden' name='dopost' value='listArchives' />
           <td><table width='600' border='0' cellpadding='0' cellspacing='0'>
             <tr>
-              <td width='90' align='center'>ÇëÑ¡Ôñ·ÖÀà£º</td>
+              <td width='90' align='center'>è¯·é€‰æ‹©åˆ†ç±»ï¼š</td>
               <td width='124'><select name='clsid' style='width:150' id="clsid">
-                <option value='0'>Ä¬ÈÏ·ÖÀà...</option>
+                <option value='0'>é»˜è®¤åˆ†ç±»...</option>
                 
           	<?php echo $option;?>
           
               </select></td>
-              <td width='71'> ¹Ø¼ü×Ö£º </td>
+              <td width='71'> å…³é”®å­—ï¼š </td>
               <td width='185'><input type='text' name='keyword' style='width:150' /></td>
               <td width="130"><input name="imageField" type="image" src="images/button_search.gif" width="60" height="22" border="0" class="np" /></td>
             </tr>
@@ -40,13 +40,13 @@ $fields = array();
     </table></td>
   </tr>
   <tr align="center"  bgcolor="#FBFCE2"" height="24"> 
-      <td width="8%">±àºÅ</td>
-      <td width="20%">·ÖÀà</td>
-      <td width="20%">¹ã¸æÃû³Æ</td>
-      <td width="12%">Í¶·Å·¶Î§</td>
-      <td width="11%">ÊÇ·ñÏÞÊ±</td>
-      <td width="11%">½áÊøÊ±¼ä</td>
-      <td width="18%">¹ÜÀí</td>
+      <td width="8%">ç¼–å·</td>
+      <td width="20%">åˆ†ç±»</td>
+      <td width="20%">å¹¿å‘Šåç§°</td>
+      <td width="12%">æŠ•æ”¾èŒƒå›´</td>
+      <td width="11%">æ˜¯å¦é™æ—¶</td>
+      <td width="11%">ç»“æŸæ—¶é—´</td>
+      <td width="18%">ç®¡ç†</td>
    </tr>
    
    <?php
@@ -65,9 +65,9 @@ foreach( $blockValue as $key=>$fields )
         <td><?php echo TimeSetValue($fields['timeset']); ?></td>
         <td><?php echo GetDateMk($fields['endtime']); ?></td>
         <td>
-         <a href='ad_edit.php?aid=<?php echo $fields['aid']; ?>&dopost=gettag'>[´úÂë]</a>
-         <a href='ad_edit.php?aid=<?php echo $fields['aid']; ?>&dopost=edit'>[¸ü¸Ä]</a>
-		     <a href='ad_edit.php?aid=<?php echo $fields['aid']; ?>&dopost=delete'>[É¾³ý]</a>
+         <a href='ad_edit.php?aid=<?php echo $fields['aid']; ?>&dopost=gettag'>[ä»£ç ]</a>
+         <a href='ad_edit.php?aid=<?php echo $fields['aid']; ?>&dopost=edit'>[æ›´æ”¹]</a>
+		     <a href='ad_edit.php?aid=<?php echo $fields['aid']; ?>&dopost=delete'>[åˆ é™¤]</a>
 		    </td>
      </tr>
 		<?php

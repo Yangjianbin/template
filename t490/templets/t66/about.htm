@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link type="text/css" rel="stylesheet" href="/skin/css/master.css" />
+<link type="text/css" rel="stylesheet" href="/skin/css/sub.css" />
+<script type="text/javascript" src="/skin/js/jquery.min.js"></script>
+<script type="text/javascript" src="/skin/js/global.js"></script>
+<script type="text/javascript" src="/skin/js/tab.js"></script>
+<script type="text/javascript" src="/skin/js/master.js"></script>
+<script type="text/javascript" src="/skin/js/index_brand.js"></script>
+<script type="application/javascript" language="javascript">
+function browserRedirect() {
+         var sUserAgent = navigator.userAgent.toLowerCase();
+         var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+         var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+         var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+         var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+         var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+         var bIsAndroid = sUserAgent.match(/android/i) == "android";
+         var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+         var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+         if ((bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {
+                   var thisUrl = window.location.href;
+                   window.location.href= thisUrl.substr(0,thisUrl.lastIndexOf('/')+1)+'wap/';
+         } 
+}
+browserRedirect();
+</script>
+</head>
+
+<body>
+{dede:include filename="head.htm"/} 
+
+<!--sub_content-->
+<div class="sub_banner" style=" background:url(/skin/images/20150116112934-9735124511644244.jpg) no-repeat top center;">
+  <div class="sub_content">
+    <div><img src="/skin/images/subbg01.png" width="1194" height="10" alt="line"></div>
+    <div class="sub_content01"> 
+      <!--sider-->
+      <div class="sider">
+        <div class="sider_tit">{dede:field name='typeid' function="GetTopTypename(@me)"/}</div>
+        <div class="sider01">
+          <ul>
+            {dede:channel type='son' currentstyle="
+            <li><a href='~typelink~' class='sider01_on'>~typename~</a></li>
+            "}
+            <li><a href="[field:typeurl/]" title="[field:typename/]">[field:typename/]</a></li>
+            {/dede:channel}
+          </ul>
+        </div>
+      </div>
+      <!--sider end--> 
+      <!--sub_right-->
+      <div class="sub_right">
+        <div class="sub_tit">
+          <div class="sub_tit01">{dede:field name='typename'/}</div>
+          <div class="sub_wz">当前位置：{dede:field name='position'/}</div>
+        </div>
+        <div class="sub_about"> {dede:field.content/}
+          <div class="return"><a href="/" title="返回首页"><img src="/skin/images/return01.jpg" width="114" height="39" alt="返回首页"></a></div>
+        </div>
+      </div>
+      <!--sub_right end-->
+      <div class="clears"></div>
+    </div>
+    <div><img src="/skin/images/subbg02.png" width="1194" height="10" alt="line"></div>
+  </div>
+</div>
+<!--sub_content end--> 
+
+<!--footer--> 
+{dede:include filename="footer.htm"/} 
+<!--footer end-->
+
+</body>
+</html>

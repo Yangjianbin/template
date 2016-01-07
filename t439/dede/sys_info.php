@@ -1,8 +1,8 @@
 <?php
 /**
- * ÏµÍ³ÅäÖÃ
+ * ç³»ç»Ÿé…ç½®
  *
- * @version        $Id: sys_info.php 1 22:28 2010Äê7ÔÂ20ÈÕZ tianya $
+ * @version        $Id: sys_info.php 1 22:28 2010å¹´7æœˆ20æ—¥Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -14,13 +14,13 @@ if(empty($dopost)) $dopost = "";
 
 $configfile = DEDEDATA.'/config.cache.inc.php';
 
-//¸üĞÂÅäÖÃº¯Êı
+//æ›´æ–°é…ç½®å‡½æ•°
 function ReWriteConfig()
 {
     global $dsql,$configfile;
     if(!is_writeable($configfile))
     {
-        echo "ÅäÖÃÎÄ¼ş'{$configfile}'²»Ö§³ÖĞ´Èë£¬ÎŞ·¨ĞŞ¸ÄÏµÍ³ÅäÖÃ²ÎÊı£¡";
+        echo "é…ç½®æ–‡ä»¶'{$configfile}'ä¸æ”¯æŒå†™å…¥ï¼Œæ— æ³•ä¿®æ”¹ç³»ç»Ÿé…ç½®å‚æ•°ï¼";
         exit();
     }
     $fp = fopen($configfile,'w');
@@ -44,7 +44,7 @@ function ReWriteConfig()
     fclose($fp);
 }
 
-//±£´æÅäÖÃµÄ¸Ä¶¯
+//ä¿å­˜é…ç½®çš„æ”¹åŠ¨
 if($dopost=="save")
 {
     foreach($_POST as $k=>$v)
@@ -61,26 +61,26 @@ if($dopost=="save")
         $dsql->ExecuteNoneQuery("UPDATE `#@__sysconfig` SET `value`='$v' WHERE varname='$k' ");
     }
     ReWriteConfig();
-    ShowMsg("³É¹¦¸ü¸ÄÕ¾µãÅäÖÃ£¡", "sys_info.php");
+    ShowMsg("æˆåŠŸæ›´æ”¹ç«™ç‚¹é…ç½®ï¼", "sys_info.php");
     exit();
 }
-//Ôö¼ÓĞÂ±äÁ¿
+//å¢åŠ æ–°å˜é‡
 else if($dopost=='add')
 {
     if($vartype=='bool' && ($nvarvalue!='Y' && $nvarvalue!='N'))
     {
-        ShowMsg("²¼¶û±äÁ¿Öµ±ØĞëÎª'Y'»ò'N'!","-1");
+        ShowMsg("å¸ƒå°”å˜é‡å€¼å¿…é¡»ä¸º'Y'æˆ–'N'!","-1");
         exit();
     }
     if(trim($nvarname)=='' || preg_match("#[^a-z_]#i", $nvarname) )
     {
-        ShowMsg("±äÁ¿Ãû²»ÄÜÎª¿Õ²¢ÇÒ±ØĞëÎª[a-z_]×é³É!","-1");
+        ShowMsg("å˜é‡åä¸èƒ½ä¸ºç©ºå¹¶ä¸”å¿…é¡»ä¸º[a-z_]ç»„æˆ!","-1");
         exit();
     }
     $row = $dsql->GetOne("SELECT varname FROM `#@__sysconfig` WHERE varname LIKE '$nvarname' ");
     if(is_array($row))
     {
-        ShowMsg("¸Ã±äÁ¿Ãû³ÆÒÑ¾­´æÔÚ!","-1");
+        ShowMsg("è¯¥å˜é‡åç§°å·²ç»å­˜åœ¨!","-1");
         exit();
     }
     $row = $dsql->GetOne("SELECT aid FROM `#@__sysconfig` ORDER BY aid DESC ");
@@ -90,21 +90,21 @@ else if($dopost=='add')
     $rs = $dsql->ExecuteNoneQuery($inquery);
     if(!$rs)
     {
-        ShowMsg("ĞÂÔö±äÁ¿Ê§°Ü£¬¿ÉÄÜÓĞ·Ç·¨×Ö·û£¡", "sys_info.php?gp=$vargroup");
+        ShowMsg("æ–°å¢å˜é‡å¤±è´¥ï¼Œå¯èƒ½æœ‰éæ³•å­—ç¬¦ï¼", "sys_info.php?gp=$vargroup");
         exit();
     }
     if(!is_writeable($configfile))
     {
-        ShowMsg("³É¹¦±£´æ±äÁ¿£¬µ«ÓÉÓÚ $configfile ÎŞ·¨Ğ´Èë£¬Òò´Ë²»ÄÜ¸üĞÂÅäÖÃÎÄ¼ş£¡","sys_info.php?gp=$vargroup");
+        ShowMsg("æˆåŠŸä¿å­˜å˜é‡ï¼Œä½†ç”±äº $configfile æ— æ³•å†™å…¥ï¼Œå› æ­¤ä¸èƒ½æ›´æ–°é…ç½®æ–‡ä»¶ï¼","sys_info.php?gp=$vargroup");
         exit();
     }else
     {
         ReWriteConfig();
-        ShowMsg("³É¹¦±£´æ±äÁ¿²¢¸üĞÂÅäÖÃÎÄ¼ş£¡","sys_info.php?gp=$vargroup");
+        ShowMsg("æˆåŠŸä¿å­˜å˜é‡å¹¶æ›´æ–°é…ç½®æ–‡ä»¶ï¼","sys_info.php?gp=$vargroup");
         exit();
     }
 }
-// ËÑË÷ÅäÖÃ
+// æœç´¢é…ç½®
 else if ($dopost=='search')
 {
     $keywords = isset($keywords)? strip_tags($keywords) : '';
@@ -113,9 +113,9 @@ else if ($dopost=='search')
  <table width="100%" cellspacing="1" cellpadding="1" border="0" bgcolor="#cfcfcf" id="tdSearch" style="">
   <tbody>
    <tr height="25" bgcolor="#fbfce2" align="center">
-    <td width="300">²ÎÊıËµÃ÷</td>
-    <td>²ÎÊıÖµ</td>
-    <td width="220">±äÁ¿Ãû</td>
+    <td width="300">å‚æ•°è¯´æ˜</td>
+    <td>å‚æ•°å€¼</td>
+    <td width="220">å˜é‡å</td>
    </tr>
 EOT;
     echo $configstr;
@@ -130,7 +130,7 @@ EOT;
             $row['info'] = preg_replace("#{$keywords}#", '<font color="red">'.$keywords.'</font>', $row['info']);
 ?>
       <tr align="center" height="25" bgcolor="<?php echo $bgcolor?>">
-       <td width="300"><?php echo $row['info']; ?>£º </td>
+       <td width="300"><?php echo $row['info']; ?>ï¼š </td>
        <td align="left" style="padding:3px;">
 <?php
     if($row['type']=='bool')
@@ -138,17 +138,17 @@ EOT;
         $c1='';
         $c2 = '';
         $row['value']=='Y' ? $c1=" checked" : $c2=" checked";
-        echo "<input type='radio' class='np' name='edit___{$row['varname']}' value='Y'$c1>ÊÇ ";
-        echo "<input type='radio' class='np' name='edit___{$row['varname']}' value='N'$c2>·ñ ";
+        echo "<input type='radio' class='np' name='edit___{$row['varname']}' value='Y'$c1>æ˜¯ ";
+        echo "<input type='radio' class='np' name='edit___{$row['varname']}' value='N'$c2>å¦ ";
     }else if($row['type']=='bstring')
     {
-        echo "<textarea name='edit___{$row['varname']}' row='4' id='edit___{$row['varname']}' class='textarea_info' style='width:98%;height:50px'>".htmlspecialchars($row['value'])."</textarea>";
+        echo "<textarea name='edit___{$row['varname']}' row='4' id='edit___{$row['varname']}' class='textarea_info' style='width:98%;height:50px'>".dede_htmlspecialchars($row['value'])."</textarea>";
     }else if($row['type']=='number')
     {
         echo "<input type='text' name='edit___{$row['varname']}' id='edit___{$row['varname']}' value='{$row['value']}' style='width:30%'>";
     }else
     {
-        echo "<input type='text' name='edit___{$row['varname']}' id='edit___{$row['varname']}' value=\"".htmlspecialchars($row['value'])."\" style='width:80%'>";
+        echo "<input type='text' name='edit___{$row['varname']}' id='edit___{$row['varname']}' value=\"".dede_htmlspecialchars($row['value'])."\" style='width:80%'>";
     }
     ?>
 </td>
@@ -164,7 +164,7 @@ EOT;
     if ($i == 1)
     {
         echo '      <tr align="center" bgcolor="#F9FCEF" height="25">
-           <td colspan="3">Ã»ÓĞÕÒµ½ËÑË÷µÄÄÚÈİ</td>
+           <td colspan="3">æ²¡æœ‰æ‰¾åˆ°æœç´¢çš„å†…å®¹</td>
           </tr></table>';
     }
     exit;

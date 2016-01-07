@@ -1,8 +1,8 @@
 <?php
 /**
- * Ôö¼Ó×Ô¶¨Òå±íµ¥
+ * å¢žåŠ è‡ªå®šä¹‰è¡¨å•
  *
- * @version        $Id: diy_add.php 1 14:31 2010Äê7ÔÂ12ÈÕZ tianya $
+ * @version        $Id: diy_add.php 1 14:31 2010å¹´7æœˆ12æ—¥Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -24,20 +24,20 @@ else
 {
     if(preg_match("#[^0-9-]#", $diyid) || empty($diyid))
     {
-        ShowMsg("<font color=red>'×Ô¶¨Òå±íµ¥diyid'</font>±ØÐëÎªÊý×Ö£¡","-1");
+        ShowMsg("<font color=red>'è‡ªå®šä¹‰è¡¨å•diyid'</font>å¿…é¡»ä¸ºæ•°å­—ï¼","-1");
         exit();
     }
     if($table=="")
     {
-        ShowMsg("±íÃû²»ÄÜÎª¿Õ£¡", "-1");
+        ShowMsg("è¡¨åä¸èƒ½ä¸ºç©ºï¼", "-1");
         exit();
     }
     $public = isset($public) && is_numeric($public) ? $public : 0;
-    $name = htmlspecialchars($name);
+    $name = dede_htmlspecialchars($name);
     $row = $dsql->GetOne("SELECT * FROM #@__diyforms WHERE diyid='$diyid' OR `table` LIKE '$table' OR name LIKE '$name' ");
     if(is_array($row))
     {
-        ShowMsg("¿ÉÄÜ×Ô¶¨Òå±íµ¥µÄ¡®diyid¡¯¡¢¡®Ãû³Æ¡¯ÔÚÊý¾Ý¿âÖÐÒÑ´æÔÚ£¬²»ÄÜÖØ¸´Ê¹ÓÃ£¡","-1");
+        ShowMsg("å¯èƒ½è‡ªå®šä¹‰è¡¨å•çš„â€˜diyidâ€™ã€â€˜åç§°â€™åœ¨æ•°æ®åº“ä¸­å·²å­˜åœ¨ï¼Œä¸èƒ½é‡å¤ä½¿ç”¨ï¼","-1");
         exit();
     }
     $query = "SHOW TABLES FROM {$dsql->dbName} ";
@@ -48,7 +48,7 @@ else
         if(empty($row[0])) $row[0] = '';
         if($table == $row[0])
         {
-            showmsg('Ö¸¶¨µÄ±íÔÚÊý¾Ý¿âÖÐÖØ¸´', '-1');
+            showmsg('æŒ‡å®šçš„è¡¨åœ¨æ•°æ®åº“ä¸­é‡å¤', '-1');
             exit();
         }
     }
@@ -68,10 +68,10 @@ else
     {
         $query = "INSERT INTO #@__diyforms (`diyid`, `name`, `table`, `info`, `listtemplate`, `viewtemplate`, `posttemplate`, `public` ) VALUES ('$diyid', '$name', '$table', '', '$listtemplate', '$viewtemplate', '$posttemplate', '$public')";
         $dsql->ExecuteNoneQuery($query);
-        showmsg('×Ô¶¨Òå±íµ¥´´½¨³É¹¦£¬Çë×ÔÐÐÌí¼Ó×Ö¶Î', 'diy_main.php');
+        showmsg('è‡ªå®šä¹‰è¡¨å•åˆ›å»ºæˆåŠŸï¼Œè¯·è‡ªè¡Œæ·»åŠ å­—æ®µ', 'diy_main.php');
     }
     else
     {
-        showmsg('×Ô¶¨Òå±íµ¥´´½¨Ê§°Ü', '-1');
+        showmsg('è‡ªå®šä¹‰è¡¨å•åˆ›å»ºå¤±è´¥', '-1');
     }
 }

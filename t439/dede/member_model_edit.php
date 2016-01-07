@@ -1,8 +1,8 @@
 <?php
 /**
- * »áÔ±Ä£ĞÍ±à¼­
+ * ä¼šå‘˜æ¨¡å‹ç¼–è¾‘
  *
- * @version        $Id: member_model_edit.php 1 11:20 2010Äê7ÔÂ20ÈÕZ tianya $
+ * @version        $Id: member_model_edit.php 1 11:20 2010å¹´7æœˆ20æ—¥Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -22,13 +22,13 @@ function __SaveEdit()
 if($dopost=="save")
 {
     $state = isset($state) && is_numeric($state) ? $state : 1;
-    $description = htmlspecialchars($description);
-    $name = htmlspecialchars($name);
+    $description = dede_htmlspecialchars($description);
+    $name = dede_htmlspecialchars($name);
     $query = "UPDATE `#@__member_model` SET name = '$name', description = '$description', state='$state' WHERE id='$id' ";
     $dsql->ExecuteNoneQuery($query);
-    //¸üĞÂ»áÔ±Ä£ĞÍ»º´æ
+    //æ›´æ–°ä¼šå‘˜æ¨¡å‹ç¼“å­˜
     UpDateMemberModCache();
-    ShowMsg("³É¹¦¸ü¸ÄÒ»¸ö»áÔ±Ä£ĞÍ£¡", "member_model_main.php");
+    ShowMsg("æˆåŠŸæ›´æ”¹ä¸€ä¸ªä¼šå‘˜æ¨¡å‹ï¼", "member_model_main.php");
     exit();
 }
 /*----------------
@@ -40,12 +40,12 @@ else if($dopost=="disabled")
     CheckPurview('c_Del');
     $row = $dsql->GetOne("SELECT * FROM #@__member_model WHERE id='$id'");
     $statenum = ($row['state']==0)? 1 : 0;
-    $statestr = ($row['state']==0)? 'ÆôÓÃ' : '½ûÓÃ';
-    //½ûÓÃÄ£ĞÍ
+    $statestr = ($row['state']==0)? 'å¯ç”¨' : 'ç¦ç”¨';
+    //ç¦ç”¨æ¨¡å‹
     $dsql->ExecuteNoneQuery("UPDATE #@__member_model SET state={$statenum} WHERE id='$id' ");
-    //¸üĞÂ»áÔ±Ä£ĞÍ»º´æ
+    //æ›´æ–°ä¼šå‘˜æ¨¡å‹ç¼“å­˜
     UpDateMemberModCache();
-    ShowMsg("³É¹¦{$statestr}Ò»¸ö»áÔ±Ä£ĞÍ£¡","member_model_main.php");
+    ShowMsg("æˆåŠŸ{$statestr}ä¸€ä¸ªä¼šå‘˜æ¨¡å‹ï¼","member_model_main.php");
     exit();
 }
 /*----------------
@@ -64,48 +64,48 @@ else if($dopost=="copy")
     else $newid = 1;
     if(empty($job)) $job="";
     
-    //È·ÈÏÌáÊ¾
+    //ç¡®è®¤æç¤º
     if($job=="")
     {
-        $wintitle = "»áÔ±Ä£ĞÍ¹ÜÀí-¸´ÖÆ»áÔ±Ä£ĞÍ";
-        $wecome_info = "<a href='member_model_main.php'>»áÔ±Ä£ĞÍ¹ÜÀí</a>::¸´ÖÆ»áÔ±Ä£ĞÍ";
+        $wintitle = "ä¼šå‘˜æ¨¡å‹ç®¡ç†-å¤åˆ¶ä¼šå‘˜æ¨¡å‹";
+        $wecome_info = "<a href='member_model_main.php'>ä¼šå‘˜æ¨¡å‹ç®¡ç†</a>::å¤åˆ¶ä¼šå‘˜æ¨¡å‹";
         $win = new OxWindow();
         $win->Init("member_model_edit.php","js/blank.js","POST");
         $win->AddHidden("job","yes");
         $win->AddHidden("dopost",$dopost);
         $win->AddHidden("id",$id);
-        $win->AddTitle("ÄãÈ·ÊµÒª¸´ÖÆ \"".$thisname."\" Õâ¸ö»áÔ±Ä£ĞÍ£¿");
+        $win->AddTitle("ä½ ç¡®å®è¦å¤åˆ¶ \"".$thisname."\" è¿™ä¸ªä¼šå‘˜æ¨¡å‹ï¼Ÿ");
         $msg ="";
         $msg.="<table width='460' border='0' cellspacing='0' cellpadding='0'>\r\n";
     $msg.="<tr>\r\n";
-    $msg.=" <td width='170' height='24' align='center'>ĞÂÄ£ĞÍID£º</td>\r\n";
+    $msg.=" <td width='170' height='24' align='center'>æ–°æ¨¡å‹IDï¼š</td>\r\n";
     $msg.=" <td width='230'><input name='newid' type='text' id='newid' size='6' value='{$newid}'/></td>\r\n";
     $msg.="</tr>\r\n";
     $msg.="<tr>\r\n";
-    $msg.=" <td height='24' align='center'>ĞÂÄ£ĞÍÃû³Æ£º</td>\r\n";
+    $msg.=" <td height='24' align='center'>æ–°æ¨¡å‹åç§°ï¼š</td>\r\n";
     $msg.=" <td><input name='newname' type='text' id='newname' value='{$thisname}{$newid}' style='width:250px'/></td>\r\n";
     $msg.="</tr>\r\n";
     $msg.="<tr>\r\n";
-    $msg.=" <td height='24' align='center'>Ä£ĞÍÊı¾İ±í£º</td>\r\n";
+    $msg.=" <td height='24' align='center'>æ¨¡å‹æ•°æ®è¡¨ï¼š</td>\r\n";
     $msg.=" <td><input name='newtable' type='text' id='newtable' value='{$thistable}{$newid}' style='width:250px'/></td>\r\n";
     $msg.="</tr>\r\n";
     $msg.="<tr>\r\n";
-    $msg.=" <td height='24' align='center'>Ä£ĞÍ×Ö¶Î£º</td>\r\n";
-    $msg.=" <td><font color='red'>Ä£ĞÍ×Ö¶ÎÄ¬ÈÏÒÑ¾­¸´ÖÆ,ÇëÔÚ±à¼­µ±Ç°Ä£ĞÍÖĞ²é¿´</font></td>\r\n";
+    $msg.=" <td height='24' align='center'>æ¨¡å‹å­—æ®µï¼š</td>\r\n";
+    $msg.=" <td><font color='red'>æ¨¡å‹å­—æ®µé»˜è®¤å·²ç»å¤åˆ¶,è¯·åœ¨ç¼–è¾‘å½“å‰æ¨¡å‹ä¸­æŸ¥çœ‹</font></td>\r\n";
     $msg.="</tr>\r\n";
     $msg.="<tr>\r\n";
-    $msg.=" <td height='24' align='center'>ĞÂÄ£ĞÍÃèÊö£º</td>\r\n";
+    $msg.=" <td height='24' align='center'>æ–°æ¨¡å‹æè¿°ï¼š</td>\r\n";
     $msg.=" <td><label>\r\n";
-    $msg.=" <textarea name=\"description\" id=\"description\" cols=\"45\" rows=\"5\" onClick=\"this.value=''\">ĞÂÄ£ĞÍÃèÊö</textarea>\r\n";
+    $msg.=" <textarea name=\"description\" id=\"description\" cols=\"45\" rows=\"5\" onClick=\"this.value=''\">æ–°æ¨¡å‹æè¿°</textarea>\r\n";
     $msg.=" </label></td>\r\n";
     $msg.="</tr>\r\n";
     $msg.="<tr>\r\n";
-    $msg.=" <td height='24' align='center'>Ä£ĞÍ×´Ì¬£º</td>\r\n";
+    $msg.=" <td height='24' align='center'>æ¨¡å‹çŠ¶æ€ï¼š</td>\r\n";
     $msg.=" <td><input name='state' type='radio' id='copytemplet' value='1' class='np' checked='checked'/>\r\n";
-    $msg.=" ÆôÓÃ\r\n";
+    $msg.=" å¯ç”¨\r\n";
     $msg.=" &nbsp;\r\n";
     $msg.=" <input name='state' type='radio' id='copytemplet' class='np' value='0'/>\r\n";
-    $msg.=" ½ûÓÃ</td>\r\n";
+    $msg.=" ç¦ç”¨</td>\r\n";
     $msg.="</tr>\r\n";
     $msg.="</table>";
     $win->AddMsgItem("<div style='padding:20px;line-height:300%'>$msg</div>");
@@ -114,28 +114,28 @@ else if($dopost=="copy")
         exit();
     }
 
-    //²Ù×÷
+    //æ“ä½œ
     else if($job=="yes")
     {
         if(preg_match("#[^0-9-]#", $newid) || empty($newid))
         {
-            ShowMsg("<font color=red>'»áÔ±Ä£ĞÍID'</font>±ØĞëÎªÊı×Ö£¡","-1");
+            ShowMsg("<font color=red>'ä¼šå‘˜æ¨¡å‹ID'</font>å¿…é¡»ä¸ºæ•°å­—ï¼","-1");
             exit();
         }
         if($newtable=="")
         {
-            ShowMsg("±íÃû²»ÄÜÎª¿Õ£¡", "-1");
+            ShowMsg("è¡¨åä¸èƒ½ä¸ºç©ºï¼", "-1");
             exit();
         }
         $state = isset($state) && is_numeric($state) ? $state : 0;
-        $newname = htmlspecialchars($newname);
+        $newname = dede_htmlspecialchars($newname);
         $row = $dsql->GetOne("SELECT * FROM #@__member_model WHERE id='$newid' OR `table` LIKE '$newtable' OR name LIKE '$newname' ");
         if(is_array($row))
         {
-            ShowMsg("¿ÉÄÜ»áÔ±Ä£ĞÍµÄ¡®ID¡¯¡¢¡®Ãû³Æ¡¯ÔÚÊı¾İ¿âÖĞÒÑ´æÔÚ£¬²»ÄÜÖØ¸´Ê¹ÓÃ£¡","-1");
+            ShowMsg("å¯èƒ½ä¼šå‘˜æ¨¡å‹çš„â€˜IDâ€™ã€â€˜åç§°â€™åœ¨æ•°æ®åº“ä¸­å·²å­˜åœ¨ï¼Œä¸èƒ½é‡å¤ä½¿ç”¨ï¼","-1");
             exit();
         }
-        //¿½±´Êı¾İ±í
+        //æ‹·è´æ•°æ®è¡¨
         if(!$dsql->IsTable($newtable))
         {
             $dsql->Execute('me',"SHOW CREATE TABLE {$dsql->dbName}.{$thistable}");
@@ -150,13 +150,13 @@ else if($dopost=="copy")
         if($rs)
         {
             UpDateMemberModCache();
-            ShowMsg("³É¹¦¸´ÖÆ»áÔ±Ä£ĞÍ£¬ÏÖ×ªµ½ÏêÏ¸²ÎÊıÒ³... ","member_model_edit.php?id={$newid}&dopost=edit");
+            ShowMsg("æˆåŠŸå¤åˆ¶ä¼šå‘˜æ¨¡å‹ï¼Œç°è½¬åˆ°è¯¦ç»†å‚æ•°é¡µ... ","member_model_edit.php?id={$newid}&dopost=edit");
             exit();
         }
         else
         {
             $errv = $dsql->GetError();
-            ShowMsg("ÏµÍ³³ö´í£¬Çë°Ñ´íÎó´úÂë·¢ËÍµ½¹Ù·½ÂÛÌ³£¬ÒÔ¼ì²éÔ­Òò£¡<br /> ´íÎó´úÂë£ºmember_model_edit.php?dopost=copy $errv","javascript:;");
+            ShowMsg("ç³»ç»Ÿå‡ºé”™ï¼Œè¯·æŠŠé”™è¯¯ä»£ç å‘é€åˆ°å®˜æ–¹è®ºå›ï¼Œä»¥æ£€æŸ¥åŸå› ï¼<br /> é”™è¯¯ä»£ç ï¼šmember_model_edit.php?dopost=copy $errv","javascript:;");
             exit();
         }
         //echo "Do it!";exit();
@@ -172,44 +172,44 @@ else if($dopost=="delete")
     $row = $dsql->GetOne("SELECT * FROM #@__member_model WHERE id='$id'");
     if($row['issystem'] == 1)
     {
-        ShowMsg("ÏµÍ³Ä£ĞÍ,½ûÖ¹É¾³ı!","-1");
+        ShowMsg("ç³»ç»Ÿæ¨¡å‹,ç¦æ­¢åˆ é™¤!","-1");
         exit();
     }
     if(empty($job)) $job="";
 
-    //È·ÈÏÌáÊ¾
+    //ç¡®è®¤æç¤º
     if($job=="")
     {
-        $wintitle = "»áÔ±Ä£ĞÍ¹ÜÀí-É¾³ı»áÔ±Ä£ĞÍ";
-        $wecome_info = "<a href='member_model_main.php'>»áÔ±Ä£ĞÍ¹ÜÀí</a>::É¾³ı»áÔ±Ä£ĞÍ";
+        $wintitle = "ä¼šå‘˜æ¨¡å‹ç®¡ç†-åˆ é™¤ä¼šå‘˜æ¨¡å‹";
+        $wecome_info = "<a href='member_model_main.php'>ä¼šå‘˜æ¨¡å‹ç®¡ç†</a>::åˆ é™¤ä¼šå‘˜æ¨¡å‹";
         $win = new OxWindow();
         $win->Init("member_model_edit.php","js/blank.js","POST");
         $win->AddHidden("job","yes");
         $win->AddHidden("dopost",$dopost);
         $win->AddHidden("id",$id);
-        $win->AddTitle("£¡½«É¾³ıËùÓĞÓë¸Ã»áÔ±Ä£ĞÍÏà¹ØµÄÎÄ¼şºÍÊı¾İ<br />ÄãÈ·ÊµÒªÉ¾³ı \"".$row['name']."\" Õâ¸ö»áÔ±Ä£ĞÍ£¿");
+        $win->AddTitle("ï¼å°†åˆ é™¤æ‰€æœ‰ä¸è¯¥ä¼šå‘˜æ¨¡å‹ç›¸å…³çš„æ–‡ä»¶å’Œæ•°æ®<br />ä½ ç¡®å®è¦åˆ é™¤ \"".$row['name']."\" è¿™ä¸ªä¼šå‘˜æ¨¡å‹ï¼Ÿ");
         $winform = $win->GetWindow("ok");
         $win->Display();
         exit();
     }
 
-    //²Ù×÷
+    //æ“ä½œ
     else if($job=="yes")
     {
         $row = $dsql->GetOne("SELECT `table` FROM `#@__member_model` WHERE id='$id'",MYSQL_ASSOC);
         if(!is_array($row))
         {
-            ShowMsg("ÄãËùÖ¸¶¨µÄ»áÔ±Ä£ĞÍĞÅÏ¢²»´æÔÚ!","-1");
+            ShowMsg("ä½ æ‰€æŒ‡å®šçš„ä¼šå‘˜æ¨¡å‹ä¿¡æ¯ä¸å­˜åœ¨!","-1");
             exit();
         }
 
-        //É¾³ı±í
+        //åˆ é™¤è¡¨
         $dsql->ExecuteNoneQuery("DROP TABLE IF EXISTS `{$row['table']}`;");
 
-        //É¾³ıÆµµÀÅäÖÃĞÅÏ¢
+        //åˆ é™¤é¢‘é“é…ç½®ä¿¡æ¯
         $dsql->ExecuteNoneQuery("DELETE FROM `#@__member_model` WHERE id='$id'");
         UpDateMemberModCache();
-        ShowMsg("³É¹¦É¾³ıÒ»¸ö»áÔ±Ä£ĞÍ£¡","member_model_main.php");
+        ShowMsg("æˆåŠŸåˆ é™¤ä¸€ä¸ªä¼šå‘˜æ¨¡å‹ï¼","member_model_main.php");
         exit();
     }
 }

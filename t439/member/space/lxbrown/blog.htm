@@ -9,7 +9,7 @@
 <!--begin main-->
 <div id="main" class="right">
 	<div class="box">
-	  <h2>ÈÕÖ¾ÎÄÕÂ</h2>
+	  <h2>æ—¥å¿—æ–‡ç« </h2>
 	 </div>
 <!--begin-->
 
@@ -30,9 +30,9 @@
 <!--begin comment-->
 <div class="comment bb" style="padding-left:6px;">
 <?php if (count($msgs)>0)  { ?>
-<h5 id="cdisplay" style="display:;">Ò»¹²ÓĞ <span id="sums"><?php echo count($msgs);?></span> ÌõÆÀÂÛ</h5>
+<h5 id="cdisplay" style="display:;">ä¸€å…±æœ‰ <span id="sums"><?php echo count($msgs);?></span> æ¡è¯„è®º</h5>
 <?php
-//Ô­ÓĞÆÀÂÛ£¨È¡ÆäÇ°50Ìõ£©
+//åŸæœ‰è¯„è®ºï¼ˆå–å…¶å‰50æ¡ï¼‰
 foreach ($msgs as $msg)
 {
 ?>
@@ -42,7 +42,7 @@ foreach ($msgs as $msg)
 	</dd>
 	<dd>
 	<?php
-		if ($msg['username']=='ÄäÃû' || $msg['userid']=='') {
+		if ($msg['username']=='åŒ¿å' || $msg['userid']=='') {
 				echo $msg['username'];
 		}
 		else {
@@ -55,7 +55,7 @@ foreach ($msgs as $msg)
 		<span id="s_<?php echo $msg['id']; ?>"></span>
 		<div id="r_<?php echo $msg['id']; ?>">
 			<div class="re-comment" style="display:none;">
-				<b><?php echo $msg['username']; ?> ÓÚ <?php echo MyDate('m-d H:i',$msg['dtime']);?> »Ø¸´£º</b>
+				<b><?php echo $msg['username']; ?> äº <?php echo MyDate('m-d H:i',$msg['dtime']);?> å›å¤ï¼š</b>
 				<div id="r_content_<?php echo $msg['id']; ?>"></div>
 			</div>
 			<div>
@@ -69,21 +69,21 @@ foreach ($msgs as $msg)
 ?>
 	<div class="big"></div>
 	<div class="post-comment">
-	<h5>·¢±íÆÀÂÛ</h5>
+	<h5>å‘è¡¨è¯„è®º</h5>
 	<div>
 		<form action="feedback.php" method="post" name="feedback">
 		<input type="hidden" name="action" value="send" />
 		<input type="hidden" name="comtype" value="comments">
 		<input type="hidden" name="aid" value="<?php echo $aid; ?>" />
 		<input type="hidden" name="isconfirm" value="yes" />
-		<input name="cmtuser" type="hidden" value="{dede:var.uname /}">{dede:var.uname /}£º
+		<input name="cmtuser" type="hidden" value="{dede:var.uname /}">{dede:var.uname /}ï¼š
 	</div>
 	<div>
 		<textarea class="ip" id="cmtcontent" name="msg" style="width:90%;height:8em" ></textarea>
 	</div>
 	<div class="c"></div>
 	<div > 
-		<strong style= "FLOAT:left; ">±íÇé:</strong>
+		<strong style= "FLOAT:left; ">è¡¨æƒ…:</strong>
 			<ul>
 				<li style= "FLOAT:left; "><input type="radio" name='face' value='6' checked="1" /><img src="templets/images/smiley/6.gif" /></li>
 				<li style= "FLOAT:left; "><input type="radio" name='face' value='4'/><img src="templets/images/smiley/4.gif" /></li>
@@ -96,11 +96,11 @@ foreach ($msgs as $msg)
 		</div>
 		<table>
 				<tr>
-				<td>ÑéÖ¤Âë£º</td>
+				<td>éªŒè¯ç ï¼š</td>
 			 	<td><input name="validate" type="text" id="validate" size="10" style="height:16px;width:60px;" class="ip" /></td>
 			 	<td><img src='../include/vdimgck.php' width='60px' height='20px'  /></td>
-       	<td>&nbsp;<input name="sbbt" type="submit" value="·¢ËÍÆÀÂÛ" style="width:60px;height:22px"  /></td>
-			 	<td><input name="notuser" type="checkbox" id="notuser" value="1" />ÄäÃûÆÀÂÛ</td>
+       	<td>&nbsp;<input name="sbbt" type="submit" value="å‘é€è¯„è®º" style="width:60px;height:22px"  /></td>
+			 	<td><input name="notuser" type="checkbox" id="notuser" value="1" />åŒ¿åè¯„è®º</td>
 			 </tr>
 		</table>
 	</form>

@@ -8,8 +8,8 @@ $z[3]=Array("global","",264,298);
 $z[3][4]['name']="cfg_plus_dir";
 $z[4]=Array("global","",516,550);
 $z[4][4]['name']="cfg_plus_dir";
-$z[5]=Array("wecome_info","",579,598);
-$z[6]=Array("winform","",708,723);
-$z[7]=Array("lang_cms_powerby","",775,799);
+$z[5]=Array("wecome_info","",580,599);
+$z[6]=Array("winform","",709,724);
+$z[7]=Array("lang_cms_powerby","",776,800);
 
 ?>

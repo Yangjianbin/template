@@ -1,8 +1,8 @@
 <?php
 /**
- * ÎÄµµ±à¼­
+ * æ–‡æ¡£ç¼–è¾‘
  *
- * @version        $Id: article_edit.php 1 14:12 2010Äê7ÔÂ12ÈÕZ tianya $
+ * @version        $Id: article_edit.php 1 14:12 2010å¹´7æœˆ12æ—¥Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -26,7 +26,7 @@ if($dopost!='save')
     require_once(DEDEINC."/dedetag.class.php");
     ClearMyAddon();
 
-    //¶ÁÈ¡¹éµµĞÅÏ¢
+    //è¯»å–å½’æ¡£ä¿¡æ¯
     $query = "SELECT ch.typename AS channelname,ar.membername AS rankname,arc.*
     FROM `#@__archives` arc
     LEFT JOIN `#@__channeltype` ch ON ch.id=arc.channel
@@ -34,21 +34,21 @@ if($dopost!='save')
     $arcRow = $dsql->GetOne($query);
     if(!is_array($arcRow))
     {
-        ShowMsg("¶ÁÈ¡µµ°¸»ù±¾ĞÅÏ¢³ö´í!","-1");
+        ShowMsg("è¯»å–æ¡£æ¡ˆåŸºæœ¬ä¿¡æ¯å‡ºé”™!","-1");
         exit();
     }
     $query = "SELECT * FROM `#@__channeltype` WHERE id='".$arcRow['channel']."'";
     $cInfos = $dsql->GetOne($query);
     if(!is_array($cInfos))
     {
-        ShowMsg("¶ÁÈ¡ÆµµÀÅäÖÃĞÅÏ¢³ö´í!","javascript:;");
+        ShowMsg("è¯»å–é¢‘é“é…ç½®ä¿¡æ¯å‡ºé”™!","javascript:;");
         exit();
     }
     $addtable = $cInfos['addtable'];
     $addRow = $dsql->GetOne("SELECT * FROM `$addtable` WHERE aid='$aid'");
     if(!is_array($addRow))
     {
-        ShowMsg("¶ÁÈ¡¸½¼ÓĞÅÏ¢³ö´í!","javascript:;");
+        ShowMsg("è¯»å–é™„åŠ ä¿¡æ¯å‡ºé”™!","javascript:;");
         exit();
     }
     $channelid = $arcRow['channel'];
@@ -74,24 +74,24 @@ else if($dopost=='save')
     
     if(empty($typeid))
     {
-        ShowMsg("ÇëÖ¸¶¨ÎÄµµµÄÀ¸Ä¿£¡", "-1");
+        ShowMsg("è¯·æŒ‡å®šæ–‡æ¡£çš„æ ç›®ï¼", "-1");
         exit();
     }
     if(empty($channelid))
     {
-        ShowMsg("ÎÄµµÎª·ÇÖ¸¶¨µÄÀàĞÍ£¬Çë¼ì²éÄã·¢²¼ÄÚÈİµÄ±íµ¥ÊÇ·ñºÏ·¨£¡", "-1");
+        ShowMsg("æ–‡æ¡£ä¸ºéæŒ‡å®šçš„ç±»å‹ï¼Œè¯·æ£€æŸ¥ä½ å‘å¸ƒå†…å®¹çš„è¡¨å•æ˜¯å¦åˆæ³•ï¼", "-1");
         exit();
     }
     if(!CheckChannel($typeid, $channelid))
     {
-        ShowMsg("ÄãËùÑ¡ÔñµÄÀ¸Ä¿Óëµ±Ç°Ä£ĞÍ²»Ïà·û£¬ÇëÑ¡Ôñ°×É«µÄÑ¡Ïî£¡", "-1");
+        ShowMsg("ä½ æ‰€é€‰æ‹©çš„æ ç›®ä¸å½“å‰æ¨¡å‹ä¸ç›¸ç¬¦ï¼Œè¯·é€‰æ‹©ç™½è‰²çš„é€‰é¡¹ï¼", "-1");
         exit();
     }
     if(!TestPurview('a_Edit'))
     {
         if(TestPurview('a_AccEdit'))
         {
-            CheckCatalog($typeid, "¶Ô²»Æğ£¬ÄãÃ»ÓĞ²Ù×÷À¸Ä¿ {$typeid} µÄÎÄµµÈ¨ÏŞ£¡");
+            CheckCatalog($typeid, "å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ“ä½œæ ç›® {$typeid} çš„æ–‡æ¡£æƒé™ï¼");
         }
         else
         {
@@ -100,12 +100,12 @@ else if($dopost=='save')
     }
 
 
-    //¶Ô±£´æµÄÄÚÈİ½øĞĞ´¦Àí
+    //å¯¹ä¿å­˜çš„å†…å®¹è¿›è¡Œå¤„ç†
     $pubdate = GetMkTime($pubdate);
     $sortrank = AddDay($pubdate,$sortup);
     $ismake = $ishtml==0 ? -1 : 0;
     $autokey = 1;
-    $title = htmlspecialchars(cn_substrR($title,$cfg_title_maxlen));
+    $title = dede_htmlspecialchars(cn_substrR($title,$cfg_title_maxlen));
     $shorttitle = cn_substrR($shorttitle,36);
     $color =  cn_substrR($color,7);
     $writer =  cn_substrR($writer,20);
@@ -121,17 +121,17 @@ else if($dopost=='save')
     }
     $adminid = $cuserLogin->getUserID();
 
-    //´¦ÀíÉÏ´«µÄËõÂÔÍ¼
+    //å¤„ç†ä¸Šä¼ çš„ç¼©ç•¥å›¾
     if(empty($ddisremote))
     {
         $ddisremote = 0;
     }
     $litpic = GetDDImage('none',$picname,$ddisremote);
 
-    //·ÖÎöbodyÀïµÄÄÚÈİ
+    //åˆ†æbodyé‡Œçš„å†…å®¹
     $body = AnalyseHtmlBody($body,$description,$litpic,$keywords,'htmltext');
 
-    //·ÖÎö´¦Àí¸½¼Ó±íÊı¾İ
+    //åˆ†æå¤„ç†é™„åŠ è¡¨æ•°æ®
     $inadd_f = '';
     $inadd_v = '';
     if(!empty($dede_addonfields))
@@ -148,7 +148,7 @@ else if($dopost=='save')
                     continue;
                 }
                 $vs = explode(',',$v);
-                if($vs[1]=='htmltext'||$vs[1]=='textdata') //HTMLÎÄ±¾ÌØÊâ´¦Àí
+                if($vs[1]=='htmltext'||$vs[1]=='textdata') //HTMLæ–‡æœ¬ç‰¹æ®Šå¤„ç†
                 {
                     ${$vs[0]} = AnalyseHtmlBody(${$vs[0]},$description,$litpic,$keywords,$vs[1]);
                 }else
@@ -164,7 +164,7 @@ else if($dopost=='save')
         }
     }
 
-    //´¦ÀíÍ¼Æ¬ÎÄµµµÄ×Ô¶¨ÒåÊôĞÔ
+    //å¤„ç†å›¾ç‰‡æ–‡æ¡£çš„è‡ªå®šä¹‰å±æ€§
     if($litpic!='' && !preg_match("#p#", $flag))
     {
         $flag = ($flag=='' ? 'p' : $flag.',p');
@@ -174,9 +174,9 @@ else if($dopost=='save')
         $flag = ($flag=='' ? 'j' : $flag.',j');
     }
 
-    //Ìø×ªÍøÖ·µÄÎÄµµÇ¿ÖÆÎª¶¯Ì¬
+    //è·³è½¬ç½‘å€çš„æ–‡æ¡£å¼ºåˆ¶ä¸ºåŠ¨æ€
     if(preg_match("#j#", $flag)) $ismake = -1;
-    //¸üĞÂÊı¾İ¿âµÄSQLÓï¾ä
+    //æ›´æ–°æ•°æ®åº“çš„SQLè¯­å¥
     $query = "UPDATE #@__archives SET
     typeid='$typeid',
     typeid2='$typeid2',
@@ -204,7 +204,7 @@ else if($dopost=='save')
 
     if(!$dsql->ExecuteNoneQuery($query))
     {
-        ShowMsg('¸üĞÂÊı¾İ¿âarchives±íÊ±³ö´í£¬Çë¼ì²é',-1);
+        ShowMsg('æ›´æ–°æ•°æ®åº“archivesè¡¨æ—¶å‡ºé”™ï¼Œè¯·æ£€æŸ¥',-1);
         exit();
     }
     
@@ -217,12 +217,12 @@ else if($dopost=='save')
         $iquery = "UPDATE `$addtable` SET typeid='$typeid',body='$body'{$inadd_f},redirecturl='$redirecturl',templet='$templet',userip='$useip' WHERE aid='$id'";
         if(!$dsql->ExecuteNoneQuery($iquery))
         {
-            ShowMsg("¸üĞÂ¸½¼Ó±í `$addtable`  Ê±³ö´í£¬Çë¼ì²éÔ­Òò£¡","javascript:;");
+            ShowMsg("æ›´æ–°é™„åŠ è¡¨ `$addtable`  æ—¶å‡ºé”™ï¼Œè¯·æ£€æŸ¥åŸå› ï¼","javascript:;");
             exit();
         }
     }
 
-    //Éú³ÉHTML
+    //ç”ŸæˆHTML
     UpIndexKey($id, $arcrank, $typeid, $sortrank, $tags);
     if($cfg_remote_site=='Y' && $isremote=="1")
     {    
@@ -242,24 +242,24 @@ else if($dopost=='save')
     }
     ClearMyAddon($id, $title);
     
-    //·µ»Ø³É¹¦ĞÅÏ¢
+    //è¿”å›æˆåŠŸä¿¡æ¯
     $msg = "
-    ¡¡¡¡ÇëÑ¡ÔñÄãµÄºóĞø²Ù×÷£º
-    <a href='article_add.php?cid=$typeid'><u>·¢²¼ĞÂÎÄÕÂ</u></a>
+    ã€€ã€€è¯·é€‰æ‹©ä½ çš„åç»­æ“ä½œï¼š
+    <a href='article_add.php?cid=$typeid'><u>å‘å¸ƒæ–°æ–‡ç« </u></a>
     &nbsp;&nbsp;
-    <a href='archives_do.php?aid=".$id."&dopost=editArchives'><u>²é¿´¸ü¸Ä</u></a>
+    <a href='archives_do.php?aid=".$id."&dopost=editArchives'><u>æŸ¥çœ‹æ›´æ”¹</u></a>
     &nbsp;&nbsp;
-    <a href='$artUrl' target='_blank'><u>²é¿´ÎÄÕÂ</u></a>
+    <a href='$artUrl' target='_blank'><u>æŸ¥çœ‹æ–‡ç« </u></a>
     &nbsp;&nbsp;
-    <a href='catalog_do.php?cid=$typeid&dopost=listArchives'><u>¹ÜÀíÎÄÕÂ</u></a>
+    <a href='catalog_do.php?cid=$typeid&dopost=listArchives'><u>ç®¡ç†æ–‡ç« </u></a>
     &nbsp;&nbsp;
     $backurl
     ";
 
-    $wintitle = "³É¹¦¸ü¸ÄÎÄÕÂ£¡";
-    $wecome_info = "ÎÄÕÂ¹ÜÀí::¸ü¸ÄÎÄÕÂ";
+    $wintitle = "æˆåŠŸæ›´æ”¹æ–‡ç« ï¼";
+    $wecome_info = "æ–‡ç« ç®¡ç†::æ›´æ”¹æ–‡ç« ";
     $win = new OxWindow();
-    $win->AddTitle("³É¹¦¸ü¸ÄÎÄÕÂ£º");
+    $win->AddTitle("æˆåŠŸæ›´æ”¹æ–‡ç« ï¼š");
     $win->AddMsgItem($msg);
     $winform = $win->GetWindow("hand","&nbsp;",false);
     $win->Display();

@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="author" content="design by www.weipow.com" />
+<link type="text/css" rel="stylesheet" href="/skin/css/master.css" />
+<script type="text/javascript" src="/skin/js/jquery.min.js"></script>
+<script type="text/javascript" src="/skin/js/global.js"></script>
+<script type="text/javascript" src="/skin/js/tab.js"></script>
+<script type="text/javascript" src="/skin/js/master.js"></script>
+</head>
+
+<body>
+<div class="top_language"> <a href="/" title="中文版"><img src="/skin/images/cn.png" alt="中文版" /></a> <a href="/" title="英文版"><img src="/skin/images/en.png" alt="英文版" /></a> </div>
+<div class="content content-1">
+  <div class="top_bg">
+    <div class="top"><a href="/" class="nav_on" title="{dede:global.cfg_webname/}"><img src="/skin/images/logo.png" class="logo" alt="{dede:global.cfg_webname/}" /></a>
+      <ul class="nav">
+        {dede:channelartlist typeid='top'}
+        <li><a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">{dede:field name='typename'/}</a>
+          <dl>
+            {dede:channel type='son' noself='yes'}
+            <dd><a href="[field:typelink/]"  title="[field:typename/]">[field:typename/]</a></dd>
+            {/dede:channel}
+          </dl>
+        </li>
+        {/dede:channelartlist}
+      </ul>
+    </div>
+  </div>
+  <img src="/skin/images/down.png" class="down" alt="点击向下" />
+  <div id="js_banner" class="banner"> 
+    <script language="javascript">
+  $(document).ready(function(){
+    var $window = $(window),
+        window_width = $window.width(),
+        window_height = $window.height();
+    $('#js_banner, #js_banner_img li').width(window_width);
+    //$(".banner_inner").css("height",window_height);
+    var startFrame = 0;
+
+    new $.Tab({/*添加圆点按钮*/
+        target: $('#js_banner_img li'),
+        effect: 'slide3d',
+        animateTime: 1000,/*切换时长，值越小越快，值越大时间越长，时隔时长必须大于切换时长，建议4倍比例*/
+        stay: 4000,/*间隔时长*/
+        playTo: startFrame,
+       	    autoPlay: true,
+       	    merge: true,
+        prevBtn: $('#js_banner_pre'),
+        nextBtn: $('#js_banner_next')
+    });
+    $('#js_banner_img').css('left','-' + (window_width * startFrame) + 'px');
+
+});
+</script>
+    <ul id="js_banner_img" class="banner_img clear">
+      <li class="bgli01">
+        <div class="banner_inner">
+          <div class="child child1" data-z="2"><a href="#" title="一 流 航 天 动 力 装 置 提 供 商"><img src="/skin/images/20150122131638-47556043229997160.jpg"  alt="一 流 航 天 动 力 装 置 提 供 商" /></a></div>
+          <div class="child child2" data-z="3"><!--<img src="/skin/images/c1.png" />--><span>一 流 航 天 动 力 装 置 提 供 商</span>以创造性的动力技术服务社会  以高品质的工业装备报效国家</div>
+        </div>
+      </li>
+      <li class="bgli02">
+        <div class="banner_inner">
+          <div class="child child1" data-z="2"><a href="#" title="以客户为中心，以奋斗者为本，以创新者为荣"><img src="/skin/images/20150115053642-1036143420.jpg"  alt="以客户为中心，以奋斗者为本，以创新者为荣" /></a></div>
+          <div class="child child2" data-z="3"><!--<img src="/skin/images/c1.png" />--><span>以客户为中心，以奋斗者为本，以创新者为荣</span>以创造性的动力技术服务社会　以高品质的工业装备报效国家</div>
+        </div>
+      </li>
+      <li class="bgli03">
+        <div class="banner_inner">
+          <div class="child child1" data-z="2"><a href="#" title="新 动 力   源 自 新 光"><img src="/skin/images/20150122114453-86059316992759712.jpg"  alt="新 动 力   源 自 新 光" /></a></div>
+          <div class="child child2" data-z="3"><!--<img src="/skin/images/c1.png" />--><span>新 动 力   源 自 新 光</span>以创造性的动力技术服务社会　以高品质的工业装备报效国家</div>
+        </div>
+      </li>
+    </ul>
+    <div class="banner_common"> <a id="js_banner_pre" href="javascript:;" class="banner_pre" title="上一张"></a> <a id="js_banner_next" href="javascript:;" class="banner_next" title="下一张"></a> </div>
+  </div>
+</div>
+<div class="content content-2">
+  <div class="title1"><!-- <img src="/skin/images/title1.png" alt="Company introduction" /> --></div>
+  <div class="tab_btn1"> <a href="javascript:;" class="on" title="公司简介">公司简介</a> <a href="javascript:;" title="专业技术">专业技术</a> </div>
+  <div class="tab_box">
+    <div class="tab_con1">
+      <div class="tab_con1_top"> {dede:myad name='jj'/}</div>
+      <ul class="tab_con1_list">
+        <li> {dede:type typeid='2'}<a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150123095602-36594519531354312.jpg" width="323" height="302" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span>经过近百年的发展和积累，形成了门类齐全、体...</span> <img src="/skin/images/search.png" class="search-btn" alt="查看详细" /> </a>{/dede:type} </li>
+        <li> {dede:type typeid='18'}<a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150115063434-1449882408.jpg" width="323" height="302" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span>xxxxx建立了技术先进，设备完善的科技...</span> <img src="/skin/images/search.png" class="search-btn" alt="查看详细" /> </a> {/dede:type}</li>
+        <li>{dede:type typeid='17'} <a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150115063442-469868412.jpg" width="323" height="302" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span>公司工艺技术体系完整，设备先进，拥有大批具...</span> <img src="/skin/images/search.png" class="search-btn" alt="查看详细" /> </a>{/dede:type} </li>
+      </ul>
+    </div>
+    <div class="tab_con2">
+      <div class="tab_con1_top">{dede:myad name='js'/}</div>
+      <ul class="tab_con1_list">
+        <li> {dede:type typeid='2'}<a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150116105634-32650755485519768.jpg" width="323" height="302" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span>经过近百年的发展和积累，形成了门类齐全、体...</span> <img src="/skin/images/search.png" class="search-btn" alt="search" /> </a> {/dede:type}</li>
+        <li> {dede:type typeid='19'}<a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150116105650-33873337693512440.jpg" width="323" height="302" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span>公司工艺技术体系完整，设备先进，拥有大批具...</span> <img src="/skin/images/search.png" class="search-btn" alt="search" /> </a>{/dede:type} </li>
+        <li>{dede:type typeid='11'} <a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150121095619-28950695088133216.jpg" width="323" height="302" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span>公司始终关注能源动力与生存环境，致力于能源...</span> <img src="/skin/images/search.png" class="search-btn" alt="search" /> </a> {/dede:type}</li>
+      </ul>
+    </div>
+  </div>
+  <a title="点击向下" class="jj01" style=" cursor:pointer; display:block; width:29px; height:70px; bottom:20px; position:absolute; margin-left:-14px; left:50%; z-index:99999;"></a> <a href="javascript:;" id="scroll1" class="scroll">
+  <embed src="/skin/images/scroll.swf" width="29" height="70" wmode="transparent" ></embed>
+  </a> </div>
+<div class="content content-3">
+  <div class="con3_bg">
+    <div class="title2"><!-- <img src="/skin/images/title2.png" alt="Business field" /> --></div>
+    <div class="con1_box">
+      <div class="con1_imgs"> {dede:type typeid='12'}<a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150116104204-68563413759693504.jpg" width="315" height="313" alt="[field:typename/]" />
+        <h2>[field:typename/]</h2>
+        <span>公司在动力系统关键零部件设计生产制造上具备丰富经验，可为客户提供优质的高、中、低气瓶类、阀类、减压器、涡轮泵、燃油调节器、油滤、油泵、高精度高可靠性火工连接分离机构等产品 </span> </a>{/dede:type}
+        <div class="con1_imgs_box1"> {dede:type typeid='11'}<a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150122105917-2135874424129724.jpg" width="212" height="152" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span>新源动力为新光集团旗下能源装备商业品牌，公司始终关注能源动力与生存环境，致力于能源装备的技术创新、制造和服务。</span> </a>{/dede:type}
+          {dede:type typeid='13'}<a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150122111619-32204263238236308.jpg" width="212" height="152" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span>xxxxxxx有限公司是沈阳航天新光集团有限公司下属全资子公司。
+          
+          1986年10月，公司取得一、二、三类高（A1）、中、低压压力容器（A2）制造资格及低、中压压力容器设计资格（A2），并于2000年通过北京天一正质量体系认证中心ISO9001质量体系认证。 </span> </a> {/dede:type}</div>
+        <div class="con1_imgs_box2"> {dede:type typeid='15'}<a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150122110300-75765252020210032.jpg" width="218" height="152" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span> 公司所属xxxx所国有综合性二级医院、卫生部爱婴医院、沈阳基本医疗保险定点医院、沈阳生育保险定点医院。医院设有内科、外科、妇产科、血液科、儿科、皮肤科、口腔科、耳鼻喉科、中医科等临床科室，并设有体检中心、 康复中心等机构，开展健康体检、医疗、康复服务和医疗设备提供服务。 </span> </a> {/dede:type}
+          {dede:type typeid='11'} <a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150122112448-43498185742646456.jpg" width="218" height="152" alt="[field:typename/]" />
+          <h2>[field:typename/]</h2>
+          <span> xxxxx地处沈阳，坐拥东北交通大枢纽，运力覆盖全国，拥有高速公路、铁路、海运、空运多种立体运输能力组合。公司兴建了多个大型仓储中心，研制了多型全自动冷库和储运周转箱，集成了RFID、物联网、移动通讯等现代科技，实现冷链物流装备的智能化和网络化。面向血浆、血液、生物制剂、药品和生鲜食品等物流系统提供现代化装备和服务，构建智慧物流。 </span> </a> {/dede:type} </div>
+        {dede:type typeid='17'} <a href="[field:typelink/]" title="[field:typename/]"> <img src="/skin/images/20150121100740-17186135333031416.jpg" width="218" height="313" alt="[field:typename/]" />
+        <h2>[field:typename/]</h2>
+        <span> 经过近百年的发展和积累，形成了门类齐全、体系完备、水平先进的技术、研发、制造、服务保障体系，研制生产的8种产品获得了国家质量奖，并19次获得国家级新产品和国家级科技进步奖。</span> </a> {/dede:type} </div>
+      <p class="clears"></p>
+    </div>
+  </div>
+  <a title="点击向下" class="jj02" style=" cursor:pointer; display:block; width:29px; height:70px; bottom:20px; position:absolute; margin-left:-14px; left:50%; z-index:99999;"></a>
+  <embed src="/skin/images/scroll.swf" width="29" height="70" class="scroll" id="scroll2" wmode="transparent" ></embed>
+</div>
+<div class="content content-4">
+  <div class="title3"><!-- <img src="/skin/images/title3.png" alt="News Center" /> --></div>
+  <div class="con4_box">
+  <!--滚动开始-->
+  
+<div id="container">
+  <div id="example">
+    <div id="slides">
+      <div class="slides_container" >
+        <div class="slide">
+          <ul class="con4_list">
+             {dede:arclist row=3 infolen='120' typeid='7' titlelen=60}                  
+            <li> <a href="[field:arcurl/]" title="[field:title/]" class="con4_img">
+            <img src="[field:picname/]" width="324" height="262" alt="[field:title/]" /></a>
+              <p><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></p>
+              <div class="date">[field:pubdate function="MyDate('Y/m/d',@me)"/]</div>
+              <div class="con4_view">[field:info/]...</div>
+            </li>
+            {/dede:arclist}
+                 </ul>
+        </div>
+        <div class="slide">
+           <ul class="con4_list">
+             {dede:arclist row=3 infolen='120' typeid='8' titlelen=60}                 
+            <li> <a href="[field:arcurl/]" title="[field:title/]" class="con4_img">
+            <img src="[field:picname/]" width="324" height="262" alt="[field:title/]" /></a>
+              <p><a href="[field:arcurl/]" title="[field:title/]">[field:title/]...</a></p>
+              <div class="date">[field:pubdate function="MyDate('Y/m/d',@me)"/]</div>
+              <div class="con4_view">[field:info/]...</div>
+            </li>
+            {/dede:arclist}
+                        
+             </ul>
+        </div>
+      </div>
+      <a class="prev" title="上一页"><img src="/skin/images/leftbtn.png" class="left_btn" alt="上一页" /></a> <a title="下一页" class="next"><img src="/skin/images/rightbtn.png" class="right_btn" alt="下一页"  /></a> </div>
+  </div>
+</div>
+
+  
+  
+  
+ 
+  <script src="/skin/js/slides.min.jquery.js"></script>
+  <link rel="stylesheet" href="/skin/css/g2.css" type="text/css"/>
+<script>
+		$(function(){
+			// Set starting slide to 1
+			var startSlide = 1;
+			// Get slide number if it exists
+			if (window.location.hash) {
+				startSlide = window.location.hash.replace('#','');
+			}
+			// Initialize Slides
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				generatePagination: true,
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				// Get the starting slide
+				start: startSlide,
+				animationComplete: function(current){
+					// Set the slide number as a hash
+					window.location.hash = '#' + current;
+				}
+			});
+		});
+</script>
+ <!--滚动开始 end-->
+    </div>
+    <a title="点击向下" class="jj03" style=" cursor:pointer; display:block; width:29px; height:70px; bottom:20px; position:absolute; margin-left:-14px; left:50%; z-index:99999;"></a>
+  <embed src="/skin/images/scroll.swf" width="29" height="70" class="scroll" id="scroll4" wmode="transparent" ></embed>
+</div>
+<div class="content content-5" style="height:440px;">
+  <div class="title4"> <img src="/skin/images/title4.png" alt="contact us" /> </div>
+  <div class="contact_top"> 地址：{dede:global.cfg_dz/}<br />
+    邮箱： {dede:global.cfg_email/}<br />
+    传真： <span> {dede:global.cfg_cz/}</span><br />
+  </div>
+  <p class="tel">{dede:global.cfg_tel/}</p>
+  <script type="text/javascript">
+	$(function(){
+		$('#form1').submit(function(){
+               
+
+			if($('#title').val()==''||$('#title').val()=='标题'){
+				$('#title').val('');
+				$('#title').focus();
+				alert('请填写标题');
+				return false;
+				} else $('#uu').html('');
+
+
+		
+
+        
+				
+               if($('#telephone').val()==''||$('#telephone').val()=='电话'){
+					$('#telephone').val('');
+					$('#telephone').focus();
+					alert('请填写手机号码');
+					return false;
+					} else $('#uu').html('');
+
+
+            	if(!isMobile()){
+  				alert("手机格式有误"); 
+  				$('#telephone').val('');
+  				$('#telephone').focus();
+  				return false;
+  				} ;	
+			
+               
+
+				return true;	
+			});
+
+
+		function isMobile()         
+		{        
+			var tel=$('#telephone').val();
+			if (tel.search(/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/) != -1){  
+			redflag=0;     
+			return true;    
+			}
+			else{    
+		//	alert("手机号码格式错误"); 
+			return false;
+			redflag=1;
+			}
+		}		
+
+		
+		
+		
+		})
+</script> 
+  
+  <!--<form method="post" name="form1" id="form1" style="margin:5px  auto 0  auto; " action="messages.php" onSubmit="return initValid(this)">
+      <input type="hidden" name="action" value="save" />
+      <input type="hidden" name="language" value="cn" />
+      
+  <div class="msg_top">
+    <input type="text" name="title" id="title"  class="msg_input1" onFocus="this.value=''" onBlur="if(!value){value=defaultValue}" value="标题" />
+    <input type="text"name="telephone" id="telephone"  class="msg_input2" onFocus="this.value=''" onBlur="if(!value){value=defaultValue}" value="电话" />
+  </div>
+  <textarea name="content" id="content"  cols="" rows="" class="msg_input3" onFocus="this.value=''" onBlur="if(!value){value=defaultValue}" value="内容" >内容</textarea>
+  <input type="submit" class="msg_submit" value="提交" />
+  
+   </form>--> 
+  
+  <a title="点击向上" class="jj04" style=" cursor:pointer; display:block; width:29px; height:70px; bottom:20px; position:absolute; margin-left:-14px; left:50%; z-index:99999;"></a>
+  <embed src="/skin/images/scroll_up.swf" width="29" height="70" class="scroll" id="scroll4" wmode="transparent" ></embed>
+</div>
+<div class="foot_nav_bg">
+  <div class="foot"><a href="/" class="foot_logo" title="{dede:global.cfg_webname/}"></a>
+    <div class="foot_nav"> {dede:channel type='top'} <a href="[field:typeurl/]" title="[field:typename/]">[field:typename/]</a> {/dede:channel} </div>
+  </div>
+</div>
+<div class="border"></div>
+<div class="bottom">
+  <p>{dede:global.cfg_powerby/}</p>
+  <p>联系电话: {dede:global.cfg_tel/} 传真: {dede:global.cfg_cz/}  邮箱: {dede:global.cfg_email/} </p>
+  <p><a href="http://www.miitbeian.gov.cn/" target="_blank" title="ICP备案编号：正在进行备案">ICP备案编号：{dede:global.cfg_beian/}</a></p>
+</div>
+<a href="javascript:;" title="返回顶部" class="back_top"> <img src="/skin/images/back_top.png" alt="返回顶部" /> </a>
+</body>
+</html>

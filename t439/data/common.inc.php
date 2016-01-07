@@ -1,11 +1,11 @@
 <?php
-//Êý¾Ý¿âÁ¬½ÓÐÅÏ¢
+//æ•°æ®åº“è¿žæŽ¥ä¿¡æ¯
 $cfg_dbhost = 'localhost';
-$cfg_dbname = 'T439';
+$cfg_dbname = 't439';
 $cfg_dbuser = 'root';
 $cfg_dbpwd = '';
 $cfg_dbprefix = 'dede_';
-$cfg_db_language = 'gbk';
+$cfg_db_language = 'utf8';
 
 
 ?>

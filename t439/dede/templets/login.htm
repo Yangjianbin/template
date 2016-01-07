@@ -22,7 +22,7 @@ function changeAuthCode() {
 </head>
 <body>
 <div id="login-box">
-   <div class="login-top"><a href="../index.php" target="_blank" title="·µ»ØÍøÕ¾Ö÷Ò³">·µ»ØÍøÕ¾Ö÷Ò³</a></div>
+   <div class="login-top"><a href="../index.php" target="_blank" title="è¿”å›ç½‘ç«™ä¸»é¡µ">è¿”å›ç½‘ç«™ä¸»é¡µ</a></div>
    <?php echo $redmsg; ?>
    <div class="login-main">
     <form name="form1" method="post" action="login.php">
@@ -30,26 +30,26 @@ function changeAuthCode() {
       <input type="hidden" name="dopost" value="login" />
       <input name='adminstyle' type='hidden' value='newdedecms' />
       <dl>
-	   <dt>ÓÃ»§Ãû£º</dt>
+	   <dt>ç”¨æˆ·åï¼š</dt>
 	   <dd><input type="text" name="userid"/></dd>
-	   <dt>ÃÜ&nbsp;&nbsp;Âë£º</dt>
+	   <dt>å¯†&nbsp;&nbsp;ç ï¼š</dt>
 	   <dd><input type="password" class="alltxt" name="pwd"/></dd>
 	   <?php
         	if(preg_match("/6/",$safe_gdopen))
         	{
         ?>
-	   <dt>ÑéÖ¤Âë£º</dt>
-	   <dd><input id="vdcode" type="text" name="validate" style="text-transform:uppercase;"/><img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="¿´²»Çå£¿µã»÷¸ü»»" src="../include/vdimgck.php"/>
-           <a href="#" onClick="changeAuthCode();">¿´²»Çå£¿ </a></dd>
+	   <dt>éªŒè¯ç ï¼š</dt>
+	   <dd><input id="vdcode" type="text" name="validate" style="text-transform:uppercase;"/><img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="çœ‹ä¸æ¸…ï¼Ÿç‚¹å‡»æ›´æ¢" src="../include/vdimgck.php"/>
+           <a href="#" onClick="changeAuthCode();">çœ‹ä¸æ¸…ï¼Ÿ </a></dd>
 		<?php
        		}
 		?>
 		<dt>&nbsp;</dt>
-		<dd><button type="submit" name="sm1" class="login-btn" onclick="this.form.submit();">µÇÂ¼</button></dd>
+		<dd><button type="submit" name="sm1" class="login-btn" onclick="this.form.submit();">ç™»å½•</button></dd>
 	 </dl>
 	</form>
    </div>
-   <div class="login-power">Powered by<a href="http://www.dedecms.com" title="DedeCMS¹ÙÍø"><strong>DedeCMS<?php echo $cfg_version; ?></strong></a>&copy; 2004-2011 <a href="http://www.desdev.cn" target="_blank">DesDev</a> Inc.</div>
+   <div class="login-power">Powered by<a href="http://www.dedecms.com" title="DedeCMSå®˜ç½‘"><strong>DedeCMS<?php echo $cfg_version; ?></strong></a>&copy; 2004-2011 <a href="http://www.desdev.cn" target="_blank">DesDev</a> Inc.</div>
 </div>
 <div class="dede-iframe"><iframe name="loginad" src="login.php?dopost=showad" frameborder="0" id="loginad" scrolling="no" marginwidth="0" marginheight="0" width="100%"></iframe></div>
 </body>

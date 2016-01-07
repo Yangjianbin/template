@@ -1,8 +1,8 @@
 <?php
 /**
- * Ä£¿é¹ÜÀí
+ * æ¨¡å—ç®¡ç†
  *
- * @version        $Id: module_main.php 1 14:17 2010Äê7ÔÂ20ÈÕZ tianya $
+ * @version        $Id: module_main.php 1 14:17 2010å¹´7æœˆ20æ—¥Z tianya $
  * @package        DedeCMS.Administrator
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
@@ -38,7 +38,7 @@ function ReWriteConfigAuto()
     $configfile = DEDEDATA.'/config.cache.inc.php';
     if(!is_writeable($configfile))
     {
-        echo "ÅäÖÃÎÄ¼ş'{$configfile}'²»Ö§³ÖĞ´Èë£¬ÎŞ·¨ĞŞ¸ÄÏµÍ³ÅäÖÃ²ÎÊı£¡";
+        echo "é…ç½®æ–‡ä»¶'{$configfile}'ä¸æ”¯æŒå†™å…¥ï¼Œæ— æ³•ä¿®æ”¹ç³»ç»Ÿé…ç½®å‚æ•°ï¼";
         //ClearAllLink();
         exit();
     }
@@ -84,7 +84,7 @@ function ShowAll();
 --------------*/
 if($action=='')
 {
-    $types = array('soft'=>'Ä£¿é','templets'=>'Ä£°å','plus'=>'Ğ¡²å¼ş','patch'=>'²¹¶¡');
+    $types = array('soft'=>'æ¨¡å—','templets'=>'æ¨¡æ¿','plus'=>'å°æ’ä»¶','patch'=>'è¡¥ä¸');
     $dm = new DedeModule($mdir);
     if(empty($moduletype)) $moduletype = '';
 	
@@ -106,7 +106,7 @@ else if($action=='setup')
     $infos = $dm->GetModuleInfo($hash);
 
     if($infos['url']=='') $infos['url'] = '&nbsp;';
-    $alertMsg = ($infos['lang'] == $cfg_soft_lang ? '' : '<br /><font color="red">(Õâ¸öÄ£¿éµÄÓïÑÔ±àÂëÓëÄãÏµÍ³µÄ±àÂë²»Ò»ÖÂ£¬ÇëÏò¿ª·¢ÕßÈ·ÈÏËüµÄ¼æÈİĞÔ)</font>');
+    $alertMsg = ($infos['lang'] == $cfg_soft_lang ? '' : '<br /><font color="red">(è¿™ä¸ªæ¨¡å—çš„è¯­è¨€ç¼–ç ä¸ä½ ç³»ç»Ÿçš„ç¼–ç ä¸ä¸€è‡´ï¼Œè¯·å‘å¼€å‘è€…ç¡®è®¤å®ƒçš„å…¼å®¹æ€§)</font>');
 
     $filelists = $dm->GetFileLists($hash);
     $filelist = '';
@@ -117,16 +117,16 @@ else if($action=='setup')
         if(empty($v['name'])) continue;
         if($v['type']=='dir')
         {
-            $v['type'] = 'Ä¿Â¼';
+            $v['type'] = 'ç›®å½•';
             $incdir[] = $v['name'];
         }
         else
         {
-            $v['type'] = 'ÎÄ¼ş';
+            $v['type'] = 'æ–‡ä»¶';
         }
         $filelist .= "{$v['type']}|{$v['name']}\r\n";
     }
-    //¼ì²âĞèÒªµÄÄ¿Â¼È¨ÏŞ
+    //æ£€æµ‹éœ€è¦çš„ç›®å½•æƒé™
     foreach($filelists as $v)
     {
         $prvdir = preg_replace("#\/([^\/]*)$#", '/', $v['name']);
@@ -147,11 +147,11 @@ else if($action=='setup')
         }
     }
     $prvdir = "<table cellpadding='1' cellspacing='1' width='350' bgcolor='#cfcfcf' style='margin-top:5px;'>\r\n";
-    $prvdir .= "<tr style='background:#FBFCE2'><th width='270'>Ä¿Â¼</td><th align='center'>¿ÉĞ´</td></tr>\r\n";
+    $prvdir .= "<tr style='background:#FBFCE2'><th width='270'>ç›®å½•</td><th align='center'>å¯å†™</td></tr>\r\n";
     foreach($prvdirs as $k=>$v)
     {
-        if($v) $cw = '¡Ì';
-        else $cw = '<font color="red">¡Á</font>';
+        if($v) $cw = 'âˆš';
+        else $cw = '<font color="red">Ã—</font>';
         $prvdir .= "<tr bgcolor='#ffffff'><td >$k</td>";
         $prvdir .= "<td align='center' >$cw</td></tr>\r\n";
     }
@@ -159,59 +159,59 @@ else if($action=='setup')
 
     $win = new OxWindow();
     $win->Init("module_main.php","js/blank.js","post");
-    $wecome_info = "Ä£¿é¹ÜÀí";
-    $win->AddTitle("&nbsp;<a href='module_main.php'>Ä£¿é¹ÜÀí</a> &gt;&gt; °²×°Ä£¿é£º {$infos['name']}");
+    $wecome_info = "æ¨¡å—ç®¡ç†";
+    $win->AddTitle("&nbsp;<a href='module_main.php'>æ¨¡å—ç®¡ç†</a> &gt;&gt; å®‰è£…æ¨¡å—ï¼š {$infos['name']}");
     $win->AddHidden("hash",$hash);
     $win->AddHidden("action",'setupstart');
-    if(trim($infos['url'])=='') $infos['url'] = 'ÎŞ';
+    if(trim($infos['url'])=='') $infos['url'] = 'æ— ';
     $msg = "<style>.dtb{border-bottom:1px dotted #cccccc}</style>
     <table width='98%' border='0' cellspacing='0' cellpadding='0'>
   <tr>
-    <td width='20%' height='28' class='dtb'>Ä£¿éÃû³Æ£º</td>
+    <td width='20%' height='28' class='dtb'>æ¨¡å—åç§°ï¼š</td>
     <td width='80%' class='dtb'>{$infos['name']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÓïÑÔ£º</td>
+    <td height='28' class='dtb'>è¯­è¨€ï¼š</td>
     <td class='dtb'>{$infos['lang']} {$alertMsg}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÎÄ¼ş´óĞ¡£º</td>
+    <td height='28' class='dtb'>æ–‡ä»¶å¤§å°ï¼š</td>
     <td class='dtb'>{$infos['filesize']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÍÅ¶ÓÃû³Æ£º</td>
+    <td height='28' class='dtb'>å›¢é˜Ÿåç§°ï¼š</td>
     <td class='dtb'>{$infos['team']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>·¢²¼Ê±¼ä£º</td>
+    <td height='28' class='dtb'>å‘å¸ƒæ—¶é—´ï¼š</td>
     <td class='dtb'>{$infos['time']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>µç×ÓÓÊÏä£º</td>
+    <td height='28' class='dtb'>ç”µå­é‚®ç®±ï¼š</td>
     <td class='dtb'>{$infos['email']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>¹Ù·½ÍøÖ·£º</td>
+    <td height='28' class='dtb'>å®˜æ–¹ç½‘å€ï¼š</td>
     <td class='dtb'>{$infos['url']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>Ê¹ÓÃĞ­Òé£º</td>
-    <td class='dtb'><a href='module_main.php?action=showreadme&hash={$hash}' target='_blank'>µã»÷ä¯ÀÀ...</a></td>
+    <td height='28' class='dtb'>ä½¿ç”¨åè®®ï¼š</td>
+    <td class='dtb'><a href='module_main.php?action=showreadme&hash={$hash}' target='_blank'>ç‚¹å‡»æµè§ˆ...</a></td>
   </tr>
   <tr>
     <td height='30' class='dtb' bgcolor='#F9FCEF' colspan='2'>
-    <b>×¢ÒâÊÂÏî£º</b>
-    °²×°Ê±ÇëÈ·±£ÎÄ¼şÁĞ±íÖĞÉæ¼°µÄÄ¿Â¼Ç°¿ÉĞ´ÈëÈ¨ÏŞ£¬´ËÍâ¡°ºóÌ¨¹ÜÀíÄ¿Â¼¡±¡¢¡°ºóÌ¨¹ÜÀíÄ¿Â¼/templets¡±Ä¿Â¼Ò²±ØĞëÔİÊ±ÉèÖÃ¿ÉĞ´ÈëÈ¨ÏŞ¡£
+    <b>æ³¨æ„äº‹é¡¹ï¼š</b>
+    å®‰è£…æ—¶è¯·ç¡®ä¿æ–‡ä»¶åˆ—è¡¨ä¸­æ¶‰åŠçš„ç›®å½•å‰å¯å†™å…¥æƒé™ï¼Œæ­¤å¤–â€œåå°ç®¡ç†ç›®å½•â€ã€â€œåå°ç®¡ç†ç›®å½•/templetsâ€ç›®å½•ä¹Ÿå¿…é¡»æš‚æ—¶è®¾ç½®å¯å†™å…¥æƒé™ã€‚
     </td>
   </tr>
   <tr>
-    <td height='30'><b>Ä¿Â¼È¨ÏŞ¼ì²â£º</b><br /> ../ Îª¸ùÄ¿Â¼ <br /> ./ ±íÊ¾µ±Ç°Ä¿Â¼</td>
+    <td height='30'><b>ç›®å½•æƒé™æ£€æµ‹ï¼š</b><br /> ../ ä¸ºæ ¹ç›®å½• <br /> ./ è¡¨ç¤ºå½“å‰ç›®å½•</td>
     <td>
     $prvdir
     </td>
   </tr>
   <tr>
-    <td height='30'>Ä£¿é°üº¬µÄËùÓĞÎÄ¼şÁĞ±í£º</td>
+    <td height='30'>æ¨¡å—åŒ…å«çš„æ‰€æœ‰æ–‡ä»¶åˆ—è¡¨ï¼š</td>
     <td></td>
   </tr>
   <tr>
@@ -220,14 +220,14 @@ else if($action=='setup')
     </td>
   </tr>
   <tr>
-    <td height='28'>¶ÔÓÚÒÑ´æÔÚÎÄ¼ş´¦Àí·½·¨£º</td>
+    <td height='28'>å¯¹äºå·²å­˜åœ¨æ–‡ä»¶å¤„ç†æ–¹æ³•ï¼š</td>
     <td>
    <input name='isreplace' type='radio' value='1' checked='checked' />
-    ¸²¸Ç
+    è¦†ç›–
    <input name='isreplace' type='radio' value='3' />
-   ¸²¸Ç£¬±£Áô¸±±¾
+   è¦†ç›–ï¼Œä¿ç•™å‰¯æœ¬
    <input type='radio' name='isreplace' value='0' />
-   ±£Áô¾ÉÎÄ¼ş
+   ä¿ç•™æ—§æ–‡ä»¶
    </td>
   </tr>
 </table>
@@ -245,7 +245,7 @@ else if($action=='setupstart')
 {
     if(!is_writeable($mdir))
     {
-        ShowMsg("Ä¿Â¼ {$mdir} ²»Ö§³ÖĞ´Èë£¬Õâ½«µ¼ÖÂ°²×°³ÌĞòÃ»·¨Õı³£´´½¨£¡","-1");
+        ShowMsg("ç›®å½• {$mdir} ä¸æ”¯æŒå†™å…¥ï¼Œè¿™å°†å¯¼è‡´å®‰è£…ç¨‹åºæ²¡æ³•æ­£å¸¸åˆ›å»ºï¼","-1");
         exit();
     }
     $dm = new DedeModule($mdir);
@@ -263,7 +263,7 @@ else if($action=='setupstart')
     $rs = $dsql->ExecuteNoneQuery($query);
     if(!$rs)
     {
-        ShowMsg('±£´æÊı¾İ¿âĞÅÏ¢Ê§°Ü£¬ÎŞ·¨Íê³É°²×°£¡'.$dsql->GetError(),'javascript:;');
+        ShowMsg('ä¿å­˜æ•°æ®åº“ä¿¡æ¯å¤±è´¥ï¼Œæ— æ³•å®Œæˆå®‰è£…ï¼'.$dsql->GetError(),'javascript:;');
         exit();
     }
 
@@ -274,17 +274,17 @@ else if($action=='setupstart')
     $dm->WriteSystemFile($hash,'readme');
     $dm->Clear();
 
-    //ÓÃÄ£¿éµÄ°²×°³ÌĞò°²×°
+    //ç”¨æ¨¡å—çš„å®‰è£…ç¨‹åºå®‰è£…
     if(!isset($autosetup) || $autosetup==0)
     {
         include(DEDEDATA.'/module/'.$filename);
         exit();
     }
-    //ÏµÍ³×Ô¶¯°²×°
+    //ç³»ç»Ÿè‡ªåŠ¨å®‰è£…
     else
     {
         $mysql_version = $dsql->GetVersion(TRUE);
-        //Ä¬ÈÏÊ¹ÓÃMySQL 4.1 ÒÔÏÂ°æ±¾µÄSQLÓï¾ä£¬¶Ô´óÓÚ4.1°æ±¾²ÉÓÃÌæ»»´¦Àí TYPE=MyISAM ==> ENGINE=MyISAM DEFAULT CHARSET=#~lang~#
+        //é»˜è®¤ä½¿ç”¨MySQL 4.1 ä»¥ä¸‹ç‰ˆæœ¬çš„SQLè¯­å¥ï¼Œå¯¹å¤§äº4.1ç‰ˆæœ¬é‡‡ç”¨æ›¿æ¢å¤„ç† TYPE=MyISAM ==> ENGINE=MyISAM DEFAULT CHARSET=#~lang~#
         $setupsql = $dm->GetSystemFile($hash, 'setupsql40');
 
         $setupsql = preg_replace("#ENGINE=MyISAM#i", 'TYPE=MyISAM', $setupsql);
@@ -319,7 +319,7 @@ else if($action=='setupstart')
 
         UpDateCatCache();
         SendData($hash);
-        ShowMsg('Ä£¿é°²×°Íê³É...', 'module_main.php');
+        ShowMsg('æ¨¡å—å®‰è£…å®Œæˆ...', 'module_main.php');
         exit();
     }
 }
@@ -332,51 +332,51 @@ else if($action=='del')
     $infos = $dm->GetModuleInfo($hash);
 
     if($infos['url']=='') $infos['url'] = '&nbsp;';
-    $alertMsg = ($infos['lang']==$cfg_soft_lang ? '' : '<br /><font color="red">(Õâ¸öÄ£¿éµÄÓïÑÔ±àÂëÓëÄãÏµÍ³µÄ±àÂë²»Ò»ÖÂ£¬ÇëÏò¿ª·¢ÕßÈ·ÈÏËüµÄ¼æÈİĞÔ)</font>');
+    $alertMsg = ($infos['lang']==$cfg_soft_lang ? '' : '<br /><font color="red">(è¿™ä¸ªæ¨¡å—çš„è¯­è¨€ç¼–ç ä¸ä½ ç³»ç»Ÿçš„ç¼–ç ä¸ä¸€è‡´ï¼Œè¯·å‘å¼€å‘è€…ç¡®è®¤å®ƒçš„å…¼å®¹æ€§)</font>');
 
     $win = new OxWindow();
     $win->Init("module_main.php", "js/blank.js", "post");
-    $wecome_info = "Ä£¿é¹ÜÀí";
-    $win->AddTitle("<a href='module_main.php'>Ä£¿é¹ÜÀí</a> &gt;&gt; É¾³ıÄ£¿é£º {$infos['name']}");
+    $wecome_info = "æ¨¡å—ç®¡ç†";
+    $win->AddTitle("<a href='module_main.php'>æ¨¡å—ç®¡ç†</a> &gt;&gt; åˆ é™¤æ¨¡å—ï¼š {$infos['name']}");
     $win->AddHidden('hash', $hash);
     $win->AddHidden('action', 'delok');
     $msg = "<style>.dtb{border-bottom:1px dotted #cccccc}</style>
     <table width='750' border='0' cellspacing='0' cellpadding='0'>
   <tr>
-    <td width='200' height='28' class='dtb'>Ä£¿éÃû³Æ£º</td>
+    <td width='200' height='28' class='dtb'>æ¨¡å—åç§°ï¼š</td>
     <td width='550' class='dtb'>{$infos['name']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÓïÑÔ£º</td>
+    <td height='28' class='dtb'>è¯­è¨€ï¼š</td>
     <td class='dtb'>{$infos['lang']} {$alertMsg}</td>
   </tr>
   <tr>
-    <td width='200' height='28' class='dtb'>ÎÄ¼ş´óĞ¡£º</td>
+    <td width='200' height='28' class='dtb'>æ–‡ä»¶å¤§å°ï¼š</td>
     <td width='550' class='dtb'>{$infos['filesize']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÍÅ¶ÓÃû³Æ£º</td>
+    <td height='28' class='dtb'>å›¢é˜Ÿåç§°ï¼š</td>
     <td class='dtb'>{$infos['team']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>·¢²¼Ê±¼ä£º</td>
+    <td height='28' class='dtb'>å‘å¸ƒæ—¶é—´ï¼š</td>
     <td class='dtb'>{$infos['time']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>µç×ÓÓÊÏä£º</td>
+    <td height='28' class='dtb'>ç”µå­é‚®ç®±ï¼š</td>
     <td class='dtb'>{$infos['email']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>¹Ù·½ÍøÖ·£º</td>
+    <td height='28' class='dtb'>å®˜æ–¹ç½‘å€ï¼š</td>
     <td class='dtb'>{$infos['url']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>Ê¹ÓÃĞ­Òé£º</td>
-    <td class='dtb'><a href='module_main.php?action=showreadme&hash={$hash}' target='_blank'>µã»÷ä¯ÀÀ...</a></td>
+    <td height='28' class='dtb'>ä½¿ç”¨åè®®ï¼š</td>
+    <td class='dtb'><a href='module_main.php?action=showreadme&hash={$hash}' target='_blank'>ç‚¹å‡»æµè§ˆ...</a></td>
   </tr>
   <tr>
     <td height='28' colspan='2'>
-    É¾³ıÄ£¿é½öÉ¾³ıÕâ¸öÄ£¿éµÄ°²×°°üÎÄ¼ş£¬Èç¹ûÄãÒÑ¾­°²×°£¬ÇëÖ´ĞĞ<a href='module_main.php?hash={$hash}&action=uninstall'><u>Ğ¶ÔØ³ÌĞò</u></a>À´É¾³ı£¡
+    åˆ é™¤æ¨¡å—ä»…åˆ é™¤è¿™ä¸ªæ¨¡å—çš„å®‰è£…åŒ…æ–‡ä»¶ï¼Œå¦‚æœä½ å·²ç»å®‰è£…ï¼Œè¯·æ‰§è¡Œ<a href='module_main.php?hash={$hash}&action=uninstall'><u>å¸è½½ç¨‹åº</u></a>æ¥åˆ é™¤ï¼
    </td>
   </tr>
 </table>
@@ -391,8 +391,8 @@ else if($action=='delok')
 {
     $dm = new DedeModule($mdir);
     $modfile = $mdir."/".$dm->GetHashFile($hash);
-    unlink($modfile) or die("É¾³ıÎÄ¼ş {$modfile} Ê§°Ü£¡");
-    ShowMsg("³É¹¦É¾³ıÒ»¸öÄ£¿éÎÄ¼ş£¡","module_main.php");
+    unlink($modfile) or die("åˆ é™¤æ–‡ä»¶ {$modfile} å¤±è´¥ï¼");
+    ShowMsg("æˆåŠŸåˆ é™¤ä¸€ä¸ªæ¨¡å—æ–‡ä»¶ï¼","module_main.php");
     exit();
 }
 /*--------------
@@ -404,59 +404,59 @@ else if($action=='uninstall')
     $infos = $dm->GetModuleInfo($hash);
 
     if($infos['url']=='') $infos['url'] = '&nbsp;';
-    $alertMsg = ($infos['lang']==$cfg_soft_lang ? '' : '<br /><font color="red">(Õâ¸öÄ£¿éµÄÓïÑÔ±àÂëÓëÄãÏµÍ³µÄ±àÂë²»Ò»ÖÂ£¬ÇëÏò¿ª·¢ÕßÈ·ÈÏËüµÄ¼æÈİĞÔ)</font>');
+    $alertMsg = ($infos['lang']==$cfg_soft_lang ? '' : '<br /><font color="red">(è¿™ä¸ªæ¨¡å—çš„è¯­è¨€ç¼–ç ä¸ä½ ç³»ç»Ÿçš„ç¼–ç ä¸ä¸€è‡´ï¼Œè¯·å‘å¼€å‘è€…ç¡®è®¤å®ƒçš„å…¼å®¹æ€§)</font>');
 
     $filelists = $dm->GetFileLists($hash);
     $filelist = '';
     foreach($filelists as $v)
     {
         if(empty($v['name'])) continue;
-        if($v['type']=='dir') $v['type'] = 'Ä¿Â¼';
-        else $v['type'] = 'ÎÄ¼ş';
+        if($v['type']=='dir') $v['type'] = 'ç›®å½•';
+        else $v['type'] = 'æ–‡ä»¶';
         $filelist .= "{$v['type']}|{$v['name']}\r\n";
     }
     $win = new OxWindow();
     $win->Init("module_main.php", "js/blank.js", "post");
-    $wecome_info = "Ä£¿é¹ÜÀí";
-    $win->AddTitle("<a href='module_main.php'>Ä£¿é¹ÜÀí</a> &gt;&gt; Ğ¶ÔØÄ£¿é£º {$infos['name']}");
+    $wecome_info = "æ¨¡å—ç®¡ç†";
+    $win->AddTitle("<a href='module_main.php'>æ¨¡å—ç®¡ç†</a> &gt;&gt; å¸è½½æ¨¡å—ï¼š {$infos['name']}");
     $win->AddHidden("hash",$hash);
     $win->AddHidden("action",'uninstallok');
     $msg = "<style>.dtb{border-bottom:1px dotted #cccccc}</style>
     <table width='750' border='0' cellspacing='0' cellpadding='0'>
   <tr>
-    <td width='200' height='28' class='dtb'>Ä£¿éÃû³Æ£º</td>
+    <td width='200' height='28' class='dtb'>æ¨¡å—åç§°ï¼š</td>
     <td width='550' class='dtb'>{$infos['name']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÓïÑÔ£º</td>
+    <td height='28' class='dtb'>è¯­è¨€ï¼š</td>
     <td class='dtb'>{$infos['lang']} {$alertMsg}</td>
   </tr>
   <tr>
-    <td width='200' height='28' class='dtb'>ÎÄ¼ş´óĞ¡£º</td>
+    <td width='200' height='28' class='dtb'>æ–‡ä»¶å¤§å°ï¼š</td>
     <td width='550' class='dtb'>{$infos['filesize']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÍÅ¶ÓÃû³Æ£º</td>
+    <td height='28' class='dtb'>å›¢é˜Ÿåç§°ï¼š</td>
     <td class='dtb'>{$infos['team']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>·¢²¼Ê±¼ä£º</td>
+    <td height='28' class='dtb'>å‘å¸ƒæ—¶é—´ï¼š</td>
     <td class='dtb'>{$infos['time']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>µç×ÓÓÊÏä£º</td>
+    <td height='28' class='dtb'>ç”µå­é‚®ç®±ï¼š</td>
     <td class='dtb'>{$infos['email']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>¹Ù·½ÍøÖ·£º</td>
+    <td height='28' class='dtb'>å®˜æ–¹ç½‘å€ï¼š</td>
     <td class='dtb'>{$infos['url']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>Ê¹ÓÃĞ­Òé£º</td>
-    <td class='dtb'><a href='module_main.php?action=showreadme&hash={$hash}' target='_blank'>µã»÷ä¯ÀÀ...</a></td>
+    <td height='28' class='dtb'>ä½¿ç”¨åè®®ï¼š</td>
+    <td class='dtb'><a href='module_main.php?action=showreadme&hash={$hash}' target='_blank'>ç‚¹å‡»æµè§ˆ...</a></td>
   </tr>
   <tr>
-    <td height='28'>Ä£¿é°üº¬µÄÎÄ¼ş£º<br />(ÎÄ¼şÂ·¾¶Ïà¶ÔÓÚµ±Ç°Ä¿Â¼)</td><td>&nbsp;</td>
+    <td height='28'>æ¨¡å—åŒ…å«çš„æ–‡ä»¶ï¼š<br />(æ–‡ä»¶è·¯å¾„ç›¸å¯¹äºå½“å‰ç›®å½•)</td><td>&nbsp;</td>
   </tr>
   <tr>
     <td height='164' colspan='2'>
@@ -464,12 +464,12 @@ else if($action=='uninstall')
     </td>
   </tr>
   <tr>
-    <td height='28'>¶ÔÓÚÄ£¿éµÄÎÄ¼ş´¦Àí·½·¨£º</td>
+    <td height='28'>å¯¹äºæ¨¡å—çš„æ–‡ä»¶å¤„ç†æ–¹æ³•ï¼š</td>
     <td>
     <input type='radio' name='isreplace' value='0' checked='checked' />
-    ÊÖ¹¤É¾³ıÎÄ¼ş£¬½öÔËĞĞĞ¶ÔØ³ÌĞò
+    æ‰‹å·¥åˆ é™¤æ–‡ä»¶ï¼Œä»…è¿è¡Œå¸è½½ç¨‹åº
    <input name='isreplace' type='radio' value='2' />
-    É¾³ıÄ£¿éµÄËùÓĞÎÄ¼ş
+    åˆ é™¤æ¨¡å—çš„æ‰€æœ‰æ–‡ä»¶
    </td>
   </tr>
 </table>
@@ -525,7 +525,7 @@ else if($action=='uninstallok')
         $rflwft .= "</script>";
         echo $rflwft;
         SendData($hash,2);
-        ShowMsg('Ä£¿éĞ¶ÔØÍê³É...','module_main.php');
+        ShowMsg('æ¨¡å—å¸è½½å®Œæˆ...','module_main.php');
         exit();
     }
 }
@@ -541,8 +541,8 @@ else if($action=='showreadme')
     $dm->Clear();
     $win = new OxWindow();
     $win->Init("module_main.php","js/blank.js","post");
-    $wecome_info = "Ä£¿é¹ÜÀí";
-    $win->AddTitle("<a href='module_main.php'>Ä£¿é¹ÜÀí</a> &gt;&gt; Ê¹ÓÃËµÃ÷£º");
+    $wecome_info = "æ¨¡å—ç®¡ç†";
+    $win->AddTitle("<a href='module_main.php'>æ¨¡å—ç®¡ç†</a> &gt;&gt; ä½¿ç”¨è¯´æ˜ï¼š");
     $win->AddMsgItem("<div style='padding-left:10px;line-height:150%'>$msg</div>");
     $winform = $win->GetWindow("hand");
     $win->Display();
@@ -557,7 +557,7 @@ else if($action=='view')
     $infos = $dm->GetModuleInfo($hash);
 
     if($infos['url']=='') $infos['url'] = '&nbsp;';
-    $alertMsg = ($infos['lang'] == $cfg_soft_lang ? '' : '<br /><font color="red">(Õâ¸öÄ£¿éµÄÓïÑÔ±àÂëÓëÄãÏµÍ³µÄ±àÂë²»Ò»ÖÂ£¬ÇëÏò¿ª·¢ÕßÈ·ÈÏËüµÄ¼æÈİĞÔ)</font>');
+    $alertMsg = ($infos['lang'] == $cfg_soft_lang ? '' : '<br /><font color="red">(è¿™ä¸ªæ¨¡å—çš„è¯­è¨€ç¼–ç ä¸ä½ ç³»ç»Ÿçš„ç¼–ç ä¸ä¸€è‡´ï¼Œè¯·å‘å¼€å‘è€…ç¡®è®¤å®ƒçš„å…¼å®¹æ€§)</font>');
 
     $filelists = $dm->GetFileLists($hash);
     $filelist = '';
@@ -565,60 +565,60 @@ else if($action=='view')
     foreach($filelists as $v)
     {
         if(empty($v['name'])) continue;
-        if($v['type']=='dir') $v['type'] = 'Ä¿Â¼';
-        else $v['type'] = 'ÎÄ¼ş';
+        if($v['type']=='dir') $v['type'] = 'ç›®å½•';
+        else $v['type'] = 'æ–‡ä»¶';
         $filelist .= "{$v['type']}|{$v['name']}\r\n";
     }
     if(file_exists(DEDEDATA."/module/{$hash}-readme.php")) 
     {
-        $setupinfo = "ÒÑ°²×° <a href='module_main.php?action=uninstall&hash={$hash}'>Ğ¶ÔØ</a>";
+        $setupinfo = "å·²å®‰è£… <a href='module_main.php?action=uninstall&hash={$hash}'>å¸è½½</a>";
     } else {
-        $setupinfo = "Î´°²×° <a href='module_main.php?action=setup&hash={$hash}'>°²×°</a>";
+        $setupinfo = "æœªå®‰è£… <a href='module_main.php?action=setup&hash={$hash}'>å®‰è£…</a>";
     }
     $win = new OxWindow();
     $win->Init("", "js/blank.js","");
-    $wecome_info = "Ä£¿é¹ÜÀí";
-    $win->AddTitle("<a href='module_main.php'>Ä£¿é¹ÜÀí</a> &gt;&gt; Ä£¿éÏêÇé£º {$infos['name']}");
+    $wecome_info = "æ¨¡å—ç®¡ç†";
+    $win->AddTitle("<a href='module_main.php'>æ¨¡å—ç®¡ç†</a> &gt;&gt; æ¨¡å—è¯¦æƒ…ï¼š {$infos['name']}");
     $msg = "<style>.dtb{border-bottom:1px dotted #cccccc}</style>
     <table width='98%' border='0' cellspacing='0' cellpadding='0'>
   <tr>
-    <td width='20%' height='28' class='dtb'>Ä£¿éÃû³Æ£º</td>
+    <td width='20%' height='28' class='dtb'>æ¨¡å—åç§°ï¼š</td>
     <td width='80%' class='dtb'>{$infos['name']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÓïÑÔ£º</td>
+    <td height='28' class='dtb'>è¯­è¨€ï¼š</td>
     <td class='dtb'>{$infos['lang']} {$alertMsg}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÎÄ¼ş´óĞ¡£º</td>
+    <td height='28' class='dtb'>æ–‡ä»¶å¤§å°ï¼š</td>
     <td class='dtb'>{$infos['filesize']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÊÇ·ñÒÑ°²×°£º</td>
+    <td height='28' class='dtb'>æ˜¯å¦å·²å®‰è£…ï¼š</td>
     <td class='dtb'>{$setupinfo}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>ÍÅ¶ÓÃû³Æ£º</td>
+    <td height='28' class='dtb'>å›¢é˜Ÿåç§°ï¼š</td>
     <td class='dtb'>{$infos['team']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>·¢²¼Ê±¼ä£º</td>
+    <td height='28' class='dtb'>å‘å¸ƒæ—¶é—´ï¼š</td>
     <td class='dtb'>{$infos['time']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>µç×ÓÓÊÏä£º</td>
+    <td height='28' class='dtb'>ç”µå­é‚®ç®±ï¼š</td>
     <td class='dtb'>{$infos['email']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>¹Ù·½ÍøÖ·£º</td>
+    <td height='28' class='dtb'>å®˜æ–¹ç½‘å€ï¼š</td>
     <td class='dtb'>{$infos['url']}</td>
   </tr>
   <tr>
-    <td height='28' class='dtb'>Ê¹ÓÃĞ­Òé£º</td>
-    <td class='dtb'><a href='module_main.php?action=showreadme&hash={$hash}' target='_blank'>µã»÷ä¯ÀÀ...</a></td>
+    <td height='28' class='dtb'>ä½¿ç”¨åè®®ï¼š</td>
+    <td class='dtb'><a href='module_main.php?action=showreadme&hash={$hash}' target='_blank'>ç‚¹å‡»æµè§ˆ...</a></td>
   </tr>
   <tr>
-    <td height='28'>Ä£¿é°üº¬µÄÎÄ¼ş£º<br />(ÎÄ¼şÂ·¾¶Ïà¶ÔÓÚµ±Ç°Ä¿Â¼)</td><td>&nbsp;</td>
+    <td height='28'>æ¨¡å—åŒ…å«çš„æ–‡ä»¶ï¼š<br />(æ–‡ä»¶è·¯å¾„ç›¸å¯¹äºå½“å‰ç›®å½•)</td><td>&nbsp;</td>
   </tr>
   <tr>
     <td height='164' colspan='2'>
@@ -647,7 +647,7 @@ else if($action=='edit')
     if(!isset($moduletype)) $moduletype = 'soft';
 
     $menustring = $dm->GetSystemFile($hash, 'menustring');
-    $setupsql40 = htmlspecialchars($dm->GetSystemFile($hash, 'setupsql40'));
+    $setupsql40 = dede_htmlspecialchars($dm->GetSystemFile($hash, 'setupsql40'));
     $readmetxt = $dm->GetSystemFile($hash, 'readme');
     $delsql = $dm->GetSystemFile($hash, 'delsql');
     $filelist = $dm->GetSystemFile($hash,'oldfilelist',false);
@@ -665,5 +665,5 @@ else if($action=='download')
 	$model_remote_url = $updateHost.'dedecms/module_'.$cfg_soft_lang.'/'.$hash.'.xml';
 	$model_remote = file_get_contents($model_remote_url);
 	file_put_contents($mdir.'/'.$hash.'.xml',$model_remote);
-	echo "Î´°²×° <a href='module_main.php?action=setup&hash={$hash}'><u>°²×°</u></a>";
+	echo "æœªå®‰è£… <a href='module_main.php?action=setup&hash={$hash}'><u>å®‰è£…</u></a>";
 }

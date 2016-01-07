@@ -9,7 +9,7 @@
 <!--begin main-->
   <div id="main" class="right">
 	<div class="box">
-	  <h2>ÁôÑÔÁĞ±í</h2>
+	  <h2>ç•™è¨€åˆ—è¡¨</h2>
 	  <!--begin-->
 	  <div class="text">
 		<!--begin comment-->
@@ -20,10 +20,10 @@
 		  <dl id="dl_1">
 			<dd class="comment-pic left">
 				<?php if($fields['face']==''){ 
-                   $face=($fields['sex']=='Å®')? 'templets/images/dfgirl.png' : 'templets/images/dfboy.png';
+                   $face=($fields['sex']=='å¥³')? 'templets/images/dfgirl.png' : 'templets/images/dfboy.png';
                   echo  '<img src="'.$face.'" width="50" height="50"/>';
                  }else{ 
-                     echo  '<img src="'.$fields['face'].'" width="50" height="50" alt="'.$fields['uname'].'µÄÍ·Ïñ" />';
+                     echo  '<img src="'.$fields['face'].'" width="50" height="50" alt="'.$fields['uname'].'çš„å¤´åƒ" />';
                  } ?>
 			</dd>
 			<dd>
@@ -35,7 +35,7 @@
 			  <span id="s_1"></span>
 			  <div id="r_1">
 				<div class="re-comment" style="display:none;">
-				  <b><a href='index.php?uid={dede:field.uname/}'></a> ÓÚ  »Ø¸´£º</b>
+				  <b><a href='index.php?uid={dede:field.uname/}'></a> äº  å›å¤ï¼š</b>
 				  <div id="r_content_1"></div>
 				</div>
 			  </div>
@@ -44,16 +44,16 @@
 		  {/dede:datalist}
 		  <div class="big"><div class="pages">{dede:pagelist/}</div></div>
 		  <div class="post-comment">
-			<h5>·¢±íÁôÑÔ</h5>
+			<h5>å‘è¡¨ç•™è¨€</h5>
 			<div>
        <form action="index.php" name="form1" method="post">
-			  <input type="hidden" id="guser" value="{dede:var.uname /}" />{dede:var.uname /}£º
+			  <input type="hidden" id="guser" value="{dede:var.uname /}" />{dede:var.uname /}ï¼š
         <input type="hidden" name="action" value="guestbooksave" />
         <input type="hidden" name="uidnum" value="{dede:var.mid/}" />
         <input type="hidden" name="uid" value="{dede:var.userid/}" />
         <input type="hidden" name="uname" type="text" id="uname" value="<?php if(isset($cfg_ml->M_LoginID) && $cfg_ml->M_LoginID!='') echo $cfg_ml->M_LoginID; ?>"  />
 			</div>
-			<div>±êÌâ£º<input name="title" type="text" id="title"   class="ip" style="width:250px;height:15px;" /></div>
+			<div>æ ‡é¢˜ï¼š<input name="title" type="text" id="title"   class="ip" style="width:250px;height:15px;" /></div>
 			<div>
 			  <textarea class="ip" name="msg" id="msg" style="width:95%;height:8em"></textarea>
 			  <span style="margin-top:-1em;padding:3px; text-align:right; width:200px; position:absolute">
@@ -62,10 +62,10 @@
 			</div>
 			<table>
 				<tr>
-			 	<td>ÑéÖ¤Âë£º</td>
+			 	<td>éªŒè¯ç ï¼š</td>
 			 	<td><input name="vdcode" type="text" id="vdcode" size="10" style="height:16px;width:60px;" class="ip" /></td>
 			 	<td><img src='../include/vdimgck.php' width='60px' height='20px'  /></td>
-       	<td>&nbsp;<input name="sbbt" type="submit" value="·¢ËÍÁôÑÔ" style="width:60px;height:22px"  /></td>
+       	<td>&nbsp;<input name="sbbt" type="submit" value="å‘é€ç•™è¨€" style="width:60px;height:22px"  /></td>
 			 </tr>
 			</table>
 		  </div>

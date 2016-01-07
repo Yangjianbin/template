@@ -1,0 +1,18 @@
+<div class="top_language"> <a href="/" title="中文版"><img src="/skin/images/cn.png" alt="中文版" /></a> <a href="/" title="英文版"><img src="/skin/images/en.png" alt="英文版" /></a> </div>
+<!--header-->
+<div class="top_bg">
+    <div class="top"><a href="/" class="nav_on" title="{dede:global.cfg_webname/}"><img src="/skin/images/logo.png" class="logo" alt="{dede:global.cfg_webname/}" /></a>
+      <ul class="nav">
+        {dede:channelartlist typeid='top'}
+        <li><a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}" >{dede:field name='typename'/}</a>
+          <dl>
+            {dede:channel type='son' noself='yes'}
+            <dd><a href="[field:typelink/]"  title="[field:typename/]">[field:typename/]</a></dd>
+            {/dede:channel}
+          </dl>
+        </li>
+        {/dede:channelartlist}
+      </ul>
+    </div>
+  </div>
+<!--header end--> 

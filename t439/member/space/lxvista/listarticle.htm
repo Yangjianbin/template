@@ -10,8 +10,8 @@
  <!--begin main-->
 <div id="main" class="right">
 <div class="box">
-<h2>ÈÕÖ¾ÎÄÕÂÁĞ±í 
-<img src="space/lxvista/images/write.gif"><a href="article_add.php" class="noul"><span class="gray fn">·¢±íÈÕÖ¾</span></a>
+<h2>æ—¥å¿—æ–‡ç« åˆ—è¡¨ 
+<img src="space/lxvista/images/write.gif"><a href="article_add.php" class="noul"><span class="gray fn">å‘è¡¨æ—¥å¿—</span></a>
 </h2>
 <!--begin-->
 {dede:datalist}
@@ -29,20 +29,20 @@
 					{/dede:if}
 					{dede:field.body function='cn_substr(@me, 500); /}
 				</p>
-        <p><a href='index.php?uid={dede:var.userid_e /}&action=viewarchives&aid={dede:field.id/}'>&lt;&lt;ÏêÏ¸ÄÚÈİ</a>
+        <p><a href='index.php?uid={dede:var.userid_e /}&action=viewarchives&aid={dede:field.id/}'>&lt;&lt;è¯¦ç»†å†…å®¹</a>
 			</td>
 		  </tr>
 		</table>
 		<div class="bb">
 		  <div>
-		  Àà±ğ£º
+		  ç±»åˆ«ï¼š
 		  {dede:if field.mtypename=='' }
-		  	<a href="#">ÎŞ·ÖÀà</a> | 
+		  	<a href="#">æ— åˆ†ç±»</a> | 
       {else}
         <a href="index.php?uid={dede:var.userid_e /}&action=archives&mtype=<?php echo $mty['mtypeid']; ?>">{dede:field.mtypename/}</a> | 
 			{/dede:if}
-			  <a href="{dede:field.arcurl/}" target="_blank" title="{dede:field.title/}">ä¯ÀÀÈ«ÎÄ</a>({dede:field.click/}) | 
-        <a href="{dede:global.cfg_phpurl/}/feedback.php?aid={dede:field.id/}" target="_blank">ºÃÆÀ¶È</a>({dede:field.scores/})
+			  <a href="{dede:field.arcurl/}" target="_blank" title="{dede:field.title/}">æµè§ˆå…¨æ–‡</a>({dede:field.click/}) | 
+        <a href="{dede:global.cfg_phpurl/}/feedback.php?aid={dede:field.id/}" target="_blank">å¥½è¯„åº¦</a>({dede:field.scores/})
 		  </div>
 		  <div class="c"></div>
 		</div>

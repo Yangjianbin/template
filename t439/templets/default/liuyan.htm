@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<LINK href="/skin/css/style.css" rel=stylesheet>
+<LINK href="/skin/css/base.css" rel=stylesheet>
+<LINK href="/skin/css/animate.css" rel=stylesheet>
+<LINK href="/skin/css/main.css" rel=stylesheet>
+<LINK href="/skin/css/jbox.css" rel=stylesheet>
+<script language="JavaScript" type="text/javascript" src="/skin/js/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/duoduo.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/functions.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/jquery.jbox-2.3.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/formvalid.js"></script>
+<script language="JavaScript" type="text/javascript" src="/skin/js/fv_onblur.js"></script>
+</head>
+<body>
+{dede:include filename="head.htm"/} 
+<script type="text/javascript" src="/skin/js/main.js"></script>
+<div class="c"></div>
+<style>
+.nybanner{ width:100%; height:122px; background:url(/skin/images/20150812102747-387015252.jpg) no-repeat;}
+</style>
+<div class="nybanner">
+  <div class="nybanner_mid">
+    <h4>{dede:field name='typeid' function="GetTopTypename(@me)"/}</h4>
+    <p>创新、诚信、务实、高效</p>
+  </div>
+</div>
+<div class="ny_mid">
+  <div class="nyleft">
+    <div class="lefta">{dede:field name='typeid' function="GetTopTypename(@me)"/}</div>
+    <div class="leftb">
+      <ul>
+        {dede:channel type='son' currentstyle="
+        <li><a href='~typelink~' class='cu'>~typename~</a></li>
+        "}
+        <li><a href="[field:typeurl/]" title="[field:typename/]">[field:typename/]</a></li>
+        {/dede:channel}
+      </ul>
+    </div>
+    <div class="contact">
+      <div class="lefta">联系我们</div>
+       <div class="contactbt">
+        <p>浙江省杭州市江干区，金沙居A座1524室</p>
+        <h6>我们的服务好啊，真是好好好好好好</h6>
+        <h4>联系电话：xxxxxxxxxx</h4>
+        <h3>传真：xxxxxxxxxx</h3>
+      </div>
+    </div>
+  </div>
+  <div class="contentright">
+    <div class="contentright_head">
+      <div class="contentright_head_left">{dede:field name='typename'/}</div>
+      <div class="contentright_head_right">您的位置：{dede:field name='position'/}</div>
+    </div>
+    <div class="proxx_bta">
+      <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+        <input type="hidden" name="action" value="post" />
+        <input type="hidden" name="diyid" value="1" />
+        <input type="hidden" name="do" value="2" />
+        <table width="618" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:5px  auto 0  auto;">
+          <tr>
+            <td align="right" >昵称：  </td>
+            <td width="452" height="45" align="left"  scope="col"><input type="text" name="name" class="inptxt" id="name" maxlength="10"  style="height:18px; width:200px; border:1px solid #9fafbb;"  valid="required|limit" errmsg="请输入昵称！|昵称长度必须在1-15个字符之间！" max="10" min="1" />
+              <span style="color:red;"> *</span> <span class="errMsg" id="errMsg_nickname"></span></td>
+          </tr>
+          <tr>
+            <td align="right" >手机：  </td>
+            <td height="45" ><input type="text" name="tel" class="inptxt" id="tel" maxlength="11" style="height:18px; width:200px; border:1px solid #9fafbb;" valid="isMobile|limit" errmsg="手机号码格式有误！|手机号码长度必须为11个字符！" max="11" min="11" />
+              <span class="errMsg" id="errMsg_telephone"></span></td>
+          </tr>
+          <tr>
+            <td align="right">邮箱：  </td>
+            <td height="44"><input class="inptxt" type="text" name="email" id="email"  style="height:18px; width:200px; border:1px solid #9fafbb;" valid="isEmail" errmsg="Email格式不正确！请正确填写！" />
+              <span class="errMsg" id="errMsg_email"></span></td>
+          </tr>
+          <tr>
+            <td align="right">标题：  </td>
+            <td height="44"><input class="inptxt" type="text" name="bt" id="bt"  style="height:18px; width:200px;" valid="required" errmsg="请填写标题！" />
+              <span style="color:red;"> *</span> <span class="errMsg" id="errMsg_title"></span></td>
+          </tr>
+          <tr>
+            <td align="right">内容：  </td>
+            <td height="44"><textarea name="content" cols="40" rows="5" class="inptxt" id="content" valid="required" errmsg="请填写内容！"></textarea>
+              <span style="color:red;"> *</span> <span class="errMsg" id="errMsg_content"></span></td>
+          </tr>
+          <input type="hidden" name="dede_fields" value="name,text;tel,text;email,text;bt,text;content,text" />
+          <input type="hidden" name="dede_fieldshash" value="628d663895cb275361e1545e99da28c1" />
+          <tr>
+            <td align="right">验证码：</td>
+            <td height="55" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th width="21%" height="31" align="left" scope="col"> <input class="inptxt" name="vdcode"  id="vdcode"  style="height:20px; width:80px; border:1px solid #9fafbb;" placeholder="请输右边入验证码(点击图片可刷新)" type="text"/>
+                  </th>
+                  <th width="79%" height="55" align="left" scope="col"> <img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor:pointer;" alt="验证码" src="/include/vdimgck.php" title="点击刷新"/> <span class="errMsg" id="errMsg_valid"></span></th>
+                </tr>
+              </table></td>
+          </tr>
+          <tr>
+            <td align="right"></td>
+            <td height="55" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th width="21%" height="31" align="left" scope="col"> <input class="inptxt" type="submit" name="submit"  style="width:80px; line-height:25px; height:28px;font-weight:bold; color:#006699; cursor:pointer;" value="提交" title="提交" onclick="javascript:if (validator(document.form1)){document.form1.submit();}" />
+                  </th>
+                  <th width="79%" height="55" align="left" scope="col"> <input class="inptxt" type="reset" name="reset" value="重置" style="width:80px; line-height:25px; height:28px; color:#006699; font-weight:bold;  cursor:pointer;" title="重置" onclick="form1.reset()" /></th>
+                </tr>
+              </table></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <div class="c"></div>
+    <div class="fanyea">
+      <div class="fah">{dede:type}<a href="[field:typelink/]" title="返回列表"><img src="/skin/images/fhb.jpg" width="87" height="26" alt="返回列表" /></a>{/dede:type}</div>
+      </a></div>
+  </div>
+  <div class="c"></div>
+</div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>
