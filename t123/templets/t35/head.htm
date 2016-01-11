@@ -1,0 +1,18 @@
+<header>
+  <div class="top">
+    <div class="w1000"> <span><a href="javascript:void(0)" onmouseup="SetHome(window.location)">设为首页</a> | <a href="javascript:void(0)" onmouseup="AddFavorite(window.location,document.title)">收藏本站</a></span>欢迎来到杭州联合威力工作室 </div>
+  </div>
+  <div class="w1000">
+    <div class="logo"><img src="/skin/images/logo.png" height="56" alt="{dede:global.cfg_webname/}" /></div>
+    <div class="menu">
+      <ul>
+        <li><a href="/">网站首页</a></li>
+        {dede:channel type='top' row='5' currentstyle="
+        <li><a href='~typelink~' class='on' ~rel~><span>~typename~</span></a></li>
+        "}
+        <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+        {/dede:channel}
+      </ul>
+    </div>
+  </div>
+</header>

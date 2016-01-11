@@ -1,0 +1,42 @@
+<?php
+$z[0]=Array("field","",254,273);
+$z[0][4]['name']="title";
+$z[1]=Array("global","",274,300);
+$z[1][4]['name']="cfg_webname";
+$z[2]=Array("field","",341,363);
+$z[2][4]['name']="keywords";
+$z[3]=Array("field","",403,454);
+$z[3][4]['name']="description";
+$z[3][4]['function']="html2text(@me)";
+$z[4]=Array("global","",1258,1284);
+$z[4][4]['name']="cfg_webname";
+$z[5]=Array("channel","\r\n        <li><a href=\"[field:typeurl/]\">[field:typename/]</a></li>\r\n        ",1387,1622);
+$z[5][4]['type']="top";
+$z[5][4]['row']="5";
+$z[5][4]['currentstyle']="<li><a href='~typelink~' class='on' ~rel~><span>~typename~</span></a></li>";
+$z[6]=Array("type"," <a href='[field:typelink/]' class=\"all\">全部</a>",1791,1865);
+$z[7]=Array("prenext","",1875,1903);
+$z[7][4]['get']="preurl";
+$z[8]=Array("prenext","",1930,1959);
+$z[8][4]['get']="nexturl";
+$z[9]=Array("field","",1995,2014);
+$z[9][4]['name']="title";
+$z[10]=Array("field","",2269,2287);
+$z[10][4]['name']="body";
+$z[11]=Array("field","",2448,2504);
+$z[11][4]['name']="pubdate";
+$z[11][4]['function']="MyDate('Y-m-d H:i',@me)";
+$z[12]=Array("field","",2556,2583);
+$z[12][4]['name']="phpurl";
+$z[13]=Array("field","",2607,2630);
+$z[13][4]['name']="id";
+$z[14]=Array("field","",2635,2659);
+$z[14][4]['name']="mid";
+$z[15]=Array("arclist","　\r\n        <article>\r\n          <div class=\"citem\"><a href=\"[field:arcurl/]\" title=\"[field:title/]\"> <img src=\"[field:picname/]\" alt=\"[field:title/]\" class=\"attachment-post-thumbnail wp-post-image\" /> <span></span> </a>\r\n            <div class=\"citemtxt\"><a href=\"[field:arcurl/]\" title=\"[field:title/]\">\r\n              <h4>[field:title/]</h4>\r\n              </a>\r\n              <p><span><a href='[field:typeurl/]'>[field:typename/]</a></span><em>\r\n                <label>[field:click/]</label>\r\n                浏览</em> </p>\r\n            </div>\r\n          </div>\r\n        </article>\r\n        ",3063,3719);
+$z[15][4]['typeid']="1";
+$z[15][4]['row']="8";
+$z[15][4]['titlelen']="32";
+$z[16]=Array("include","",4482,4519);
+$z[16][4]['filename']="footer.htm";
+
+?>

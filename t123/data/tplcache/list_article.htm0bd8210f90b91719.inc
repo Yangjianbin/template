@@ -1,0 +1,41 @@
+<?php
+$z[0]=Array("field","",254,273);
+$z[0][4]['name']="title";
+$z[1]=Array("global","",274,300);
+$z[1][4]['name']="cfg_webname";
+$z[2]=Array("field","",341,370);
+$z[2][4]['name']="keywords";
+$z[3]=Array("field","",410,468);
+$z[3][4]['name']="description";
+$z[3][4]['function']="html2text(@me)";
+$z[4]=Array("include","",1010,1045);
+$z[4][4]['filename']="head.htm";
+$z[5]=Array("type","\r\n      <li class=\"cat-item\"><a href='[field:typelink/]'>所有</a></li>\r\n      ",1141,1255);
+$z[5][4]['typeid']="7";
+$z[6]=Array("channel","\r\n      <li class=\"cat-item\"><a href=\"[field:typeurl/]\">[field:typename/]</a></li>\r\n      ",1263,1487);
+$z[6][4]['type']="son";
+$z[6][4]['currentstyle']="<li><a href='~typelink~' class='thisclass'>~typename~</a></li>";
+$z[7]=Array("list","\r\n      <div class=\"artlist\">\r\n        <div class=\"times\" onMouseOver=\"this.className='ontimes'\" onMouseOut=\"this.className='times'\">[field:pubdate function=\"MyDate('Y年',@me)\"/]<br />\r\n          [field:pubdate function=\"MyDate('m-d',@me)\"/]</div>\r\n        <div class=\"listt\">\r\n          <div class=\"listtbt\"><a href=\"[field:arcurl/]\" title=\"[field:title/]\">[field:title/]</a></div>\r\n          <div class=\"listtnr\">[field:description function='cn_substr(@me,250)'/]...<a href=\"[field:arcurl/]\" title=\"[field:title/]\">[详情]</a></div>\r\n        </div>\r\n      </div>\r\n      ",1586,2196);
+$z[7][4]['pagesize']="8";
+$z[8]=Array("pagelist","",2250,2303);
+$z[8][4]['listitem']="index,end,pre,next,pageno";
+$z[9]=Array("type"," <a href=\"[field:typelink/]\" >[field:typename/]</a>",2403,2488);
+$z[9][4]['typeid']="1";
+$z[10]=Array("type","<a href=\"[field:typelink/]\"><img src=\"/skin/images/more.jpg\"/></a>",2496,2596);
+$z[10][4]['typeid']="1";
+$z[11]=Array("arclist","\r\n        <div class=\"zxal\"> <a href=\"[field:arcurl/]\" title=\"[field:title/]\"><img src=\"[field:picname/]\" alt=\"[field:title/]\" width=\"120\" height=\"90\"></a>\r\n          <p><a href=\"[field:arcurl/]\">[field:title/]</a></p>\r\n        </div>\r\n        ",2630,2932);
+$z[11][4]['row']="8";
+$z[11][4]['typeid']="1";
+$z[11][4]['titlelen']="20";
+$z[12]=Array("type"," <a href=\"[field:typelink/]\" >[field:typename/]</a>",2972,3057);
+$z[12][4]['typeid']="7";
+$z[13]=Array("type","<a href=\"[field:typelink/]\"><img src=\"/skin/images/more.jpg\"/></a>",3064,3164);
+$z[13][4]['typeid']="7";
+$z[14]=Array("arclist","\r\n          <li><span><a href=\"[field:arcurl/]\" title=\"[field:title/]\"> > [field:title/]</a></span></li>\r\n          ",3223,3398);
+$z[14][4]['row']="9";
+$z[14][4]['typeid']="7";
+$z[14][4]['titlelen']="50";
+$z[15]=Array("include","",3630,3667);
+$z[15][4]['filename']="footer.htm";
+
+?>
