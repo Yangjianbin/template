@@ -1,0 +1,1 @@
+[field:typelink function='str_replace("/index.html","",@me)' /]

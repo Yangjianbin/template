@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>制作织梦CMS系统的sitemap.xml网站地图详细步骤_红灰色大气网络工作室织梦模板</title>
+<meta name="keywords" content="制作,织梦,CMS,系统,的,sitemap.xml,网站," />
+<meta name="description" content="用过织梦CMS的朋友应该都知道织梦自带有两种网站地图可以生成sitemap.html和rssmap.html（前一篇文章织梦58网络科技的优优哥已近讲解过如何修改织梦自带的网站地图路劲）。那么有人会问" />
+<link rel="stylesheet" href="/skin/css/style.css" type="text/css" media="all">
+<!--[if lte IE 6]>
+    <script src="/skin/js/new_tmd.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('div, ul, img, li, input , a');
+    </script>
+    <![endif]-->
+<script type="text/javascript" src="/skin/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/focus.js" language="javascript"></script>
+</head>
+<body>
+<div id="loading">
+  <div class="more-loading"></div>
+  <p>佛曰：前世五百次的回眸，才换得今世的擦肩而过！<br/>
+    了解织梦58只要60秒，让我们不再错过<br/>
+    . . .</p>
+</div>
+<script type="text/javascript">$(window).load(function(){$("#loading").animate({top:'-1680px'},1000);$("#loading").fadeOut(500);})</script>
+<div class="header-warp">
+  <div class="header">
+    <div class="Container clearfix">
+      <h1><a href="/" title="红灰色大气网络工作室织梦模板" class="logo">红灰色大气网络工作室织梦模板</a></h1>
+      <ul class="contact-group">
+        <li class="animate-btn"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=65965678&site=qq&menu=yes" class="qq"></a></li>
+        <li class="animate-btn"><a href="Mailto:admin@dede58.com" class="mail"title="给我们发邮件">MAIL</a></li>
+      </ul>
+      <div class="navlist">
+        <div>
+          <ul class="nav-menu">
+            <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="/">首页</a></li>
+            
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/a/anli/">案例</a></li>
+            
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/a/fuwu/">服务</a></li>
+            
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/a/about/">关于</a></li>
+            <li class='current-menu-item'><a href='/a/dongtai/' ><span>动态</span></a></li>
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/a/contact/">联系</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="case-warp csort">
+  <div class="case-sort">
+    <div class="weizhi">
+      <div class="xwdt">
+        <h1>建站手册</h1>
+      </div>
+      <div class="dqwz1">当前位置：<a href='http://127.0.0.76/'>主页</a> > <a href='/a/dongtai/'>动态</a> > <a href='/a/dongtai/jianzhanshouce/'>建站手册</a> >  </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="main1">
+  <div class="mainn">
+    <div class="mleft">
+      <div class="leftnr">
+        <div class="yuedu"><script src="/plus/count.php?view=yes&aid=39&mid=1" type='text/javascript' language="javascript"></script> 人<br/>
+          已阅读</div>
+        <div class="leftbt">
+          <h1>制作织梦CMS系统的sitemap.xml网站地图详细步骤</h1>
+          <div class="zuozhe">来源：dede58.com&nbsp;&nbsp; &nbsp;  &nbsp;  时间:2015-08-03 13:35 &nbsp; &nbsp; &nbsp; &nbsp;    责任编辑:dede58.com</div>
+        </div>
+      </div>
+      <div class="left_xx"></div>
+      <div class="left_content"> <div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;用过织梦CMS的朋友应该都知道织梦自带有两种网站地图可以生成sitemap.html和rssmap.html（前一篇文章织梦58网络科技的优优哥已近讲解过如何修改织梦自带的网站地图路劲）。那么有人会问：&ldquo;不是还有一种sitemap.xml的吗？又该如何制作呢？&rdquo;。今天织梦58网络科技的优优哥就给大家讲解一下如何制作织梦cms的sitemap.xml网站地图。请按照如下步骤操作！</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; 1.建立一个Sitemap.htm的模板，内容如下：</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;urlset&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;url&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;loc&gt;http://这里填入您的域名一般是带WWW的域名/&lt;/loc&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;lastmod&gt;{dede:arclist row=1 titlelen=24 orderby=pubdate}</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; [field:pubdate function=strftime(&#39;%Y-%m-%d&#39;,@me)/]</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; {/dede:arclist}&lt;/lastmod&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;changefreq&gt;daily&lt;/changefreq&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;priority&gt;1.0&lt;/priority&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;/url&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; {dede:channel row=&#39;23&#39; type=&#39;top&#39;}</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;url&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;loc&gt;http://xxxx.com[field:typelink /]&lt;/loc&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;changefreq&gt;daily&lt;/changefreq&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;priority&gt;0.8&lt;/priority&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;/url&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; {/dede:channel}</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; {dede:arclist row=2000 orderby=pubdate}</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;url&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;loc&gt;http://xxxx.com[field:arcurl/]&lt;/loc&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;lastmod&gt;[field:pubdate function=strftime(&#39;%Y-%m-%d&#39;,@me)/]&lt;/lastmod&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;changefreq&gt;0.7&lt;/changefreq&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;/url&gt;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; {/dede:arclist}</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; &lt;/urlset&gt;<br />
+	如果不会制作sitemap.htm的朋友请注意了，可以使用记事本把上面的代码复制进去，然后修改域名，点保存，最后在修改一下文件名为sitemap.htm就可以了！</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; 2.将做好的模板上传至你的网站模板目录下，注意你的模板放的地址，如果是默认的话是在\templets\default下，然后生成以下，在网站后台的模板-默认模板管理就能看到我们做好的网站地图模板。</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px; text-align: center;">
+	<img alt="" src="/uploads/allimg/150803/1-150P313355W63.jpg" style="border: 0px; width: 480px; height: 193px;" /></div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; 3.点击后台的生成-更新主页HTML，会看到如下界面</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px; text-align: center;">
+	<img alt="" src="/uploads/allimg/150803/1-150P3133604S6.jpg" style="border: 0px; width: 571px; height: 267px;" /></div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; 4.点击选择主页模板右侧的选择按钮，选择我们之前做好的sitemap.htm模板！</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px; text-align: center;">
+	<img alt="" src="/uploads/allimg/150803/1-150P3133610153.jpg" style="border: 0px; width: 523px; height: 208px;" /></div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; 5.选择主页模板下面会有一个主页位置，把主页位置的内容../index.html改成../Sitemap.xml，然后选择更新主页html（注意这里需要选择生成静态页）</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px; text-align: center;">
+	<img alt="" src="/uploads/allimg/150803/1-150P3133615543.jpg" style="border: 0px; width: 520px; height: 229px;" /></div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; 6.最后预览你就能看到我们做的Sitemap.xml网站地图做好了！</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; 注意事项：</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; 在生成xml网站地图之后一定要记得生成回来，选择你的主页模板和首页位置，不然你的首页访问地址就是Sitemap.xml的地址</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; color: rgb(92, 92, 92); font-family: 宋体; font-size: 14px; line-height: 26px;">
+	&nbsp; &nbsp; 如果你觉得此文帮助到你了请点击下面百度分享或者收藏本文，谢谢！</div>
+ </div>
+      <div class="left_xx"></div>
+      
+      <!--百度分享代码--> 
+      
+    </div>
+  </div>
+  <div class="mright">
+    <div class="part2"><span><a href="/a/anli/">最新案例</a></span><a href="javascript:;"><img src="/skin/images/more.jpg"/></a></div>
+    <div class="part3"> <div class="zxal"> <a href="/a/anli/tubiaojipingmian/47.html"><img src="/uploads/allimg/150803/1-150P31341570-L.png" width="120" height="70"></a>
+        <p><a href="/a/anli/tubiaojipingmian/47.html">《救你姐》IOS 游戏</a></p>
+      </div>
+<div class="zxal"> <a href="/a/anli/tubiaojipingmian/49.html"><img src="/uploads/allimg/150803/1-150P31343120-L.jpg" width="120" height="70"></a>
+        <p><a href="/a/anli/tubiaojipingmian/49.html">斗地主手机游戏</a></p>
+      </div>
+<div class="zxal"> <a href="/a/anli/tubiaojipingmian/48.html"><img src="/uploads/allimg/150803/1-150P31342250-L.jpg" width="120" height="70"></a>
+        <p><a href="/a/anli/tubiaojipingmian/48.html">果圣农瑞VI标识设</a></p>
+      </div>
+<div class="zxal"> <a href="/a/anli/yidongkehuduan/46.html"><img src="/uploads/allimg/150803/1-150P31340280-L.jpg" width="120" height="70"></a>
+        <p><a href="/a/anli/yidongkehuduan/46.html">前沿文档安全管理</a></p>
+      </div>
+<div class="zxal"> <a href="/a/anli/wangye/21.html"><img src="/uploads/150803/1-150P3121300449.jpg" width="120" height="70"></a>
+        <p><a href="/a/anli/wangye/21.html">佩服网UI界面设计</a></p>
+      </div>
+<div class="zxal"> <a href="/a/anli/wangye/20.html"><img src="/uploads/150803/1-150P3121245b5.jpg" width="120" height="70"></a>
+        <p><a href="/a/anli/wangye/20.html">中盛光电集团海外</a></p>
+      </div>
+<div class="zxal"> <a href="/a/anli/wangye/19.html"><img src="/uploads/150803/1-150P3121233395.jpg" width="120" height="70"></a>
+        <p><a href="/a/anli/wangye/19.html">中海商业广场官网</a></p>
+      </div>
+<div class="zxal"> <a href="/a/anli/wangye/18.html"><img src="/uploads/150803/1-150P312121O58.jpg" width="120" height="70"></a>
+        <p><a href="/a/anli/wangye/18.html">北京沛合健康科技</a></p>
+      </div>
+ </div>
+    <div class="part2"><span><a href="/a/dongtai/">推荐阅读</a></span><a href="javascript:;"><img src="/skin/images/more.jpg"/></a></div>
+    <div class="part4">
+      <ul>
+        <li><span><a href="/a/dongtai/tuiguangmiji/45.html"> >&nbsp;搜索引擎算法的四大因素</a></span></li>
+<li><span><a href="/a/dongtai/tuiguangmiji/44.html"> >&nbsp;百度推荐正式推出Discuz！建站插件</a></span></li>
+<li><span><a href="/a/dongtai/tuiguangmiji/43.html"> >&nbsp;网站不更新能得到百度的排名吗？</a></span></li>
+<li><span><a href="/a/dongtai/shejibaodian/42.html"> >&nbsp;设计师提高工作效率的10条建议！</a></span></li>
+<li><span><a href="/a/dongtai/shejibaodian/41.html"> >&nbsp;非常有趣的设计观点：设计就像炒饭</a></span></li>
+<li><span><a href="/a/dongtai/shejibaodian/40.html"> >&nbsp;提高设计师工作效率的5条黄金法则！</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer-warp">
+  <div class="footfixed">
+    <div class="Container clearfix">
+      <div class="c-txt"> Copyright &copy; 2002-2011 DEDE58.COM 织梦模板 版权所有 <a href=http://www.dedecms.com target='_blank'>Power by DedeCms</a></a> <span>粤ICP备69589678号</span> </div>
+      <div class="c-way"> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=69865678&site=qq&menu=yes" title="QQ在线联系" class="qq">69865678</a> <span>/</span> <a href="Mailto:admin@dede58.com" title="给我们发邮件" class="mail">admin@dede58.com</a> </div>
+    </div>
+  </div>
+</div>
+ 
+<script type="text/javascript" src="/skin/js/jquery.infinitescroll.min.js"></script> 
+<script type='text/javascript' src='/skin/js/userscripts.js'></script> 
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        /**
+         * Customize the previous navitation menu
+         */
+        var infinite_scroll = {
+            loading: {
+                img: "/skin/images/more.gif",
+                msgText: "正在加载中，请稍后...",
+                finishedMsg: "已经没有了哦！"
+            },
+            nextSelector:"#nav-below .nav-previous a",
+            navSelector:"#nav-below",
+            itemSelector:"article",
+            contentSelector:"#content"
+        };
+        jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="author" content="design by www.dede58.com" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--[if lt IE 9]>
+    <script src="/skin/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+<!--  -->
+<link rel='stylesheet' href='/skin/css/style.css' type='text/css' media='all' />
+<link rel="shortcut icon" href="/favicon.ico" />
+<script type="text/javascript" src="/skin/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div id="loading">
+  <div class="more-loading"></div>
+  <p>佛曰：前世五百次的回眸，才换得今世的擦肩而过！<br/>
+    了解织梦58只要60秒，让我们不再错过<br/>
+    . . .</p>
+</div>
+<script type="text/javascript">$(window).load(function(){$("#loading").animate({top:'-1680px'},1000);$("#loading").fadeOut(500);})</script>
+<div class="header-warp">
+  <div class="header">
+    <div class="Container clearfix">
+      <h1><a href="/" title="{dede:global.cfg_webname/}" class="logo">{dede:global.cfg_webname/}</a></h1>
+      <ul class="contact-group">
+        <li class="animate-btn"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=65965678&site=qq&menu=yes" class="qq"></a></li>
+        <li class="animate-btn"><a href="Mailto:admin@dede58.com" class="mail"title="给我们发邮件">MAIL</a></li>
+      </ul>
+      <div class="navlist">
+        <div>
+          <ul class="nav-menu">
+            <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home current-menu-item"><a href="/">首页</a></li>
+            {dede:channel type='top' row='5' currentstyle="
+            <li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>
+            "}
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="[field:typeurl/]">[field:typename/]</a></li>
+            {/dede:channel}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="banner-warp">
+  <div id="banner"> 
+    <!--轮播插件-->
+    <div> <img src="/skin/images/1.jpg" alt="织梦58，专业提供品牌网站建设、App设计和开发服务" />
+      <div> <img class="sub_1_1" src="/skin/images/sub_1_1.png"  />
+        <div class="sub_1_2">广州市织梦58科技有限公司旗下设计和开发服务品牌<span>广州品牌网站建设、APP 设计&开发专业团队</span></div>
+      </div>
+    </div>
+    <div> <img src="/skin/images/2.jpg" alt="织梦58，专业外包UI设计和开发团队" />
+      <div>
+        <div class="sub_2_1" >
+          <h1>Think Creat Design</h1>
+          <h2>我们追求简洁而不简单</h2>
+        </div>
+        <div class="sub_2_2" ><a href="/a/about/" class="contact-btn1">了解我们</a></div>
+      </div>
+    </div>
+    <div> <img src="/skin/images/3.jpg"alt="织梦58，前沿文档移动App界面设计" />
+      <div>
+        <div class="sub_3_1" >
+          <h1>文档安全移动终端App界面设计</h1>
+          <h2>Design By Ued Interation</h2>
+          <a href="/a/anli/" class="contact-btn1">欣赏案例</a></div>
+        <img class="sub_3_2" src="/skin/images/sub_3_2.png" /> </div>
+    </div>
+    <!--轮播插件--> 
+  </div>
+</div>
+<div class="service-warp">
+  <div class="Container clearfix">
+    <div class="Sbox"> <a href="/a/fuwu/" class="des">
+      <p>Design Service</p>
+      <h3>视觉设计</h3>
+      </a> </div>
+    <div class="Sbox"> <a href="/a/fuwu/" class="del">
+      <p>Delevop Service</p>
+      <h3>程序开发</h3>
+      </a> </div>
+    <div class="Sbox"> <a href="/a/fuwu/" class="mar">
+      <p>Marketing Service</p>
+      <h3>运营推广</h3>
+      </a> </div>
+  </div>
+</div>
+<div class="case-warp bg-gray padding60">
+  <div class="Container">
+    <div class="Title-group">
+      <div class="animate-btn"><a href="/a/anli/" class="all" title="查看全部">查看全部</a></div>
+      <h2 class="title-index"><span class="c-red">Our Case</span> • <span class="c-black">我们的案例</span></h2>
+      <p>如您所见，我们追求的不仅是吸引您的眼球，而是创造产品与用户之间的共鸣</p>
+    </div>
+    <!--case list-->
+    <ul class="case-list">
+      {dede:arclist typeid='1' row=8 titlelen=32}
+      <li>
+        <div class="citem"> <a href="[field:arcurl/]" title="[field:title/]"> <img width="280" height="180" src="[field:picname/]" class="attachment-post-thumbnail wp-post-image" alt="[field:title/]" /> <span></span> </a>
+          <div class="citemtxt"> <a href="[field:arcurl/]" title="[field:title/]">
+            <h4>[field:title/]</h4>
+            </a>
+            <p> <span><a href="[field:typeurl/]">[field:typename/]</a></span> <em>
+              <label><script src="[field:phpurl/]/count.php?view=yes&aid=[field:id/]&mid=[field:mid/]" type='text/javascript' language="javascript"></script></label>
+              浏览</em> </p>
+          </div>
+        </div>
+      </li>
+      {/dede:arclist}
+    </ul>
+    <!--//case list--> 
+  </div>
+</div>
+<div class="contact-warp padding60 contact-indexbg">
+  <div class="Container clearfix">
+    <div class="contact-txt">
+      <h3>让我们从沟通开始这次愉快的合作！</h3>
+      <a href="/a/contact/" class="contact-btn1">Contact Us &gt;</a> </div>
+    <div class="good-item">
+      <div class="gbox"> <span>5+</span> <em>Years of exprience</em> </div>
+      <div class="gbox"> <span>176</span> <em>Completed project</em> </div>
+      <div class="gbox"> <span>68</span> <em>Cooperation clients</em> </div>
+    </div>
+  </div>
+</div>
+<div class="comment-warp bg-gray padding60">
+  <div class="Container">
+    <div class="Title-group">
+      <h2 class="title-index"><span class="c-red">Our Clients</span> • <span class="c-black">我们的客户</span></h2>
+      <p>您的肯定，是我们前进的动力</p>
+    </div>
+    <!--轮播评论-->
+    <div class="client-comments">
+      <ul class="cc-list">
+        <li>
+          <p class="comm-img"><img width="132" height="132" src="/skin/images/kh1.png" class="attachment-post-thumbnail wp-post-image" alt="kh1" /></p>
+          <div class="comm-txt">
+            <p>“ 小而精的设计开发团队，全球视野的设计理念，关注设计到开发的每一个细节，让服务的产品更上一个台阶。非常难得，值得信赖！  ”</p>
+          </div>
+          <p class="comm-name">高阳 &#8211; SEGMENTFAULT CEO</p>
+        </li>
+        <li>
+          <p class="comm-img"><img width="132" height="132" src="/skin/images/yr.png" class="attachment-post-thumbnail wp-post-image" alt="yr" /></p>
+          <div class="comm-txt">
+            <p>“  织梦58 团队的合作从开始到结束都是一个愉快的过程。他们交付的工作满足了我们的要求，以及我们的产品，合作得非常顺利。 ”</p>
+          </div>
+          <p class="comm-name">祝义才 &#8211; 雨润控股集团总裁</p>
+        </li>
+        <li>
+          <p class="comm-img"><img width="132" height="132" src="/skin/images/climg2.png" class="attachment-post-thumbnail wp-post-image" alt="climg2" /></p>
+          <div class="comm-txt">
+            <p>“ 织梦58 的作品让人赏心悦目，是技术与艺术的完美结合，同时一起合作得非常愉快。推荐给初创企业良好的委托设计和开发提供商。”</p>
+          </div>
+          <p class="comm-name">焦俊康 &#8211; 南京恒林软件科技有限公司 CTO</p>
+        </li>
+        <li>
+          <p class="comm-img"><img width="132" height="132" src="/skin/images/climg11.png" class="attachment-post-thumbnail wp-post-image" alt="climg1" /></p>
+          <div class="comm-txt">
+            <p>“ 全心全意为客户着想的设计团队，及时响应客户的需求，提供出完美的方案，让客户满意，放心！ ”</p>
+          </div>
+          <p class="comm-name">魏醒 &#8211; 无锡易迅惠科技有限公司 产品经理</p>
+        </li>
+      </ul>
+      <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+      <div class="num">
+        <ul>
+        </ul>
+      </div>
+    </div>
+    <!--//轮播评论--> 
+  </div>
+</div>
+<div class="client-warp padding60">
+  <div class="Container">
+    <ul class="clients-list clearfix">
+      {dede:arclist typeid='13' row='15'}
+      <li><img width="140" height="50" src="[field:picname/]" class="attachment-post-thumbnail wp-post-image" alt="c_logo15" /></li>
+      {/dede:arclist}
+    </ul>
+  </div>
+</div>
+<script src="/skin/js/jquery.kinmaxshow-1.1.min.js" type="text/javascript"  charset="utf-8"></script> 
+<script src="/skin/js/jquery.superslide.2.1.1.js" type="text/javascript"></script> 
+<script type="text/javascript">
+    $(function(){
+        $("#banner").kinMaxShow({
+            height:600,
+            button:{
+                showIndex:false,
+                normal:{background:'url(/skin/images/button.png) no-repeat -14px 0',marginRight:'8px',border:'0',right:'47.2%',bottom:'20px'},
+                focus:{background:'url(/skin/images/button.png) no-repeat 0 0',border:'0'}
+            },
+
+            callback:function(index,action){
+                switch(index){
+                    case 0 :
+                        if(action=='fadeIn'){
+                            $(this).find('.sub_1_1').animate({top:'85px'},600)
+                            $(this).find('.sub_1_2').animate({bottom:'190px'},600)
+
+                        }else{
+                            $(this).find('.sub_1_1').animate({top:'-224px'},600)
+                            $(this).find('.sub_1_2').animate({bottom:'-300px'},600)
+
+                        };
+                        break;
+
+                    case 1 :
+                        if(action=='fadeIn'){
+                            $(this).find('.sub_2_1').animate({left:'50%'},600)
+                            $(this).find('.sub_2_2').animate({bottom:'260px'},600)
+                        }else{
+                            $(this).find('.sub_2_1').animate({left:'-50%'},600)
+                            $(this).find('.sub_2_2').animate({bottom:'-100px'},600)
+                        };
+                        break;
+
+                    case 2 :
+                        if(action=='fadeIn'){
+                            $(this).find('.sub_3_1').animate({left:'50%'},600)
+                            $(this).find('.sub_3_2').animate({right:'50%'},600)
+                        }else{
+                            $(this).find('.sub_3_1').animate({left:'-50%'},600)
+                            $(this).find('.sub_3_2').animate({right:'-50%'},600)
+                        };
+                        break;
+
+                }
+            }
+
+        });
+
+    });
+</script> 
+<script>
+    /*鼠标移过，左右按钮显示*/
+    $(".client-comments").hover(function(){
+        $(this).find(".prev,.next").fadeTo("show",0.1);
+    },function(){
+        $(this).find(".prev,.next").hide();
+    })
+    /*鼠标移过某个按钮 高亮显示*/
+    $(".prev,.next").hover(function(){
+        $(this).fadeTo("show",0.87);
+    },function(){
+        $(this).fadeTo("show",0.1);
+    })
+    $(".client-comments").slide({ titCell:".num ul" , mainCell:".cc-list" , effect:"left", autoPlay:true, delayTime:700 , autoPage:"<li><a></a></li>" });
+
+</script> 
+{dede:include filename="footer.htm"/} 
+<script type="text/javascript" src="/skin/js/jquery.infinitescroll.min.js"></script> 
+<script type='text/javascript' src='/skin/js/userscripts.js'></script> 
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        /**
+         * Customize the previous navitation menu
+         */
+        var infinite_scroll = {
+            loading: {
+                img: "/skin/images/more.gif",
+                msgText: "正在加载中，请稍后...",
+                finishedMsg: "已经没有了哦！"
+            },
+            nextSelector:"#nav-below .nav-previous a",
+            navSelector:"#nav-below",
+            itemSelector:"article",
+            contentSelector:"#content"
+        };
+        jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
+    });
+</script>
+</body>
+</html>

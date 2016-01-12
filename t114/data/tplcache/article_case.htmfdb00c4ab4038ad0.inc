@@ -1,0 +1,47 @@
+<?php
+$z[0]=Array("global","",87,113);
+$z[0][4]['name']="cfg_webname";
+$z[1]=Array("field","",158,180);
+$z[1][4]['name']="keywords";
+$z[2]=Array("field","",224,275);
+$z[2][4]['name']="description";
+$z[2][4]['function']="html2text(@me)";
+$z[3]=Array("global","",508,537);
+$z[3][4]['name']="cfg_templeturl";
+$z[4]=Array("global","",602,631);
+$z[4][4]['name']="cfg_templeturl";
+$z[5]=Array("global","",716,745);
+$z[5][4]['name']="cfg_templeturl";
+$z[6]=Array("global","",818,847);
+$z[6][4]['name']="cfg_templeturl";
+$z[7]=Array("global","",899,928);
+$z[7][4]['name']="cfg_templeturl";
+$z[8]=Array("global","",1077,1106);
+$z[8][4]['name']="cfg_templeturl";
+$z[9]=Array("global","",1219,1248);
+$z[9][4]['name']="cfg_templeturl";
+$z[10]=Array("channel","\r\n            <li><a href=\"[field:typeurl/]\">[field:typename/]</a></li>\r\n            ",1491,1713);
+$z[10][4]['type']="top";
+$z[10][4]['currentstyle']="<li class='active'><a href='~typelink~' style='color:white;'>~typename~</a></li>";
+$z[11]=Array("type","[field:typelink function='str_replace(\"/index.html\",\"\",@me)' /]",2280,2383);
+$z[11][4]['typeid']="0";
+$z[11][4]['row']="1";
+$z[12]=Array("prenext","",2544,2572);
+$z[12][4]['get']="preurl";
+$z[13]=Array("prenext","",2744,2773);
+$z[13][4]['get']="nexturl";
+$z[14]=Array("field","",3063,3082);
+$z[14][4]['name']="title";
+$z[15]=Array("type","[field:typelink function='str_replace(\"/index.html\",\"\",@me)' /]",3149,3252);
+$z[15][4]['typeid']="0";
+$z[15][4]['row']="1";
+$z[16]=Array("field","",3277,3306);
+$z[16][4]['name']="typename";
+$z[17]=Array("field","",3326,3355);
+$z[17][4]['name']="typename";
+$z[18]=Array("tag","\r\n              <dd><a href=\"[field:link/]\" target=\"_blank\">[field:tag /]</a></dd>\r\n              ",3527,3657);
+$z[18][4]['getall']="0";
+$z[19]=Array("field","",3781,3799);
+$z[19][4]['name']="body";
+
+?>
